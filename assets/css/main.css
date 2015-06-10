@@ -397,6 +397,68 @@ bttn:active, bttn:focus {
     text-shadow: 0px -1px 8px rgba(22, 22, 22, 1);
 
 }
+
+.scroll-arrow {
+    font-size: 28px;
+    padding: .125em 0;
+    color: orange;
+    text-decoration: none;
+    display: block;
+    width: 50px;
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.scroll-arrow:focus,
+.scroll-arrow:visited {
+    color: orange;
+}
+.scroll-arrow:hover {
+    color: #fff;
+}
+.is-loaded .scroll-arrow {
+    animation: bounce-down 1.5s infinite;
+}
+@-webkit-keyframes bounce-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+}
+@keyframes bounce-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+}
+
+
+
 #intro {
     background: #2c3e50;
     padding-top: 60px;
