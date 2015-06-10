@@ -17,6 +17,14 @@ body {
     -o-overflow-scrolling: touch;
     overflow-scrolling: touch;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-wrap {
+    background-color: #fff;
+}
 h1,h2,h3,h4,h5,h6 {
     font-family: "Raleway";
     font-weight: 300;
@@ -360,26 +368,19 @@ bttn:active, bttn:focus {
   color: #bab6b6;
 }
 #headerwrap {
-    background: rgb(34, 34, 34);
-    background: linear-gradient(rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.4)), url(../img/header-bg2.jpg) no-repeat center top;   
+    position: relative;
+    top: 0;
+    left: 0;
     color: #fff;
     text-align: center;
     margin-top: 60px;
-    padding-top: 140px;
     text-align: center;
-    background-attachment: relative;
-    background-position: center center;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     
-    height: 97vh;
+    height: 100vh;
     width: 100%;
+}
+#headerwrap .container {
+    padding-top: 140px;
 }
 #headerwrap h1 {
     font-size: 80px;
@@ -397,6 +398,32 @@ bttn:active, bttn:focus {
     text-shadow: 0px -1px 8px rgba(22, 22, 22, 1);
 
 }
+.header-bg {
+    z-index: -1;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: rgb(34, 34, 34);
+    background: linear-gradient(rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.4)), url(../img/taust.jpeg) no-repeat center top;   
+    
+    background-attachment: relative;
+    background-position: center center;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.header-blur {
+  background: linear-gradient(rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.4)), url(../img/taust-blur.jpeg) no-repeat center top; 
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
 
 .scroll-arrow {
     font-size: 28px;
@@ -406,7 +433,7 @@ bttn:active, bttn:focus {
     display: block;
     width: 50px;
     position: absolute;
-    bottom: 55px;
+    bottom: 85px;
     left: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -457,7 +484,10 @@ bttn:active, bttn:focus {
     }
 }
 
-
+.container.desc {
+    background-color: #fff;
+    width: 100%;
+}
 
 #intro {
     background: #2c3e50;
