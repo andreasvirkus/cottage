@@ -13,3 +13,8 @@ ExpiresByType image/x-icon "access 1 year"
 ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
+
+#Create filter to match files you want to cache
+(open crutch)FilesMatch “\.(jpg|jpeg|png|gif|pdf|js|css|ico)$”(close crutch)
+Header add “Cache-Control” “max-age=604800″
+(open crutch)/FilesMatch(close crutch)
