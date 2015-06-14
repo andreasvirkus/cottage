@@ -1,8 +1,7 @@
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
-ExpiresDefault A86400
-# A31536000
+ExpiresDefault "access plus 11 month"
 
 # Add correct content-type for fonts
 AddType application/vnd.ms-fontobject .eot

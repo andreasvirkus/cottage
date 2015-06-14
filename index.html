@@ -9,8 +9,63 @@
     <link rel="shortcut icon" href="assets/ico/favicon.ico" />
     <title>Andreas J. Virkus</title>
     <link href='//fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css' />
-    <link defer href="assets/css/bootstrap.css" rel="stylesheet" /> 
-    <link href="assets/css/main.css" rel="stylesheet" />  
+    <style>
+        *, ::after, ::before { box-sizing: border-box; }
+        * { box-sizing: border-box; }
+        body {font-family: Lato; font-size: 20px; line-height: 1.428571429; font-weight: 300; }
+        .bar { position: fixed; left: 0px; overflow: hidden; width: 0%; height: 5px; z-index: 9999; }
+        .bar-bg { position: absolute; left: 0px; width: 100%; height: 100%; background-color: rgb(225, 96, 54); }
+        #headerwrap { position: relative; top: 0px; left: 0px; color: rgb(255, 255, 255); margin-top: 60px; text-align: center; height: 100vh; width: 100%; }
+        .header-bg { z-index: -1; position: fixed; height: 100vh; width: 100%; -webkit-background-size: cover; background: linear-gradient(rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.4)) 50% 50% / cover, url(assets/img/taust.jpeg) no-repeat; }
+        .header-blur { opacity: 0; background: linear-gradient(rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.4)), url(assets/img/taust-blur.jpeg) 50% 0% no-repeat; }
+        .container { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; max-width: 1170px; }
+        #headerwrap .container { padding-top: 140px; }
+        .row { margin-right: -15px; margin-left: -15px; }
+        .col-md-1, .col-md-10, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 { position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; }
+        h1 { margin: 0.67em 0px; }
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 500; line-height: 1.1; }
+        h1, h2, h3 { margin-top: 20px; margin-bottom: 10px; }
+        .h1, h1 { font-size: 36px; }
+        h1, h2, h3, h4, h5, h6 { font-family: Raleway; font-weight: 300; color: rgb(51, 51, 51); }
+        #headerwrap h1 { font-size: 80px; color: rgb(255, 255, 255); }
+        .h3, h3 { font-size: 24px; }
+        h3 { letter-spacing: 5px; }
+        #headerwrap h3 { font-size: 20px; color: rgb(255, 255, 255); }
+        a { color: rgb(225, 96, 54); text-decoration: none; word-wrap: break-word; transition: color 0.1s ease-in, background 0.1s ease-in; -webkit-transition: color 0.1s ease-in, background 0.1s ease-in; }
+        .header-email { color: rgb(255, 255, 255); }
+        .scroll-arrow { font-size: 28px; padding: 0.125em 0px; color: orange; text-decoration: none; display: block; width: 50px; position: absolute; bottom: 85px; left: 50%; border-radius: 50%; transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
+        .scroll-arrow:focus, .scroll-arrow:visited { color: orange; }
+        .contact-overlay { position: fixed; width: 100%; height: 0px; top: 0px; right: 0px; z-index: 400; overflow: hidden; opacity: 0; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; background: rgba(140, 140, 140, 0.8); }
+        .contact-overlay .close-button { position: absolute; width: 2em; height: 2em; top: 60px; right: 35px; margin: 1em; border: 1px solid rgb(255, 255, 255); color: rgb(255, 255, 255); cursor: pointer; transition: all 0.3s ease; -webkit-transition: all 0.3s ease; border-radius: 2em; box-sizing: border-box; }
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+        section#overlay { margin: 190px auto 0px; text-align: center; width: 40%; max-width: 500px; transition: all 0.4s ease-in-out; -webkit-transition: all 0.4s ease-in-out; background: rgba(255, 255, 255, 0); }
+        .contact-form { position: relative; width: 380px; margin: 0px auto; padding: 20px; background: rgb(255, 255, 255); }
+        .field-container { margin-bottom: 20px; }
+        button, input, select, textarea { margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; }
+        button, input, select[multiple], textarea { background-image: none; }
+        .input { width: 100%; margin: 0px; padding: 0px 6px; border: none; outline: none; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: 1; font-family: Lato, san-serif; color: rgb(64, 64, 64); background: transparent; }
+        p { margin: 0px 0px 10px; line-height: 28px; margin-bottom: 25px; }
+        #intro h5, p { color: white; }
+        #skillswrap h5, p { color: white; }
+        .antispam { display: none; }
+        textarea { overflow: auto; vertical-align: top; }
+        .text-area { height: 19px; overflow-y: hidden; resize: none; transition: all 0.4s ease-in; -webkit-transition: all 0.4s ease-in; }
+        .button-container { margin-bottom: 20px; }
+        .bttn { display: block; width: 90px; margin: 0px auto; border: none; padding: 0.75rem 1rem; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; font-family: Lato, sans-serif; outline: none; color: rgb(130, 130, 130); text-decoration: none; line-height: 1.5; cursor: pointer; background: none; }
+        button, html input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+        #section-topbar { position: fixed; top: 0px; left: 0px; right: 0px; z-index: 10000; overflow: visible; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: 24px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        #topbar-inner { line-height: 0; text-align: center; background: rgb(17, 17, 17); }
+        .dropdown { position: relative; }
+        ol, ul { margin-top: 0px; margin-bottom: 10px; }
+        .nav { padding-left: 0px; margin-bottom: 0px; list-style: none; }
+        #section-topbar ul#nav { display: inline-block; position: relative; margin: 0px; padding: 0px; zoom: 1; }
+        .nav > li { position: relative; display: block; }
+        #section-topbar ul#nav > li { display: block; float: left; padding: 0px; }
+        .nav > li > a { position: relative; display: block; padding: 10px 15px; }
+        #section-topbar a { color: rgb(255, 255, 255); }
+        #section-topbar ul#nav a { display: block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; padding: 18px 20px 18px 18px; }
+        #section-topbar i { font-size: 25px; }  
+    </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,7 +83,7 @@
         <div class="header-bg header-blur"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="col-xs-12">
 					<h1>Andreas J. Virkus</h1>
 					<h3>Web Designer <span class="mobile-hide">|</span> 
                         <script type="text/javascript">
@@ -53,36 +108,14 @@
                             //]]>
                         </script>
                     </h3>
-				</div><!--/.col-lg-12 -->
+				</div><!--/.col-xs-12 -->
 			</div><!--/.row -->            
             <a href="#about" class="scroll-arrow smoothScroll mobile-hide">
                 <span class="fa fa-angle-down fa-2x"></span>
             </a>
 		</div><!--/.container -->
 	</div><!--/ #headerwrap -->
-      
-    <div class="contact-overlay">
-      <a class="close-button" title="Close"></a>
-        <section id="overlay">
-            <form method="post" class="contact-form" name="contactForm" onsubmit="return validateForm();">
-              <div class="field-container name-container">
-                <input type="text"  required class="input" maxlength="40" title="Name [A-Z, -]"pattern="^[a-zA-Z\-\s]+$" name="name" placeholder="Name" />
-              </div>
-              <div class="field-container email-container">
-                <input type="email" required class="input" name="email" title="E-mail [example@abc.com]" placeholder="Email" />
-              </div>
-              <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
-
-              <div class="field-container text-area-container">
-                <textarea type="text" required class="input text-area" title="Message [A-Z, .!?-]" pattern="^[a-zA-Z\-\s!?.,0-9]+$" name="message" maxlength="300" placeholder="Your Message"></textarea>
-              </div>
-              <div class="button-container">
-              <input class="bttn" type="submit" value="Send" title="Email me"/>
-              </div>
-            </form>
-        </section>
-    </div><!--/ .contact-overlay -->
-      
+       
 	<div id="section-topbar">
 		<div id="topbar-inner">
 			<div class="container">
@@ -105,21 +138,46 @@
 		</div><!--/ #topbar-inner -->
 	</div><!--/ #section-topbar -->
 	
+    <link defer href="assets/css/bootstrap.css" rel="stylesheet" /> 
+    <link href="assets/css/main.css" rel="stylesheet" />  
+      
+    <div class="contact-overlay">
+      <a class="close-button" title="Close"></a>
+        <section id="overlay">
+            <form method="post" class="contact-form" name="contactForm" onsubmit="return validateForm();">
+              <div class="field-container name-container">
+                <input type="text"  required class="input" maxlength="40" title="Name [A-Z, -]"pattern="^[a-zA-Z\-\s]+$" name="name" placeholder="Name" />
+              </div>
+              <div class="field-container email-container">
+                <input type="email" required class="input" name="email" title="E-mail [example@abc.com]" placeholder="Email" />
+              </div>
+              <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+
+              <div class="field-container text-area-container">
+                <textarea type="text" required class="input text-area" title="Message [A-Z, .!?-]" pattern="^[a-zA-Z\-\s!?.,0-9]+$" name="message" maxlength="300" placeholder="Your Message"></textarea>
+              </div>
+              <div class="button-container">
+              <input class="bttn" type="submit" value="Send" title="Email me"/>
+              </div>
+            </form>
+        </section>
+    </div><!--/ .contact-overlay -->
+     
     <div class="content-wrap">
 	<section id="about" name="about"></section>
 	<div id="intro">
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-lg-2 col-lg-offset-1 centered">
+				<div class="col-md-2 col-md-offset-1 centered">
 <!--					<h5 class="mobile-hide">ABOUT</h5>-->
                     <div class="profile-pic"></div>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-md-6">
 					<p>I'm an aspiring web designer & front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I also have skills in other fields like scripting and web development.<br/><br/>
                     <span style="font-style: italic">The curriculum vitae is downloadable through the link.</span></p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
                     <p id="pdf"><a href="assets/cv/cv-ajv.pdf"><i class="fa fa-file"></i> <sm>DOWNLOAD PDF</sm></a></p>
 				</div>
 				
@@ -128,87 +186,87 @@
 	</div><!--/ #intro -->
 
 	<section id="resume" name="resume"></section>
-	<!--EDUCATION DESCRIPTION -->
+
+    <!--EDUCATION DESCRIPTION -->
 	<div class="container desc">
 		<div class="row">
 
-				<div class="col-lg-2 col-lg-offset-1">
+				<div class="col-md-2 col-md-offset-1">
 					<h5>EDUCATION</h5>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-md-6">
 					<p><t>Computer Science</t><br/>
 						Tallinn University of Technology <br/>
 						<i>Bachelor's degree</i>
 					</p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<p><sm>GRADUATING IN JUNE 2016</sm><br/>
 					<imp><sm>IN PROGRESS</sm></imp>
 					</p>
 				</div>
 	
-				<div class="col-lg-6 col-lg-offset-3">
+				<div class="col-md-6 col-md-offset-3">
 					<p><t>Hardcore developer training</t><br/>
 						 PluralSight<br/>
 						<i>1 week crash course</i>
 					</p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<p><sm>MAY 2015</sm></p>
 				</div>
 	            
-                <div class="col-lg-6 col-lg-offset-3">
+                <div class="col-md-6 col-md-offset-3">
 					<p><t>Exact Science Field</t><br/>
 						 Old Town Educational College<br/>
 						<i>Secondary education</i>
 					</p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<p><sm>GRADUATED JUNE 2012</sm></p>
 				</div>
 		</div><!--/.row -->
 		<br>
 		<hr>
 	</div><!--/.container -->
-	
-      
+	  
 	<!--WORK DESCRIPTION -->
 	<div class="container desc">
 		<div class="row">
-				<div class="col-lg-2 col-lg-offset-1">
+				<div class="col-md-2 col-md-offset-1">
 					<h5>WORK</h5>
 				</div>
             
-                <div class="col-lg-6">
+                <div class="col-md-6">
 					<p><t>Programming teacher</t><br/>
 						Saue High school <br/>
 					</p>
 					<p><more>My job is to give my students a basic understanding of the principles of programming, whilst keeping it a fun learning experience. I teach Python mostly through games and active user input, so their first experience with programming wouldn't be stale.</more></p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<p><sm>STARTED 2015</sm></br>
                     <imp><sm>CURRENT</sm></imp>
                     </p>
 				</div>
             
             
-				<div class="col-lg-6 col-lg-offset-3">
+				<div class="col-md-6 col-md-offset-3">
 					<p><t>Bellhop</t><br/>
                         Hotel Telegraaf<br/>
 					</p>
 					<p><more>I was in charge of preparing rooms for conferences and seminars, organizing parking for the hotel guests, various services including luggage-handling and a part-time concierge. I was elected Employee of the Year and I am the Honorary Ambassador of the Hotel Telegraaf since 2014.</more></p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<p><sm>AUGUST 2012 - FEBRUARY 2015</sm></p>
 				</div>
 	
-				<div class="col-lg-6 col-lg-offset-3">
+				<div class="col-md-6 col-md-offset-3">
 					<p><t>Web Designer</t><br/>
 						Freelancing <br/>
 					</p>
 					<p><more>Programming has been an interest of mine. Having also a soft spot for the artsy side in me&#8212;front-end development seemed like an excellent field to start gaining some experience. </more></p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<p><sm>STARTED 2013</sm></p>
 				</div>
 		</div><!--/.row -->
@@ -219,15 +277,15 @@
 	<!--AWARDS DESCRIPTION -->
 	<div class="container desc">
 		<div class="row">
-				<div class="col-lg-2 col-lg-offset-1">
+				<div class="col-md-2 col-md-offset-1">
 					<h5>AWARDS</h5>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-md-6">
 					<p><t>Honorary Ambassador</t><br/>
 						 Hotel Telegraaf <br/>
 					</p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<p><sm>NOVEMBER 2014</sm></p>
 				</div>		
 		</div><!--/.row -->
@@ -238,36 +296,36 @@
 	<div id="skillswrap">
 		<div class="container">
 			<div class="row">
-					<div class="col-lg-2 col-lg-offset-1">
+					<div class="col-md-2 col-md-offset-1">
 						<h5>SKILLS</h5>
 					</div>
-					<div class="col-lg-3 centered">
+					<div class="col-md-3 centered">
 						<canvas id="javascript" height="130" width="130"></canvas>
 						<p>JavaScript</p>
 						<br>
 					</div>
-					<div class="col-lg-3 centered">
+					<div class="col-md-3 centered">
 						<canvas id="bootstrap" height="130" width="130"></canvas>
 						<p>Bootstrap</p>
 						<br>
 					</div>
-					<div class="col-lg-3 centered">
+					<div class="col-md-3 centered">
 						<canvas id="python" height="130" width="130"></canvas>
 						<p>Python</p>
 						<br>
 					</div>
 					
-					<div class="col-lg-3 col-lg-offset-3 centered">
+					<div class="col-md-3 col-md-offset-3 centered">
 						<canvas id="html" height="130" width="130"></canvas>
 						<p>HTML/CSS</p>
 						<br>
 					</div>
-					<div class="col-lg-3 centered">
+					<div class="col-md-3 centered">
 						<canvas id="java" height="130" width="130"></canvas>
 						<p>Java</p>
 						<br>
 					</div>
-					<div class="col-lg-3 centered">
+					<div class="col-md-3 centered">
 						<canvas id="php" height="130" width="130"></canvas>
 						<p>PHP</p>
 						<br>
@@ -390,7 +448,7 @@
 	<div id="footwrap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-lg-offset-5 centered">
+				<div class="col-md-3 col-md-offset-5 centered">
 					<p><sm id="footer-social">SOCIAL LINKS</sm></p>
 					<p>
 						<a href="http://www.github.com/andreasvirkus">
@@ -448,7 +506,7 @@
     <script type="text/javascript">
         function addJSOnload() {
             var element = document.createElement("script");
-            element.src = "script.min.js";
+            element.src = "assets/js/script.min.js";
             document.body.appendChild(element);
         }
         if (window.addEventListener)
@@ -458,9 +516,5 @@
         else
             window.onload = addJSOnload;
     </script>
-
-
-    <script defer src="assets/js/script.min.js" defer></script>
-    <script src="assets/js/Chart.js"></script>  
   </body>
 </html>
