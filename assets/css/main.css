@@ -611,7 +611,7 @@ p {
     font-size: 12px;
     position: relative;
     color: #fff;
-    padding: 10px 20px 20px;
+    padding: 0px 20px;
     text-align: center;
     transform: translateY(100px);
     opacity: 0;
@@ -651,7 +651,7 @@ p {
 }
 
 mark {
-    font-size: 12px;
+    font-size: 9px;
     color: #333;
     background-color:bisque;
 }
