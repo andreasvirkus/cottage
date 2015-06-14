@@ -1,7 +1,5 @@
-## EXPIRES CACHING ##
-<IfModule mod_expires.c>
 ExpiresActive On
-ExpiresDefault "access plus 11 month"
+ExpiresDefault "access plus 1 month"
 
 # Add correct content-type for fonts
 AddType application/vnd.ms-fontobject .eot
@@ -10,18 +8,15 @@ AddType application/x-font-opentype .otf
 AddType application/x-font-woff .woff
 AddType image/svg+xml .svg
 
-# Compress compressible fonts
 AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
 
-# Add a far future Expires header for fonts
 ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
 ExpiresByType application/x-font-ttf "access plus 1 year"
 ExpiresByType application/x-font-opentype "access plus 1 year"
 ExpiresByType application/x-font-woff "access plus 1 year"
 ExpiresByType image/svg+xml "access plus 1 year"
 
-# Expires after 1 month
-ExpiresByType image/jpg 
+ExpiresByType image/jpg "access plus 1 year"
 ExpiresByType image/jpeg "access plus 1 year"
 ExpiresByType image/gif "access plus 1 year"
 ExpiresByType image/png "access plus 1 year"
@@ -35,8 +30,6 @@ ExpiresByType text/x-javascript "access plus 1 year"
 ExpiresByType text/javascript "access plus 1 year"
 ExpiresByType application/javascript "access plus 1 year"
 ExpiresByType application/x-javascript "access plus 1 year"
-</IfModule>
-## EXPIRES CACHING ##
 
 ## GZIP COMPRESSION ##
 <ifModule mod_gzip.c>
