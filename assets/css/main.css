@@ -4,7 +4,7 @@
 
 body {
     background-color: #f2f2f2;
-    font-family: "Lato";
+    font-family: "Lato", "Raleway";
     font-weight: 300;
     font-size: 20px;
     color: #222;
@@ -253,6 +253,25 @@ section#overlay {
 .antispam { 
     display:none;
 }
+
+.desc {
+    padding-top: 50px;
+}
+.desc p {
+    color: #2f2f2f;
+}
+.desc t {
+    color: #34495e;
+    font-weight: 700;
+}
+.desc imp {
+    padding: 6px;
+    color: white;
+    background: #34495e;
+}
+.desc more {
+    color: #95a5a6;
+}
 .field-container {
   margin-bottom: 20px;
 }
@@ -288,7 +307,7 @@ section#overlay {
   border: none;
   outline: none;
   background: transparent;
-  font: 16px/1 'Lato', san-serif;
+  font: 16px/1 'Lato', 'Raleway', san-serif;
   color: #404040;
 }
 
@@ -319,7 +338,7 @@ section#overlay {
   border: none;
   padding: 0.75rem 1rem;
   text-decoration: none;
-  font: 16px/1 'Lato', sans-serif;
+  font: 16px/1 'Lato', 'Raleway', sans-serif;
   outline: none;
   color: #828282;
   text-decoration: none;
@@ -488,7 +507,7 @@ bttn:active, bttn:focus {
     background-color: #fff;
     width: 100%;
 }
-
+/* about */
 #intro {
     background: #2c3e50;
     padding-top: 60px;
@@ -536,11 +555,108 @@ p {
 p {
     color: white;
 }
-
+/* portfolio */
 .portfolio-grid {
     font-size: 16px;
 }
 
+.view {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    float: left;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+}
+.view .mask, .view .content {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+
+.view .mask {
+    opacity: 0;
+    background-color: rgba(219,127,8, 0.7); 
+    transition: all 0.4s ease-in-out;
+}
+    
+.view img {
+    display: block;
+    position: relative;
+    transition: all 0.2s linear;
+}
+.view h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.view p {
+    text-transform: uppercase;
+    font-family: 'Raleway', Georgia, serif;
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+	transition: all 0.2s linear;
+}
+.view a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0;
+	transition: all 0.2s ease-in-out;
+}
+.view a.info:hover {
+    color: #E16036;
+}
+
+.view:hover img { 
+	transform: scale(1.1);
+} 
+.view:hover .mask { 
+	opacity: 1;
+}
+.view:hover h2,
+.view:hover p,
+.view:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.view:hover p {
+    transition-delay: 0.1s;
+}
+.view:hover a.info {
+    transition-delay: 0.2s;
+}
+
+mark {
+    font-size: 12px;
+    color: #333;
+    background-color:bisque;
+}
+
+/* footer */
 #footwrap {
     font-size: 34px;
     background: #2f2f2f;
@@ -576,24 +692,6 @@ p {
 }
 #c p {
     color: white
-}
-.desc {
-    padding-top: 50px;
-}
-.desc p {
-    color: #2f2f2f;
-}
-.desc t {
-    color: #34495e;
-    font-weight: 700;
-}
-.desc imp {
-    padding: 6px;
-    color: white;
-    background: #34495e;
-}
-.desc more {
-    color: #95a5a6;
 }
 sm {
     font-size: 14px;
