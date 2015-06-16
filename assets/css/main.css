@@ -503,6 +503,18 @@ bttn:active, bttn:focus {
     }
 }
 
+
+#back-to-top{
+    background: #f26c4f url(../img/sprite.png) 10px -55px no-repeat;
+    border-radius: 3px 3px 0 0;
+    bottom: 0;
+    display: none;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    width: 50px;
+}
+
 .container.desc {
     background-color: #fff;
     width: 100%;
