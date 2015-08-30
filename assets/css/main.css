@@ -1,6 +1,7 @@
 /* Globals */
 @lightOrange = #FD9638;
 @darkOrange = #E16036;
+@sectionBlue = #2c3e50;
 
 body {
     background-color: #f2f2f2;
@@ -75,47 +76,15 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-#section-topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10000;
-    overflow: visible;
-    font: normal 16px/24px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-#section-topbar a {
-    color: #fff;
-}
 #topbar-inner {
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(20, 20, 20, 0.6);
     line-height: 0;
     text-align: center;
-}
-#section-topbar ul#nav {
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    zoom: 1;
-    *display: inline;
-}
-#section-topbar ul#nav > li {
-    display: block;
-    float: left;
-    padding: 0;
-}
-#section-topbar ul#nav a {
-    display: block;
-    font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-decoration: none;
-    padding: 18px 20px 18px 18px;
 }
 #section-topbar ul#nav a:focus {
     background: #111;
 }
 #section-topbar ul#nav a:hover {
-    background: #222;
     color: #E16036;
     text-decoration: none;
 }
@@ -128,29 +97,6 @@ hr {
 }
 #section-topbar i {
     font-size: 25px;
-}
-
-.nav .menu-item {
-    cursor: pointer;
-}
-
-.bar {
-    position: fixed;
-    top: 62px;
-    left: 0;
-    overflow: hidden;
-    width: 0%;
-    height: 5px;
-    z-index: 9999;
-}
-
-.bar-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #E16036;
 }
 /* Contact overlay */
 .contact-overlay {
@@ -277,9 +223,6 @@ section#overlay {
 .desc more {
     color: #95a5a6;
 }
-.field-container {
-  margin-bottom: 20px;
-}
 .field-container:after {
   content: "";
   display: block;
@@ -305,17 +248,6 @@ section#overlay {
     -webkit-animation: bounce 1s;
     animation: bounce 1s;
 }
-.input {
-  width: 100%;
-  margin: 0;
-  padding: 0 6px;
-  border: none;
-  outline: none;
-  background: transparent;
-  font: 16px/1 'Lato', 'Raleway', san-serif;
-  color: #404040;
-}
-
 .text-area {
   height: 19px;
   overflow-y: hidden;
@@ -525,7 +457,7 @@ bttn:active, bttn:focus {
 }
 /* about */
 #intro {
-    background: #222;
+    background: #2c3e50;
     padding-top: 60px;
     padding-bottom: 60px;
     color: white;
@@ -563,7 +495,7 @@ p {
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 }
 #skillswrap {
-    background: #222;
+    background: #2c3e50;
     padding-top: 60px;
     padding-bottom: 60px;
     color: white;
@@ -677,7 +609,7 @@ mark {
 /* footer */
 #footwrap {
     font-size: 34px;
-    background: #222;
+    background: #2c3e50;
     padding-top: 50px;
     padding-bottom: 50px;
 }

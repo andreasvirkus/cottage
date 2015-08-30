@@ -53,7 +53,6 @@
         .text-area { height: 19px; overflow-y: hidden; resize: none; transition: all 0.4s ease-in; -webkit-transition: all 0.4s ease-in; }
         .button-container { margin-bottom: 20px; }
         .bttn { display: block; width: 90px; margin: 0px auto; border: none; padding: 0.75rem 1rem; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; font-family: Lato, sans-serif; outline: none; color: rgb(130, 130, 130); text-decoration: none; line-height: 1.5; cursor: pointer; background: none; }
-        button, html input[type="button"], input[type="reset"], input[type="submit"], .nav .menu-item { cursor: pointer; -webkit-appearance: button; }
         #section-topbar { position: fixed; top: 0px; left: 0px; right: 0px; z-index: 10000; overflow: visible; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: 24px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
         #topbar-inner { line-height: 0; text-align: center; background: rgb(17, 17, 17); }
         .dropdown { position: relative; }
@@ -87,27 +86,29 @@
 				<div class="col-xs-12">
 					<h1>Andreas J. Virkus</h1>
 					<h3>Web Designer <span class="mobile-hide">|</span> 
-                        <script type="text/javascript">
-                            // email obfuscation
-                            //<![CDATA[
-                            <!--
-                            var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
-                            "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
-                            " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
-                            "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
-                            "\"(4)\\\\,F\\\"@L[S6F02\\\\\\\\IY31\\\\04\\\\03\\\\\\\\21\\\\0_\\\\34\\\\06" +
-                            "\\\\00\\\\\\\\17\\\\00\\\\00\\\\\\\\13\\\\0+\\\\31\\\\04\\\\03\\\\\\\\03\\\\"+
-                            "05\\\\02\\\\\\\\17\\\\03\\\\02\\\\\\\\0J02\\\\\\\\03\\\\04\\\\00\\\\\\\\22\\"+
-                            "\\0;\\\\<0yb06\\\\04\\\\479x2=6?20\\\\0<\\\\&;\\\\>\\\\\\\"<\\\\;g#& 7#-/{R" +
-                            "K]T0V03\\\\\\\\5e00\\\\\\\\SQ\\\\G\\\\\\\\3\\\\02\\\\\\\\20\\\\0m\\\\\\\\\\" +
-                            "\\\\\\\\\\OFI@06\\\\0X\\\\LLCF6M00\\\\\\\\77\\\\17\\\\03\\\\\\\\SRr~<~&z0;z" +
-                            "y`p`z>f`{ahj~ah\\\"\\\\f(;} ornture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fng" +
-                            "riSt+=;o27=1y%+;y+4)i<f({i+)i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r" +
-                            " va){,y(x fontincfu)\\\"\")"                                                 ;
-                            while(x=eval(x));
-                            //-->
-                            //]]>
-                        </script>
+                        <span title="Email me">
+                            <script type="text/javascript">
+                                // email obfuscation
+                                //<![CDATA[
+                                <!--
+                                var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                                "\"(4)\\\\,F\\\"@L[S6F02\\\\\\\\IY31\\\\04\\\\03\\\\\\\\21\\\\0_\\\\34\\\\06" +
+                                "\\\\00\\\\\\\\17\\\\00\\\\00\\\\\\\\13\\\\0+\\\\31\\\\04\\\\03\\\\\\\\03\\\\"+
+                                "05\\\\02\\\\\\\\17\\\\03\\\\02\\\\\\\\0J02\\\\\\\\03\\\\04\\\\00\\\\\\\\22\\"+
+                                "\\0;\\\\<0yb06\\\\04\\\\479x2=6?20\\\\0<\\\\&;\\\\>\\\\\\\"<\\\\;g#& 7#-/{R" +
+                                "K]T0V03\\\\\\\\5e00\\\\\\\\SQ\\\\G\\\\\\\\3\\\\02\\\\\\\\20\\\\0m\\\\\\\\\\" +
+                                "\\\\\\\\\\OFI@06\\\\0X\\\\LLCF6M00\\\\\\\\77\\\\17\\\\03\\\\\\\\SRr~<~&z0;z" +
+                                "y`p`z>f`{ahj~ah\\\"\\\\f(;} ornture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fng" +
+                                "riSt+=;o27=1y%+;y+4)i<f({i+)i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r" +
+                                " va){,y(x fontincfu)\\\"\")"                                                 ;
+                                while(x=eval(x));
+                                //-->
+                                //]]>
+                            </script>
+                        </span><!-- /email obfuscation -->
                     </h3>
 				</div><!--/.col-xs-12 -->
 			</div><!--/.row -->            
@@ -127,7 +128,7 @@
 							<li class="menu-item"><a class="nav-resume smoothScroll" href="#resume" title="Resume"><i class="fa fa-graduation-cap"></i></a></li>
 							<li class="menu-item"><a class="nav-works smoothScroll" href="#work" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
 							<li class="menu-item"><a class="nav-social smoothScroll" href="#contact" title="Social"><i class="fa fa-share-alt"></i></a></li>
-                            <li class="menu-item  mobile-hide"><a class="nav-contact smoothScroll mobile-hide" id="open-overlay" title="Contact"><i class="fa fa-envelope"></i></a></li>
+                            <li class="menu-item  mobile-hide"><a class="nav-contact smoothScroll mobile-hide" id="open-overlay" title="Email me"><i class="fa fa-envelope"></i></a></li>
 						</ul><!--/ uL#nav -->
 					</div><!-- /.dropdown -->
                     
