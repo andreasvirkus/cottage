@@ -129,6 +129,10 @@ hr {
     font-size: 25px;
 }
 
+.nav .menu-item {
+    cursor: pointer;
+}
+
 .bar {
     position: fixed;
     top: 62;
