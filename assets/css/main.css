@@ -87,7 +87,7 @@ hr {
     color: #fff;
 }
 #topbar-inner {
-    background: #111;
+    background: #222;
     line-height: 0;
     text-align: center;
 }
@@ -589,7 +589,7 @@ p {
     cursor: default;
 }
 .view .mask, .view .content {
-    width: 300px;
+    width: 100%;
     height: 200px;
     position: absolute;
     overflow: hidden;
@@ -599,7 +599,7 @@ p {
 
 .view .mask {
     opacity: 0;
-    background-color: rgba(219,127,8, 0.7); 
+    background-color: #E16036; 
     transition: all 0.4s ease-in-out;
 }
     
@@ -667,15 +667,16 @@ p {
 }
 
 mark {
-    font-size: 11px;
-    color: #333;
-    background-color:bisque;
+    font-size: 16px;
+    color: #fff;
+    background-color: #E16036;
+    display: block;
 }
 
 /* footer */
 #footwrap {
     font-size: 34px;
-    background: #2f2f2f;
+    background: #222;
     padding-top: 50px;
     padding-bottom: 50px;
 }
