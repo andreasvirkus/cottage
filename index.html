@@ -10,12 +10,13 @@
     <title>Andreas J. Virkus</title>
     <link defer href='//fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css' />
     <style>
+        <!-- Inline CSS for above-the-fold content -->
         *, ::after, ::before { box-sizing: border-box; }
         * { box-sizing: border-box; }
         body {font-family: Lato; font-size: 20px; line-height: 1.428571429; font-weight: 300; }
-        .bar { position: fixed; left: 0px; overflow: hidden; width: 0%; height: 5px; z-index: 9999; }
-        .bar-bg { position: absolute; left: 0px; width: 100%; height: 100%; background-color: rgb(225, 96, 54); }
-        #headerwrap { position: relative; top: 0px; left: 0px; color: rgb(255, 255, 255); margin-top: 60px; text-align: center; height: 100vh; width: 100%; }
+        .bar { position: fixed; top: 62px; left: 0px; overflow: hidden; width: 0%; height: 5px; z-index: 9999; }
+        .bar-bg { position: absolute; top: 0; left: 0px; width: 100%; height: 100%; background-color: rgb(225, 96, 54); }
+        #headerwrap { position: relative; top: 0px; left: 0px; color: rgb(255, 255, 255); text-align: center; height: 100vh; width: 100%; }
         .header-bg { z-index: -1; position: fixed; height: 100vh; width: 100%; -webkit-background-size: cover; background: linear-gradient(rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.4)) 50% 50% / cover, url(assets/img/taust.jpeg) no-repeat; }
         .header-blur { opacity: 0; background: linear-gradient(rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.4)), url(assets/img/taust-blur.jpeg) 50% 0% no-repeat; }
         .container { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; max-width: 1170px; }
@@ -52,7 +53,7 @@
         .text-area { height: 19px; overflow-y: hidden; resize: none; transition: all 0.4s ease-in; -webkit-transition: all 0.4s ease-in; }
         .button-container { margin-bottom: 20px; }
         .bttn { display: block; width: 90px; margin: 0px auto; border: none; padding: 0.75rem 1rem; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; font-family: Lato, sans-serif; outline: none; color: rgb(130, 130, 130); text-decoration: none; line-height: 1.5; cursor: pointer; background: none; }
-        button, html input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+        button, html input[type="button"], input[type="reset"], input[type="submit"], .nav .menu-item { cursor: pointer; -webkit-appearance: button; }
         #section-topbar { position: fixed; top: 0px; left: 0px; right: 0px; z-index: 10000; overflow: visible; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: 24px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
         #topbar-inner { line-height: 0; text-align: center; background: rgb(17, 17, 17); }
         .dropdown { position: relative; }
@@ -63,7 +64,7 @@
         #section-topbar ul#nav > li { display: block; float: left; padding: 0px; }
         .nav > li > a { position: relative; display: block; padding: 10px 15px; }
         #section-topbar a { color: rgb(255, 255, 255); }
-        #section-topbar ul#nav a { display: block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; padding: 18px 20px 18px 18px; }
+        #section-topbar ul#nav a { display: block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; padding: 18px 20px 18px 18px; } 
         #section-topbar i { font-size: 25px; }  
     </style>
 
@@ -124,7 +125,7 @@
 						<ul id="nav" class="nav">
 							<li class="menu-item"><a class="nav-about smoothScroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
 							<li class="menu-item"><a class="nav-resume smoothScroll" href="#resume" title="Resume"><i class="fa fa-graduation-cap"></i></a></li>
-							<li class="menu-item"><a class="nav-works smoothScroll" href="#work" title="Works"><i class="fa fa-briefcase"></i></a></li>
+							<li class="menu-item"><a class="nav-works smoothScroll" href="#work" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
 							<li class="menu-item"><a class="nav-social smoothScroll" href="#contact" title="Social"><i class="fa fa-share-alt"></i></a></li>
                             <li class="menu-item  mobile-hide"><a class="nav-contact smoothScroll mobile-hide" id="open-overlay" title="Contact"><i class="fa fa-envelope"></i></a></li>
 						</ul><!--/ uL#nav -->
