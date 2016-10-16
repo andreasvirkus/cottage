@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name='robots' content='noindex' />
     <meta name="description" content="" />
     <meta name="author" content="ajv" />
     <link rel="shortcut icon" href="assets/ico/favicon.ico" />
     <title>Andreas J. Virkus</title>
-    <link defer href='//fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css' />
+    <link defer href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css' />
     <style>
         <!-- Inline CSS for above-the-fold content -->
         *, ::after, ::before { box-sizing: border-box; }
@@ -32,7 +32,7 @@
         .h3, h3 { font-size: 24px; }
         h3 { letter-spacing: 5px; }
         #headerwrap h3 { font-size: 20px; color: rgb(255, 255, 255); }
-        a { color: rgb(225, 96, 54); text-decoration: none; word-wrap: break-word; transition: color 0.1s ease-in, background 0.1s ease-in; -webkit-transition: color 0.1s ease-in, background 0.1s ease-in; }
+        a { color: #fff; text-decoration: none; word-wrap: break-word; transition: color 0.1s ease-in, background 0.1s ease-in; -webkit-transition: color 0.1s ease-in, background 0.1s ease-in; }
         .header-email { color: rgb(255, 255, 255); }
         .scroll-arrow { font-size: 28px; padding: 0.125em 0px; color: orange; text-decoration: none; display: block; width: 50px; position: absolute; bottom: 85px; left: 50%; border-radius: 50%; transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
         .scroll-arrow:focus, .scroll-arrow:visited { color: orange; }
@@ -54,7 +54,7 @@
         .button-container { margin-bottom: 20px; }
         .bttn { display: block; width: 90px; margin: 0px auto; border: none; padding: 0.75rem 1rem; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; font-family: Lato, sans-serif; outline: none; color: rgb(130, 130, 130); text-decoration: none; line-height: 1.5; cursor: pointer; background: none; }
         #section-topbar { position: fixed; top: 0px; left: 0px; right: 0px; z-index: 10000; overflow: visible; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: 24px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-        #topbar-inner {line-height: 0; text-align: center; background: rgba(20, 20, 20, 0.6);}
+        #topbar-inner {line-height: 0; text-align: center; background: #222222;}
         .dropdown {position: relative; }
         ol, ul {margin-top: 0px; margin-bottom: 10px; }
         .nav {padding-left: 0px; margin-bottom: 0px; list-style: none; }
@@ -63,8 +63,8 @@
         #section-topbar ul#nav > li {display: block; float: left; padding: 0px; }
         .nav > li > a {position: relative; display: block; padding: 10px 15px; }
         #section-topbar a {color: rgb(255, 255, 255); }
-        #section-topbar ul#nav a { display: block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; padding: 18px 20px 18px 18px; } 
-        #section-topbar i { font-size: 25px; }  
+        #section-topbar ul#nav a { display: block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; padding: 18px 20px 18px 18px; }
+        #section-topbar i { font-size: 25px; }
     </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -73,19 +73,19 @@
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body data-spy="scroll" data-offset="0" data-target="#nav">   
+  <body data-spy="scroll" data-offset="0" data-target="#nav">
     <div class="bar">
         <div class="bar-bg"></div>
-    </div> <!--/ .bar -->  
-    
-	<div id="headerwrap">
+    </div> <!--/ .bar -->
+
+    <div id="headerwrap">
         <div class="header-bg"></div>
         <div class="header-bg header-blur"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h1>Andreas J. Virkus</h1>
-					<h3>Web Designer <span class="mobile-hide">|</span> 
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Andreas J. Virkus</h1>
+                    <h3>Web Designer <span class="mobile-hide">|</span>
                         <span title="Email me">
                             <script type="text/javascript">
                                 // email obfuscation
@@ -110,39 +110,39 @@
                             </script>
                         </span><!-- /email obfuscation -->
                     </h3>
-				</div><!--/.col-xs-12 -->
-			</div><!--/.row -->            
+                </div><!--/.col-xs-12 -->
+            </div><!--/.row -->
             <a href="#about" class="scroll-arrow smoothScroll mobile-hide">
                 <span class="fa fa-angle-down fa-2x"></span>
             </a>
-		</div><!--/.container -->
-	</div><!--/ #headerwrap -->
-       
-	<div id="section-topbar">
-		<div id="topbar-inner">
-			<div class="container">
-				<div class="row">
-					<div class="dropdown">
-						<ul id="nav" class="nav">
-							<li class="menu-item"><a class="nav-about smoothScroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
-							<li class="menu-item"><a class="nav-resume smoothScroll" href="#resume" title="Resume"><i class="fa fa-graduation-cap"></i></a></li>
-							<li class="menu-item"><a class="nav-works smoothScroll" href="#work" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
-							<li class="menu-item"><a class="nav-social smoothScroll" href="#contact" title="Social"><i class="fa fa-share-alt"></i></a></li>
-                            <li class="menu-item  mobile-hide"><a class="nav-contact smoothScroll mobile-hide" id="open-overlay" title="Email me"><i class="fa fa-envelope"></i></a></li>
-						</ul><!--/ uL#nav -->
-					</div><!-- /.dropdown -->
-                    
-					<div class="clear"></div>
-				</div><!--/.row -->
-			</div><!--/.container -->
+        </div><!--/.container -->
+    </div><!--/ #headerwrap -->
 
-			<div class="clear"></div>
-		</div><!--/ #topbar-inner -->
-	</div><!--/ #section-topbar -->
-	
-    <link async href="assets/css/bootstrap.css" rel="stylesheet" /> 
-    <link async href="assets/css/main.css" rel="stylesheet" />  
-      
+    <div id="section-topbar">
+        <div id="topbar-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="dropdown">
+                        <ul id="nav" class="nav">
+                            <li class="menu-item"><a class="nav-about smoothScroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
+                            <li class="menu-item"><a class="nav-resume smoothScroll" href="#resume" title="Resume"><i class="fa fa-graduation-cap"></i></a></li>
+<!--                            <li class="menu-item"><a class="nav-works smoothScroll" href="#work" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>-->
+                            <li class="menu-item"><a class="nav-social smoothScroll" href="#contact" title="Social"><i class="fa fa-share-alt"></i></a></li>
+                            <li class="menu-item  mobile-hide"><a class="nav-contact smoothScroll mobile-hide" id="open-overlay" title="Email me"><i class="fa fa-envelope"></i></a></li>
+                        </ul><!--/ uL#nav -->
+                    </div><!-- /.dropdown -->
+
+                    <div class="clear"></div>
+                </div><!--/.row -->
+            </div><!--/.container -->
+
+            <div class="clear"></div>
+        </div><!--/ #topbar-inner -->
+    </div><!--/ #section-topbar -->
+
+    <link async href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link async href="assets/css/main.min.css" rel="stylesheet" />
+
     <div class="contact-overlay">
       <a class="close-button" title="Close"></a>
         <section id="overlay">
@@ -167,296 +167,153 @@
     <a href="#headerwrap" class="smoothScroll" id="back-to-top"></a>
 
     <div class="content-wrap">
-	<section id="about" name="about"></section>
-	<div id="intro">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-md-2 col-md-offset-1 centered">
-<!--					<h5 class="mobile-hide">ABOUT</h5>-->
-                    <div class="profile-pic"></div>
-				</div>
-				<div class="col-md-6">
-					<p>I'm an aspiring web designer & front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I also have skills in other fields like scripting and web development.<br/><br/>
-                    <span style="font-style: italic">The curriculum vitae is downloadable through the link.</span></p>
-				</div>
-				<div class="col-md-3">
-                    <p id="pdf"><a href="assets/cv/CV-Andreas-johan-virkus.pdf"><i class="fa fa-file"></i> <sm>DOWNLOAD PDF</sm></a></p>
-				</div>
-				
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/ #intro -->
+    <section id="about" name="about"></section>
+    <div id="intro">
+        <div class="container">
+            <div class="row">
 
-	<section id="resume" name="resume"></section>
+                <div class="col-md-2 col-md-offset-1 centered">
+<!--                    <h5 class="mobile-hide">ABOUT</h5>-->
+                    <div class="profile-pic"></div>
+                </div>
+                <div class="col-md-6">
+                    <p>I'm an aspiring web designer & front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I also have skills in other fields like scripting and web development.<br/><br/>
+                    <span style="font-style: italic">The curriculum vitae is downloadable through the link.</span></p>
+                </div>
+                <div class="col-md-3">
+                    <p id="pdf"><a href="assets/cv/CV-Andreas-johan-virkus.pdf"><i class="fa fa-file"></i> <sm>DOWNLOAD PDF</sm></a></p>
+                </div>
+
+            </div><!--/.row -->
+        </div><!--/.container -->
+    </div><!--/ #intro -->
+
+    <section id="resume" name="resume"></section>
 
     <!--EDUCATION DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
+    <div class="container desc">
+        <div class="row">
 
-				<div class="col-md-2 col-md-offset-1">
-					<h5>EDUCATION</h5>
-				</div>
-				<div class="col-md-6">
-					<p><t>Computer Science</t><br/>
-						Tallinn University of Technology <br/>
-						<i>Bachelor's degree</i>
-					</p>
-				</div>
-				<div class="col-md-3">
-					<p><sm>GRADUATING IN JUNE 2016</sm><br/>
-					<imp><sm>IN PROGRESS</sm></imp>
-					</p>
-				</div>
-	
-				<div class="col-md-6 col-md-offset-3">
-					<p><t>Hardcore developer training</t><br/>
-						 PluralSight<br/>
-						<i>1 week crash course</i>
-					</p>
-				</div>
-				<div class="col-md-3">
-					<p><sm>MAY 2015</sm></p>
-				</div>
-	            
-                <div class="col-md-6 col-md-offset-3">
-					<p><t>Exact Science Field</t><br/>
-						 Old Town Educational College<br/>
-						<i>Secondary education</i>
-					</p>
-				</div>
-				<div class="col-md-3">
-					<p><sm>GRADUATED JUNE 2012</sm></p>
-				</div>
-		</div><!--/.row -->
-		<br>
-		<hr>
-	</div><!--/.container -->
-	  
-	<!--WORK DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
-				<div class="col-md-2 col-md-offset-1">
-					<h5>WORK</h5>
-				</div>
-            
+                <div class="col-md-2 col-md-offset-1">
+                    <h5>EDUCATION</h5>
+                </div>
                 <div class="col-md-6">
-					<p><t>Front-End developer</t><br/>
-						Bigbank<br/>
-					</p>
-					<p><more>I'm currently a Front-End developer at Bigbank in a highly agile team that thrives for x-competency.</more></p>
-				</div>
-				<div class="col-md-3">
-					<p><sm>STARTED JUL 2015</sm></br>
-                    <imp><sm>CURRENT</sm></imp>
+                    <p><t>Computer Science</t><br/>
+                        Tallinn University of Technology <br/>
+                        <i>Bachelor's degree</i>
                     </p>
-				</div>
-            
+                </div>
+                <div class="col-md-3">
+                    <p><sm>PROUD DROP OUT</sm><br/>
+                    </p>
+                </div>
+
                 <div class="col-md-6 col-md-offset-3">
-					<p><t>Programming teacher</t><br/>
-						Saue High school <br/>
-					</p>
-					<p><more>My job is to give my students a basic understanding of the principles of programming, whilst keeping it a fun learning experience. I teach Python mostly through games and active user input, so their first experience with programming wouldn't be stale.</more></p>
-				</div>
-				<div class="col-md-3">
-					<p><sm>STARTED JAN 2015</sm></br>
+                    <p><t>Hardcore developer training</t><br/>
+                        PluralSight<br/></p>
+                </div>
+                <div class="col-md-3">
+                    <p><sm>MAY 2015</sm></p>
+                </div>
+
+                <div class="col-md-6 col-md-offset-3">
+                    <p><t>Certificate in Full Stack Development</t><br/>
+                        Free Code Camp<br/></p>
+                </div>
+                <div class="col-md-3">
+                    <p><sm>SPRING 2015</sm></p>
+                </div>
+
+                <div class="col-md-6 col-md-offset-3">
+                    <p><t>Exact Science Field</t><br/>
+                         Old Town Educational College<br/>
+                        <i>Secondary education</i>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p><sm>GRADUATED JUNE 2012</sm></p>
+                </div>
+        </div><!--/.row -->
+        <br>
+        <hr>
+    </div><!--/.container -->
+
+    <!--WORK DESCRIPTION -->
+    <div class="container desc">
+        <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    <h5>WORK</h5>
+                </div>
+
+                <div class="col-md-6">
+                    <p><t>Front-End developer</t><br/>
+                        Bigbank<br/>
+                    </p>
+                    <p><more>I'm currently a Front-End developer at Bigbank in a highly agile team that thrives for x-competency.</more></p>
+                </div>
+                <div class="col-md-3">
+                    <p><sm>STARTED JUL 2015</sm></br>
                     <imp><sm>CURRENT</sm></imp>
                     </p>
-				</div>
-    
-				<div class="col-md-6 col-md-offset-3">
-					<p><t>Web Designer</t><br/>
-						Freelancing <br/>
-					</p>
-					<p><more>Programming has long been an interest of mine. Having also a soft spot for the artsy side in me&#8212;front-end development seemed like an excellent field to start gaining some experience. </more></p>
-				</div>
-				<div class="col-md-3">
-					<p><sm>STARTED 2013</sm></p>
-				</div>
-		</div><!--/.row -->
-		<br>
-		<hr>
-	</div><!--/.container -->
-
-	<!--AWARDS DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
-				<div class="col-md-2 col-md-offset-1">
-					<h5>AWARDS</h5>
-				</div>
-				<div class="col-md-6">
-					<p><t>Honorary Ambassador</t><br/>
-						 Hotel Telegraaf <br/>
-					</p>
-				</div>
-				<div class="col-md-3">
-					<p><sm>NOVEMBER 2014</sm></p>
-				</div>		
-		</div><!--/.row -->
-		<br>
-	</div><!--/.container -->
-	
-	<!--SKILLS DESCRIPTION -->
-	<div id="skillswrap">
-		<div class="container">
-			<div class="row">
-					<div class="col-md-2 col-md-offset-1">
-						<h5>SKILLS</h5>
-					</div>
-					<div class="col-md-3 centered">
-						<canvas id="javascript" height="130" width="130"></canvas>
-						<p>JavaScript</p>
-						<br>
-					</div>
-					<div class="col-md-3 centered">
-						<canvas id="bootstrap" height="130" width="130"></canvas>
-						<p>Bootstrap</p>
-						<br>
-					</div>
-					<div class="col-md-3 centered">
-						<canvas id="python" height="130" width="130"></canvas>
-						<p>Python</p>
-						<br>
-					</div>
-					
-					<div class="col-md-3 col-md-offset-3 centered">
-						<canvas id="html" height="130" width="130"></canvas>
-						<p>HTML/CSS</p>
-						<br>
-					</div>
-					<div class="col-md-3 centered">
-						<canvas id="java" height="130" width="130"></canvas>
-						<p>Java</p>
-						<br>
-					</div>
-					<div class="col-md-3 centered">
-						<canvas id="php" height="130" width="130"></canvas>
-						<p>PHP</p>
-						<br>
-					</div>
-
-			</div><!--/.row -->
-			<br>
-		</div><!--/.container -->
-	</div><!--/ #skillswrap -->
-
-	<section id="work" name="work"></section>
-	<!--PORTFOLIO DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
-            <div class="col-xs-12 centered">
-            <p><mark>*Sample projects are being moved.<br/>
-                    The links will be active soon.</mark></p>
-            </div>
-            
-            <div class="col-xs-12 col-md-1 col-md-offset-1">
-              <h5>PORTFOLIO</h5>
-            </div>
-    
-            <div class="col-xs-12 col-md-10 portfolio-grid">
-
-              <div class="col-xs-12 col-md-6 clearfix">
-                <div class="view">  
-                     <img src="assets/img/site1.min.jpg" />  
-                     <div class="mask">  
-                     <h2>Template</h2>  
-                     <p>A simple home page template</p>   <br/>
-                         <a href="#" class="info">Visit</a>  
-                     </div>  
                 </div>
-              <p>Skills improved: design, Bootstrap, responsive front-end, JavaScript</p>
-              </div> 
-                
-                <div class="col-xs-12 col-md-6 clearfix">
-                <div class="view">  
-                     <img src="assets/img/site2.min.jpg" />  
-                     <div class="mask">  
-                     <h2>Project</h2>  
-                     <p>A social network project
-                         with photo uploads</p>  
-                         <a href="#" class="info">Visit</a>  
-                     </div>  
-                </div> 
-                <p>Skills improved: AJAX, Python, MySQL, front-end</p>
-              </div> 
-                
-                <div class="col-xs-12 col-md-6 clearfix">
-                    <div class="view">  
-                         <img src="assets/img/site3.min.jpg" />  
-                         <div class="mask">  
-                         <h2>Template</h2>  
-                         <p>A simple company site template</p>   <br/>
-                             <a href="#" class="info">Visit</a>  
-                         </div>  
-                    </div> 
-                    <p>Skills improved: design, bootstrap, css, responsive front-end</p>
-              </div> 
-                
-                <div class="col-xs-12 col-md-6 clearfix">
-                <div class="view">  
-                     <img src="assets/img/site4.min.jpg" />  
-                     <div class="mask">  
-                     <h2>Text clock</h2>  
-                     <p>A text-based
-                         JavaScript-powered clock.</p>
-                         <a href="#" class="info">Visit</a>  
-                     </div>  
+
+                <div class="col-md-6 col-md-offset-3">
+                    <p><t>Programming teacher</t><br/>
+                        Saue High school <br/>
+                    </p>
+                    <p><more>My job was to give my students a basic understanding of the principles of programming, whilst keeping it a fun learning experience. I teach Python mostly through games and active user input, so their first experience with programming wouldn't be stale.</more></p>
                 </div>
-                <p>Skills improved: JavaScript</p>
-              </div> 
-                
-                <div class="col-xs-12 col-md-6 clearfix">
-                <div class="view">  
-                     <img src="assets/img/site5.min.jpg" />  
-                     <div class="mask">  
-                     <h2>JS plugin</h2>  
-                     <p>A simple JavaScript scrollbar</p>   <br/>
-                         <a href="#" class="info">Visit</a>  
-                     </div>  
-                </div> 
-                    <p>Skills improved: JavaScript, Git</p>
-              </div> 
-                
-                
-                <div class="col-xs-12 col-md-6 clearfix">
-                <div class="view">  
-                     <img src="assets/img/site6.min.jpg" />  
-                     <div class="mask">  
-                     <h2>Game</h2>  
-                     <p>A small dice game</p>   <br/>
-                         <a href="#" class="info">Visit</a>  
-                     </div>  
-                </div> 
-                    <p>Skills improved: AJAX, PHP, Python, design, CSS</p>
-              </div> 
-                
+                <div class="col-md-3">
+                    <p><sm>2015 - 2016</sm></br>
+                    </p>
+                </div>
 
-            </div>
-		</div><!--/.row -->
-		<br>
-		<br>
-	</div><!--/.container -->
-	</div><!--/ .content wrap -->
+                <div class="col-md-6 col-md-offset-3">
+                    <p><t>Web Designer</t><br/>
+                        Freelancing <br/>
+                    </p>
+                    <p><more>Programming has long been an interest of mine. Having also a soft spot for the artsy side in me&#8212;front-end development seemed like an excellent field to start gaining some experience. </more></p>
+                </div>
+                <div class="col-md-3">
+                    <p><sm>STARTED 2013</sm></p>
+                </div>
+        </div><!--/.row -->
+        <br>
+        <hr>
+    </div><!--/.container -->
 
-	<section id="contact" name="contact"></section>
-	<!--FOOTER DESCRIPTION -->
-	<div id="footwrap">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 centered">
-					<p><sm id="footer-social">SOCIAL LINKS</sm></p>
-					<p>
-						<a title="Visit me on GitHub" href="http://www.github.com/andreasvirkus">
+    <!--AWARDS DESCRIPTION -->
+    <div class="container desc">
+        <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    <h5>AWARDS</h5>
+                </div>
+                <div class="col-md-6">
+                    <p><t>Honorary Ambassador</t><br/>
+                         Hotel Telegraaf <br/>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p><sm>NOVEMBER 2014</sm></p>
+                </div>
+        </div><!--/.row -->
+        <br>
+    </div><!--/.container -->
+    </div><!--/ .content wrap -->
+
+    <section id="contact" name="contact"></section>
+    <!--FOOTER DESCRIPTION -->
+    <div id="footwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 centered">
+                    <p><sm id="footer-social">SOCIAL LINKS</sm></p>
+                    <p>
+                        <a title="Visit me on GitHub" href="http://www.github.com/andreasvirkus">
                             <i class="fa fa-github"></i>
                         </a>
-						<a title="Read my tweets" href="http://www.twitter.com/vaidvalitutele">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-						<a title="Visit me on LinkedIn" href="https://ee.linkedin.com/pub/andreas-johan-virkus/a4/928/22">
+                        <a title="Visit my LinkedIn profile" href="https://ee.linkedin.com/pub/andreas-johan-virkus/a4/928/22">
                             <i class="fa fa-linkedin"></i>
-                        </a>
-						<a title="Visit my Google+ profile" href="https://plus.google.com/u/0/111964778052610692601/posts">
-                            <i class="fa fa-google-plus"></i>
                         </a>
                         <a title="View my Pens" href="http://codepen.io/ajv/">
                             <i class="fa fa-codepen"></i>
@@ -487,21 +344,18 @@
                         </script>
                             <i class="fa fa-envelope" title="Email me"></i>
                         </a>
-					</p>
-				</div>
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/ #footer -->
-    <!--
-	<div id="c">
-		<div class="container">
-			<p id="footer-tag"> a j <a href="#">virkus</a></p>
-		</div>
-	</div>
-    -->
+                    </p>
+                </div>
+            </div><!--/.row -->
+        </div><!--/.container -->
+    </div><!--/ #footer -->
 
-    <link defer rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link async href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css' />
+    <div id="c">
+        <p id="footer-tag">Made with <span class="heart">♥</span> a keyboard</p>
+    </div>
+
+    <link defer rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link async href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css' />
     <script type="text/javascript">
         function addJSOnload() {
             var element = document.createElement("script");
@@ -514,7 +368,7 @@
             window.attachEvent("onload", addJSOnload);
         else
             window.onload = addJSOnload;
-        
+
         document.body.className="is-loaded";
     </script>
   </body>
