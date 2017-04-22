@@ -626,26 +626,15 @@ mark {
 }
 #c p {
     color: white;
-    font-size: 0.5em;
+    font-size: 0.7em;
     margin-bottom: 0;
     padding-bottom: 15px;
 }
 #c .heart {
     color: crimson;
     position: relative;
-    font-size: 2.6rem;
+    font-size: 1.6rem;
     margin: 0 .5em 0 0.3em;
-}
-#c .heart::after {
-    content: '';
-    position: absolute;
-    top: 16px;
-    left: -5px;
-    width: 160%;
-    height: 1px;
-    background-color: #fff;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
 }
 sm {
     font-size: 14px;
