@@ -1,5 +1,6 @@
 ---
 title: stats
+layout: dashboard.hbs
 ---
 
 # geeky statistics

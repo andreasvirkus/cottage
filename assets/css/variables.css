@@ -1,0 +1,11 @@
+:root {
+    --bg-dark: #223;
+    --bg-light: #fff;
+    --bg-border: 0.5em;
+    --content-color: #222;
+    --heading-color: #444;
+    --highlight-color: #e16036;
+    --link-color: tomato;
+    --link-color__hover: #552;
+    --logo-font-size: 64px;
+}
