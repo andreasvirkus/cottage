@@ -1,5 +1,6 @@
 ---
-title: home
+title: me
+layout: about.hbs
 ---
 
 # ajv
