@@ -9,6 +9,7 @@ header {
     color: var(--content-color);
     font-size: var(--logo-font-size);
     font-family: Josefin Slab, serif;
+    padding: 0.3em;
 }
 .logo__letter {
     position: absolute;

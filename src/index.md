@@ -6,8 +6,6 @@ menu-order: 1
 
 # ajv
 
-I'm an aspiring web designer & front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I also have skills in other fields like scripting and web development.
+I see you've managed to find my secret lair...
 
-The curriculum vitae is downloadable through the link.
-
-<a href="assets/cv/CV-Andreas-johan-virkus.pdf">Download pdf</a>.
+It's alright to have a look around, but don't touch anything!
