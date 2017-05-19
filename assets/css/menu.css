@@ -199,7 +199,7 @@
 	}
 
 	.menu {
-		transform: translate3d(-170px, 0, 0);
+		transform: translate3d(-160px, 0, 0);
 	}
 
 	.menu.menu--open + .main {
