@@ -3,20 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <title>ajv | {{ title }}</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ description }}">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link href="/assets/css/utility.css" rel="stylesheet">
+  <link href="/assets/css/global.css" rel="stylesheet">
+  <link href="/assets/css/header.css" rel="stylesheet">
+  <link href="/assets/css/menu.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <p>
-      <a href="/">Home</a>
-    </p>
-  </header>
+    <header>
+        {{> logo }}
+    </header>
 
-  {{{ contents }}}
+    {{> nav }}
 
-  <footer>
-    <p>Generated with {{ generator }} &mdash; <a href="{{ url }}">{{ url }}</a></p>
-  </footer>
+    <main>
 
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+
+        {{{ contents }}}
+    </main>
+
+    <footer>
+        {{> social }}
+        <p>Proudly generated with Metalsmith.</p>
+    </footer>
+
+    <script src="/assets/js/classie.js"></script>
+    <script src="/assets/js/snap.svg.min.js"></script>
+    <script src="/assets/js/menu.js"></script>
 </body>
 </html>

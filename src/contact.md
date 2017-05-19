@@ -1,10 +1,10 @@
 ---
-title: me
-layout: about.hbs
-menu-order: 2
+title: contact
+layout: contact.hbs
+menu-order: 5
 ---
 
-# me
+# ajv
 
 I'm an aspiring web designer & front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I also have skills in other fields like scripting and web development.
 

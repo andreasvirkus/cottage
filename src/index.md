@@ -1,6 +1,7 @@
 ---
 title: home
 layout: default.hbs
+menu-order: 1
 ---
 
 # ajv

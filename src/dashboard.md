@@ -1,6 +1,7 @@
 ---
 title: stats
 layout: dashboard.hbs
+menu-order: 3
 ---
 
 # geeky statistics
