@@ -5,6 +5,4 @@ layout: blog.hbs
 menu-order: 4
 ---
 
-# blog
-
-### my thoughts and musings
+Here you can read 'bout the idiotic things I come up with.

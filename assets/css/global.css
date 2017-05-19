@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 @import url('variables.css');
+@import url('social.css');
 
 body {
     margin: 0;
@@ -68,6 +69,11 @@ p, ul, hr, form, h1, h2 {
 }
 img {
     height:auto;
+}
+
+footer p {
+    text-align: right;
+    padding-right: 1em;
 }
 
 @media screen and (max-width: 25em) {

@@ -1,9 +1,11 @@
 <nav id="menu" class="menu" role="navigation">
     <button class="menu__handle" title="Open menu"><span>Menu</span></button>
     <div class="menu__inner">
-        <ul>
+        <ul class="menu__list">
             {{#each collections.pages}}
-            <li class="{{#is this.path @root.path }}active{{/is}}"><a href="/{{ this.path }}">{{ this.title }}</a></li>
+            <li class="menu__item {{#is this.path @root.path }}active{{/is}}">
+                <a href="/{{ this.path }}" class="menu__link">{{ this.title }}</a>
+            </li>
             {{/each}}
         </ul>
     </div>

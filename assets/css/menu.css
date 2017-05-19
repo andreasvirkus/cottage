@@ -41,14 +41,14 @@
 	z-index: 5;
 }
 
-.menu ul {
+.menu__list {
 	list-style: none;
 	padding: 0 50px;
 	margin: 0;
     text-align: left;
 }
 
-.menu ul li {
+.menu__item {
 	margin: 0 0 2em 0;
 	transform: translate3d(-150px, 0, 0);
 	transition: transform 0.6s;
@@ -58,33 +58,33 @@
 	transform: translate3d(0, 0, 0);
 }
 
-.menu ul li:first-child {
+.menu__item:first-child {
 	transition-delay: 0.2s;
 }
 
-.menu ul li:nth-child(2) {
+.menu__item:nth-child(2) {
 	transition-delay: 0.15s;
 }
 
-.menu ul li:nth-child(3) {
+.menu__item:nth-child(3) {
 	transition-delay: 0.1s;
 }
 
-.menu ul li:nth-child(4) {
+.menu__item:nth-child(4) {
 	transition-delay: 0.05s;
 }
 
-.menu ul li a {
+.menu__link {
 	display: inline-block;
-  position: relative;
+	position: relative;
 	outline: none;
-  text-transform: uppercase;
-  color: #5f656f;
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
+	text-transform: uppercase;
+	color: #5f656f;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
 }
 
-.menu ul li a:before {
+.menu__link::before {
     content: ':';
     position: absolute;
     font-weight: 800;
@@ -94,10 +94,9 @@
     transition: all 0.1s ease-in-out;
 }
 
-.menu ul li.active a:before {
+.menu__item.active a::before {
     color: #e16036;
 }
-
 
 .menu__handle {
 	background: transparent;
@@ -110,23 +109,13 @@
 	top: 3px;
 	right: 70px;
 	z-index: 9;
-    overflow: hidden;
+	cursor: pointer;
 }
 
 .menu__handle::before,
 .menu__handle::after,
 .menu__handle span {
 	background-color: #5f656f;
-}
-
-.menu__handle:hover {
-  cursor: pointer;
-
-  &::before,
-  &::after,
-  span {
-    background-color: #bbbfc5;
-  }
 }
 
 .menu__handle::before,
@@ -138,7 +127,7 @@
 	left: 0;
 	top: 50%;
 	transform-origin: 50% 50%;
-	transition: transform 0.25s, background-color ease-out .25s;
+	transition: transform 0.25s;
 }
 
 .menu__handle span {
@@ -147,7 +136,7 @@
 	height: 2px;
 	left: 0;
 	text-indent: 200%;
-	transition: opacity 0.25s, background-color ease-out .25s;
+	color: transparent;
 }
 
 .menu__handle::before {
@@ -199,7 +188,13 @@
 	}
 
 	.menu {
+		top: 2em;
+		bottom: 4em;
 		transform: translate3d(-160px, 0, 0);
+	}
+
+	.menu__handle {
+		background: rgba(255, 255, 255, 0.6);
 	}
 
 	.menu.menu--open + .main {
