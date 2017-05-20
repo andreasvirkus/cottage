@@ -44,6 +44,9 @@ main {
 main a {
     border-bottom: 3px solid var(--link-border-color);
 }
+main ul {
+    padding-left: 1.4em;
+}
 li {
     margin-right: 1em;
     list-style: circle;
