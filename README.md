@@ -7,7 +7,7 @@ Code for my current portfolio-ish site.
 ### TODO:
 
 - Content
-- ̶S̶i̶t̶e̶m̶a̶p̶ ̶&̶ ̶r̶o̶b̶o̶t̶s̶.̶t̶x̶t̶
+- ~~Sitemap & robots.txt~~
 - Dynamic navigation
     - History API support
     - Page transitions (menu overlay into the next page's solid white background)
