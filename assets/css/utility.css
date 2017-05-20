@@ -1,3 +1,7 @@
 .skewed-section {
   clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
+
+.text__line-through {
+    text-decoration: line-through;
+}

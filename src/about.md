@@ -6,7 +6,14 @@ menu-order: 2
 
 # me
 
-I'm an aspiring web designer & front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I also have skills in other fields like scripting, development, CD & CI, agile thinking.
+I'm an aspiring <span class="text__line-through">full-stack</span> front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I love (and preach) all things Node, semantic HTML, the power of CSS & progressive enhancement. I've also dabbled in other fields (and hope to perfect them in the future), like:
+- scripting
+- web performance
+- CD & CI
+- agile thinking
+- accessibility
+- UNIX-based systems
+- dockerisation/Kubernetes
 
 <!-- TODO: List skills etc -->
 

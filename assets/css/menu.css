@@ -1,8 +1,7 @@
 .menu {
 	position: fixed;
 	width: 300px;
-	top: 3em;
-	bottom: 9em;
+	top: 3.5em;
 	left: 0;
 	z-index: 5;
 	transform: translate3d(-150px, 0, 0);
@@ -21,10 +20,6 @@
 }
 .menu.menu--open {
 	transform: translate3d(0, 0, 0);
-}
-
-.main {
-	transition: opacity 0.6s;
 }
 
 .menu.menu--open + main {
@@ -54,7 +49,7 @@
 	transition: transform 0.6s;
 }
 
-.menu.menu--anim ul li {
+.menu.menu--anim li {
 	transform: translate3d(0, 0, 0);
 }
 
@@ -75,7 +70,7 @@
 	position: relative;
 	outline: none;
 	text-transform: uppercase;
-	color: var(--menu-color);
+	color: var(--content-color);
 	cursor: pointer;
 	transition: color 0.1s ease-in-out;
 }
@@ -90,8 +85,9 @@
 	transition: color 0.1s ease-in-out;
 }
 
+.menu__link:hover,
 .menu__item.active a::before {
-    color: var(--menu-active-color);
+    color: var(--highlight-color);
 }
 
 .menu__handle {
@@ -176,10 +172,16 @@
 @media screen and (max-width: 35em) {
 	.menu {
 		top: 2em;
-		bottom: 4em;
 		transform: translate3d(-160px, 0, 0);
 	}
-	.menu__handle {
-		background: rgba(255, 255, 255, 0.6);
+	.menu__handle span::before {
+		content: '';
+		background-color: rgba(255, 255, 255, 0.8);
+		position: absolute;
+		top: -20px;
+		left: -7px;
+		right: -7px;
+		bottom: -20px;
+		z-index: -1;
 	}
 }

@@ -5,10 +5,10 @@
     --content-color: #222;
     --heading-color: #333;
     --highlight-color: #e16036;
-    --link-color: tomato;
-    --link-color__hover: #552;
+    --link-color: #333;
+    --link-color__hover: tomato;
+    --link-border-color: #444;
     --logo-font-size: 64px;
     --breakpoint: 35em;
     --menu-color: #5f656f;
-    --menu-active-color: #e16036;
 }

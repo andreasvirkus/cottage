@@ -1,11 +1,9 @@
 <nav class="blog__menu" role="navigation">
     <ul class="blog__menu__list">
-        {{#each collections.pages }}
-        {{#isnt this.path @root.path }}
+        {{# each collections.posts }}
         <li class="blog__menu__item {{#is this.path @root.path }}active{{/is}}">
-            <a href="/{{ this.path }}" class="menu__link">{{ this.title }}</a>
+            <a href="/{{ this.path }}" class="blog__menu__link">{{ this.title }} | {{ date this.date }}</a>
         </li>
-        {{/isnt }}
-        {{/each }}
+        {{/ each }}
     </ul>
 </nav>

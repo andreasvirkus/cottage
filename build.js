@@ -3,11 +3,11 @@ const markdown = require('metalsmith-markdown');
 const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
 const layouts = require('metalsmith-layouts');
-// const postcss = require('metalsmith-postcss');
 const autoprefixer = require('metalsmith-autoprefixer');
 const cleanCSS = require('metalsmith-clean-css');
 const sitemap = require('metalsmith-sitemap');
 const Handlebars = require('handlebars');
+const moment = require('moment');
 
 Handlebars.registerHelper('is', function (value, test, options) {
     if (value === test) {
@@ -15,6 +15,10 @@ Handlebars.registerHelper('is', function (value, test, options) {
     } else {
         return options.inverse(this);
     }
+});
+
+Handlebars.registerHelper('date', function (date) {
+    return moment(date, "MM-DD-YYYY").format('Do MMM \'YY');
 });
 
 metalsmith(__dirname)
@@ -31,7 +35,7 @@ metalsmith(__dirname)
     .clean(true)
     .use(collections({
         posts: {
-            pattern: 'posts/*.md',
+            pattern: 'thoughts/*.md',
             sortBy: 'date',
             reverse: true
         },
