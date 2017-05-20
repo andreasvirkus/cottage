@@ -6,7 +6,7 @@ menu-order: 1
 
 # welcome, welcome.
 
-I see you've managed to find my secret lair... I bet the impeccable SEO helped.
+I see you've managed to find my secret lair... _I bet the impeccable SEO helped_.
 
 It's alright to have a look around, but don't touch anything!<br>
 I kid, I kid... I've set up a _blogish_ thing so you wouldn't get bored
