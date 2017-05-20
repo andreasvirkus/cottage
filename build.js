@@ -3,9 +3,10 @@ const markdown = require('metalsmith-markdown');
 const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
 const layouts = require('metalsmith-layouts');
-const postcss = require('metalsmith-postcss');
+// const postcss = require('metalsmith-postcss');
 const autoprefixer = require('metalsmith-autoprefixer');
 const cleanCSS = require('metalsmith-clean-css');
+const sitemap = require('metalsmith-sitemap');
 const Handlebars = require('handlebars');
 
 Handlebars.registerHelper('is', function (value, test, options) {
@@ -49,12 +50,16 @@ metalsmith(__dirname)
         default: 'default.hbs',
         partials: 'layouts/partials'
     }))
+    .use(autoprefixer())
     .use(cleanCSS({
         files: 'assets/css/*.css',
         cleanCSS: {
             rebase: true,
             level: 2
         }
+    }))
+    .use(sitemap({
+        hostname: "https://andreasvirkus.me"
     }))
     .build(function (err) {
         if (err) throw err;

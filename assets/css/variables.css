@@ -3,9 +3,12 @@
     --bg-light: #fff;
     --bg-border: 0.5em;
     --content-color: #222;
-    --heading-color: #444;
+    --heading-color: #333;
     --highlight-color: #e16036;
     --link-color: tomato;
     --link-color__hover: #552;
     --logo-font-size: 64px;
+    --breakpoint: 35em;
+    --menu-color: #5f656f;
+    --menu-active-color: #e16036;
 }
