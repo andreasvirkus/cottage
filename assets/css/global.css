@@ -46,7 +46,7 @@ main a {
 }
 li {
     margin-right: 1em;
-    list-style: none;
+    list-style: circle;
 }
 h1 {
     font-style: normal;

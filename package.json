@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
-    "start": "node . && cp -r assets dist/"
+    "start": "node . && npm run postbuild",
+    "postbuild": "cp -r assets dist/ && cp .htaccess dist/ && cp robots.txt dist/"
   },
   "repository": {
     "type": "git",
