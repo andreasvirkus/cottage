@@ -40,7 +40,9 @@ main {
 /* Content links */
 main a,
 footer p a {
+    display: initial;
     border-bottom: 3px solid var(--link-border-color);
+    font-weight: 500;
 }
 main a:hover,
 footer p a:hover {

@@ -9,7 +9,7 @@
     --highlight-color: #e16036;
 
     --link-color: #333;
-    --link-color__hover: var(--highlight-color);
+    --link-color__hover: tomato;
     --link-border-color: #444;
     --link-bullet-gray__hover: #555;
 
