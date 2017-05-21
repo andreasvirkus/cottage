@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
     "start": "node . && npm run postbuild",
-    "postbuild": "cp -r assets dist/ && cp .htaccess dist/ && cp robots.txt dist/"
+    "minify:js": "uglifyjs ./dist/assets/js/*.js --overwrite -c -o ./dist/assets/js/script.min.js",
+    "postbuild": "cp -r assets dist/ && cp .htaccess dist/ && cp robots.txt dist/ && npm run minify:js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "metalsmith-navigation": "^0.2.9",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-sitemap": "^1.2.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "uglify-js": "^3.0.10"
   }
 }

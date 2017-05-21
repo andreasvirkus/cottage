@@ -58,8 +58,8 @@ metalsmith(__dirname)
     .use(cleanCSS({
         files: 'assets/css/*.css',
         cleanCSS: {
-            rebase: true,
-            level: 2
+            rebase: true
+            // level: 2
         }
     }))
     .use(sitemap({
