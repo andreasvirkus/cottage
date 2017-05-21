@@ -24,10 +24,10 @@ Handlebars.registerHelper('date', function (date) {
 metalsmith(__dirname)
     .metadata({
         site: {
-            name: 'Habanero',
-            description: "The whimsical recipes and doings of Lia Virkus.",
+            name: 'cave',
+            description: "My humble homepage of sorts.",
             generatorname: "Metalsmith",
-            generatorurl: "http://metalsmith.io/"
+            generatorurl: "https://metalsmith.io/"
         }
     })
     .source('./src')

@@ -28,9 +28,6 @@ a {
     color: var(--link-color);
     text-decoration: none;
 }
-    main a:hover {
-        color: var(--link-color__hover);
-    }
 
 main {
     max-width: 45em;
@@ -41,13 +38,19 @@ main {
     flex: 1;
 }
 /* Content links */
-main a {
+main a,
+footer p a {
     border-bottom: 3px solid var(--link-border-color);
 }
+main a:hover,
+footer p a:hover {
+    color: var(--link-color__hover);
+}
+
 main ul {
     padding-left: 0.5em;
 }
-main li {
+li {
     margin-right: 1em;
     list-style: none;
 }
