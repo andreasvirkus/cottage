@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
     "start": "node . && npm run postbuild",
-    "minify:js": "uglifyjs ./dist/assets/js/*.js --overwrite -c -o ./dist/assets/js/script.min.js",
-    "postbuild": "cp -r assets dist/ && cp .htaccess dist/ && cp robots.txt dist/ && npm run minify:js"
+    "postbuild": "npm run copy-assets && npm run minify:js",
+    "copy-assets": "cp -r assets dist/ && cp .htaccess dist/ && cp robots.txt dist/",
+    "minify:js": "sh uglify.sh"
   },
   "repository": {
     "type": "git",
