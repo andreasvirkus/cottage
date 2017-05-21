@@ -2,7 +2,7 @@
     <ul class="blog__menu__list">
         {{# each collections.posts }}
         <li class="blog__menu__item {{#is this.path @root.path }}active{{/is}}">
-            <a href="/{{ this.path }}" class="blog__menu__link">{{ this.title }} | {{ date this.date }}</a>
+            <a href="/{{ this.path }}" class="blog__menu__link">{{ this.title }}</a> | <em>{{ date this.date }}</em>
         </li>
         {{/ each }}
     </ul>

@@ -25,3 +25,9 @@ footer p {
         padding-right: 3em;
     }
 }
+
+@media screen and (max-width: 35em) {
+    .social {
+        padding-right: 1em;
+    }
+}

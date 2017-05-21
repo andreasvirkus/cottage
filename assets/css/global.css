@@ -28,7 +28,7 @@ a {
     color: var(--link-color);
     text-decoration: none;
 }
-    a:hover {
+    main a:hover {
         color: var(--link-color__hover);
     }
 
@@ -45,12 +45,16 @@ main a {
     border-bottom: 3px solid var(--link-border-color);
 }
 main ul {
-    padding-left: 1.4em;
+    padding-left: 0.5em;
 }
-li {
+main li {
     margin-right: 1em;
-    list-style: circle;
+    list-style: none;
 }
+main li::before {
+    content: '∘ ';
+}
+
 h1 {
     font-style: normal;
     font-weight: 700;
