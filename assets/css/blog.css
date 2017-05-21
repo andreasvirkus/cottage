@@ -1,5 +1,23 @@
-.blog__menu__link {
+.blog__menu-link {
     text-transform: uppercase;
+}
+
+.blog__title-divider {
+    height: 5px;
+}
+.blog__title-block {
+    width: 33%;
+    float: left;
+    height: 100%;
+}
+.blog__title-block.blue {
+    background-color: #0EBCF3;
+}
+.blog__title-block.green {
+    background-color: #29BAA5;
+}
+.blog__title-block.purple {
+    background-color: #844BA1;
 }
 
 @media screen and (min-width: 35em) {
