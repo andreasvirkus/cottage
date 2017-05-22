@@ -1,18 +1,22 @@
 # andreasvirkus.github.io
 ### A humble landing page of sorts...
 
-Code for my current portfolio-ish site.
+Metalsmith setup for my current portfolio-ish site.
+
+Since Github doesn't let you use a subdir for your static site
+(and the gh-pages hack `git subtree push --prefix dist origin gh-pages`
+doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 
 ----------
 ### TODO:
 
 - Content
 - ~~Sitemap & robots.txt~~
-- Dynamic navigation
-    - History API support
+- ~~Dynamic navigation (Pjax)~~
+    - ~~History API support~~
     - Page transitions (menu overlay into the next page's solid white background)
 - Analytics & dashboard (visitor statistics & performance metrics)
-- Theming? Since the site is built on CSS custom properties, wouldn't be a lot to change
+- Theming? Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes
 - Offline support, manifest.json etc
-- Maybe write some blog posts you lazy bum
+- Write some blog posts

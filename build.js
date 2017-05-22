@@ -4,7 +4,6 @@ const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
 const layouts = require('metalsmith-layouts');
 const autoprefixer = require('metalsmith-autoprefixer');
-const cleanCSS = require('metalsmith-clean-css');
 const sitemap = require('metalsmith-sitemap');
 const Handlebars = require('handlebars');
 const moment = require('moment');
@@ -45,8 +44,6 @@ metalsmith(__dirname)
         }
     }))
     .use(markdown())
-    // Generate ToC
-    // .use(tableOfContentsTask())
     .use(permalinks())
     .use(layouts({
         engine: 'handlebars',
@@ -55,13 +52,6 @@ metalsmith(__dirname)
         partials: 'layouts/partials'
     }))
     .use(autoprefixer())
-    .use(cleanCSS({
-        files: 'assets/css/*.css',
-        cleanCSS: {
-            rebase: true
-            // level: 2
-        }
-    }))
     .use(sitemap({
         hostname: "https://andreasvirkus.me"
     }))
