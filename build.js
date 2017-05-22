@@ -26,7 +26,11 @@ metalsmith(__dirname)
             name: 'cave',
             description: "My humble homepage of sorts.",
             generatorname: "Metalsmith",
-            generatorurl: "http://metalsmith.io/"
+            generatorurl: "http://metalsmith.io/",
+            generatortitle: "Check out Metalsmith!",
+            hostname: "Netlify",
+            hosturl: "https://netlify.com/",
+            hosttitle: "Learn more about Netlify"
         }
     })
     .source('./src')

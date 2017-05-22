@@ -184,6 +184,13 @@
 	pointer-events: inherit;
 }
 
+.menu:not(.menu--open) {
+	pointer-events: none;
+}
+.menu__handle {
+	pointer-events: all;
+}
+
 .morph-shape {
 	position: absolute;
 	width: 240px;
@@ -211,11 +218,5 @@
 		right: -7px;
 		bottom: -20px;
 		z-index: -1;
-	}
-	.menu:not(.menu--open) {
-		pointer-events: none;
-	}
-	.menu__handle {
-		pointer-events: all;
 	}
 }

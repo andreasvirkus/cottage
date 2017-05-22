@@ -33,12 +33,24 @@ main {
     transition: opacity 0.6s;
     flex: 1;
 }
+
+main p {
+    font-size: 1.4em;
+}
 /* Content links */
 main a,
 footer p a {
     display: initial;
     border-bottom: 3px solid var(--link-border-color);
     font-weight: 500;
+}
+@supports (text-decoration-skip: ink) {
+    main a,
+    footer p a {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration-skip: ink;
+    }
 }
 main a:hover,
 footer p a:hover {
