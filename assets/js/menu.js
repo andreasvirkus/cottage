@@ -8,7 +8,7 @@
         this.trigger = this.el.querySelector('button.menu__handle');
         this.shapeEl = this.el.querySelector('div.morph-shape');
 
-        var s = Snap( this.shapeEl.querySelector('svg'));
+        var s = Snap(this.shapeEl.querySelector('svg'));
         this.pathEl = s.select('path');
         this.paths = {
             reset : this.pathEl.attr('d'),
@@ -17,12 +17,37 @@
         };
 
         this.isOpen = false;
-
         this.initEvents();
     };
 
     SVGMenu.prototype.initEvents = function() {
-        this.trigger.addEventListener('click', this.toggle.bind(this));
+        var menu = this,
+            isBlogPost,
+            menuLinks = document.querySelectorAll('#menu .menu__link');
+
+        menu.trigger.addEventListener('click', menu.toggle.bind(menu));
+
+        document.addEventListener('pjax:complete', function() {
+            menu.isOpen && menu.toggle();
+
+            isBlogPost = true;
+
+            // Loop through nav links, find one whose href matches page slug
+            [].forEach.call(menuLinks, function(link) {
+                link.parentElement.classList.remove('active');
+
+                if (link.getAttribute('href') === location.pathname) {
+                    link.parentElement.classList.add('active');
+                    isBlogPost = false;
+                }
+            });
+
+            if (isBlogPost) {
+                document.getElementById('menu')
+                    .querySelector('[href="/thoughts"]')
+                    .parentElement.classList.add('active');
+            }
+        });
     };
 
     SVGMenu.prototype.toggle = function() {
@@ -41,7 +66,7 @@
         }
 
         this.pathEl.stop().animate({
-            'path' : this.isOpen
+            'path': this.isOpen
                 ? this.paths.close
                 : this.paths.open
             }, 350, mina.easeout, function() {
@@ -55,4 +80,10 @@
     };
 
     new SVGMenu(document.getElementById('menu'));
+
+    new Pjax({
+        selectors: ["title", "main"],
+        cacheBust: false
+    });
+
 })();
