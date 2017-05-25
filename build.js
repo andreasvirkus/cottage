@@ -1,4 +1,5 @@
 const metalsmith = require('metalsmith');
+const drafts = require('metalsmith-drafts');
 const markdown = require('metalsmith-markdown');
 const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
@@ -36,6 +37,7 @@ metalsmith(__dirname)
     .source('./src')
     .destination('./dist')
     .clean(true)
+    .use(drafts())
     .use(collections({
         posts: {
             pattern: 'thoughts/*.md',

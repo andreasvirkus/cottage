@@ -1,3 +1,11 @@
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,17 +15,17 @@ body {
     color: var(--content-color);
     background-color: var(--bg-light);
     box-shadow: 0 0 0 var(--bg-border) var(--bg-dark) inset;
-    font-family: -apple-system,
-               BlinkMacSystemFont,
-               "Segoe UI",
-               Roboto,
-               Oxygen,
-               Ubuntu,
-               Cantarell,
-               "Open Sans",
-               "Helvetica Neue",
-               sans-serif;
+    font-family: var(--site-font-stack);
 }
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+/* TODO: Make autoprefixer do this crap:
+/*::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers * /
+}*/
 
 a {
     display: inline-block;
@@ -34,9 +42,6 @@ main {
     flex: 1;
 }
 
-main p {
-    font-size: 1.4em;
-}
 /* Content links */
 main a,
 footer p a {
@@ -68,14 +73,18 @@ main li::before {
     content: '∘ ';
 }
 
+/* Typography */
 h1 {
-    font-style: normal;
     font-weight: 700;
     line-height: 1.0;
     font-size: 3.4em;
 }
 h2 {
-    font-size: 40px;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+h3 {
     font-size: 1.7rem;
     font-weight: 500;
     line-height: 1.5;
@@ -90,15 +99,25 @@ p, ul, hr, form, h1, h2 {
 img {
     height:auto;
 }
+main p {
+    font-size: 1.4em;
+}
 
-@media screen and (max-width: 35em) {
+main li ul {
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 45em) {
     body {
         padding: 0;
     }
     main {
         width: auto;
         min-height: 60vh;
-        transform: translateY(-4em);
+        transform: translateY(-2.5em);
+    }
+    main p {
+        font-size: 1.2em;
     }
     img {
         height: auto;

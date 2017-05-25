@@ -27,6 +27,7 @@
 
         menu.trigger.addEventListener('click', menu.toggle.bind(menu));
 
+        // Close menu if opened and reassign current nav link
         document.addEventListener('pjax:complete', function() {
             menu.isOpen && menu.toggle();
 
@@ -34,18 +35,18 @@
 
             // Loop through nav links, find one whose href matches page slug
             [].forEach.call(menuLinks, function(link) {
-                link.parentElement.classList.remove('active');
+                link.parentElement.removeAttribute('aria-current');
 
                 if (link.getAttribute('href') === location.pathname) {
-                    link.parentElement.classList.add('active');
+                    link.parentElement.setAttribute('aria-current', 'page');
                     isBlogPost = false;
                 }
             });
 
             if (isBlogPost) {
                 document.getElementById('menu')
-                    .querySelector('[href="/thoughts"]')
-                    .parentElement.classList.add('active');
+                    .querySelector('[href="/thoughts/"]')
+                    .parentElement.setAttribute('aria-current', 'page');
             }
         });
     };
@@ -83,7 +84,10 @@
 
     new Pjax({
         selectors: ["title", "main"],
-        cacheBust: false
+        cacheBust: false,
+        switches: {
+            'main': Pjax.switches.outerHTML
+        }
     });
 
 })();

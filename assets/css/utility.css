@@ -5,3 +5,9 @@
 .text__line-through {
     text-decoration: line-through;
 }
+
+hr.divider {
+    height: 3px;
+    background-image: linear-gradient(90deg,#0ec1f6,#8823de);
+    border: none;
+}

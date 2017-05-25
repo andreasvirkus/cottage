@@ -10,6 +10,7 @@ header {
     font-size: var(--logo-font-size);
     font-family: Josefin Slab, serif;
     padding: 0.3em;
+    box-sizing: initial;
 }
 .logo__letter {
     position: absolute;
