@@ -8,11 +8,10 @@
     "prestart": "npm install",
     "start": "node . && npm run postbuild",
     "postbuild": "npm run copy-assets && npm run minify",
-    "copy-assets": "cp -r assets dist/ && cp .htaccess dist/ && cp robots.txt dist/ && cp manifest.json dist/ && cp service-worker.js dist/",
-    "build:js": "webpack -p --config webpack.config.js",
+    "copy-assets": "cp -r assets dist/ && cp robots.txt dist/ && cp manifest.json dist/ && cp service-worker.js dist/",
     "minify": "npm run minify:js && npm run minify:css",
     "minify:js": "uglifyjs ./dist/assets/js/*.js -c -m -o ./dist/assets/js/script.min.js",
-    "minify:css": "cleancss --level 2 -o ./dist/assets/css/styles.min.css ./dist/assets/css/*.css"
+    "minify:css": "cleancss --level 2 -o ./dist/assets/css/styles.min.css ./dist/assets/css/*.css && postcss ./dist/assets/css/styles.min.css --use autoprefixer -o ./dist/assets/css/styles.min.css"
   },
   "repository": {
     "type": "git",
@@ -42,6 +41,7 @@
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-sitemap": "^1.2.0",
     "moment": "^2.18.1",
+    "postcss-cli": "^4.0.0",
     "uglify-js": "^3.0.10"
   }
 }

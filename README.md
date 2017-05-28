@@ -25,6 +25,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - Analytics & dashboard (visitor statistics & performance metrics)
 - Theming? Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes
+- Set up Webpack, since I miss my ES6 modules
 
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aandreasvirkus/netlify-metalsmith)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/netlify-metalsmith)
