@@ -14,9 +14,16 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - ~~Sitemap & robots.txt~~
 - ~~Dynamic navigation (Pjax)~~
     - ~~History API support~~
-    - Page transitions (menu overlay into the next page's solid white background)
+- Offline support, manifest.json etc
+
+----------
+### Roadmap
+
+- Syntax highlighting if posts get code-heavy
+- Smooth page transitions (menu overlay into the next page's solid white background)
 - Analytics & dashboard (visitor statistics & performance metrics)
 - Theming? Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes
-- Offline support, manifest.json etc
-- Write some blog posts
+
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aandreasvirkus/netlify-metalsmith)
