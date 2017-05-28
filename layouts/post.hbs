@@ -1,0 +1,20 @@
+{{> doc-head }}
+<link href="/assets/css/blog.css" rel="stylesheet">
+<body class="wip-page">
+    {{> header }}
+
+    {{> nav }}
+
+    <main>
+
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+
+        <div class="blog__title-divider"></div>
+
+        {{{ contents }}}
+    </main>
+
+    {{> footer }}
+</body>
+</html>

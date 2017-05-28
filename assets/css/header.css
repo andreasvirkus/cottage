@@ -1,0 +1,58 @@
+header {
+    text-align: right;
+}
+
+.logo {
+    position: relative;
+    width: 95px;
+    height: 90px;
+    color: var(--content-color);
+    font-size: var(--logo-font-size);
+    font-family: Josefin Slab, serif;
+    padding: 0.3em;
+    box-sizing: initial;
+}
+.logo__letter {
+    position: absolute;
+    line-height: 1;
+    font-feature-settings: "kern";
+}
+.logo__letter-a {
+    top: 3px;
+    left: 30px;
+}
+.logo__letter-j {
+    top: 30px;
+    left: 57px;
+    transition: color 0.1s ease-in-out;
+}
+.logo__letter-v{
+    top: 40px;
+    left: 72px;
+}
+.logo:hover .logo__letter {
+    color: var(--content-color);
+}
+.logo:hover .logo__letter-j {
+    color: var(--highlight-color);
+}
+
+/* WIP label */
+.wip-page .logo::before {
+    content: 'WIP';
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    background-color: var(--wip-label-bg);
+    color: var(--bg-light);
+    border-radius: 3px;
+    padding: .5em;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+@media (min-width: 35em) {
+    header {
+        transform: translate(-1.5em, 1em);
+    }
+}
