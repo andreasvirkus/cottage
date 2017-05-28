@@ -12,15 +12,16 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 
 - Content
 - ~~Sitemap & robots.txt~~
-- ~~Dynamic navigation (Pjax)~~
-    - ~~History API support~~
-- Offline support, manifest.json etc
+- First posts
 
 ----------
 ### Roadmap
 
+- ~~Dynamic navigation (Pjax)~~
+    - ~~History API support~~
+    - Smooth page transitions (menu overlay into the next page's solid white background)
+- ~~Offline support & manifest.json~~
 - Syntax highlighting if posts get code-heavy
-- Smooth page transitions (menu overlay into the next page's solid white background)
 - Analytics & dashboard (visitor statistics & performance metrics)
 - Theming? Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes

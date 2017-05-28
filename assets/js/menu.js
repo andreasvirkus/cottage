@@ -32,7 +32,10 @@
             menuLink.addEventListener('click', function(e) {
                 menu.isOpen && menu.toggle();
             });
-        })
+        });
+
+        // TODO: Add back ajax navigation once I settle on a page transition animation.
+
         // document.addEventListener('pjax:complete', function() {
         //     menu.isOpen && menu.toggle();
         //

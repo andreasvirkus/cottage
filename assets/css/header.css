@@ -37,6 +37,20 @@ header {
     color: var(--highlight-color);
 }
 
+/* WIP label */
+.wip-page .logo::before {
+    content: 'WIP';
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    background-color: var(--wip-label-bg);
+    color: var(--bg-light);
+    border-radius: 3px;
+    padding: .5em;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
 @media (min-width: 35em) {
     header {
         transform: translate(-1.5em, 1em);
