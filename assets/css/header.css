@@ -4,34 +4,13 @@ header {
 
 .logo {
     position: relative;
-    width: 95px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     color: var(--content-color);
     font-size: var(--logo-font-size);
     font-family: Josefin Slab, serif;
     padding: 0.3em;
     box-sizing: initial;
-}
-.logo__letter {
-    position: absolute;
-    line-height: 1;
-    font-feature-settings: "kern";
-}
-.logo__letter-a {
-    top: 3px;
-    left: 30px;
-}
-.logo__letter-j {
-    top: 30px;
-    left: 57px;
-    transition: color 0.1s ease-in-out;
-}
-.logo__letter-v{
-    top: 40px;
-    left: 72px;
-}
-.logo:hover .logo__letter {
-    color: var(--content-color);
 }
 .logo:hover .logo__letter-j {
     color: var(--highlight-color);
