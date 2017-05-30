@@ -13,7 +13,7 @@ header {
     box-sizing: initial;
 }
 .logo:hover .logo__letter-j {
-    color: var(--highlight-color);
+    fill: var(--highlight-color);
 }
 
 /* WIP label */
