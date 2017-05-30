@@ -29,4 +29,4 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - Set up Webpack, since I miss my ES6 modules
 
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/netlify-metalsmith)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
