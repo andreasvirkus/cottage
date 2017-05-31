@@ -89,15 +89,21 @@
 }
 
 .menu__item:first-child {
-	transition-delay: 0.2s;
+	transition-delay: 0.3s;
 }
 .menu__item:nth-child(2) {
-	transition-delay: 0.15s;
+	transition-delay: 0.25s;
 }
 .menu__item:nth-child(3) {
-	transition-delay: 0.1s;
+	transition-delay: 0.2s;
 }
 .menu__item:nth-child(4) {
+	transition-delay: 0.15s;
+}
+.menu__item:nth-child(5) {
+	transition-delay: 0.1s;
+}
+.menu__item:nth-child(6) {
 	transition-delay: 0.05s;
 }
 
@@ -115,6 +121,9 @@
 }
 .menu__item:nth-child(5)::before {
 	color: #8F6EF4;
+}
+.menu__item:nth-child(6)::before {
+	color: #00A0B0;
 }
 
 .menu__handle {

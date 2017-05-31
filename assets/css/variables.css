@@ -18,6 +18,8 @@
     --breakpoint: 35em;
     --menu-color: #5f656f;
 
+    --blog-post-divider: linear-gradient(90deg, #0ec1f6, #8823de);
+    --default-divider: linear-gradient(90deg, #FF00AA, #AA00FF);
 
     --selection-bg: var(--highlight-color);
     --selection-text: #fff;

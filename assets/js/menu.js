@@ -31,6 +31,7 @@
         [].forEach.call(menuLinks, function(menuLink) {
             menuLink.addEventListener('click', function(e) {
                 menu.isOpen && menu.toggle();
+                console.log('menu is open:', menu.isOpen);
             });
         });
 

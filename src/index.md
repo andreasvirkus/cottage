@@ -9,13 +9,16 @@ menu-order: 1
 
 **Disclaimer** This site is still in early stages of getting set up. Forgive
 any typos and stupid humour you might find (one of those might improve over time).
-Also pardon the filler context–I don't have a whole lot of ideas of my own... 😐
+Also pardon the (temporary) filler context–I don't have a whole lot of ideas of my own... 😐
 
 _Ahem_. I see you've managed to find my secret lair... _I bet the impeccable SEO helped_.
 
 It's alright to have a look around, but don't touch anything!<br>
 I kid, I kid... I've set up a [_blogish_](/thoughts) thing so you wouldn't get bored
 and some [geeky stats](/dashboard) about the site's visitors and site's performance metrics.
+
+This site's main purpose is to act as my personal playground for different web
+technologies.
 
 Since the site's styles make use of [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) where possible,
 I'm hoping to add theming soon as well. Later I'd like you to have the control

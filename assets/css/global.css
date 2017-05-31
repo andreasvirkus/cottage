@@ -22,10 +22,6 @@ body {
   background-color: var(--selection-bg);
   color: var(--selection-text);
 }
-/* TODO: Make autoprefixer do this crap:
-/*::-moz-selection {
-  background: #ffb7b7; /* Gecko Browsers * /
-}*/
 
 a {
     display: inline-block;
@@ -105,6 +101,12 @@ main p {
 
 main li ul {
     margin-bottom: 0.5rem;
+}
+
+hr {
+    height: 3px;
+    border: none;
+    background-image: var(--default-divider);
 }
 
 @media screen and (max-width: 45em) {

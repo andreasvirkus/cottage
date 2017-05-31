@@ -3,8 +3,7 @@
 }
 
 .blog__title-divider {
-    height: 3px;
-    background-image: linear-gradient(90deg, #0ec1f6, #8823de);
+    background-image: var(--blog-post-divider);
 }
 
 code {
@@ -16,14 +15,14 @@ code {
     white-space: pre-wrap;
     vertical-align: middle;
     padding: .2rem .3rem .1rem;
-    font-family: Consolas,monaco,monospace;
+    font-family: Consolas, monaco, monospace;
 }
 pre code {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
     color: #333;
-    background: #fff;   
+    background: #fff;
 }
 
 @media screen and (min-width: 35em) {
