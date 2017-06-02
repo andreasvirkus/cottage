@@ -44,6 +44,9 @@ metalsmith(__dirname)
             sortBy: 'date',
             reverse: true
         },
+        vault: {
+            pattern: 'vault/*.md'
+        },
         pages: {
             pattern: '*.md',
             sortBy: 'menu-order'

@@ -11,7 +11,7 @@
     "copy-assets": "cp -r assets dist/ && cp robots.txt dist/ && cp manifest.json dist/ && cp service-worker.js dist/",
     "minify": "npm run minify:js && npm run minify:css",
     "minify:js": "uglifyjs ./dist/assets/js/*.js -c -m -o ./dist/assets/js/script.min.js",
-    "minify:css": "cleancss -O2 -o ./dist/assets/css/styles.min.css ./dist/assets/css/*.css && postcss ./dist/assets/css/styles.min.css --use autoprefixer -o ./dist/assets/css/styles.min.css"
+    "minify:css": "cleancss -O2 -o ./dist/assets/css/styles.min.css ./dist/assets/css/*.css && postcss --no-map ./dist/assets/css/styles.min.css --use autoprefixer -o ./dist/assets/css/styles.min.css"
   },
   "repository": {
     "type": "git",
