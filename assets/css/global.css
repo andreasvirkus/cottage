@@ -114,7 +114,6 @@ hr {
         padding: 0;
     }
     main {
-        width: auto;
         min-height: 60vh;
         transform: translateY(-2.5em);
     }
