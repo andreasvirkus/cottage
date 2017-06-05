@@ -31,6 +31,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - Set up Webpack, since I miss my ES6 modules
 - [Partial rebuilds](http://www.mograblog.com/2016/11/speed-up-metalsmith.html) with Chokidar
 - Metalsmith helper for random (or within range) gradient custom properties.
+- Generate CV file's PDF from Markdown (using [markdown-pdf](https://www.npmjs.com/package/markdown-pdf) or similar)
 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
