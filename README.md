@@ -10,10 +10,10 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 ----------
 ### TODO:
 
-- Content
+- ~~Initial content~~
 - ~~Sitemap & robots.txt~~
-- ~~First posts~~
-- Link to [status page](https://status.andreasvirkus.me)
+- First posts
+- ~~Link to [status page](https://status.andreasvirkus.me)~~
 - ~~Make dashboard's timeframe dynamic~~
 
 ----------
