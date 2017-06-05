@@ -217,7 +217,7 @@ window.renderCharts = function(client, timeframe) {
       filters: [{
         'operator': 'ne',
         'property_name': 'geo.city',
-        'property_value': 'null'
+        'property_value': null
       }],
       timeframe: timeframe,
       timezone: 'UTC'
