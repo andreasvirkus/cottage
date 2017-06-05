@@ -13,7 +13,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - Content
 - ~~Sitemap & robots.txt~~
 - First posts
-- Link to status page (https://ajv-personal-site-status.netlify.com/ || status.andreasvirkus.me)
+- Link to [status page](https://status.andreasvirkus.me)
 - ~Make dashboard's timeframe dynamic~
 
 ----------
