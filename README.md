@@ -22,6 +22,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - ~~Dynamic navigation (Pjax)~~
     - ~~History API support~~
     - Smooth page transitions (menu overlay into the next page's solid white background)
+    - Swap pjax for [Barba](https://github.com/luruke/barba.js)
 - ~~Offline support & manifest.json~~
 - Syntax highlighting if posts get code-heavy
 - Analytics & dashboard (visitor statistics & performance metrics)
