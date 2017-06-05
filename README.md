@@ -14,7 +14,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - ~~Sitemap & robots.txt~~
 - First posts
 - Link to status page (https://ajv-personal-site-status.netlify.com/ || status.andreasvirkus.me)
-- Make dashboard's timeframe dynamic
+- ~Make dashboard's timeframe dynamic~
 
 ----------
 ### Roadmap
@@ -28,6 +28,8 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - Theming? Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes
 - Set up Webpack, since I miss my ES6 modules
+- [Partial rebuilds](http://www.mograblog.com/2016/11/speed-up-metalsmith.html) with Chokidar
+- Metalsmith helper for random (or within range) gradient custom properties.
 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)

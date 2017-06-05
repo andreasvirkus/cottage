@@ -6,7 +6,7 @@ header {
     position: relative;
     width: 80px;
     height: 80px;
-    color: var(--content-color);
+    fill: var(--content-color);
     font-size: var(--logo-font-size);
     font-family: Josefin Slab, serif;
     padding: 0.3em;
@@ -14,6 +14,7 @@ header {
 }
 .logo:hover .logo__letter-j {
     fill: var(--highlight-color);
+    fill: url(#logoGradientOrange);
 }
 
 /* WIP label */

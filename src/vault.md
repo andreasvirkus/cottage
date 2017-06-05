@@ -2,6 +2,7 @@
 title: vault
 description: Small snippets and bits of code I value.
 layout: vault.hbs
+draft: true
 menu-order: 6
 ---
 

@@ -15,7 +15,7 @@ _Ahem_. I see you've managed to find my secret lair... _I bet the impeccable SEO
 
 It's alright to have a look around, but don't touch anything!<br>
 I kid, I kid... I've set up a [_blogish_](/thoughts) thing so you wouldn't get bored
-and some [geeky stats](/dashboard) about the site's visitors and site's performance metrics.
+and some [geeky stats](/dashboard) about the site's visitors and performance metrics.
 
 This site's main purpose is to act as my personal playground for different web
 technologies.

@@ -7,11 +7,12 @@ menu-order: 2
 
 # me
 
-I'm not much of a talker, but let me rant about myself for a bit.
+I'm not much of a talker, but let me rant about myself for a bit. You can skip ahead to:
+my [passions](#superpowers-), overview about my [education](#education) or my [work](#labor).
 
 ## superpowers ⚡
 
-I'm an aspiring <span class="text__line-through">full-stack</span> front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I love (and preach) all things Node, semantic HTML, the power of CSS & progressive enhancement. Lately I've really enjoyed tinkering with:
+I'm an aspiring <span class="text__line-through">full-stack</span> front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I love (and preach) all things Node.js, semantic HTML, the power of CSS & progressive enhancement. Lately I've really enjoyed tinkering with:
 - Vue.js ♥
 - Webpack
 - Metalsmith
@@ -42,9 +43,8 @@ of going the standard university route (BSc, MSc, internships, etc.), I pivoted 
 my time tinkering on small private projects, reading books & articles and listening to podcasts.
 
 My biggest educational growth though were the first few months at my first job
-and I believe my hunger for knowledge has sky-rocketed ever since.
-
-I love meetups and conferences (though not the ones all 'bout fluff).
+and I believe my hunger for knowledge has sky-rocketed ever since. I also love
+meetups and conferences (...it's the free swag).
 
 Since some do care about the _official_ part of this, here's a rundown:
 - **CS at Tallinn University of Technology**
@@ -60,13 +60,42 @@ Since some do care about the _official_ part of this, here's a rundown:
 - **Exact Science Field at Old Town Educational College** (Secondary education)
     - Graduated June 2012
 
+Favourite learning resources:
+- **Podcasts**
+    - [Shop Talk Show](http://shoptalkshow.com/)
+    - [Developer tea](https://spec.fm/podcasts/developer-tea)
+    - [Javascript Jabber](http://devchat.tv/js-jabber/picks)
+    - [The Web Ahead](http://5by5.tv/webahead)
+    - [Front End Happy Hour](http://frontendhappyhour.com/)
+    - [CodePen Radio](https://blog.codepen.io/radio/)
+    - [Friends Talk Frontend](https://friendstalkfrontend.com/)
+- **News/article feeds**
+    - [CSS-Tricks](https://css-tricks.com/)
+    - [Front-End Front](https://frontendfront.com/)
+    - [Ron Valstar](http://ronvalstar.nl/)
+    - [Tutorialzine](https://tutorialzine.com/feed) (Mostly their monthly JS lib rundown)
+    - [Hugo Giraudel](http://hugogiraudel.com/)
+    - [David Walsh](https://davidwalsh.name/)
+    - [CSS Wizardry](https://csswizardry.com/)
+    - [Sara Soueidan](https://sarasoueidan.com/)
+    - [Code Kraft](https://abdulapopoola.com/)
+    - [A List Apart](https://alistapart.com/)
+    - [Jag Talon](https://www.jagtalon.com/)
+    - Various Smashing Magazine and Medium articles
+
 ## labor
 
 I like fiddling small components and scripts on codepen, jsfiddle, gist and on my Arduino.
 I started out creating websites for neighbours and small companies, which really sparked a passion. Here's what I've been up to since:
 - **FE developer at Bigbank**
     - _July 2015–current_
-    - TODO: Enter job description
+    - I started out supporting an in-house Wordpress theme, helping marketers create pages
+    with a page builder. Worked with the design team to unify the corporate visuals
+    across multiple countries and platforms (also implemented a pattern library).
+    I then shifted bit more towards Node's full-stack world and worked with microservices
+    and the Wordpress REST API to render its contents as a separate Vue application.
+    I've learned heaps about virtualisation, dockerisation, CI & CD, security,
+    authentication, and too much about front-end itself to even list.
 - **Programming teacher at Saue High school**
     - _Autumn 2015–Spring 2016_
     - My job was to give my students a basic understanding of the principles of
