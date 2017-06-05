@@ -12,7 +12,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 
 - Content
 - ~~Sitemap & robots.txt~~
-- First posts
+- ~~First posts~~
 - Link to [status page](https://status.andreasvirkus.me)
 - ~~Make dashboard's timeframe dynamic~~
 
