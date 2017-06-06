@@ -9,7 +9,6 @@ menu-order: 1
 
 **Disclaimer** This site is still in early stages of getting set up. Forgive
 any typos and stupid humour you might find (one of those might improve over time).
-Also pardon the (temporary) filler context–I don't have a whole lot of ideas of my own... 😐
 
 _Ahem_. I see you've managed to find my secret lair... _I bet the impeccable SEO helped_.
 
