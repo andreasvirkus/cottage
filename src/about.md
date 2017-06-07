@@ -10,6 +10,8 @@ menu-order: 2
 I'm not much of a talker, but let me rant about myself for a bit. You can skip ahead to:
 my [passions](#superpowers-), overview about my [education](#education) or my [work](#labor).
 
+My full curriculum vitae can be viewed [here](/cv) and downloaded through the link: [Download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf).
+
 ## superpowers ⚡
 
 I'm an aspiring <span class="text__line-through">full-stack</span> front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I love (and preach) all things Node.js, semantic HTML, the power of CSS & progressive enhancement. Lately I've really enjoyed tinkering with:
@@ -33,8 +35,6 @@ I've also dabbled in other fields (and hope to perfect them in the future), like
 - UX & user flow
 - interaction design
 - Googling for solutions (near master level 💯)
-
-My full curriculum vitae is downloadable through the link: [Download CV.pdf](/assets/cv/CV-Andreas-johan-virkus.pdf).
 
 ## education
 

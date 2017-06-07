@@ -59,14 +59,11 @@ footer p a:hover {
 }
 
 main ul {
-    padding-left: 0.5em;
+    padding-left: 1em;
 }
 li {
     margin-right: 1em;
     list-style: none;
-}
-main li::before {
-    content: '∘ ';
 }
 
 /* Typography */
@@ -89,23 +86,44 @@ h1, h2, h3, h4 {
     letter-spacing: -0.05555556em;
     color: var(--heading-color);
 }
+main p {
+    font-size: 1.4em
+}
+main li {
+    position: relative;
+    font-size: 1.2rem;
+}
+    main li::before {
+        content: '∘ ';
+        display: inline-block;
+        position: absolute;
+        transform: translateX(-13px);
+    }
+
 p, ul, hr, form, h1, h2 {
     margin-bottom: 1.5rem;
 }
+main li ul {
+    margin-bottom: 0;
+}
+    main li li::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        top: 11px;
+        height: 6px;
+        width: 6px;
+        background-color: var(--content-color);
+        border-radius: 50%;
+    }
 img {
     height:auto;
-}
-main p {
-    font-size: 1.4em;
-}
-
-main li ul {
-    margin-bottom: 0.5rem;
 }
 
 hr {
     height: 3px;
     border: none;
+    background-color: var(--default-divider);
     background-image: var(--default-divider);
 }
 

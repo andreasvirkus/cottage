@@ -12,9 +12,15 @@ const moment = require('moment');
 Handlebars.registerHelper('is', function (value, test, options) {
     if (value === test) {
         return options.fn(this);
-    } else {
-        return options.inverse(this);
     }
+    return options.inverse(this);
+});
+
+Handlebars.registerHelper('isnot', function (value, test, options) {
+    if (value !== test) {
+        return options.fn(this);
+    }
+    return options.inverse(this);
 });
 
 Handlebars.registerHelper('date', function (date) {

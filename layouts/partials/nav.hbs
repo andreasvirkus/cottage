@@ -3,6 +3,7 @@
     <div class="menu__inner">
         <ul class="menu__list">
             {{#each collections.pages}}
+            {{#isnot this.path 'cv' }}
             <li class="menu__item" {{#is this.path @root.path }}aria-current="page"{{/is}}>
                 {{#if this.path }}
                 <a href="/{{ this.path }}/" class="menu__link">{{ this.title }}</a>
@@ -10,6 +11,7 @@
                 <a href="/" class="menu__link">{{ this.title }}</a>
                 {{/if}}
             </li>
+            {{/isnot}}
             {{/each}}
         </ul>
     </div>

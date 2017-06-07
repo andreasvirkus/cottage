@@ -3,6 +3,7 @@
 }
 
 .blog__title-divider {
+    background-color: var(--blog-post-divider);
     background-image: var(--blog-post-divider);
 }
 
