@@ -1,8 +1,8 @@
-window.renderCharts = function(client, timeframe) {
+window.renderVisitorData = function(client, timeframe) {
   var pageviewsInterval = new Dataviz()
     .height(300)
     .el('.pageviews-interval')
-    .title('Pageviews by day')
+    .title('Pageviews by daytime')
     .type('area')
     .render();
 
@@ -234,17 +234,57 @@ window.renderCharts = function(client, timeframe) {
       pageviewsByCity
         .message(err.message);
     });
+};
 
-  function rand(a, b){
-    return Math.floor((Math.random() * b) + a);
-  }
+window.renderPerformanceData = function(client, timeframe) {
+  var responseTime = new Dataviz()
+    .height(300)
+    .el('.response-time')
+    .title('Response time')
+    .type('area')
+    .render();
 
-  function gen(n){
-    var arr = [ faker.internet.exampleEmail() ];
-    for (var i = 0; i < n; i++) {
-      arr.push(rand(0, 1000));
-    }
-    return arr;
-  }
+  client
+    .query('count', {
+      event_collection: 'checks',
+      timeframe: timeframe,
+      interval: 'hourly',
+      timezone: 'UTC'
+    })
+    .then(function(res){
+      // Handle the result
+      responseTime
+        .data(res)
+        .render();
+    })
+    .catch(function(err){
+      // Handle the error
+      responseTime
+        .message(err.message);
+    });
 
+  var avgResponse = new Dataviz()
+    .height(300)
+    .el('.avg-response')
+    .type('metric')
+    .title('Pageviews')
+    .prepare();
+
+  client
+    .query('count', {
+      event_collection: 'checks',
+      timeframe: timeframe,
+      timezone: 'UTC'
+    })
+    .then(function(res){
+      // Handle the result
+      avgResponse
+        .data(res)
+        .render();
+    })
+    .catch(function(err){
+      // Handle the error
+      avgResponse
+        .message(err.message);
+    });
 }

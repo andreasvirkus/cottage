@@ -10,8 +10,7 @@
     <main>
         {{{ contents }}}
 
-        <div class="dashboard-container">
-            <style>
+        <style>
             div[class^="col-"] {
                 padding: 10px;
             }
@@ -36,7 +35,9 @@
                 text-align: center;
                 box-sizing: border-box;
             }
-            </style>
+        </style>
+
+        <div class="dashboard-container">
             <h3>General visitor data</h3>
 
             <div class="row">
@@ -45,6 +46,46 @@
                 </div>
                 <div class="col-md-4 col-xs-12">
                   <div class="total-pageviews"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="pageviews-by-day"></div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="popular-pages-visited"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="pageviews-by-browser"></div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                  <div class="pageviews-by-device"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="pageviews-by-country"></div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="pageviews-by-city"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <h3>General visitor data</h3>
+
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                  <div class="response-time"></div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                  <div class="avg-response"></div>
                 </div>
             </div>
 
@@ -91,9 +132,14 @@
                 end: new Date().toISOString()
             };
 
-            window.renderCharts(new Keen({
+            window.renderVisitorData(new Keen({
                 projectId: '5932a7c595cfc907a1f80c67',
                 readKey: '03384FBE774B660D6C84C358DE6B68C0073053180D104FC19752DA666AB92D44032A5F8AE8F7AAE4E93DAAC8303A3C8FB4AEAD402FEC9B639164BC23953BEEC1D3893A48EB449673E429E5593BD22B0ABDA2A407360CF0EF1C7173E41CD03C1F'
+            }), timeframe);
+
+            window.renderPerformanceData(new Keen({
+                projectId: '593d876495cfc907a1f8125c',
+                readKey: 'B72287E07C5BBE0F25ADB1C392E3FD7B44C7C6A8397BCEA4401EEB343EEEE7C88DD5E7513387AE094E944652A2387C2DFA3CC930BD8256DB608A2B05A81EA1437A2AF6CB3D9B93B11CBECBD2199644A9CFFE493E2D4BBFA73541AF6EEAC813AB'
             }), timeframe);
         }
     </script>

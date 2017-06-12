@@ -11,5 +11,3 @@ present user statistics (no. of visits, devices used, duration of session) and p
 
 Might one day feature Metalsmith-related statistics like average
 build times for this site and so on.
-
-Needless to say, these are in the rough stages and I'll filter out the `null` data soon.
