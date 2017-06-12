@@ -240,25 +240,32 @@ window.renderPerformanceData = function(client, timeframe) {
   var responseTime = new Dataviz()
     .height(300)
     .el('.response-time')
-    .title('Response time')
+    .title('Response time (s)')
     .type('area')
     .render();
 
   client
-    .query('count', {
+    .query('average', {
       event_collection: 'checks',
-      timeframe: timeframe,
-      interval: 'hourly',
-      timezone: 'UTC'
+      timeframe:  'this_7_days',
+      interval: 'daily',
+      timezone: 'UTC',
+      target_property: 'request.duration'
     })
-    .then(function(res){
-      // Handle the result
-      responseTime
-        .data(res)
-        .render();
+    .then(function(res) {
+        // TODO: Loop res.result and convert time to ms
+        for (var i = 0; i < res.result.length; i++) {
+            if (!res.result[i].value) continue;
+            res.result[i].value = parseFloat(res.result[i].value.toFixed(2));
+        }
+
+        console.log('res.result', res.result);
+
+        responseTime
+            .data(res)
+            .render();
     })
-    .catch(function(err){
-      // Handle the error
+    .catch(function(err) {
       responseTime
         .message(err.message);
     });
@@ -267,23 +274,25 @@ window.renderPerformanceData = function(client, timeframe) {
     .height(300)
     .el('.avg-response')
     .type('metric')
-    .title('Pageviews')
+    .title('avg response (ms)')
     .prepare();
 
   client
-    .query('count', {
+    .query('median', {
       event_collection: 'checks',
-      timeframe: timeframe,
-      timezone: 'UTC'
+      timeframe: 'this_7_days',
+      timezone: 'UTC',
+      target_property: 'request.duration'
     })
-    .then(function(res){
-      // Handle the result
-      avgResponse
-        .data(res)
-        .render();
+    .then(function(res) {
+        var responseInMs = (res.result * 1000).toFixed();
+        res.result = parseFloat(responseInMs);
+
+        avgResponse
+            .data(res)
+            .render();
     })
-    .catch(function(err){
-      // Handle the error
+    .catch(function(err) {
       avgResponse
         .message(err.message);
     });
