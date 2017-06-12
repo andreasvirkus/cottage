@@ -259,8 +259,6 @@ window.renderPerformanceData = function(client, timeframe) {
             res.result[i].value = parseFloat(res.result[i].value.toFixed(2));
         }
 
-        console.log('res.result', res.result);
-
         responseTime
             .data(res)
             .render();
