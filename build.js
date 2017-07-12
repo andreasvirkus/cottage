@@ -8,6 +8,8 @@ const autoprefixer = require('metalsmith-autoprefixer');
 const sitemap = require('metalsmith-sitemap');
 const Handlebars = require('handlebars');
 const moment = require('moment');
+const date = require('metalsmith-build-date');
+const fs = require('fs');
 
 Handlebars.registerHelper('is', function (value, test, options) {
     if (value === test) {
@@ -15,16 +17,17 @@ Handlebars.registerHelper('is', function (value, test, options) {
     }
     return options.inverse(this);
 });
-
 Handlebars.registerHelper('isnot', function (value, test, options) {
     if (value !== test) {
         return options.fn(this);
     }
     return options.inverse(this);
 });
-
 Handlebars.registerHelper('date', function (date) {
     return moment(date, "MM-DD-YYYY").format('Do MMM \'YY');
+});
+Handlebars.registerHelper('buildNumber', function () {
+    return fs.readFileSync('build-number.txt');
 });
 
 metalsmith(__dirname)
@@ -43,6 +46,8 @@ metalsmith(__dirname)
     .source('./src')
     .destination('./dist')
     .clean(true)
+    .use(date({ key: 'dateBuilt' }))
+    // TODO: Create plugin for incrementing build number, add to metadata
     .use(drafts())
     .use(collections({
         posts: {

@@ -11,3 +11,5 @@ present user statistics (no. of visits, devices used, duration of session) and p
 
 Might one day feature Metalsmith-related statistics like average
 build times for this site and so on.
+
+### Any type of ad-block should be disabled for this page to render the graphs below:

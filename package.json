@@ -34,6 +34,7 @@
     "handlebars": "^4.0.8",
     "metalsmith": "^2.3.0",
     "metalsmith-autoprefixer": "^1.1.1",
+    "metalsmith-build-date": "^0.2.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-layouts": "^1.8.1",

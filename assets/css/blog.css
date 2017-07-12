@@ -24,6 +24,8 @@ pre code {
     padding: 0.5em;
     color: #333;
     background: #fff;
+    font-size: .8rem;
+    user-select: all;
 }
 
 @media screen and (min-width: 35em) {

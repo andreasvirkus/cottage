@@ -35,6 +35,13 @@
                "Open Sans",
                "Helvetica Neue",
                sans-serif;
+   --font-secondary: "Apple Garamond",
+                "Baskerville",
+                "Times New Roman",
+                "Droid Serif",
+                "Times",
+                "Source Serif Pro",
+                serif;
    --font-mono: "SFMono-Regular",
                 Menlo,
                 Consolas,

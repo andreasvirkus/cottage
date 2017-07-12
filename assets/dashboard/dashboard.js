@@ -254,10 +254,10 @@ window.renderPerformanceData = function(client, timeframe) {
     })
     .then(function(res) {
         // TODO: Loop res.result and convert time to ms
-        for (var i = 0; i < res.result.length; i++) {
-            if (!res.result[i].value) continue;
-            res.result[i].value = parseFloat(res.result[i].value.toFixed(2));
-        }
+        // for (var i = 0; i < res.result.length; i++) {
+        //     if (!res.result[i].value) continue;
+        //     res.result[i].value = parseFloat(res.result[i].value.toFixed(2));
+        // }
 
         responseTime
             .data(res)
@@ -294,4 +294,39 @@ window.renderPerformanceData = function(client, timeframe) {
       avgResponse
         .message(err.message);
     });
+
+    // var siteWeight = new Dataviz()
+    //   .height(300)
+    //   .el('.site-weight')
+    //   .title('Site weight (kB)')
+    //   .type('metric')
+    //   .render();
+
+    // client
+    //   .query('average', {
+    //     event_collection: 'checks',
+    //     timeframe:  'this_7_days',
+    //     interval: 'daily',
+    //     timezone: 'UTC',
+    //     target_property: 'response.content_length'
+    //   })
+    //   .then(function(res) {
+    //       for (var i = 0; i < res.result.length; i++) {
+    //           if (!res.result[i].value) continue;
+    //           res.result[i].value = parseFloat((res.result[i].value / 1024).toFixed(1));
+    //       }
+    //
+    //       siteWeight
+    //           .data(res)
+    //           .render();
+    //   })
+    //   .catch(function(err) {
+    //     responseTime
+    //       .message(err.message);
+    //   });
+
+    var now = new Date().getTime();
+    var loadTime = now - performance.timing.navigationStart;
+    console.log("User-perceived page loading time: " + loadTime);
+    document.getElementById('full-load-time').innerHTML = (loadTime / 1000).toFixed(2)
 }

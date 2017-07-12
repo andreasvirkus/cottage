@@ -35,6 +35,9 @@
                 text-align: center;
                 box-sizing: border-box;
             }
+            .keen-dataviz .keen-dataviz-table {
+                overflow-x: auto;
+            }
         </style>
 
         <div class="dashboard-container">
@@ -91,7 +94,14 @@
 
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <div class="full-load-time"></div>
+                    <div class="full-load-time">
+                        <div class="keen-dataviz">
+                            <div class="keen-dataviz-metric" style="background-color: rgb(0, 187, 222); width: auto; height: 300px;" title="52">
+                                <span class="keen-dataviz-metric-value" style="padding-top: 97px;" id="full-load-time"></span>
+                                <span class="keen-dataviz-metric-title">full load time (s)</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="site-weight"></div>
@@ -100,19 +110,24 @@
 
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <div class="pageviews-by-browser"></div>
+                    <div class="build-number">
+                        <div class="keen-dataviz">
+                            <div class="keen-dataviz-metric" style="background-color: rgb(0, 187, 222); width: auto; height: 300px;" title="52">
+                                <span class="keen-dataviz-metric-value" style="padding-top: 97px;">{{{buildNumber}}}</span>
+                                <span class="keen-dataviz-metric-title">times built</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
-                  <div class="pageviews-by-device"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 col-xs-12">
-                    <div class="pageviews-by-country"></div>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <div class="pageviews-by-city"></div>
+                    <div class="latest-build">
+                        <div class="keen-dataviz">
+                            <div class="keen-dataviz-metric" style="background-color: rgb(0, 187, 222); width: auto; height: 300px;" title="52">
+                                <span class="keen-dataviz-metric-value" style="padding-top: 97px;">{{date dateBuilt}}</span>
+                                <span class="keen-dataviz-metric-title">latest build</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

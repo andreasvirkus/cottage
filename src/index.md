@@ -8,11 +8,11 @@ menu-order: 1
 
 
 **Disclaimer** This site is still in early stages of getting set up. Forgive
-any typos and stupid humour you might find (one of those might improve over time).
+any typos, lacking content and stupid humour you might find (one of those might improve over time).
 
 _Ahem_. I see you've managed to find my secret lair... _I bet the impeccable SEO helped_.
 
-It's alright to have a look around, but don't touch anything!<br>
+It's alright to have a look around, but don't touch anything!  
 I kid, I kid... I've set up a [_blogish_](/thoughts) thing so you wouldn't get bored
 and some [geeky stats](/dashboard) about the site's visitors and performance metrics.
 

@@ -1,0 +1,81 @@
+main ul {
+    padding-left: 1em;
+}
+li {
+    margin-right: 1em;
+    list-style: none;
+}
+
+/* Typography */
+h1 {
+    font-weight: 700;
+    line-height: 1.0;
+    font-size: 3.4em;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+h1, h2, h3, h4 {
+    letter-spacing: -0.05555556em;
+    color: var(--heading-color);
+}
+main p {
+    font-size: 1.4em
+}
+main li {
+    position: relative;
+    font-size: 1.2rem;
+}
+    main li::before {
+        content: '∘ ';
+        display: inline-block;
+        position: absolute;
+        transform: translateX(-13px);
+    }
+
+p, ul, hr, form, h1, h2 {
+    margin-bottom: 1.5rem;
+}
+main li ul {
+    margin-bottom: 0;
+}
+    main li li::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        top: 11px;
+        height: 6px;
+        width: 6px;
+        background-color: var(--content-color);
+        border-radius: 50%;
+    }
+
+blockquote {
+    position: relative;
+    padding-top: 3rem;
+    font-style: italic;
+    color: #555;
+}
+    blockquote::before {
+        content: "“";
+        position: absolute;
+        display: block;
+        top: -1rem;
+        width: 100%;
+        padding-top: 1rem;
+        text-align: center;
+        font-family: var(--font-secondary);
+        font-size: 6em;
+        /*color: #3999d0; // Light blue*/
+        color: var(--highlight-color);
+    }
+    blockquote p:last-child {
+        font-size: 1em;
+    }
