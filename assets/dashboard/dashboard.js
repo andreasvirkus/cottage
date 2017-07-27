@@ -240,7 +240,7 @@ window.renderPerformanceData = function(client, timeframe) {
   var responseTime = new Dataviz()
     .height(300)
     .el('.response-time')
-    .title('Response time (s)')
+    .title('Avg response time (s)')
     .type('area')
     .render();
 
@@ -272,7 +272,7 @@ window.renderPerformanceData = function(client, timeframe) {
     .height(300)
     .el('.avg-response')
     .type('metric')
-    .title('avg response (ms)')
+    .title('TTFB (ms)')
     .prepare();
 
   client
@@ -283,12 +283,12 @@ window.renderPerformanceData = function(client, timeframe) {
       target_property: 'request.duration'
     })
     .then(function(res) {
-        var responseInMs = (res.result * 1000).toFixed();
-        res.result = parseFloat(responseInMs);
+      var responseInMs = (res.result * 1000).toFixed();
+      res.result = parseFloat(responseInMs);
 
-        avgResponse
-            .data(res)
-            .render();
+      avgResponse
+        .data(res)
+        .render();
     })
     .catch(function(err) {
       avgResponse
@@ -327,6 +327,6 @@ window.renderPerformanceData = function(client, timeframe) {
 
     var now = new Date().getTime();
     var loadTime = now - performance.timing.navigationStart;
-    console.log("User-perceived page loading time: " + loadTime);
+    console.log('User-perceived page loading time', loadTime, '(ms)');
     document.getElementById('full-load-time').innerHTML = (loadTime / 1000).toFixed(2)
 }

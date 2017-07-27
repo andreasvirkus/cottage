@@ -1,0 +1,14 @@
+.blog__menu-list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.blog__menu-item {
+    flex-basis: 50%;
+    margin: 0;
+    padding: 1em;
+}
+    .blog__menu-item::before {
+        content: none;
+    }
