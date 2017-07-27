@@ -6,10 +6,13 @@ const permalinks = require('metalsmith-permalinks');
 const layouts = require('metalsmith-layouts');
 const autoprefixer = require('metalsmith-autoprefixer');
 const sitemap = require('metalsmith-sitemap');
+const date = require('metalsmith-build-date');
+const rss = require('metalsmith-rss');
 const Handlebars = require('handlebars');
 const moment = require('moment');
-const date = require('metalsmith-build-date');
 const fs = require('fs');
+
+let buildNumber = 0;
 
 Handlebars.registerHelper('is', function (value, test, options) {
     if (value === test) {
@@ -47,7 +50,17 @@ metalsmith(__dirname)
     .destination('./dist')
     .clean(true)
     .use(date({ key: 'dateBuilt' }))
-    // TODO: Create plugin for incrementing build number, add to metadata
+    // Increment build number, add to metadata
+    .use(function(files, metalsmith, done) {
+        buildNumber = parseInt(fs.readFileSync('./build-number.txt'), 10);
+        buildNumber++;
+        // metalsmith.metadata.buildNumber = buildNumber;
+
+        fs.writeFile('./build-number.txt', buildNumber, function(err) {
+            if (err) throw err;
+            done();
+        });
+    })
     .use(drafts())
     .use(collections({
         posts: {
@@ -72,8 +85,16 @@ metalsmith(__dirname)
         partials: 'layouts/partials'
     }))
     .use(autoprefixer())
+    .use(rss({
+        feedOptions: {
+            title: 'ajv blog',
+            description: 'Blog about nifty development tricks & snippets.',
+            site_url: 'https://andreasvirkus.me'
+        }
+    }))
     .use(sitemap({
-        hostname: "https://andreasvirkus.me"
+        hostname: "https://andreasvirkus.me",
+        omitIndex: true
     }))
     .build(function (err) {
         if (err) throw err;

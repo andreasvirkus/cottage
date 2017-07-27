@@ -5,9 +5,9 @@ layout: contact.hbs
 menu-order: 5
 ---
 
-### So you want to get in touch? Tough luck, 'cause I'm always...
+### So you want to get in touch? Tough luck, 'cause...
 
-looking for interesting small(ish?) projects to tinker on, so let me
+ I'm always looking for interesting small(ish?) projects to tinker on, so let me
 know if you'd like to collab!
 
 Unless I've managed to put a contact form here (nope!), just use the social links below!
