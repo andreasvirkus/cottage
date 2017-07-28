@@ -81,7 +81,7 @@ Favourite learning resources:
     - [Code Kraft](https://abdulapopoola.com/)
     - [A List Apart](https://alistapart.com/)
     - [Jag Talon](https://www.jagtalon.com/)
-    - Various Smashing Magazine and Medium articles
+    - Too many Smashing Magazine and Medium articles
 
 ## labor
 
@@ -108,4 +108,4 @@ I started out creating websites for neighbours and small companies, which really
     for the artsy side in me—front-end development seemed like an excellent
     field to start gaining some experience.
 
-In my free time I enjoy working on my motorcycle, disc golfing, practising muay thai & BJJ... and starring Github repos ⭐.
+In my free time I enjoy working on my motorcycle, disc golfing, practising muay thai & BJJ... and starring GitHub repos ⭐.

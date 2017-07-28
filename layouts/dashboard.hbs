@@ -38,6 +38,12 @@
             .keen-dataviz .keen-dataviz-table {
                 overflow-x: auto;
             }
+
+            .metric-block {
+                background-color: rgb(0, 187, 222);
+                width: auto;
+                height: 300px;
+            }
         </style>
 
         <div class="dashboard-container" id="visitor-data">
@@ -96,7 +102,7 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="full-load-time">
                         <div class="keen-dataviz">
-                            <div class="keen-dataviz-metric" style="background-color: rgb(0, 187, 222); width: auto; height: 300px;" title="52">
+                            <div class="keen-dataviz-metric metric-block" title="Site's load time in seconds">
                                 <span class="keen-dataviz-metric-value" style="padding-top: 97px;" id="full-load-time"></span>
                                 <span class="keen-dataviz-metric-title">full load time (s)</span>
                             </div>
@@ -106,7 +112,7 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="site-weight">
                         <div class="keen-dataviz">
-                            <div class="keen-dataviz-metric" style="background-color: rgb(0, 187, 222); width: auto; height: 300px;" title="52">
+                            <div class="keen-dataviz-metric metric-block" title="Site weight in kB">
                                 <span class="keen-dataviz-metric-value" style="padding-top: 97px;" id="js-site-weight">WIP</span>
                                 <span class="keen-dataviz-metric-title">site weight (kB)</span>
                             </div>
@@ -119,8 +125,8 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="build-number">
                         <div class="keen-dataviz">
-                            <div class="keen-dataviz-metric" style="background-color: rgb(0, 187, 222); width: auto; height: 300px;" title="52">
-                                <span class="keen-dataviz-metric-value" style="padding-top: 97px;">{{{buildNumber}}}</span>
+                            <div class="keen-dataviz-metric metric-block" title="Number of times Metalsmith build has been run">
+                                <span class="keen-dataviz-metric-value" style="padding-top: 97px;">{{ buildNumber }}</span>
                                 <span class="keen-dataviz-metric-title">times built</span>
                             </div>
                         </div>
@@ -129,9 +135,31 @@
                 <div class="col-md-6 col-xs-12">
                     <div class="latest-build">
                         <div class="keen-dataviz">
-                            <div class="keen-dataviz-metric" style="background-color: rgb(0, 187, 222); width: auto; height: 300px;" title="52">
-                                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;">{{date dateBuilt}}</span>
+                            <div class="keen-dataviz-metric metric-block" title="When the latest build took place">
+                                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;">{{ date dateBuilt }}</span>
                                 <span class="keen-dataviz-metric-title">latest build</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="latest-build">
+                        <div class="keen-dataviz">
+                            <div class="keen-dataviz-metric metric-block" title="How long the latest build took">
+                                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;">{{ buildTime }}</span>
+                                <span class="keen-dataviz-metric-title">build duration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="latest-build">
+                        <div class="keen-dataviz">
+                            <div class="keen-dataviz-metric metric-block" title="Something special">
+                                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;">WIP</span>
+                                <span class="keen-dataviz-metric-title">Stay tuned</span>
                             </div>
                         </div>
                     </div>

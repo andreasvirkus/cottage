@@ -14,24 +14,30 @@ const fs = require('fs');
 
 let buildNumber = 0;
 
-Handlebars.registerHelper('is', function (value, test, options) {
+Handlebars.registerHelper('is', (value, test, options) => {
     if (value === test) {
         return options.fn(this);
     }
     return options.inverse(this);
 });
-Handlebars.registerHelper('isnot', function (value, test, options) {
+Handlebars.registerHelper('isnot', (value, test, options) => {
     if (value !== test) {
         return options.fn(this);
     }
     return options.inverse(this);
 });
-Handlebars.registerHelper('date', function (date) {
+Handlebars.registerHelper('date', date => {
     return moment(date, "MM-DD-YYYY").format('Do MMM \'YY');
 });
-Handlebars.registerHelper('buildNumber', function () {
+Handlebars.registerHelper('buildNumber', () => {
     return fs.readFileSync('build-number.txt');
 });
+Handlebars.registerHelper('buildTime', () => {
+    return fs.readFileSync('build-time.txt');
+});
+
+// Start build timer
+let start = process.hrtime();
 
 metalsmith(__dirname)
     .metadata({
@@ -51,12 +57,12 @@ metalsmith(__dirname)
     .clean(true)
     .use(date({ key: 'dateBuilt' }))
     // Increment build number, add to metadata
-    .use(function(files, metalsmith, done) {
+    .use((files, metalsmith, done) => {
         buildNumber = parseInt(fs.readFileSync('./build-number.txt'), 10);
         buildNumber++;
         // metalsmith.metadata.buildNumber = buildNumber;
 
-        fs.writeFile('./build-number.txt', buildNumber, function(err) {
+        fs.writeFile('./build-number.txt', buildNumber, err => {
             if (err) throw err;
             done();
         });
@@ -99,3 +105,11 @@ metalsmith(__dirname)
     .build(function (err) {
         if (err) throw err;
     });
+
+// Measure time
+var elapsed = process.hrtime(start)[1] / 1000000;
+
+// Save result
+fs.writeFile('./build-time.txt', elapsed, err => {
+    if (err) throw err;
+});
