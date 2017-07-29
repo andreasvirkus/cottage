@@ -14,13 +14,14 @@ const fs = require('fs');
 
 let buildNumber = 0;
 
-Handlebars.registerHelper('is', (value, test, options) => {
+// Keep 'is' and 'isnot' helpers with ES5 functions since we need 'this' scope
+Handlebars.registerHelper('is', function(value, test, options) {
     if (value === test) {
         return options.fn(this);
     }
     return options.inverse(this);
 });
-Handlebars.registerHelper('isnot', (value, test, options) => {
+Handlebars.registerHelper('isnot', function(value, test, options) {
     if (value !== test) {
         return options.fn(this);
     }
