@@ -110,13 +110,13 @@
 	stroke-width: 5px;
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 67em) {
 	.morph-shape {
 		pointer-events: none;
 	}
 }
 
-@media screen and (max-width: 45em) {
+@media screen and (max-width: 67em) {
 	.menu.menu--anim li {
 		transform: translateX(0);
 	}
