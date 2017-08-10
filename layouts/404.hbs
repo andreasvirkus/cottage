@@ -7,10 +7,6 @@
 
     <style>
         .code-area {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             font-family: monospace;
             font-size: 2em;
         }
@@ -18,48 +14,19 @@
             display: block;
         }
 
-        main {
-            padding-top: 8em;
-        }
-
         @media screen and (max-width: 45em) {
             .code-area {
-            font-size: 5vw;
-            min-width: auto;
-            width: 95%;
-            margin: auto;
-            padding: 5px;
-            padding-left: 10px;
-            line-height: 6.5vw;
+                font-size: 5vw;
+                min-width: auto;
+                width: 95%;
+                margin: auto;
+                padding: 5px;
+                padding-left: 10px;
+                line-height: 6.5vw;
             }
         }
     </style>
     <main>
-
-        <!-- 404 credits go to Constantine Apostolou
-            https://codepen.io/conmarap/pen/mVMvVv -->
-        <div class="code-area">
-            <span style="color: #777;font-style:italic;">
-                // 404 page not found.
-            </span>
-            <span>
-                <span style="color:#d65562;">
-                if
-                </span>
-                (<span style="color:#4ca8ef;">!</span><span style="font-style: italic;color:#1abc9c;">found</span>)
-                {
-            </span>
-            <span>
-                <span style="padding-left: 15px;color:#2796ec">
-                <i style="width: 10px;display:inline-block"></i>throw
-                </span>
-                <span>
-                (<span style="color: #a6a61f">"(╯°□°)╯︵ ┻━┻"</span>);
-                </span>
-                <span style="display:block">}</span>
-            </span>
-        </div>
-
         {{{ contents }}}
 
         <a href="javascript:history.back()">Navigate back</a> or hop to the <a href="/">homepage</a>.

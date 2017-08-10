@@ -14,7 +14,7 @@ I kid, I kid... I've set up a [_blogish_](/thoughts) thing so you wouldn't get b
 and some [geeky stats](/dashboard) about the site's visitors and performance metrics.
 
 This site's main purpose is to act as my personal playground for different web
-technologies.
+technologies, but also to provide a bit of insight about [me](/about).
 
 ### Future plans
 
