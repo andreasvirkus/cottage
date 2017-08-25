@@ -36,6 +36,9 @@ Handlebars.registerHelper('buildNumber', () => {
 Handlebars.registerHelper('buildTime', () => {
     return fs.readFileSync('build-time.txt');
 });
+Handlebars.registerHelper('format', time => {
+    return Math.floor(parseFloat(time) / 100).toFixed(1);
+});
 
 // Start build timer
 let start = process.hrtime();
