@@ -2,13 +2,24 @@
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    padding-left: 0;
 }
 
 .blog__menu-item {
-    flex-basis: 50%;
-    margin: 0;
+    flex-basis: 48%;
+    margin: 6px;
+    border: 1px dashed;
+}
+
+.blog__menu-item:hover {
+    border-style: solid;
+}
+
+.blog__menu-item::before {
+    content: none;
+}
+
+.blog__menu-item a {
+    display: block;
     padding: 1em;
 }
-    .blog__menu-item::before {
-        content: none;
-    }
