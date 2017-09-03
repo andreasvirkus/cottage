@@ -2,8 +2,12 @@
 title: Appending lines to XML
 layout: post.hbs
 description: Showing how to easily append lines at the end of an XML file.
-date: 07-27-2017
+postDate: 07-27-2017
 ---
+
+**WIP**: This is currently a public draft of sorts, making me embarassed
+about its existance and hopefully urging me to finish it quicker that way.
+Check back soon!
 
 PDFs should be in your sitemap, etc.
 Explain this snippet:

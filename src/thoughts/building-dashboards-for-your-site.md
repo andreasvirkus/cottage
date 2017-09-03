@@ -2,8 +2,16 @@
 title: Building dashboards for your site
 layout: post.hbs
 description: I'll go through setting up these dashboards that I don't have yet.
-date: 05-20-2017
+postDate: 05-20-2017
 ---
+
+
+**WIP**: This is currently a public draft of sorts, making me embarassed
+about its existance and hopefully urging me to finish it quicker that way.
+Check back soon!
+
+In this post, I'll go through the approaches that I explored in order to set up my
+user and performance statistics site: [stats](/dashboard).
 
 Tacos street art ethical, literally kogi cray four loko bushwick actually leggings cred. Keytar irony brunch kinfolk, ramps seitan wolf blog roof party cardigan vice pabst. Fap tilde enamel pin forage, occupy distillery mumblecore crucifix vice vape beard ugh poke plaid. Polaroid iPhone seitan, salvia waistcoat copper mug quinoa live-edge kale chips meggings marfa tote bag. Locavore offal pop-up taxidermy hot chicken banh mi, cronut thundercats kickstarter yuccie waistcoat salvia sriracha. Lumbersexual master cleanse chambray cornhole PBR&B brunch. Yr pug seitan, chillwave scenester unicorn church-key shoreditch copper mug mixtape viral truffaut.
 

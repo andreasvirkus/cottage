@@ -5,6 +5,7 @@ const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
 const layouts = require('metalsmith-layouts');
 const autoprefixer = require('metalsmith-autoprefixer');
+const wordcount = require('metalsmith-word-count');
 const sitemap = require('metalsmith-sitemap');
 const date = require('metalsmith-build-date');
 const rss = require('metalsmith-rss');
@@ -93,6 +94,13 @@ metalsmith(__dirname)
         directory: 'layouts',
         default: 'default.hbs',
         partials: 'layouts/partials'
+    }))
+    .use(wordcount({
+        metaKeyCount: "wordCount",
+        metaKeyReadingTime: "readingTime",
+        speed: 300,
+        seconds: false,
+        raw: false
     }))
     .use(autoprefixer())
     .use(rss({

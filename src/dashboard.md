@@ -15,4 +15,4 @@ Sections:
 - [visitor data](#visitor-data)
 - [performance data](#performance-data) (WIP)
 
-### Any type of ad-block should be disabled for this page to render the graphs below:
+### PS! Any type of ad-block should be disabled for this page to render the graphs below:

@@ -2,8 +2,12 @@
 title: Testing typography styles
 layout: post.hbs
 description: Styling code and quote blocks and other various typography bits.
-date: 06-24-2017
+postDate: 06-24-2017
 ---
+
+**WIP**: This is currently a public draft of sorts, making me embarassed
+about its existance and hopefully urging me to finish it quicker that way.
+Check back soon!
 
 Every now and then, a blog will come across a need to quote someone or maybe
 display a code snippet or two. Markdown, being the solid fella that it is,
@@ -12,7 +16,8 @@ that semantic meaning over to the end user through visual means.
 
 Since I lack content for the blog at this day and age, I thought, instead of
 creating a temporary filler site, styling the elements, and then deleting it,
-I'd leave the elements and their evolution of styles here for future reference.
+I'd leave the elements and their evolution of styles here for future reference
+in the form of a blog post.
 
 I'm big on using HTML elements as semantically as possible (or at least I think
 I am).
