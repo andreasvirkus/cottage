@@ -1,13 +1,9 @@
 ---
 title: Testing typography styles
-layout: post.hbs
+layout: post-wip.hbs
 description: Styling code and quote blocks and other various typography bits.
 postDate: 06-24-2017
 ---
-
-**WIP**: This is currently a public draft of sorts, making me embarassed
-about its existance and hopefully urging me to finish it quicker that way.
-Check back soon!
 
 Every now and then, a blog will come across a need to quote someone or maybe
 display a code snippet or two. Markdown, being the solid fella that it is,

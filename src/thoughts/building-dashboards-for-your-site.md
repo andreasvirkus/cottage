@@ -1,14 +1,9 @@
 ---
 title: Building dashboards for your site
-layout: post.hbs
+layout: post-wip.hbs
 description: I'll go through setting up these dashboards that I don't have yet.
 postDate: 05-20-2017
 ---
-
-
-**WIP**: This is currently a public draft of sorts, making me embarassed
-about its existance and hopefully urging me to finish it quicker that way.
-Check back soon!
 
 In this post, I'll go through the approaches that I explored in order to set up my
 user and performance statistics site: [stats](/dashboard).

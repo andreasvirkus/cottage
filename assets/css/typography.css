@@ -10,7 +10,9 @@ li {
 h1 {
     font-weight: 700;
     line-height: 1.0;
-    font-size: 3.4em;
+    font-size: 4em;
+    font-family: var(--font-secondary);
+    margin: 0;
 }
 h2 {
     font-size: 2rem;
@@ -26,6 +28,9 @@ h1, h2, h3, h4 {
     letter-spacing: -0.05555556em;
     color: var(--heading-color);
 }
+h1 + h3 {
+    margin-top: 0.3em;
+}
 main p {
     font-size: 1.4em
 }
@@ -40,7 +45,7 @@ main li {
         transform: translateX(-13px);
     }
 
-p, ul, hr, form, h1, h2 {
+p, ul, hr, form, h2 {
     margin-bottom: 1.5rem;
 }
 main li ul {

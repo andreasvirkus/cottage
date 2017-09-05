@@ -7,12 +7,18 @@
     {{> nav }}
 
     <main>
+        <h1>{{ titleCase title }}</h1>
 
-        <h1>{{ title }}</h1>
+        <div class="blog__post-info">
+            {{#if readingTime}}
+                {{ readingTime }} |
+            {{/if}}
 
-        <div class="post-info">
-            {{ readingTime }}
-            {{ date postDate }}
+            published on the {{ date postDate }}
+
+            {{#if lastUpdated }}
+                and last updated {{ date lastUpdated }}
+            {{/if}}
         </div>
 
         <p>{{ description }}</p>

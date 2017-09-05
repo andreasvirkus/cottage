@@ -1,4 +1,5 @@
 const metalsmith = require('metalsmith');
+const debug = require('metalsmith-debug');
 const drafts = require('metalsmith-drafts');
 const markdown = require('metalsmith-markdown');
 const collections = require('metalsmith-collections');
@@ -29,7 +30,7 @@ Handlebars.registerHelper('isnot', function(value, test, options) {
     return options.inverse(this);
 });
 Handlebars.registerHelper('date', date => {
-    return moment(date, "MM-DD-YYYY").format('Do MMM \'YY');
+    return moment(date, "MM-DD-YYYY").format('Do of MMMM, YYYY');
 });
 Handlebars.registerHelper('buildNumber', () => {
     return fs.readFileSync('build-number.txt');
@@ -39,6 +40,11 @@ Handlebars.registerHelper('buildTime', () => {
 });
 Handlebars.registerHelper('format', time => {
     return Math.floor(parseFloat(time) / 100).toFixed(1);
+});
+Handlebars.registerHelper('titleCase', str => {
+    if (typeof str === 'undefined') return '';
+
+    return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 });
 
 // Start build timer
@@ -96,11 +102,7 @@ metalsmith(__dirname)
         partials: 'layouts/partials'
     }))
     .use(wordcount({
-        metaKeyCount: "wordCount",
-        metaKeyReadingTime: "readingTime",
-        speed: 300,
-        seconds: false,
-        raw: false
+        raw: true
     }))
     .use(autoprefixer())
     .use(rss({
