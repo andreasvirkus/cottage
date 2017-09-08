@@ -95,14 +95,14 @@ metalsmith(__dirname)
     }))
     .use(markdown())
     .use(permalinks())
+    .use(wordcount({
+        raw: true
+    }))
     .use(layouts({
         engine: 'handlebars',
         directory: 'layouts',
         default: 'default.hbs',
         partials: 'layouts/partials'
-    }))
-    .use(wordcount({
-        raw: true
     }))
     .use(autoprefixer())
     .use(rss({
