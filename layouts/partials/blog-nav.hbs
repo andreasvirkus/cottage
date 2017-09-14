@@ -4,7 +4,7 @@
         <li class="blog__menu-item {{#is this.path @root.path }}active{{/is}}">
             <a href="/{{ this.path }}" class="blog__menu-link">
                 <div class="blog__menu-title">{{ this.title }}</div>
-                <div class="blog__menu-date"><em>{{ date this.postDate }} {{ this.postDate }}</em></div>
+                <div class="blog__menu-date"><em>{{ date this.postDate }}</em></div>
             </a>
         </li>
         {{/ each }}

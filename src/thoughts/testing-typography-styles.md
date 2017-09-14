@@ -19,6 +19,9 @@ I'm big on using HTML elements as semantically as possible (or at least I think
 I am).
 
 
+### // TODO: list heading and link styles (and examples)
+
+
 &uarr; Above you can see the post style `<hr>` element.
 
 &darr; Below you can see the default styles of an `<hr>` element.
@@ -37,6 +40,8 @@ Some monospaced sexiness!
 
 const pi = 'I never remembered it :o';
 ```
+
+Also the `<tbd>` element is great for writing inline styles!
 
 Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.
 <!-- TODO: Link to that post in the future -->

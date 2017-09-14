@@ -6,17 +6,15 @@ menu-order: 1
 
 # welcome, welcome.
 
-**Disclaimer** This site is still in early stages of getting set up. Forgive
-any typos, lacking content and stupid humour you might find (one of those might improve over time).
-
-It's alright to have a look around, but don't touch anything!  
-I kid, I kid... I've set up a [_blogish_](/thoughts) thing so you wouldn't get bored
-and some [geeky stats](/dashboard) about the site's visitors and performance metrics.
 
 This site's main purpose is to act as my personal playground for different web
 technologies, but also to provide a bit of insight about [me](/about).
 
-### Future plans
+### Roadmap
+
+I'll soon try and write some posts under the [blog](/thoughts) section. They'll
+mostly be about small development techniques or explanations of snippets
+that I often find useful.
 
 Since the site's styles make use of [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) where possible,
 I'm hoping to add theming soon as well. Later I'd like you to have the control
