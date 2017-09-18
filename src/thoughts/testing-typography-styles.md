@@ -1,6 +1,6 @@
 ---
 title: Testing typography styles
-layout: post-wip.hbs
+layout: post.hbs
 description: Styling code and quote blocks and other various typography bits.
 postDate: 06-24-2017
 ---
@@ -15,18 +15,28 @@ creating a temporary filler site, styling the elements, and then deleting it,
 I'd leave the elements and their evolution of styles here for future reference
 in the form of a blog post.
 
-I'm big on using HTML elements as semantically as possible (or at least I think
-I am).
+So let's run through some basic elements rudimentary for a half-decent blog!
 
+Some headings:
 
-### // TODO: list heading and link styles (and examples)
+# Heading 1
 
+## Heading 2
 
-&uarr; Above you can see the post style `<hr>` element.
+### Heading 3
 
-&darr; Below you can see the default styles of an `<hr>` element.
+#### Heading 4
+
+And a content link style with sexy underlines - [Gargoyle Gigglypuff jamming out](www.google.com)
+
+- A
+- List
+- Of
+- Sorts
 
 <hr>
+
+Above you can see the default
 
 Let's style a quote.
 
