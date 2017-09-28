@@ -36,6 +36,7 @@ h4 {
     font-weight: 500;
     line-height: 1.5;
 }
+
 h2::after,
 h3::after,
 h4::after {
@@ -115,7 +116,8 @@ blockquote::before {
     min-height: 6rem;
     padding: 4rem;
     border: 2px dashed #3999d0;
-    border-image: var(--default-divider);
+    /* border-image: var(--blog-post-divider);
+    border-image: var(--default-divider); */
     border-image-slice: 1;
     transform: skewX(-7deg);
 }
@@ -129,7 +131,8 @@ blockquote::after {
     text-align: center;
     font-family: var(--font-secondary);
     font-size: 6em;
-    color: #98E;
+    /* color: #98E; */
+    color: #3999d0;
 }
 
 blockquote p:last-child {
