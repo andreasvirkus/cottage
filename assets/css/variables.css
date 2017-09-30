@@ -17,6 +17,7 @@
     --logo-font-size: 64px;
     --breakpoint: 35em;
     --menu-color: #5f656f;
+    --menu-color-light: #e5e5e5;
 
     --blog-post-divider: linear-gradient(90deg, #0ec1f6, #8823de);
     --default-divider: linear-gradient(90deg, #FF00AA, #AA00FF);

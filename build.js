@@ -14,6 +14,8 @@ const Handlebars = require('handlebars');
 const moment = require('moment');
 const fs = require('fs');
 
+const appendToSitemap = require('./helpers/appendToSitemap');
+
 let buildNumber = 0;
 
 // Keep 'is' and 'isnot' helpers with ES5 functions since we need 'this' scope
@@ -71,7 +73,6 @@ metalsmith(__dirname)
     .use((files, metalsmith, done) => {
         buildNumber = parseInt(fs.readFileSync('./build-number.txt'), 10);
         buildNumber++;
-        // metalsmith.metadata.buildNumber = buildNumber;
 
         fs.writeFile('./build-number.txt', buildNumber, err => {
             if (err) throw err;
@@ -118,12 +119,15 @@ metalsmith(__dirname)
     }))
     .build(function (err) {
         if (err) throw err;
+
+        // Measure time
+        const elapsed = process.hrtime(start)[1] / 1000000;
+
+        // Save result
+        fs.writeFile('./build-time.txt', elapsed, err => {
+            if (err) throw err;
+        });
+
+        // Update sitemap
+        appendToSitemap(`<url> <loc>https://andreasvirkus.me/assets/cv/CV-Andreas-Johan-Virkus.pdf</loc> </url>`);
     });
-
-// Measure time
-var elapsed = process.hrtime(start)[1] / 1000000;
-
-// Save result
-fs.writeFile('./build-time.txt', elapsed, err => {
-    if (err) throw err;
-});

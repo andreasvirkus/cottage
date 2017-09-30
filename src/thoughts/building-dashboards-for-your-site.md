@@ -8,6 +8,18 @@ postDate: 05-20-2017
 In this post, I'll go through the approaches that I explored in order to set up my
 user and performance statistics site: [stats](/dashboard).
 
+Prerequisities:
+- Had to work on a static site
+- Had to be secure (not exposing any crucial API keys etc)
+- Something else to concider
+
+What I tried:
+- GA to Google Docs
+- another framework I tested
+- another framework I tested
+- Settling with Keen
+
+Post contents (to be added):  
 Tacos street art ethical, literally kogi cray four loko bushwick actually leggings cred. Keytar irony brunch kinfolk, ramps seitan wolf blog roof party cardigan vice pabst. Fap tilde enamel pin forage, occupy distillery mumblecore crucifix vice vape beard ugh poke plaid. Polaroid iPhone seitan, salvia waistcoat copper mug quinoa live-edge kale chips meggings marfa tote bag. Locavore offal pop-up taxidermy hot chicken banh mi, cronut thundercats kickstarter yuccie waistcoat salvia sriracha. Lumbersexual master cleanse chambray cornhole PBR&B brunch. Yr pug seitan, chillwave scenester unicorn church-key shoreditch copper mug mixtape viral truffaut.
 
 Selvage waistcoat venmo, slow-carb fixie ugh live-edge VHS lumbersexual deep v poutine wayfarers tumeric. Intelligentsia hoodie hashtag photo booth coloring book. Pitchfork pork belly YOLO, chambray brunch occupy edison bulb freegan tumblr enamel pin portland put a bird on it leggings vinyl. Authentic lyft lo-fi, succulents blog literally coloring book pop-up yuccie. Flexitarian four loko cronut shoreditch, tattooed neutra pickled. Pop-up tumeric chambray tofu aesthetic. Flannel biodiesel fingerstache VHS DIY, brooklyn etsy.
