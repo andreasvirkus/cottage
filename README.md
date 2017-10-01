@@ -1,5 +1,5 @@
 # andreasvirkus.github.io
-### A humble landing page of sorts...
+### A humble homepage of sorts...
 
 Metalsmith setup for my current portfolio-ish site.
 

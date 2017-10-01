@@ -5,17 +5,22 @@ header {
 .logo {
     position: relative;
     width: 80px;
-    height: 80px;
+    height: 70px;
     fill: var(--content-color);
     font-size: var(--logo-font-size);
     font-family: Josefin Slab, serif;
     padding: 0.3em;
     box-sizing: initial;
+    border: 2px dashed transparent;
+    transition: border-color ease-out 0.15s;
 }
-.logo:hover .logo__letter-j {
+.logo:hover {
+    border-color: inherit;
+}
+/* .logo:hover .logo__letter-j {
     fill: var(--highlight-color);
     fill: url(#logoGradientOrange);
-}
+} */
 
 /* WIP label */
 .wip-page .logo::before {
