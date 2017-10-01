@@ -7,12 +7,19 @@ Since Github doesn't let you use a subdir for your static site
 (and the gh-pages hack `git subtree push --prefix dist origin gh-pages`
 doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 
+#### Want a site like this?
+
+Check out the boilerplate repo or follow this **one-click-wonder-deploy**!
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
+
 ----------
 ### TODO:
 
 - ~~Initial content~~
+- ~~Service workers~~
 - ~~Sitemap & robots.txt~~
-- First posts
+- ~~First posts~~
 - ~~Link to [status page](https://status.andreasvirkus.me)~~
 - ~~Make dashboard's timeframe dynamic~~
 - ~~Update CV~~
@@ -29,7 +36,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - ~~Analytics & dashboard~~
     - ~~Visitor statistics~~
     - Performance metrics
-    - Build stats/time
+    - ~~Build stats/time~~
 - Theming? Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes
 - Set up Webpack, since I miss my ES6 modules
@@ -73,6 +80,3 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 - Horizontal content/page scrolling by vertical/natural mouse scrolling [my example](https://jsfiddle.net/andreasvirkus/k85fp66y/1/)  [example in the wild](http://tlmagazine.com/jongerius-breathing-colour/)
 - Vue-router `<router-back>` link element: [discussion](https://github.com/vuejs/vue-router/issues/880#issuecomment-321190433)
 - Delay promise resolvement in dev envs [example](https://gist.github.com/andreasvirkus/e3b2b849ed25fa7c04c0caa3fe14498d) (also add check for NODE_ENV in `wait.js`)
-
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
