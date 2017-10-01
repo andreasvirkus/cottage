@@ -5,6 +5,7 @@
 
 .blog__post-info {
     font-style: italic;
+    margin-top: 0.4em;
 }
 
 .blog__post-description {
@@ -30,6 +31,7 @@ pre code {
     color: #333;
     background: #fff;
     font-size: .8rem;
+    line-height: 1.2em;
     user-select: all;
 }
 

@@ -1,7 +1,7 @@
 ---
 title: Appending lines to XML
 layout: post.hbs
-description: Showing how to easily append lines at the end of an XML file.
+description: Showing how to easily append lines at the end of an XML file (like your sitemap).
 postDate: 09-30-2017
 ---
 
