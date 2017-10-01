@@ -40,5 +40,39 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
     - Add custom styles
     - Remove front matter from `.md` before generating `.pdf`
 
+### Article/blog post/snippet-sharing ideas
+
+- Properly setting selectable text limit (textareas, pre/code blocks, etc.)
+- Setting element focus only on tab/keyboard events (better accessibility); event listeners on body (look up from my [Codepen](https://codepen.io/ajv/pen/dMRwyQ))
+- Dashboard walkthrough (WIP)
+- KeepAlive monitoring (PingPong + Heroku) walkthrough (WIP)
+- Snippet: adding event listeners to nodeList ([gist](https://gist.github.com/andreasvirkus/0072d8530ac35e4b99a302196152b123))
+- Setting up Metalsmith with StealJS (or Brunch)
+- Snippet: adding current section (heading ID/hash) to URL/navbar
+- Error handling for SPAs (Vue.js examples) - getting the best of status codes and elegant redirects
+- Srcset IE fix with base64 src attr
+    ```
+    `<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">`
+    ```
+- Adding images to gists
+- ES6 template literals http://wesbos.com/template-strings-html/
+    ```
+    const markup = `
+    <ul class="dogs">
+        ${dogs.map(dog => `<li>${dog.name} is ${dog.age * 7}</li>`)}
+    </ul>
+    `;
+    ```
+- ES6 imports with relative paths (also how to resolve Vue files without extension)
+- Gradient animation for any svg [example fiddle](https://jsfiddle.net/andreasvirkus/9jpbw915/)
+- pre, code and kbd elements  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
+- Generator-based ES6 chatbot
+- CSS hacks (amend current hacks pen with tooltip and tabs)
+- Rundown of browser APIs (bluetooth, battery, etc.)
+- Nifty 'hidden' footers: https://helpie.netlify.com
+- Horizontal content/page scrolling by vertical/natural mouse scrolling [my example](https://jsfiddle.net/andreasvirkus/k85fp66y/1/)  [example in the wild](http://tlmagazine.com/jongerius-breathing-colour/)
+- Vue-router `<router-back>` link element: [discussion](https://github.com/vuejs/vue-router/issues/880#issuecomment-321190433)
+- Delay promise resolvement in dev envs [example](https://gist.github.com/andreasvirkus/e3b2b849ed25fa7c04c0caa3fe14498d) (also add check for NODE_ENV in `wait.js`)
+
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
