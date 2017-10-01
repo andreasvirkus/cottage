@@ -2,7 +2,7 @@
 title: Creating keep alive monitoring
 layout: post-wip.hbs
 description: Using Keen.io's PingPong for monitoring
-postDate: 07-30-2017
+postDate: 2017-07-30
 ---
 
 With Keen PingPong

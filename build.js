@@ -83,7 +83,7 @@ metalsmith(__dirname)
     .use(collections({
         posts: {
             pattern: 'thoughts/*.md',
-            sortBy: 'date',
+            sortBy: 'postDate',
             reverse: true
         },
         vault: {

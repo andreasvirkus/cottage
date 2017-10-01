@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var version = 'v1::';
 var offlineFundamentals = [
@@ -10,7 +10,7 @@ var offlineFundamentals = [
   '/contact/index.html',
 ];
 
-self.addEventListener("install", function(event) {
+self.addEventListener('install', function(event) {
   event.waitUntil(
     caches
       .open(version + 'fundamentals')
@@ -23,7 +23,7 @@ self.addEventListener("install", function(event) {
   );
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener('fetch', function(event) {
   console.log('worker::fetching');
 
   /* We should only cache GET requests, and deal with the rest of method in the
@@ -46,7 +46,7 @@ self.addEventListener("fetch", function(event) {
       .match(event.request)
       .then(function(cached) {
         /* Even if the response is in our cache, we go to the network as well.
-           This pattern is known for producing "eventually fresh" responses,
+           This pattern is known for producing 'eventually fresh' responses,
            where we return cached responses immediately, and meanwhile pull
            a network response and store that in the cache.
 
@@ -86,7 +86,7 @@ self.addEventListener("fetch", function(event) {
   );
 });
 
-self.addEventListener("activate", function(event) {
+self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys()
       .then(function (keys) {

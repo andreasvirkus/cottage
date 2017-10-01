@@ -2,7 +2,7 @@
 title: Building dashboards for your site
 layout: post-wip.hbs
 description: I'll go through setting up these dashboards that I don't have yet.
-postDate: 05-20-2017
+postDate: 2017-05-20
 ---
 
 In this post, I'll go through the approaches that I explored in order to set up my
