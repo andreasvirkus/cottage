@@ -9,7 +9,7 @@ doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
 
 #### Want a site like this?
 
-Check out the boilerplate repo or follow this **one-click-wonder-deploy**!
+Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or follow this **one-click-wonder-deploy**!
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
 
