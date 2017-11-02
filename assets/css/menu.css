@@ -41,14 +41,14 @@
 	cursor: pointer;
 }
 .menu__item::before {
-    content: ':';
+	content: ':';
 	position: relative;
 	display: inline-block;
 	top: -1px;
-    color: var(--link-border-color);
+	left: -3px;
 	font-weight: 700;
-    height: 11px;
-    width: 4px;
+	height: 11px;
+	width: 4px;
 }
 
 .menu__link {
@@ -64,14 +64,8 @@
 .menu__item:hover .menu__link {
 	opacity: 1;
 }
-.menu__item:hover::before {
-	color: var(--link-bullet-gray__hover);
-}
 .menu__item[aria-current="page"] .menu__link {
 	opacity: 1;
-}
-.menu__item[aria-current="page"]::before {
-    color: var(--highlight-color);
 }
 
 .menu__item:first-child::before {
