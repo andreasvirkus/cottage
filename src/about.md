@@ -85,7 +85,7 @@ Favourite learning resources:
 
 ## labor
 
-I like fiddling small components and scripts on codepen, jsfiddle, gist and on my Arduino.
+I like fiddling small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus).
 I started out creating websites for neighbours and small companies, which really sparked a passion. Here's what I've been up to since:
 - **FE developer at Bigbank**
     - _July 2015–current_
