@@ -76,7 +76,7 @@ hr {
     }
     main {
         min-height: 60vh;
-        transform: translateY(-2.5em);
+        transform: translateY(-1.5em);
     }
     main p {
         font-size: 1.2em;

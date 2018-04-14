@@ -1,5 +1,4 @@
 const metalsmith = require('metalsmith');
-const debug = require('metalsmith-debug');
 const drafts = require('metalsmith-drafts');
 const markdown = require('metalsmith-markdown');
 const collections = require('metalsmith-collections');

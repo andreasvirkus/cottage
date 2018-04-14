@@ -11,8 +11,8 @@
     "postbuild": "npm run copy-assets && npm run minify",
     "copy-assets": "cp -r assets dist/ && cp robots.txt dist/ && cp manifest.json dist/ && cp service-worker.js dist/ && mv dist/404/index.html dist/404.html && rm -rf dist/404/",
     "minify": "npm run minify:js && npm run minify:css",
-    "minify:js": "uglifyjs ./dist/assets/js/*.js -c -m -o ./dist/assets/js/script.min.js",
-    "minify:css": "cleancss -O2 -o ./dist/assets/css/styles.min.css ./dist/assets/css/*.css && postcss --no-map ./dist/assets/css/styles.min.css --use autoprefixer -o ./dist/assets/css/styles.min.css",
+    "minify:js": "uglifyjs dist/assets/js/*.js -c -m -o dist/assets/js/script.min.js",
+    "minify:css": "postcss --no-map dist/assets/css --use autoprefixer --use cssnano -d dist/assets/css",
     "generate-pdf": "markdown-pdf src/cv.md -o assets/cv/cv.pdf -s dist/assets/css/styles.min.css"
   },
   "repository": {
@@ -21,7 +21,9 @@
   },
   "keywords": [
     "metalsmith",
-    "portfolio"
+    "portfolio",
+    "blog",
+    "homepage"
   ],
   "author": "https://github.com/andreasvirkus",
   "license": "ISC",
@@ -46,14 +48,11 @@
     "metalsmith-sitemap": "^1.2.0",
     "metalsmith-word-count": "0.0.4",
     "moment": "^2.18.1",
-    "postcss-cli": "^4.0.0",
+    "postcss-cli": "^5.0.0",
     "uglify-js": "^3.0.10"
   },
   "devDependencies": {
-    "barba.js": "^1.0.0",
-    "metalsmith-debug": "^1.1.0",
-    "snapsvg": "^0.5.1",
-    "steal": "^1.5.8",
-    "steal-tools": "^1.8.2"
+    "cssnano": "^3.10.0",
+    "snapsvg": "^0.5.1"
   }
 }
