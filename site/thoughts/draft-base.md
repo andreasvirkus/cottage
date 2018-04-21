@@ -1,6 +1,6 @@
 ---
 title: A fitting title
-layout: post
+layout: Post
 description: A description of the blog post
 postDate: YYYY-MM-DD
 draft: true

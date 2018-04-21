@@ -1,6 +1,6 @@
 ---
 title: stats
-layout: dashboard
+layout: Dashboard
 ---
 
 # geeky statistics

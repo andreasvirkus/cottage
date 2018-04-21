@@ -1,7 +1,7 @@
 ---
 title: thoughts
 description: my thoughts and musings
-layout: blog
+layout: Blog
 ---
 
 Here you can read 'bout my questionable opinions on

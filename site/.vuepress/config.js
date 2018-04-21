@@ -1,14 +1,13 @@
 module.exports = {
   title: 'ajv',
   description: 'Homepage of Andreas J Virkus',
+  evergreen: true,
   // Overwrite dist/ once sitemap and rss are generated
-  // dest: 'dist',
-  // TODO: Move theme to an npm package
-  // theme: 'ajv',
+  dest: 'dist',
+  theme: 'ajv',
   serviceWorker: true,
   head: [
     ['link', { rel: 'icon', href: `/favicon.png` }]
-
     // <meta charset="UTF-8" />
     // <title>ajv | {{ title }}</title>
     // <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,7 +24,6 @@ module.exports = {
   ],
   themeConfig: {
     repo: 'andreasvirkus/vuepress-theme-ajv',
-    docsDir: 'site',
     logo: 'svg/logo.svg',
     nav: [
       {
