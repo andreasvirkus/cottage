@@ -1,0 +1,10 @@
+---
+title: thoughts
+description: my thoughts and musings
+layout: blog
+---
+
+Here you can read 'bout my questionable opinions on
+anything dev-related or just nice tips/hacks I enjoy having in my utility belt.
+
+<hr>

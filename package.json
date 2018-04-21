@@ -1,15 +1,14 @@
 {
   "name": "ajv-homepage",
   "version": "3.0.0",
+  "private": true,
   "description": "A humble homepage of sorts.",
-  "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
-    "copy-assets": "cp -r assets dist/ && cp robots.txt dist/ && cp manifest.json dist/ && cp service-worker.js dist/ && mv dist/404/index.html dist/404.html && rm -rf dist/404/",
-    "generate-pdf": "markdown-pdf src/cv.md -o assets/cv/cv.pdf -s dist/assets/css/styles.min.css"
+    "dev": "vuepress dev site",
+    "build": "vuepress build site",
+    "generate-pdf": "markdown-pdf site/cv.md -o assets/cv/cv.pdf -s dist/assets/css/styles.min.css"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,7 @@
     "homepage"
   ],
   "author": "https://github.com/andreasvirkus",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/andreasvirkus/andreasvirkus.github.io/issues"
   },
@@ -32,6 +31,6 @@
   },
   "devDependencies": {
     "snapsvg": "^0.5.1",
-    "vuepress": "^0.3.1"
+    "vuepress": "^0.4.1"
   }
 }
