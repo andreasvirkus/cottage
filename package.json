@@ -27,11 +27,8 @@
   },
   "homepage": "https://andreasvirkus.me",
   "dependencies": {
-    "moment": "^2.18.1"
-  },
-  "devDependencies": {
+    "moment": "^2.18.1",
     "snapsvg": "^0.5.1",
-    "vuepress": "^0.4.1",
-    "vuepress-theme-ajv": "^1.0.1"
+    "vuepress": "^0.4.1"
   }
 }

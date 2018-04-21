@@ -3,3 +3,4 @@ node_modules
 .npm
 .env
 site/.vuepress/dist
+#site/.vuepress/theme
