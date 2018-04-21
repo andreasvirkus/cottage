@@ -11,8 +11,8 @@ Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-b
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
 
-Vue-way:
-Add `ajv-portfolio` to your `.vuepress/config.js` `theme` parameter.
+Vuepress-way:
+Add `ajv` to your `.vuepress/config.js` `theme` parameter.
 
 ----------
 ### TODO:
@@ -24,7 +24,7 @@ Add `ajv-portfolio` to your `.vuepress/config.js` `theme` parameter.
 - ~~Link to [status page](https://status.andreasvirkus.me)~~
 - ~~Make dashboard's timeframe dynamic~~
 - ~~Update CV~~
-- Refactor to [Vuepress](https://vuepress.vuejs.org/)
+- ~Refactor to [Vuepress](https://vuepress.vuejs.org/)~
 
 ----------
 ### Roadmap
@@ -33,7 +33,7 @@ Add `ajv-portfolio` to your `.vuepress/config.js` `theme` parameter.
     - ~~History API support~~
     - Smooth page transitions (menu overlay into the next page's solid white background)
 - ~~Offline support & manifest.json~~
-- ~Syntax highlighting if posts get code-heavy~
+- ~Syntax highlighting if posts get code-heavy (Vuepress)~
 - ~~Analytics & dashboard~~
     - ~~Visitor statistics~~
     - Performance metrics

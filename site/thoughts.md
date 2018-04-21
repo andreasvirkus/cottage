@@ -1,6 +1,8 @@
 ---
 title: thoughts
-description: my thoughts and musings
+meta:
+  - name: description
+    content: My thoughts and musings
 layout: Blog
 ---
 

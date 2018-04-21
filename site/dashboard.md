@@ -1,6 +1,9 @@
 ---
 title: stats
 layout: Dashboard
+meta:
+  - name: description
+    content: View the user statistics for this site
 ---
 
 # geeky statistics

@@ -1,6 +1,8 @@
 ---
 title: vault
-description: Small snippets and bits of code I value.
+meta:
+  - name: description
+    content: Small snippets and bits of code I value
 layout: vault
 draft: true
 ---

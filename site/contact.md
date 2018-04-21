@@ -1,6 +1,8 @@
 ---
 title: contact
-description: View my contact details and hit me up!
+meta:
+  - name: description
+    content: View my contact details and hit me up!
 ---
 
 ### So you want to get in touch? Tough luck, 'cause...
