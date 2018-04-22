@@ -16,8 +16,6 @@ const offlineFundamentals = [
   '/thoughts/index.html',
   '/contact/index.html'
 ]
-const ignoreSearch = event.request.url.indexOf('?') != -1
-
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -33,35 +31,18 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
+  const ignoreSearch = event.request.url.indexOf('?') != -1
   console.log('worker::fetching');
 
-  /* We should only cache GET requests, and deal with the rest of method in the
-     client-side, by handling failed POST,PUT,PATCH,etc. requests.
-  */
   if (event.request.method !== 'GET') {
-    /* If we don't block the event as shown below, then the request will go to
-       the network as usual.
-    */
     console.log('worker::fetch ignored |', event.request.method, event.request.url);
     return;
   }
 
   event.respondWith(
     caches
-      /* This method returns a promise that resolves to a cache entry matching
-         the request. Once the promise is settled, we can then provide a response
-         to the fetch request.
-      */
       .match(event.request, { ignoreSearch })
       .then(function(cached) {
-        /* Even if the response is in our cache, we go to the network as well.
-           This pattern is known for producing 'eventually fresh' responses,
-           where we return cached responses immediately, and meanwhile pull
-           a network response and store that in the cache.
-
-           Read more:
-           https://ponyfoo.com/articles/progressive-networking-serviceworker
-        */
         var networked = fetch(event.request)
           .then(fetchedFromNetwork, unableToResolve)
           .catch(unableToResolve);
