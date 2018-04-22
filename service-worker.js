@@ -1,14 +1,23 @@
-'use strict';
+'use strict'
 
-var version = 'v1::';
-var offlineFundamentals = [
-  '/assets/css/styles.min.css',
+const version = 'v1::'
+const offlineFundamentals = [
+  '/assets/css/variables.css',
+  '/assets/css/global.css',
+  '/assets/css/header.css',
+  '/assets/css/menu.css',
+  '/assets/css/typography.css',
+  '/assets/css/utility.css',
+  '/assets/css/footer.css',
+  '/assets/css/social.css',
   '/assets/js/script.min.js',
   '/index.html',
   '/about/index.html',
   '/thoughts/index.html',
-  '/contact/index.html',
-];
+  '/contact/index.html'
+]
+const ignoreSearch = event.request.url.indexOf('?') != -1
+
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -43,7 +52,7 @@ self.addEventListener('fetch', function(event) {
          the request. Once the promise is settled, we can then provide a response
          to the fetch request.
       */
-      .match(event.request)
+      .match(event.request, { ignoreSearch })
       .then(function(cached) {
         /* Even if the response is in our cache, we go to the network as well.
            This pattern is known for producing 'eventually fresh' responses,
