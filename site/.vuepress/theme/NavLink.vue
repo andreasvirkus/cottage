@@ -4,11 +4,13 @@
     :to="link"
     v-if="!isExternal(link)"
     :exact="link === '/'"
+    @click="$emit('click')"
   >{{ item.text }}</router-link>
   <a
     v-else
     :href="link"
     class="nav-link"
+    @click="$emit('click')"
     :target="isMailto(link) ? null : '_blank'"
     :rel="isMailto(link) ? null : 'noopener noreferrer'"
   >{{ item.text }}</a>

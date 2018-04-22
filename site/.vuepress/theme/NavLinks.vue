@@ -5,7 +5,7 @@
       class="nav-item"
       v-for="item in userLinks"
       :key="item.link">
-      <NavLink :item="item"/>
+      <NavLink :item="item" @click="$emit('nav')"/>
     </div>
     <!-- repo link -->
     <a v-if="repoLink"

@@ -1,7 +1,7 @@
 <template>
   <aside id="menu" class="menu" :class="{ 'menu--open': open }" role="navigation">
     <button class="menu__handle" title="Open menu" @click="open = !open"><span>Menu</span></button>
-		<NavLinks />
+		<NavLinks @nav="open = false" />
 
     <div class="morph-shape" data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410" data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
       <svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
@@ -119,6 +119,7 @@ import NavLinks from './NavLinks'
 	width: 240px;
 	height: 80vh;
 	right: 0;
+	pointer-events: none;
 	/* Testing new responsive styles */
 	height: 90vh;
 	top: 48%;
@@ -128,12 +129,6 @@ import NavLinks from './NavLinks'
 .morph-shape path {
 	stroke: var(--menu-color);
 	stroke-width: 5px;
-}
-
-@media screen and (min-width: 67em) {
-	.morph-shape {
-		pointer-events: none;
-	}
 }
 
 @media screen and (max-width: 67em) {
