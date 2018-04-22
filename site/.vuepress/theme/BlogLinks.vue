@@ -18,7 +18,6 @@
 import moment from 'moment'
 
 export default {
-  name: 'blog-nav',
   props: {
     posts: Array
   },
@@ -32,7 +31,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../styles/config.styl'
+@import './styles/config.styl'
 
 .blog__menu-list {
     display: flex;
@@ -49,21 +48,28 @@ export default {
     padding: 1rem 0;
     text-decoration: none;
     border-bottom: 0;
+    text-align: center;
 }
 .blog__menu-link::before {
-    // content: ':';
-    position: relative;
-    display: inline-block;
-    top: -1px;
-    left: -3px;
-    font-weight: 700;
-    height: 11px;
-    width: 4px;
+    content: '';
+    left: 0;
+    bottom: 1rem;
+    width: 100%;
+    height: 2px;
+    background-color: $darkAccentColor;
+    position: absolute;
+    transition: transform .5s ease;
+    transform: scaleX(0);
 }
 
 .content .blog__menu-link:hover {
+    $bg: #0BAAD4;
     color: $darkAccentColor;
     text-decoration: none;
+
+    &::before {
+      transform: scaleX(1);
+    }
 }
 .content .blog__menu-link:hover::before {
     opacity: 1;

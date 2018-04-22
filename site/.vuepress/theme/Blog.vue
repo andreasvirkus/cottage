@@ -2,7 +2,7 @@
   <main class="page">
     <Content :custom="false" />
 
-    <blog-nav :posts="posts"/>
+    <blog-links :posts="posts"/>
 
     <div class="content edit-link" v-if="editLink">
       <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import BlogNav from './partials/BlogNav'
-import OutboundLink from './OutboundLink.vue'
+import BlogLinks from './BlogLinks'
+import OutboundLink from './OutboundLink'
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
-// TODO: Get posts (all .md files from /thoughts dir)
+
 export default {
-  components: { BlogNav, OutboundLink },
+  components: { BlogLinks, OutboundLink },
   computed: {
     posts () {
       return this.$site.pages.filter(page => page.path.startsWith('/thoughts/') && !page.frontmatter.draft)

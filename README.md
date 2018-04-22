@@ -27,6 +27,8 @@ Add `ajv` to your `.vuepress/config.js` `theme` parameter.
 - ~Refactor to [Vuepress](https://vuepress.vuejs.org/)~
 - Add Keen tracking to Vuepress via npm
 - Vuetify dashboard.js solution + import keen styles and flexbox grid (or rewrite one)
+- Refactor Stylus to native CSS + css custom properties
+- Add vue-tweezing for morphing SVG (menu border)
 
 ----------
 ### Roadmap

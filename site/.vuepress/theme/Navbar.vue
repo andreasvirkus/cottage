@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" :class="{ sticky }" ref="bar">
     <router-link to="/" class="home-link">
       <img class="logo"
         v-if="$site.themeConfig.logo"
@@ -7,17 +7,32 @@
     </router-link>
     <div class="links">
       <SearchBox v-if="$site.themeConfig.search !== false"/>
-      <NavLinks class="can-hide"/>
     </div>
   </header>
 </template>
 
 <script>
-import SearchBox from './SearchBox.vue'
-import NavLinks from './NavLinks.vue'
+import SearchBox from './SearchBox'
+import NavLinks from './NavLinks'
 
 export default {
-  components: { NavLinks, SearchBox }
+  components: { NavLinks, SearchBox },
+  data () {
+    return {
+      sticky: false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handler)
+  },
+  destroy () {
+    window.addEventListener('scroll', this.handler)
+  },
+  methods: {
+    handler (evt) {
+      this.sticky = document.documentElement.scrollTop > 50
+    }
+  }
 }
 </script>
 
@@ -28,6 +43,8 @@ export default {
   padding 0.7rem 1.5rem
   line-height $navbarHeight - 1.4rem
   position relative
+  transition height .2s, box-shadow .2s, border-color .1s
+  transition-delay 0
   a, span, img
     display inline-block
   .logo
@@ -45,8 +62,18 @@ export default {
     position absolute
     right 1.5rem
     top 0.7rem
+  &.sticky
+    //border-bottom 1px solid $borderColor
+    box-shadow 0 2px 10px -4px rgba(0,0,0,0.2)
+    height 2.4rem
 
-@media (max-width: $MQMobile)
-  .navbar .can-hide
-    display none
+
+@media (max-width: $MQNarrow)
+  .home-link
+    transition opacity .1s
+    opacity 0
+  .navbar.sticky
+    transition-delay .4s
+  .navbar.sticky .home-link
+    opacity 1
 </style>

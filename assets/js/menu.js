@@ -34,29 +34,27 @@
             });
         });
 
-        // TODO: Add back ajax navigation once I settle on a page transition animation.
-
-        // document.addEventListener('pjax:complete', function() {
-        //     menu.isOpen && menu.toggle();
-        //
-        //     isBlogPost = true;
-        //
-        //     // Loop through nav links, find one whose href matches page slug
-        //     [].forEach.call(menuLinks, function(link) {
-        //         link.parentElement.removeAttribute('aria-current');
-        //
-        //         if (link.getAttribute('href') === location.pathname) {
-        //             link.parentElement.setAttribute('aria-current', 'page');
-        //             isBlogPost = false;
-        //         }
-        //     });
-        //
-        //     if (isBlogPost) {
-        //         document.getElementById('menu')
-        //             .querySelector('[href="/thoughts/"]')
-        //             .parentElement.setAttribute('aria-current', 'page');
-        //     }
-        // });
+        document.addEventListener('pjax:complete', function() {
+            menu.isOpen && menu.toggle();
+        
+            isBlogPost = true;
+        
+            // Loop through nav links, find one whose href matches page slug
+            [].forEach.call(menuLinks, function(link) {
+                link.parentElement.removeAttribute('aria-current');
+        
+                if (link.getAttribute('href') === location.pathname) {
+                    link.parentElement.setAttribute('aria-current', 'page');
+                    isBlogPost = false;
+                }
+            });
+        
+            if (isBlogPost) {
+                document.getElementById('menu')
+                    .querySelector('[href="/thoughts/"]')
+                    .parentElement.setAttribute('aria-current', 'page');
+            }
+        });
     };
 
     SVGMenu.prototype.toggle = function() {
@@ -89,13 +87,4 @@
     };
 
     new SVGMenu(document.getElementById('menu'));
-
-    // new Pjax({
-    //     selectors: ["title", "main"],
-    //     cacheBust: false,
-    //     switches: {
-    //         'main': Pjax.switches.outerHTML
-    //     }
-    // });
-
 })();

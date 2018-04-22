@@ -24,7 +24,7 @@
 
 <script>
 // TODO: Link GitHub repos and go through them descriptively? Show off done websites
-import OutboundLink from './OutboundLink.vue'
+import OutboundLink from './OutboundLink'
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 
 export default {

@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import OutboundLink from './OutboundLink.vue'
+import OutboundLink from './OutboundLink'
 import { isActive, resolveNavLinkItem } from './util'
-import NavLink from './NavLink.vue'
+import NavLink from './NavLink'
 
 export default {
   components: { OutboundLink, NavLink },
@@ -77,6 +77,7 @@ export default {
 
 .nav-links
   display inline-block
+  transform: translate(40px)
   a
     line-height 1.4rem
     color inherit
@@ -85,7 +86,6 @@ export default {
   .nav-item
     cursor: pointer
     position relative
-    display inline-block
     margin-left 1.5rem
     line-height 2rem
   .repo-link

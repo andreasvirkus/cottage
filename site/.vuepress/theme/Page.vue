@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import OutboundLink from './OutboundLink.vue'
+import OutboundLink from './OutboundLink'
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 
 export default {

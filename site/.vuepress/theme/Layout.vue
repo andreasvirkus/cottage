@@ -5,6 +5,7 @@
     @touchend="onTouchEnd">
 
     <Navbar/>
+    <Sidebar/>
 
     <div class="custom-layout" v-if="$page.frontmatter.layout">
       <component :is="$page.frontmatter.layout"/>
@@ -21,12 +22,13 @@ import Blog from './Blog'
 import Post from './Post'
 import Dashboard from './Dashboard'
 import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 import Page from './Page'
 import { pathToComponentName, getLang } from '@app/util'
 
 
 export default {
-  components: { Blog, Post, Page, Navbar, Dashboard },
+  components: { Blog, Post, Page, Navbar, Sidebar, Dashboard },
   created () {
     if (this.$ssrContext) {
       const { titleSeparator, titleStatic } = this.$site.themeConfig
@@ -126,6 +128,7 @@ function getTitle(siteTitle, page, separator = '|', staticTitle = false) {
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style>
+<style src="./css/variables.css"></style>
 <style>
 ::selection {
   background-color: #a29bfe;
