@@ -1,5 +1,4 @@
 ---
-title: me
 meta:
   - name: description
     content: Get to know me. Long walks on the beach included.

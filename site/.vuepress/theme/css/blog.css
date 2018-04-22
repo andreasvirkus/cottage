@@ -12,7 +12,7 @@
     color: #888;
     font-style: italic;
 }
-
+/*
 code {
     border: 1px solid #d8e0e4;
     border-radius: 2px;
@@ -32,7 +32,9 @@ pre code {
     background: #fff;
     font-size: .8rem;
     line-height: 1.2em;
-    user-select: all;
+} */
+pre code {
+  user-select: all;
 }
 
 @media screen and (min-width: 35em) {

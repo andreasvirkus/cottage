@@ -1,5 +1,4 @@
 ---
-title: home
 meta:
   - name: description
     content: A humble homepage of sorts

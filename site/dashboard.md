@@ -1,5 +1,4 @@
 ---
-title: stats
 layout: Dashboard
 meta:
   - name: description

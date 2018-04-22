@@ -4,6 +4,7 @@ module.exports = {
   title: 'ajv',
   description: 'Homepage of Andreas J Virkus',
   evergreen: true,
+  host: 'localhost',
   // theme: 'ajv',
   serviceWorker: true,
   head: [
@@ -25,6 +26,7 @@ module.exports = {
   themeConfig: {
     repo: 'andreasvirkus/vuepress-theme-ajv',
     logo: 'svg/logo.svg',
+    titleSeparator: '--',
     nav: [
       {
         text: 'Home',

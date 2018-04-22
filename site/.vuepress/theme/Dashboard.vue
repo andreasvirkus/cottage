@@ -82,7 +82,7 @@
           <div class="build-number">
             <div class="keen-dataviz">
               <div class="keen-dataviz-metric metric-block" title="Number of times Metalsmith build has been run">
-                <span class="keen-dataviz-metric-value" style="padding-top: 97px;">{{ buildNumber }}</span>
+                <span class="keen-dataviz-metric-value" style="padding-top: 97px;"><!-- {{ buildNumber }} --></span>
                 <span class="keen-dataviz-metric-title">times built</span>
               </div>
             </div>
@@ -92,7 +92,7 @@
           <div class="latest-build">
             <div class="keen-dataviz">
               <div class="keen-dataviz-metric metric-block" title="When the latest build took place">
-                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;">{{ date dateBuilt }}</span>
+                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;"><!-- {{ date dateBuilt }}--></span>
                 <span class="keen-dataviz-metric-title">latest build</span>
               </div>
             </div>
@@ -105,7 +105,7 @@
           <div class="latest-build">
             <div class="keen-dataviz">
               <div class="keen-dataviz-metric metric-block" title="How long the latest build took">
-                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;">{{ format ( buildTime ) }}</span>
+                <span class="keen-dataviz-metric-value" style="padding-top: 97px; font-size: 1.6rem;"><!--{{ format ( buildTime ) }}--></span>
                 <span class="keen-dataviz-metric-title">build duration (s)</span>
               </div>
             </div>
@@ -127,25 +127,19 @@
 </template>
 
 <script src="/assets/dashboard/dashboard.js"></script>
-<script src="https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js"></script>
-<script src="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-1.1.3.min.js"></script>
-<script src="https://d26b395fwzu5fz.cloudfront.net/keen-analysis-1.2.2.js"></script>
 <script>
-  // TODO: Look if keen libs are on npm
-  // TODO: Vuetify dashboard.js solution
+  import Keen from 'keen-dataviz'
+  import analysis from 'keen-analysis'
+
+  const timeframe = {
+    // Make viz date dynamic (ie last 4 months)?
+    start: "2017-06-03T07:00:00.000Z",
+    end: new Date().toISOString()
+  }
+
   export default {
-    data() {
-      return {
-
-      }
-    },
     // Keen IO Settings
-    created () {
-      const timeframe = {
-          start: "2017-06-03T07:00:00.000Z",
-          end: new Date().toISOString()
-      };
-
+    mounted () {
       window.renderVisitorData(new Keen({
           projectId: '5932a7c595cfc907a1f80c67',
           readKey: '03384FBE774B660D6C84C358DE6B68C0073053180D104FC19752DA666AB92D44032A5F8AE8F7AAE4E93DAAC8303A3C8FB4AEAD402FEC9B639164BC23953BEEC1D3893A48EB449673E429E5593BD22B0ABDA2A407360CF0EF1C7173E41CD03C1F'
@@ -159,8 +153,6 @@
   }
 </script>
 
-<style src="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-1.1.3.min.css"></style>
-<style src="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css"></style>
 <style>
   div[class^="col-"] {
       padding: 10px;

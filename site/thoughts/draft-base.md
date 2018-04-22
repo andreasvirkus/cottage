@@ -1,5 +1,5 @@
 ---
-title: A fitting title
+pageTitle: A fitting title
 layout: Post
 description: A description of the blog post
 postDate: YYYY-MM-DD

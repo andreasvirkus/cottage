@@ -1,6 +1,6 @@
 <template>
   <main class="page">
-    <header>
+    <!-- <header>
       {{#if readingTime}}
           Reading time {{ readingTime }} min |
       {{/if}}
@@ -10,7 +10,7 @@
       {{#if lastUpdated }}
           and last updated {{ date lastUpdated }}
       {{/if}}
-    </header>
+    </header> -->
     <article>
       <Content :custom="false"/>
     </article>
@@ -109,7 +109,7 @@ function resolveNext (page, items) {
   return find(page, items, 1)
 }
 
-function find (page, items, offset) {
+function find (page, items = [], offset) {
   const res = []
   items.forEach(item => {
     if (item.type === 'group') {

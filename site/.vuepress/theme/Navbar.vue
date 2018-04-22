@@ -3,7 +3,7 @@
     <router-link to="/" class="home-link">
       <img class="logo"
         v-if="$site.themeConfig.logo"
-        :src="$withBase($site.themeConfig.logo)">
+        :src="'/' + $withBase($site.themeConfig.logo)">
     </router-link>
     <div class="links">
       <SearchBox v-if="$site.themeConfig.search !== false"/>

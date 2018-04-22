@@ -15,9 +15,6 @@ body
   font-size 16px
   color $textColor
 
-.page
-  padding-left $sidebarWidth
-
 .navbar
   position fixed
   z-index 20
@@ -52,11 +49,11 @@ body
   border-right 1px solid $borderColor
   overflow-y auto
 
-.content:not(.custom)
+.content
   max-width $contentWidth
   margin 0 auto
   padding 2rem 2.5rem
-  > *:first-child
+  > *:first-child:not(ul)
     margin-top $navbarHeight
   a:hover
     text-decoration underline
@@ -66,10 +63,8 @@ body
     border-radius 4px
   img
     max-width 100%
-
-.content.custom
-  padding 0
-  margin 0
+.content + .content
+  padding-top 0
 
 a
   font-weight 500
@@ -103,7 +98,7 @@ strong
 h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.25
-  .content:not(.custom) > &
+  .content > &
     margin-top (0.5rem - $navbarHeight)
     padding-top ($navbarHeight + 1rem)
     margin-bottom 0
@@ -167,17 +162,22 @@ th, td
     .sidebar-mask
       display: block
   &.no-navbar
-    .content:not(.custom)
+    .content
       h1, h2, h3, h4, h5, h6
         margin-top 1.5rem
         padding-top 0
 
 
 @media (min-width: ($MQMobile + 1px))
+  /* TODO: Fix scrollbar shift on desktop
+  html {
+    overflow auto
+    margin-left calc(100vw - 100%)
+    margin-right 0
+  }
+  */
   .theme-container.no-sidebar
     .sidebar
       display none
-    .page
-      padding-left 0
 
 @require './mobile.styl'

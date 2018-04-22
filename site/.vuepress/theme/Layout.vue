@@ -18,15 +18,20 @@
 import Vue from 'vue'
 import nprogress from 'nprogress'
 import Blog from './Blog'
+import Post from './Post'
+import Dashboard from './Dashboard'
 import Navbar from './Navbar'
 import Page from './Page'
-import { pathToComponentName, getTitle, getLang } from '@app/util'
+import { pathToComponentName, getLang } from '@app/util'
+
 
 export default {
-  components: { Blog, Page, Navbar },
+  components: { Blog, Post, Page, Navbar, Dashboard },
   created () {
     if (this.$ssrContext) {
-      this.$ssrContext.title = getTitle(this.$title, this.$page)
+      const { titleSeparator, titleStatic } = this.$site.themeConfig
+      console.log('ssrContext title', this.$title, this.$page)
+      this.$ssrContext.title = getTitle(this.$title, this.$page, titleSeparator, titleStatic)
       this.$ssrContext.lang = this.$lang
       this.$ssrContext.description = this.$page.description || this.$description
     }
@@ -35,11 +40,9 @@ export default {
     // update title / meta tags
     this.currentMetaTags = []
     const updateMeta = () => {
-      console.log('Page:', this.$page);
-      console.log('Title:', this.$title);
+      const { titleSeparator, titleStatic } = this.$site.themeConfig
 
-      document.title = getTitle(this.$title, this.$page)
-      document.documentElement.lang = this.$lang
+      document.title = getTitle(this.$title, this.$page, titleSeparator, titleStatic)
       const meta = [
         {
           name: 'description',
@@ -108,7 +111,24 @@ function updateMetaTags (meta, current) {
     })
   }
 }
+
+function getTitle(siteTitle, page, separator = '|', staticTitle = false) {
+  const selfTitle = page.frontmatter.pageTitle || page.title
+  if (staticTitle || selfTitle === siteTitle) return siteTitle
+
+  return siteTitle
+    ? selfTitle
+      ? (`${siteTitle} | ${selfTitle}`)
+      : siteTitle
+    : selfTitle || 'VuePress'
+}
 </script>
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style>
+<style>
+::selection {
+  background-color: #a29bfe;
+  color: #fff;
+}
+</style>

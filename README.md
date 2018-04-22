@@ -25,6 +25,8 @@ Add `ajv` to your `.vuepress/config.js` `theme` parameter.
 - ~~Make dashboard's timeframe dynamic~~
 - ~~Update CV~~
 - ~Refactor to [Vuepress](https://vuepress.vuejs.org/)~
+- Add Keen tracking to Vuepress via npm
+- Vuetify dashboard.js solution + import keen styles and flexbox grid (or rewrite one)
 
 ----------
 ### Roadmap

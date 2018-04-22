@@ -1,5 +1,5 @@
 ---
-title: My site stack
+pageTitle: My site stack
 layout: Post
 description: What this shindig consists of.
 postDate: 2017-09-03

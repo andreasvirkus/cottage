@@ -1,5 +1,5 @@
 ---
-title: Testing typography styles
+pageTitle: Testing typography styles
 layout: Post
 description: Styling code and quote blocks and other various typography bits.
 postDate: 2017-06-24
@@ -53,11 +53,11 @@ Swag occupy affogato flexitarian, locavore actually plaid cloud bread street art
 
 And now a code block:
 
-```
+```js{4}
 Some monospaced sexiness!
 
 const pi = 'I never remembered it :o';
-```
+```js{4}
 
 Also the `<tbd>` element is great for writing inline styles!
 

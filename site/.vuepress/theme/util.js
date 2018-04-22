@@ -179,15 +179,6 @@ export function findPageForPath(pages, path) {
   }
 }
 
-export function getTitle(siteTitle, page) {
-  const selfTitle = page.frontmatter.title || page.title
-  return siteTitle
-    ? selfTitle
-      ? (siteTitle + ' | ' + selfTitle)
-      : siteTitle
-    : selfTitle || 'VuePress'
-}
-
 function ensureEndingSlash (path) {
   return /(\.html|\/)$/.test(path)
     ? path
