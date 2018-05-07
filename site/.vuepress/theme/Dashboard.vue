@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Content/>
+    <Content :custom="false" />
     <!-- TODO: Use v-for to generate metrics placeholders -->
     <div class="dashboard-container" id="visitor-data">
       <h3>General visitor data</h3>

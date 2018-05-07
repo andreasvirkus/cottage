@@ -77,10 +77,11 @@ export default {
 
 .nav-links
   display inline-block
-  transform: translate(40px)
+  transform: translate(50px, 30px)
   a
-    line-height 1.4rem
+    line-height 1.7rem
     color inherit
+    font-size: 1.3rem
     &:hover, &.router-link-active
       color $accentColor
   .nav-item

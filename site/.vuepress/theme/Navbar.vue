@@ -64,8 +64,8 @@ export default {
     top 0.7rem
   &.sticky
     //border-bottom 1px solid $borderColor
-    box-shadow 0 2px 10px -4px rgba(0,0,0,0.2)
-    height 2.4rem
+    box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
+    background-color #fff
 
 
 @media (max-width: $MQNarrow)

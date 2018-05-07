@@ -4,7 +4,7 @@
     :to="link"
     v-if="!isExternal(link)"
     :exact="link === '/'"
-    @click="$emit('click')"
+    @click.native="$emit('click')"
   >{{ item.text }}</router-link>
   <a
     v-else

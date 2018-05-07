@@ -166,7 +166,7 @@ import NavLinks from './NavLinks'
 		display: block;
 		position: absolute;
 		top: -0.5rem;
-		left: 190px;
+		left: 210px;
 		background-color: transparent;
 		width: 30px;
 		height: 24px;
@@ -230,7 +230,7 @@ import NavLinks from './NavLinks'
 
 	.menu {
 		top: 2rem;
-		transform: translateX(-160px);
+		transform: translateX(-170px);
 	}
 	.sticky + .menu {
 		top: 3rem;
