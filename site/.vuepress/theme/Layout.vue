@@ -129,6 +129,7 @@ function getTitle(siteTitle, page, separator = '|', staticTitle = false) {
 <style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style>
 <style src="./css/variables.css"></style>
+<style src="./css/global.css"></style>
 <style>
 ::selection {
   background-color: #a29bfe;
