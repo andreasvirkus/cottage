@@ -7,9 +7,7 @@
     <Navbar/>
     <Sidebar/>
 
-    <div class="custom-layout" v-if="$page.frontmatter.layout">
-      <component :is="$page.frontmatter.layout"/>
-    </div>
+    <component v-if="$page.frontmatter.layout" :is="$page.frontmatter.layout"/>
 
     <Page v-else />
   </div>

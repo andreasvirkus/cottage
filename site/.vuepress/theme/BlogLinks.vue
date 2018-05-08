@@ -6,7 +6,7 @@
           <div class="blog__menu-title">{{ post.frontmatter.pageTitle }}</div>
           <div class="blog__menu-date"
             :data-short-date="formatPostDate(post.frontmatter.postDate, true)">
-            <em>{{ formatPostDate(post.frontmatter.postDate) }}</em>
+            {{ formatPostDate(post.frontmatter.postDate) }}
           </div>
         </router-link>
       </li>
@@ -39,6 +39,7 @@ export default {
     list-style: none;
     flex-wrap: wrap;
     padding-left: 0;
+    font-style: normal;
 }
 
 .blog__menu-link {
@@ -49,6 +50,7 @@ export default {
     text-decoration: none;
     border-bottom: 0;
     text-align: center;
+    font-style: normal;
 }
 .blog__menu-link::before {
     content: '';
@@ -60,19 +62,6 @@ export default {
     position: absolute;
     transition: transform .5s ease;
     transform: scaleX(0);
-}
-
-.content .blog__menu-link:hover {
-    $bg: #0BAAD4;
-    color: $darkAccentColor;
-    text-decoration: none;
-
-    &::before {
-      transform: scaleX(1);
-    }
-}
-.content .blog__menu-link:hover::before {
-    opacity: 1;
 }
 
 .blog__menu-title {

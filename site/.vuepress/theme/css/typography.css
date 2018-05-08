@@ -19,7 +19,9 @@ h1 {
 }
 
 h2 {
-    font-size: 3rem;
+  font-size: 3rem;
+  /* TODO: Create pseudo element border with gradient */
+  /* border-bottom: 1px solid var(--default-divider); */
 }
 
 h3 {
