@@ -1,4 +1,4 @@
-window.renderVisitorData = function(client, timeframe) {
+export const renderVisitorData = (client, timeframe) => {
   var pageviewsInterval = new Dataviz()
     .height(300)
     .el('.pageviews-interval')
@@ -236,7 +236,7 @@ window.renderVisitorData = function(client, timeframe) {
     });
 };
 
-window.renderPerformanceData = function(client, timeframe) {
+export const renderPerformanceData = (client, timeframe) => {
   var responseTime = new Dataviz()
     .height(300)
     .el('.response-time')

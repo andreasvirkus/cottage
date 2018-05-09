@@ -27,6 +27,12 @@ module.exports = {
     repo: 'andreasvirkus/vuepress-theme-ajv',
     logo: 'svg/logo.svg',
     titleSeparator: '--',
+    generatorUrl: 'https://vuepress.vuejs.org',
+    generatorTitle: 'Vue-based static-site generator',
+    generatorName: 'Vuepress',
+    hostUrl: 'https://netlify.com',
+    hostTitle: 'Static sites with superpowers!',
+    hostName: 'Netlify',
     nav: [
       {
         text: 'Home',

@@ -86,7 +86,7 @@ Favourite learning resources:
 
 I like fiddling small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus).
 I started out creating websites for neighbours and small companies, which really sparked a passion. Here's what I've been up to since:
-- **FE developer at Bigbank**
+- **FE -> full-stack developer at Bigbank**
     - _July 2015–current_
     - I started out supporting an in-house Wordpress theme, helping marketers create pages
     with a page builder. Worked with the design team to unify the corporate visuals

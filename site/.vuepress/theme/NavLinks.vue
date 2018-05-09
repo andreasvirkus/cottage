@@ -13,7 +13,7 @@
       class="repo-link"
       target="_blank"
       rel="noopener noreferrer">
-      {{ repoLabel }}
+      Source
       <OutboundLink/>
     </a>
   </nav>

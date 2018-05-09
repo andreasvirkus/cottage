@@ -10,6 +10,8 @@
     <component v-if="$page.frontmatter.layout" :is="$page.frontmatter.layout"/>
 
     <Page v-else />
+
+    <page-footer/>
   </div>
 </template>
 
@@ -22,11 +24,19 @@ import Dashboard from './Dashboard'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Page from './Page'
+import PageFooter from './PageFooter'
 import { pathToComponentName, getLang } from '@app/util'
 
-
 export default {
-  components: { Blog, Post, Page, Navbar, Sidebar, Dashboard },
+  components: {
+    Blog,
+    Post,
+    Page,
+    PageFooter,
+    Navbar,
+    Sidebar,
+    Dashboard
+  },
   created () {
     if (this.$ssrContext) {
       const { titleSeparator, titleStatic } = this.$site.themeConfig
@@ -132,5 +142,11 @@ function getTitle(siteTitle, page, separator = '|', staticTitle = false) {
 ::selection {
   background-color: #a29bfe;
   color: #fff;
+}
+
+.theme-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 </style>

@@ -50,7 +50,6 @@ export default {
   .logo
     height $navbarHeight - 1.4rem
     min-width $navbarHeight - 1.4rem
-    margin-right 0.8rem
     vertical-align top
   .site-name
     font-size 1.3rem

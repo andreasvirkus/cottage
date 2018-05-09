@@ -1,19 +1,35 @@
 <template>
-    <footer>
-        <social-links />
-        <p>Proudly generated with <a href="{{ site.generatorurl }}" title="{{ generatortitle }}">{{ site.generatorname }}</a>.</p>
-        <p>Safely hosted on <a href="{{ site.hosturl }}" title="{{ hosttitle }}">{{ site.hostname }}</a>.</p>
-    </footer>
+  <footer class="site-footer">
+    <social-links />
+    <p>Proudly generated with
+      <a :href="$site.themeConfig.generatorUrl"
+        :title="$site.themeConfig.generatorTitle"
+        >{{ $site.themeConfig.generatorName }}</a>,
+    </p>
+    <p>safely hosted on
+      <a :href="$site.themeConfig.hostUrl"
+        :title="$site.themeConfig.hostTitle"
+        >{{ $site.themeConfig.hostName }}</a>.</p>
+  </footer>
 </template>
 
-<style>
-footer {
-    margin-bottom: 1.5rem;
+<script>
+import SocialLinks from './SocialLinks'
+
+export default {
+  components: { SocialLinks }
 }
-footer p {
-    text-align: right;
-    padding-right: 0.8em;
-    margin: 0;
+</script>
+
+<style>
+.site-footer {
+  margin-bottom: 1.5rem;
+}
+
+.site-footer p {
+  padding-right: 0;
+  text-align: right;
+  margin: 0;
 }
 .social__link {
     position: relative;

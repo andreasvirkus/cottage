@@ -7,6 +7,15 @@ meta:
 
 # geeky statistics
 
+---
+
+## 🔧 Under (re)construction
+
+I'll have the performance dashboards back up in a jiffy!
+
+---
+
+
 Here you can have a look at some of this site's metrics. It'll (hopefully)
 present user statistics (no. of visits, devices used, duration of session)
 and performance metrics (avg. load time, site weight, etc.).

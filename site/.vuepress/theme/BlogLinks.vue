@@ -6,7 +6,7 @@
           <div class="blog__menu-title">{{ post.frontmatter.pageTitle }}</div>
           <div class="blog__menu-date"
             :data-short-date="formatPostDate(post.frontmatter.postDate, true)">
-            {{ formatPostDate(post.frontmatter.postDate) }}
+            <time :datetime="post.frontmatter.postDate">{{ formatPostDate(post.frontmatter.postDate) }}</time>
           </div>
         </router-link>
       </li>
@@ -68,10 +68,6 @@ export default {
   overflow: hidden;
   white-space: nowrap;
 }
-.blog__menu-title::after {
-  letter-spacing: 4px;
-  content: " .........................................................................";
-}
 
 .blog__menu-date {
     margin-left: auto;
@@ -80,11 +76,18 @@ export default {
 }
 
 
+@media (min-width: $MQNarrow) {
+  .blog__menu-title::after {
+    letter-spacing: 4px;
+    content: " .........................................................................";
+  }
+}
+
 @media (max-width: $MQNarrow)
   .blog__menu-date {
       padding-left: 0;
   }
-  .blog__menu-date em {
+  .blog__menu-date time {
       position: fixed;
       opacity: 0;
   }

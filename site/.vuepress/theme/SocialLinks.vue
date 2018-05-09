@@ -64,6 +64,9 @@
 .social__icon {
     display: inline-block;
 }
+.social__icon + .social__icon {
+    margin-left: 2rem;
+}
 
 .social__link svg {
     width: 30px;

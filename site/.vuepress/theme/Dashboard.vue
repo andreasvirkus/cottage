@@ -1,5 +1,7 @@
 <template>
   <main>
+    <link rel="stylesheet" href="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-1.1.3.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
     <Content :custom="false" />
     <!-- TODO: Use v-for to generate metrics placeholders -->
     <div class="dashboard-container" id="visitor-data">
@@ -126,10 +128,10 @@
   </main>
 </template>
 
-<script src="/assets/dashboard/dashboard.js"></script>
 <script>
-  import Keen from 'keen-dataviz'
-  import analysis from 'keen-analysis'
+  import Keen from 'keen-analysis'
+  import 'keen-dataviz'
+  import { renderVisitorData, renderPerformanceData } from './dashboard'
 
   const timeframe = {
     // Make viz date dynamic (ie last 4 months)?
@@ -140,12 +142,12 @@
   export default {
     // Keen IO Settings
     mounted () {
-      window.renderVisitorData(new Keen({
+      renderVisitorData(new Keen({
           projectId: '5932a7c595cfc907a1f80c67',
           readKey: '03384FBE774B660D6C84C358DE6B68C0073053180D104FC19752DA666AB92D44032A5F8AE8F7AAE4E93DAAC8303A3C8FB4AEAD402FEC9B639164BC23953BEEC1D3893A48EB449673E429E5593BD22B0ABDA2A407360CF0EF1C7173E41CD03C1F'
       }), timeframe);
 
-      window.renderPerformanceData(new Keen({
+      renderPerformanceData(new Keen({
           projectId: '593d876495cfc907a1f8125c',
           readKey: 'B72287E07C5BBE0F25ADB1C392E3FD7B44C7C6A8397BCEA4401EEB343EEEE7C88DD5E7513387AE094E944652A2387C2DFA3CC930BD8256DB608A2B05A81EA1437A2AF6CB3D9B93B11CBECBD2199644A9CFFE493E2D4BBFA73541AF6EEAC813AB'
       }), timeframe);
@@ -186,5 +188,9 @@
       background-color: rgb(0, 187, 222);
       width: auto;
       height: 300px;
+  }
+
+  .dashboard-container {
+    padding: 2rem 2.5rem;
   }
 </style>
