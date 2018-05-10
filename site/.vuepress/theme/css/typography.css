@@ -158,4 +158,9 @@ blockquote p:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 10rem;
+    font-size: 3rem;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #fbfbfb;
 }
