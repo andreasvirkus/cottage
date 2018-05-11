@@ -55,6 +55,14 @@ footer p a {
     text-decoration-skip: ink;
   }
 }
+@supports (text-decoration-skip-ink: auto) {
+  main a,
+  footer p a {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
+}
 main a:hover,
 footer p a:hover {
   color: var(--link-color__hover);
