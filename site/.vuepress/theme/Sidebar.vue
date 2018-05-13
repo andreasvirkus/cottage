@@ -271,4 +271,20 @@ import NavLinks from './NavLinks'
 		pointer-events: none;
 	}
 }
+
+@media screen and (min-width: 35rem) and (max-width: 70rem) {
+  .morph-shape,
+  .menu__handle {
+    top: 3rem;
+  }
+  .morph-shape {
+    right: -12rem;
+  }
+}
+
+@media screen and (min-width: 70rem) {
+  .morph-shape {
+    height: 80vh;
+  }
+}
 </style>
