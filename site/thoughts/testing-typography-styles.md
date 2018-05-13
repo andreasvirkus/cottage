@@ -17,6 +17,9 @@ in the form of a blog post.
 
 So let's run through some rudimentary elements essential for a half-decent blog!
 
+**Edit** This also turned out to be very useful whilst refactoring this site from
+[Metalsmith to Vuepress]() (and I'd imagine likewise for a style makeover).
+
 Some headings:
 
 # Heading 1
@@ -30,6 +33,8 @@ Some headings:
 And a content link style with sexy underlines - [Gargoyle Gigglypuff jamming it out](https://andreasvirkus.me)
 
 - A
+  - Deeply
+  - Nested
 - List
 - Of
 - Sorts
@@ -53,9 +58,7 @@ Swag occupy affogato flexitarian, locavore actually plaid cloud bread street art
 
 And now some code blocks:
 
-``` js{4}
-Some monospaced sexiness!
-
+```js
 const pi = 'I never remembered it 😶';
 ```
 

@@ -17,7 +17,7 @@ We'll need Node's native `fs` and `path` modules and also the file's name
 (which you can later make dynamic, but currently we'll settle for the default
 `sitemap.xml` value).
 
-``` js{4}
+```js
 const fs = require('fs');
 const path = require('path');
 const fileName = 'sitemap.xml';
@@ -26,7 +26,7 @@ const fileName = 'sitemap.xml';
 Next we'll define the sitemap's closing tag, so we could replace the length of it
 when we write to the file later (you'll hear more 'bout it in a bit).
 
-``` js{4}
+```js
 const closingTag = '</urlset>';
 ```
 
@@ -34,7 +34,7 @@ Then we'll go ahead and create a buffer containing our new content (the line
 we're appending) and the closing tag we just defined  
 ...aand also need to know the file's path and size.
 
-``` js{4}
+```js
 let content = `<url> <loc>https://andreasvirkus.me/assets/cv/CV-Andreas-Johan-Virkus.pdf</loc> </url>`,
     buffer = new Buffer(content+ '\n' + closingTag),
     filePath = path.join(__dirname, '..', 'dist', fileName),
@@ -44,7 +44,7 @@ let content = `<url> <loc>https://andreasvirkus.me/assets/cv/CV-Andreas-Johan-Vi
 Now all that's left to do is to open up the `XML` file and replace the
 end of the file (length of the closing tag) with our freshly defined buffer:
 
-``` js{4}
+```js
 fs.open(filePath, 'r+', (err, fd) => {
     // File was most likely not found or we don't have permission to write
     if (err) throw err;
@@ -56,7 +56,7 @@ fs.open(filePath, 'r+', (err, fd) => {
 ```
 
 So what we've got so far is this:
-``` js{4}
+```js
 // appendToSitemap.js
 
 const fs = require('fs');
@@ -82,7 +82,7 @@ it should add our `content` variable as the last entry of the file's `urlset`.
 Since I wish to automate this process, I'll add it to my Metalsmith
 build's callback as a module:
 
-``` js{4}
+```js
 const fs = require('fs');
 const path = require('path');
 const fileName = 'sitemap.xml';
@@ -103,7 +103,7 @@ module.exports = function(content) {
 
 And I can call it in my `build.js` file:
 
-``` js{4}
+```js
 metalsmith(__dirname)
     .source('./src')
     .destination('./dist')
