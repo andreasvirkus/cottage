@@ -24,7 +24,7 @@ module.exports = {
   //   }
   // },
   themeConfig: {
-    repo: 'andreasvirkus/vuepress-theme-ajv',
+    repo: 'andreasvirkus',
     logo: 'svg/logo.svg',
     titleSeparator: '--',
     generatorUrl: 'https://vuepress.vuejs.org',
