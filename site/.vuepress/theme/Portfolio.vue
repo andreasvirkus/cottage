@@ -116,9 +116,6 @@ function find (page, items = [], offset) {
 <style lang="stylus">
 @import './styles/config.styl'
 
-.page
-  padding-bottom 2rem
-
 .edit-link.content
   padding-top 0 !important
   a

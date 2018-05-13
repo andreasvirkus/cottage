@@ -117,15 +117,14 @@ import NavLinks from './NavLinks'
 
 .morph-shape {
 	position: absolute;
-	top: 50%;
-	transform: translate(220px, -50%);
+	top: 0;
+	transform: translateX(13rem);
 	width: 240px;
 	height: 80vh;
 	right: 0;
 	pointer-events: none;
 	/* Testing new responsive styles */
 	height: 90vh;
-	top: 48%;
 	transition: top .2s, height .2s;
 }
 
@@ -168,8 +167,8 @@ import NavLinks from './NavLinks'
 	.menu__handle {
 		display: block;
 		position: absolute;
-		top: -0.5rem;
-		left: 210px;
+		top: 0;
+		right: -8rem;
 		background-color: transparent;
 		width: 30px;
 		height: 24px;
@@ -243,8 +242,8 @@ import NavLinks from './NavLinks'
 	}
 	/* Testing new responsive styles */
 	.sticky + .menu .morph-shape {
-		top: 50%;
-		height: 80vh;
+		top: 2rem;
+		height: 75vh;
 	}
 	.menu.menu--open {
 		transform: translateX(0);
