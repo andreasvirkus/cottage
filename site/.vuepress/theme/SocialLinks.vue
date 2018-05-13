@@ -65,7 +65,24 @@
     display: inline-block;
 }
 .social__icon + .social__icon {
-    margin-left: 2rem;
+    margin-left: 2em;
+}
+.social__link {
+    position: relative;
+}
+.social__link::after {
+    content: '';
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    transition: border-color .2s;
+    border: 1px dashed transparent;
+    top: -0.65em;
+    left: -0.62em;
+    z-index: 0;
+}
+.social__link:hover::after {
+    border-color: #444;
 }
 
 .social__link svg {

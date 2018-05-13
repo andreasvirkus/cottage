@@ -12,8 +12,8 @@
 </template>
 
 <script>
-// import Snap from '../../../../assets/js/snap.svg.min'
-// import menu from '../../../../assets/js/menu'
+// import Snap from './snap.svg.min'
+// import menu from './menu'
 
 import NavLinks from './NavLinks'
 	// Replace morph-shape snap.svg with tweenlite or some other lighter SVG morph lib
@@ -25,6 +25,9 @@ import NavLinks from './NavLinks'
 				open: false
 			}
 		}
+		// mounted () {
+			// menu()
+		// }
 	}
 </script>
 
@@ -131,7 +134,7 @@ import NavLinks from './NavLinks'
 	stroke-width: 5px;
 }
 
-@media screen and (max-width: 67em) {
+@media screen and (max-width: 70rem) {
 	.menu.menu--anim li {
 		will-change: transform;
 		transform: translateX(0);

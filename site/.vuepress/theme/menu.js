@@ -1,4 +1,4 @@
-(function() {
+export default () => {
     function SVGMenu(el, options) {
         this.el = el;
         this.init();
@@ -87,4 +87,4 @@
     };
 
     new SVGMenu(document.getElementById('menu'));
-})();
+};
