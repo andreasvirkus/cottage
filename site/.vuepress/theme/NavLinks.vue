@@ -2,7 +2,7 @@
   <nav class="nav-links" v-if="userLinks.length || repoLink">
     <!-- user links -->
     <div
-      class="nav-item"
+      class="nav__item"
       v-for="item in userLinks"
       :key="item.link">
       <NavLink :item="item" @click="$emit('nav')"/>
@@ -10,10 +10,9 @@
     <!-- repo link -->
     <a v-if="repoLink"
       :href="repoLink"
-      class="repo-link"
+      class="nav__item repo-link"
       target="_blank"
-      rel="noopener noreferrer">
-      Source
+      rel="noopener noreferrer">Source
       <OutboundLink/>
     </a>
   </nav>
@@ -84,7 +83,7 @@ export default {
     font-size: 1.3rem
     &:hover, &.router-link-active
       color $accentColor
-  .nav-item
+  .nav__item
     cursor: pointer
     position relative
     margin-left 1.5rem
@@ -94,14 +93,14 @@ export default {
 
 @media (max-width: $MQMobile)
   .nav-links
-    .nav-item, .repo-link
+    .nav__item, .repo-link
       margin-left 0
 
 @media (min-width: $MQMobile)
   .nav-links a
     &:hover, &.router-link-active
       color $textColor
-  .nav-item > a
+  .nav__item > a
     &:hover, &.router-link-active
       margin-bottom -2px
       border-bottom 2px solid $darkAccentColor

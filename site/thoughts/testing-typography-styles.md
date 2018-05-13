@@ -51,15 +51,26 @@ Edison bulb godard craft beer, leggings keytar organic XOXO disrupt irony hell o
 Swag occupy affogato flexitarian, locavore actually plaid cloud bread street art art party cardigan health goth. +1 mustache paleo tofu knausgaard neutra. Gluten-free hashtag umami, helvetica tilde meditation direct trade hot chicken tbh forage artisan. Tote bag helvetica quinoa vexillologist, blog air plant etsy asymmetrical la croix stumptown art party.
 
 
-And now a code block:
+And now some code blocks:
 
-```js{4}
+``` js{4}
 Some monospaced sexiness!
 
-const pi = 'I never remembered it :o';
-```js{4}
+const pi = 'I never remembered it 😶';
+```
+
+``` html
+<h2>With different syntaxes</h2>
+```
+
+``` css
+body {
+  /* Someone's going to jail for this */
+  display: none !important;
+}
+```
 
 Also the `<tbd>` element is great for writing inline styles!
 
-Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.
-<!-- TODO: Link to that post in the future -->
+~Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.~ (covered by migrating to Vuepress)
+<!-- TODO: Link to Vuepress migration post in the future -->

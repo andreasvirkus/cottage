@@ -43,7 +43,7 @@ import NavLinks from './NavLinks'
 .menu::after {
 	content: '';
 	width: 140vw;
-	height: 110vh;
+	height: 130vh;
 	position: absolute;
 	top: -5em;
 	left: 0;
@@ -59,18 +59,17 @@ import NavLinks from './NavLinks'
 	width: 180px;
 }
 
-.menu__item {
+.nav__item {
 	margin-bottom: 2em;
-	font-weight: 600;
 	cursor: pointer;
 }
-.menu__item::before {
-	content: ':';
+.nav__item::before {
+	content: '≀';
 	position: relative;
 	display: inline-block;
-	top: -1px;
-	left: -3px;
-	font-weight: 700;
+	top: -2px;
+	left: -8px;
+	font-weight: 800;
 	height: 11px;
 	width: 4px;
 }
@@ -85,30 +84,33 @@ import NavLinks from './NavLinks'
 	opacity: 0.6;
 }
 
-.menu__item:hover .menu__link {
+.nav__item:hover .menu__link {
 	opacity: 1;
 }
-.menu__item[aria-current="page"] .menu__link {
+.nav__item[aria-current="page"] .menu__link {
 	opacity: 1;
 }
 
-.menu__item:first-child::before {
+.nav__item:first-child::before {
 	color: #A6D865;
 }
-.menu__item:nth-child(2)::before {
+.nav__item:nth-child(2)::before {
 	color: #DBD253;
 }
-.menu__item:nth-child(3)::before {
+.nav__item:nth-child(3)::before {
 	color: #F484D4;
 }
-.menu__item:nth-child(4)::before {
+.nav__item:nth-child(4)::before {
 	color: #EF835F;
 }
-.menu__item:nth-child(5)::before {
+.nav__item:nth-child(5)::before {
 	color: #8F6EF4;
 }
-.menu__item:nth-child(6)::before {
+.nav__item:nth-child(6)::before {
 	color: #00A0B0;
+}
+.nav__item:nth-child(7)::before {
+	color: #00d2d3;
 }
 
 .menu__handle {
@@ -118,10 +120,8 @@ import NavLinks from './NavLinks'
 .morph-shape {
 	position: absolute;
 	top: 0;
-	transform: translateX(13rem);
+	right: -13rem;
 	width: 240px;
-	height: 80vh;
-	right: 0;
 	pointer-events: none;
 	/* Testing new responsive styles */
 	height: 90vh;
@@ -139,28 +139,28 @@ import NavLinks from './NavLinks'
 		transform: translateX(0);
 	}
 
-	.menu__item {
+	.nav__item {
 		will-change: transform;
 		transform: translate3d(-160px, 0, 0);
 		transition: transform 0.6s;
 	}
 
-	.menu__item:first-child {
+	.nav__item:first-child {
 		transition-delay: 0.3s;
 	}
-	.menu__item:nth-child(2) {
+	.nav__item:nth-child(2) {
 		transition-delay: 0.25s;
 	}
-	.menu__item:nth-child(3) {
+	.nav__item:nth-child(3) {
 		transition-delay: 0.2s;
 	}
-	.menu__item:nth-child(4) {
+	.nav__item:nth-child(4) {
 		transition-delay: 0.15s;
 	}
-	.menu__item:nth-child(5) {
+	.nav__item:nth-child(5) {
 		transition-delay: 0.1s;
 	}
-	.menu__item:nth-child(6) {
+	.nav__item:nth-child(6) {
 		transition-delay: 0.05s;
 	}
 
@@ -245,7 +245,8 @@ import NavLinks from './NavLinks'
 		top: 2rem;
 		height: 75vh;
 	}
-	.menu.menu--open {
+	.menu.menu--open,
+	.menu.menu--open .nav__item {
 		transform: translateX(0);
 	}
 	.menu__handle span::before {

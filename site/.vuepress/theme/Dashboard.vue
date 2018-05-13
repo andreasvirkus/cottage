@@ -131,7 +131,7 @@
 <script>
   import Keen from 'keen-analysis'
   import 'keen-dataviz'
-  import { renderVisitorData, renderPerformanceData } from './dashboard'
+  import { renderVisitorData, renderPerformanceData } from './keenController'
 
   const timeframe = {
     // Make viz date dynamic (ie last 4 months)?
@@ -141,6 +141,7 @@
 
   export default {
     // Keen IO Settings
+    name: 'dashboard',
     mounted () {
       renderVisitorData(new Keen({
           projectId: '5932a7c595cfc907a1f80c67',
