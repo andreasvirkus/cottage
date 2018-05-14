@@ -1,17 +1,18 @@
 # andreasvirkus.github.io
 ### A humble homepage of sorts...
 
-Metalsmith setup for my current portfolio-ish site.
+~Metalsmith~ Vuepress setup for my current portfolio-ish site.
 
-Since Github doesn't let you use a subdir for your static site
-(and the gh-pages hack `git subtree push --prefix dist origin gh-pages`
-doesn't work with user pages), this is hosted on [Netlify](https://netlify.com).
+Hosted on [Netlify](https://netlify.com).
 
 #### Want a site like this?
 
 Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or follow this **one-click-wonder-deploy**!
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
+
+Vuepress-way:
+Add `ajv` to your `.vuepress/config.js` `theme` parameter.
 
 ----------
 ### TODO:
@@ -23,29 +24,35 @@ Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-b
 - ~~Link to [status page](https://status.andreasvirkus.me)~~
 - ~~Make dashboard's timeframe dynamic~~
 - ~~Update CV~~
+- ~Refactor to [Vuepress](https://vuepress.vuejs.org/)~
+- ~Add Keen tracking to Vuepress via npm~
+- Vuetify dashboard.js solution + import keen styles and flexbox grid (or rewrite one)
+- Refactor Stylus to native CSS + css custom properties
+- Add vue-tweezing for morphing SVG (menu border)
+- Add dark theme
+- Add theme customiser
 
 ----------
 ### Roadmap
 
-- ~~Dynamic navigation (Pjax)~~
+- ~~Dynamic navigation (Vuepress)~~
     - ~~History API support~~
     - Smooth page transitions (menu overlay into the next page's solid white background)
-    - Swap pjax for [Barba](https://github.com/luruke/barba.js)
 - ~~Offline support & manifest.json~~
-- Syntax highlighting if posts get code-heavy
+- ~Syntax highlighting if posts get code-heavy (Vuepress)~
 - ~~Analytics & dashboard~~
     - ~~Visitor statistics~~
     - Performance metrics
     - ~~Build stats/time~~
-- Theming? Since the site is built on CSS custom properties, wouldn't be too much of an effort.
+- Theming. Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes
-- Set up Webpack, since I miss my ES6 modules
-- [Partial rebuilds](http://www.mograblog.com/2016/11/speed-up-metalsmith.html) with Chokidar
-- Metalsmith helper for random (or within range) gradient custom properties.
+- ~Set up Webpack, since I miss my ES6 modules (Vuepress)~
+- ~Metalsmith~ Vue helper for random (or within range) gradient custom properties
 - Make CV dynamic
     - ~~Generate CV's PDF from Markdown~~
     - Add custom styles
     - Remove front matter from `.md` before generating `.pdf`
+- Gist snippets to Vuepress vault
 
 ### Article/blog post/snippet-sharing ideas
 

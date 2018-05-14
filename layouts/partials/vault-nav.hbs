@@ -1,9 +1,0 @@
-<nav class="vault__menu" role="navigation">
-    <ul class="vault__menu-list">
-        {{# each collections.posts }}
-        <li class="vault__menu-item {{#is this.path @root.path }}active{{/is}}">
-            <a href="/{{ this.path }}" class="vault__menu-link">{{ this.title }}</a> | <em>{{ date this.date }}</em>
-        </li>
-        {{/ each }}
-    </ul>
-</nav>

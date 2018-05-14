@@ -1,0 +1,171 @@
+@require './config'
+@require './nprogress'
+@require './code'
+@require './custom-blocks'
+@require './arrow'
+
+.navbar
+  position fixed
+  z-index 4
+  top 0
+  left 0
+  right 0
+  height $navbarHeight
+
+.sidebar-mask
+  position fixed
+  z-index 9
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  display none
+
+.sidebar
+  font-size 15px
+  background-color #fff
+  width $sidebarWidth
+  position fixed
+  z-index 10
+  margin 0
+  top $navbarHeight
+  left 0
+  bottom 0
+  box-sizing border-box
+  border-right 1px solid $borderColor
+  overflow-y auto
+
+.content
+  max-width $contentWidth
+  margin 0 auto
+  padding 2rem 2.5rem
+  > *:first-child:not(ul)
+    margin-top $navbarHeight
+  p.demo
+    padding 1rem 1.5rem
+    border 1px solid #ddd
+    border-radius 4px
+  img
+    max-width 100%
+.content + .content
+  padding-top 0
+
+p a code
+  font-weight 400
+  color $accentColor
+
+kbd
+  background #eee
+  border solid 0.15rem #ddd
+  border-bottom solid 0.25rem #ddd
+  border-radius 0.15rem
+  padding 0 0.15em
+
+blockquote
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 #004EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 10rem;
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #fbfbfb;
+
+blockquote p
+  margin 0
+
+blockquote p:last-child
+    font-size .6em
+    align-self flex-end
+
+
+ul, ol
+  padding-left 1.2em
+
+strong
+  font-weight 600
+
+h1, h2, h3, h4, h5, h6
+  font-weight 600
+  line-height 1.25
+  .content > &
+    margin-top (0.5rem - $navbarHeight)
+    padding-top ($navbarHeight + 1rem)
+    margin-bottom 0
+    &:first-child
+      margin-top 0
+      margin-bottom 1rem
+      + p, + pre, + .custom-block
+        margin-top 2rem
+  &:hover .header-anchor
+    opacity: 1
+
+h1
+  font-size 2.2rem
+
+h2
+  font-size 1.65rem
+  padding-bottom .3rem
+
+h3
+  font-size 1.35rem
+
+a.header-anchor
+  font-size 0.85em
+  float left
+  margin-left -0.87em
+  padding-right 0.23em
+  margin-top 0.125em
+  opacity 0
+  &:hover
+    text-decoration none
+
+code, kbd
+  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
+p, ul, ol
+  line-height 1.7
+
+hr
+  border 0
+  border-top 1px solid $borderColor
+
+table
+  border-collapse collapse
+  margin 1rem 0
+
+tr
+  border-top 1px solid #dfe2e5
+  &:nth-child(2n)
+    background-color #f6f8fa
+
+th, td
+  border 1px solid #dfe2e5
+  padding .6em 1em
+
+.theme-container
+  &.sidebar-open
+    .sidebar-mask
+      display: block
+  &.no-navbar
+    .content
+      h1, h2, h3, h4, h5, h6
+        margin-top 1.5rem
+        padding-top 0
+
+
+@media (min-width: ($MQMobile + 1px))
+  /* TODO: Fix scrollbar shift on desktop
+  html {
+    overflow auto
+    margin-left calc(100vw - 100%)
+    margin-right 0
+  }
+  */
+  .theme-container.no-sidebar
+    .sidebar
+      display none
+
+@require './mobile.styl'
