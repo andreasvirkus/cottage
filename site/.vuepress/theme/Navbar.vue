@@ -1,9 +1,6 @@
 <template>
   <header class="navbar" :class="{ sticky }" ref="bar">
     <router-link to="/" class="home-link">
-      <!-- <img class="logo"
-        v-if="$site.themeConfig.logo"
-        :src="'/' + $withBase($site.themeConfig.logo)"> -->
         <pre>~/</pre>
     </router-link>
     <div class="links">
@@ -46,6 +43,8 @@ export default {
   position relative
   border-bottom 1px solid transparent
   transition all 0.2s
+  // margin-right: 10px; // Add when we add body border
+
   a, span, img
     display inline-block
   pre
@@ -64,10 +63,13 @@ export default {
     transition opacity .1s
     opacity 0
   &.sticky
-    border-color #a29bfe82 //$borderColor
+    border-color #a29bfe82
     box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
-    background-color #fff
-    transition-delay 0
+    background-color rgba(255, 255, 255, .92)
+    transition-delay 0s
+    // Add when we add body border
+    // transform: translate(10px);
+    // margin-right: 20px;
 
     .home-link
       opacity 1

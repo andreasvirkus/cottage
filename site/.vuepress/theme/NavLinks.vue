@@ -84,12 +84,9 @@ export default {
     &:hover, &.router-link-active
       color $accentColor
   .nav__item
-    cursor: pointer
-    position relative
-    margin-left 1.5rem
     line-height 2rem
-  .repo-link
-    margin-left 1.5rem
+    &:first-child
+      margin-top 2rem
 
 @media (max-width: $MQMobile)
   .nav-links
@@ -104,4 +101,11 @@ export default {
     &:hover, &.router-link-active
       margin-bottom -2px
       border-bottom 2px solid $darkAccentColor
+
+@media (min-width: 70rem)
+   .nav-links
+    display flex
+    height 70vh
+    justify-content space-between
+    flex-direction column
 </style>

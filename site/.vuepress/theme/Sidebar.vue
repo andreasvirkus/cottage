@@ -72,23 +72,6 @@ import NavLinks from './NavLinks'
 	font-size: 2rem;
 }
 
-.menu__link {
-	position: relative;
-	outline: none;
-	text-transform: uppercase;
-	color: var(--content-color);
-	cursor: pointer;
-	transition: color 0.1s ease-in-out, opacity 0.1s;
-	opacity: 0.6;
-}
-
-.nav__item:hover .menu__link {
-	opacity: 1;
-}
-.nav__item[aria-current="page"] .menu__link {
-	opacity: 1;
-}
-
 .nav__item:first-child::before {
 	color: #A6D865;
 }
@@ -278,6 +261,10 @@ import NavLinks from './NavLinks'
   .morph-shape {
     height: 80vh;
     right: -13rem;
+  }
+
+  .nav__item {
+    transform: rotate(90deg);
   }
 }
 </style>
