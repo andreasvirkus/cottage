@@ -66,12 +66,10 @@ import NavLinks from './NavLinks'
 .nav__item::before {
 	content: '≀';
 	position: relative;
-	display: inline-block;
-	top: -2px;
+	top: 2px;
 	left: -8px;
 	font-weight: 800;
-	height: 11px;
-	width: 4px;
+	font-size: 2rem;
 }
 
 .menu__link {
@@ -134,6 +132,10 @@ import NavLinks from './NavLinks'
 }
 
 @media screen and (max-width: 70rem) {
+  .morph-shape {
+    right: -11.5rem;
+  }
+
 	.menu.menu--anim li {
 		will-change: transform;
 		transform: translateX(0);
@@ -168,7 +170,7 @@ import NavLinks from './NavLinks'
 		display: block;
 		position: absolute;
 		top: 0;
-		right: -8rem;
+		right: -7rem;
 		background-color: transparent;
 		width: 30px;
 		height: 24px;
@@ -272,19 +274,10 @@ import NavLinks from './NavLinks'
 	}
 }
 
-@media screen and (min-width: 35rem) and (max-width: 70rem) {
-  .morph-shape,
-  .menu__handle {
-    top: 3rem;
-  }
-  .morph-shape {
-    right: -12rem;
-  }
-}
-
 @media screen and (min-width: 70rem) {
   .morph-shape {
     height: 80vh;
+    right: -13rem;
   }
 }
 </style>

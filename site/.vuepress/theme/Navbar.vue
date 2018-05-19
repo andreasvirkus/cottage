@@ -1,9 +1,10 @@
 <template>
   <header class="navbar" :class="{ sticky }" ref="bar">
     <router-link to="/" class="home-link">
-      <img class="logo"
+      <!-- <img class="logo"
         v-if="$site.themeConfig.logo"
-        :src="'/' + $withBase($site.themeConfig.logo)">
+        :src="'/' + $withBase($site.themeConfig.logo)"> -->
+        <pre>~/</pre>
     </router-link>
     <div class="links">
       <SearchBox v-if="$site.themeConfig.search !== false"/>
@@ -43,14 +44,12 @@ export default {
   padding 0.7rem 1.5rem
   line-height $navbarHeight - 1.4rem
   position relative
-  transition height .2s, box-shadow .2s, border-color .1s
-  transition-delay 0
+  border-bottom 1px solid transparent
+  transition all 0.2s
   a, span, img
     display inline-block
-  .logo
-    height $navbarHeight - 1.4rem
-    min-width $navbarHeight - 1.4rem
-    vertical-align top
+  pre
+    margin 0
   .site-name
     font-size 1.3rem
     font-weight 600
@@ -61,18 +60,20 @@ export default {
     position absolute
     right 1.5rem
     top 0.7rem
-  &.sticky
-    //border-bottom 1px solid $borderColor
-    box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
-    background-color #fff
-
-
-@media (max-width: $MQNarrow)
   .home-link
     transition opacity .1s
     opacity 0
+  &.sticky
+    border-color #a29bfe82 //$borderColor
+    box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
+    background-color #fff
+    transition-delay 0
+
+    .home-link
+      opacity 1
+
+
+@media (max-width: 70rem)
   .navbar.sticky
-    transition-delay .4s
-  .navbar.sticky .home-link
-    opacity 1
+    transition-delay .2s
 </style>

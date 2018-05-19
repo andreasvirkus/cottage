@@ -167,30 +167,24 @@ export default {
         font-size 0.9em
         margin-left 0.25em
     &.focused
-      background-color #f3f4f5
+      background-color rgba(220, 220, 220, .4)
       a
         color $accentColor
 
-@media (max-width: $MQNarrow)
-  .search-box input
-    width 0
-    border-color transparent
-    position relative
-    left 1rem
-    &:focus
-      left 0
-      width 10rem
-
-@media (max-width: $MQMobile)
+@media (max-width: 70rem)
   .search-box
     margin-right 0
+
     .suggestions
       right 0
-
-@media (max-width: $MQMobileNarrow)
-  .search-box
-    .suggestions
       width calc(100vw - 4rem)
-    input:focus
-      width 8rem
+
+    input
+      width 0
+      border-color transparent
+      position relative
+      left 1rem
+      &:focus
+        left 0
+        width 10rem
 </style>
