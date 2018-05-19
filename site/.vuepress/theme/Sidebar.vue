@@ -157,7 +157,8 @@ import NavLinks from './NavLinks'
 		top: 0;
 		right: -7rem;
 		background-color: transparent;
-		width: 30px;
+		width: 30px; /* old style */
+		width: 35px;
 		height: 24px;
 		padding: 0;
 		border: none;
@@ -172,7 +173,9 @@ import NavLinks from './NavLinks'
 	.menu__handle span {
 		background-color: var(--menu-color);
 		position: absolute;
-		height: 3px;
+		height: 3px; /* old style */
+		height: 2px;
+		transition: transform 0.25s ease-in-out 0.3s, width 0.2s ease-in-out 0.2s, opacity 0.4s ease-in-out 0.3s;
 		left: 0;
 	}
 
@@ -180,37 +183,49 @@ import NavLinks from './NavLinks'
 	.menu__handle::after {
 		content: '';
 		top: 50%;
+    width: 50%;
 		transform-origin: 50% 50%;
-		transition: transform 0.25s;
 	}
 
 	.menu__handle span {
-		width: 55%;
+		width: 55%; /* old style */
+		width: 100%;
 		text-indent: 200%;
 		color: transparent;
 	}
 
 	.menu__handle::before {
 		transform: translate3d(0, -8px, 0);
-		width: 100%;
+    z-index: 3;
+		/* width: 100%; old style */
 	}
 
 	.menu__handle::after {
 		transform: translate3d(0, 8px, 0);
-		width: 75%
+    right: 0;
+    left: initial;
+		/* width: 75%; old style*/
 	}
 
 	.menu--open .menu__handle span {
 		opacity: 0;
 	}
 
+  .menu--open .menu__handle span,
+	.menu--open .menu__handle::before,
+	.menu--open .menu__handle::after {
+		transition: transform 0.25s 0.7s ease-in-out, width 0.2s 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	}
+	.menu--open .menu__handle::before,
+	.menu--open .menu__handle::after {
+    width: 100%;
+	}
 	.menu--open .menu__handle::before {
 		transform: rotate3d(0, 0, 1, 45deg);
 	}
 
 	.menu--open .menu__handle::after {
 		transform: rotate3d(0, 0, 1, -45deg);
-		width: 100%;
 	}
 
 	.menu:not(.menu--open) {

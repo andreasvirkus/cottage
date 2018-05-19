@@ -85,8 +85,6 @@ export default {
       color $accentColor
   .nav__item
     line-height 2rem
-    &:first-child
-      margin-top 3.5rem
 
 @media (max-width: $MQMobile)
   .nav-links
@@ -103,9 +101,11 @@ export default {
       border-bottom 2px solid $darkAccentColor
 
 @media (min-width: 70rem)
-   .nav-links
+  .nav-links
     display flex
     height 70vh
     justify-content space-between
     flex-direction column
+  .nav__item:first-child
+    margin-top 3.5rem
 </style>
