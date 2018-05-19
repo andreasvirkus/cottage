@@ -2,6 +2,11 @@
 meta:
   - name: description
     content: Get to know me. Long walks on the beach included.
+tags:
+  - cv
+  - employment
+  - history
+  - education
 ---
 
 # me

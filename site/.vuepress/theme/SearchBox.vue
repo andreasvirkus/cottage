@@ -66,6 +66,11 @@ export default {
         if (matches(p)) {
           res.push(p)
         } else if (p.headers) {
+          // console.log('headers:', p.headers)
+          // console.log('tags:', p.tags)
+          // TODO: Also search through tags frontmatter on pages
+          p.tags && p.headers.join(p.tags)
+
           for (let j = 0; j < p.headers.length; j++) {
             if (res.length >= max) break
             const h = p.headers[j]
@@ -159,6 +164,7 @@ export default {
     line-height 1.4
     padding 0.4rem 0.6rem
     border-radius 4px
+    z-index 5
     a
       color lighten($textColor, 35%)
       .page-title
@@ -177,7 +183,7 @@ export default {
 
     .suggestions
       right 0
-      width calc(100vw - 4rem)
+      width calc(70vw)
 
     input
       width 0

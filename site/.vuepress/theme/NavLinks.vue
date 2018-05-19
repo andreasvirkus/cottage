@@ -86,7 +86,7 @@ export default {
   .nav__item
     line-height 2rem
     &:first-child
-      margin-top 2rem
+      margin-top 3.5rem
 
 @media (max-width: $MQMobile)
   .nav-links

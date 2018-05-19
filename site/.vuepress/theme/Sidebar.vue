@@ -14,6 +14,8 @@
 <script>
 // import Snap from './snap.svg.min'
 // import menu from './menu'
+// TODO: Add v-clickaway directive for backdrop
+// TODO: Refactor styles
 
 import NavLinks from './NavLinks'
 	// Replace morph-shape snap.svg with tweenlite or some other lighter SVG morph lib
@@ -160,7 +162,7 @@ import NavLinks from './NavLinks'
 		padding: 0;
 		border: none;
 		outline: none;
-		z-index: 9;
+		z-index: 4;
 		cursor: pointer;
 		pointer-events: all;
 	}

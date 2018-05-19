@@ -43,6 +43,7 @@ export default {
   position relative
   border-bottom 1px solid transparent
   transition all 0.2s
+  z-index: 6
   // margin-right: 10px; // Add when we add body border
 
   a, span, img
