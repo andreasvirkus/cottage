@@ -86,15 +86,7 @@ export default {
   .nav__item
     line-height 2rem
 
-@media (max-width: $MQMobile)
-  .nav-links
-    .nav__item, .repo-link
-      margin-left 0
-
-@media (min-width: $MQMobile)
-  .nav-links a
-    &:hover, &.router-link-active
-      color $textColor
+@media (min-width: $MQMobile) and (max-width: 69rem)
   .nav__item > a
     &:hover, &.router-link-active
       margin-bottom -2px
@@ -105,7 +97,10 @@ export default {
     display flex
     height 70vh
     justify-content space-between
-    flex-direction column
-  .nav__item:first-child
-    margin-top 3.5rem
+    flex-direction row
+    writing-mode vertical-lr
+  .nav__item > a
+    &:hover, &.router-link-active
+      color $textColor
+      border-left 2px solid $darkAccentColor
 </style>

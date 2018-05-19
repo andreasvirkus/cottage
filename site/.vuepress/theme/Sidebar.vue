@@ -68,8 +68,6 @@ import NavLinks from './NavLinks'
 .nav__item::before {
 	content: '≀';
 	position: relative;
-	top: 2px;
-	left: -8px;
 	font-weight: 800;
 	font-size: 2rem;
 }
@@ -278,10 +276,6 @@ import NavLinks from './NavLinks'
   .morph-shape {
     height: 80vh;
     right: -13rem;
-  }
-
-  .nav__item {
-    transform: rotate(90deg);
   }
 }
 </style>

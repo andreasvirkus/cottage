@@ -144,7 +144,7 @@ export default {
     padding 0 0.5rem 0 2rem
     outline none
     transition all .2s ease
-    background #fff url(./search.svg) 0.6rem 0.5rem no-repeat
+    background transparent url(./search.svg) 0.6rem 0.5rem no-repeat
     background-size 1rem
     &:focus
       cursor auto
@@ -154,12 +154,11 @@ export default {
     width 20rem
     position absolute
     top 1.5rem
-    border 1px solid darken($borderColor, 10%)
-    border-radius 6px
+    right 0
+    // border 1px solid darken($borderColor, 10%)
+    box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
     padding 0.4rem
     list-style-type none
-    &.align-right
-      right 0
   .suggestion
     line-height 1.4
     padding 0.4rem 0.6rem
@@ -182,8 +181,7 @@ export default {
     margin-right 0
 
     .suggestions
-      right 0
-      width calc(70vw)
+      width 70vw
 
     input
       width 0
