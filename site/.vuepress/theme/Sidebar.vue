@@ -101,7 +101,7 @@ import NavLinks from './NavLinks'
 .morph-shape {
 	position: absolute;
 	top: 0;
-	right: -13rem;
+	right: -11.5rem;
 	width: 240px;
 	pointer-events: none;
 	/* Testing new responsive styles */
@@ -115,10 +115,6 @@ import NavLinks from './NavLinks'
 }
 
 @media screen and (max-width: 70rem) {
-  .morph-shape {
-    right: -11.5rem;
-  }
-
 	.menu.menu--anim li {
 		will-change: transform;
 		transform: translateX(0);

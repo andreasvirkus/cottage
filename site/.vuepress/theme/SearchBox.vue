@@ -127,7 +127,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './styles/config.styl'
+@import './css/variables.css'
 
 .search-box
   display inline-block
@@ -135,10 +135,10 @@ export default {
   margin-right 0.5rem
   input
     width 10rem
-    color lighten($textColor, 25%)
+    color var(--text-color)
     display inline-block
     border none
-    border-bottom 1px solid darken($borderColor, 10%)
+    border-bottom 1px solid var(--border-color)
     font-size 0.9rem
     line-height 2rem
     padding 0 0.5rem 0 2rem
@@ -148,14 +148,14 @@ export default {
     background-size 1rem
     &:focus
       cursor auto
-      border-color $accentColor
+      border-color var(--accent-color)
   .suggestions
     background #fff
     width 20rem
     position absolute
     top 1.5rem
     right 0
-    // border 1px solid darken($borderColor, 10%)
+    // border 1px solid darken(var(--border-color), 10%)
     box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
     padding 0.4rem
     list-style-type none
@@ -165,7 +165,7 @@ export default {
     border-radius 4px
     z-index 5
     a
-      color lighten($textColor, 35%)
+      color var(--text-color)
       .page-title
         font-weight 600
       .header
@@ -174,7 +174,7 @@ export default {
     &.focused
       background-color rgba(220, 220, 220, .4)
       a
-        color $accentColor
+        color var(--accent-color)
 
 @media (max-width: 70rem)
   .search-box

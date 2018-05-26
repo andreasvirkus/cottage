@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './styles/config.styl'
+@import './css/variables.css'
 
 .blog__menu-list {
     display: flex;
@@ -58,7 +58,7 @@ export default {
     bottom: 1rem;
     width: 100%;
     height: 2px;
-    background-color: $darkAccentColor;
+    background-color: var(--dark-accent-color);
     position: absolute;
     transition: transform .5s ease;
     transform: scaleX(0);
@@ -76,14 +76,14 @@ export default {
 }
 
 
-@media (min-width: $MQNarrow) {
+@media (min-width: 35rem) {
   .blog__menu-title::after {
     letter-spacing: 4px;
     content: " .........................................................................";
   }
 }
 
-@media (max-width: $MQNarrow)
+@media (max-width: 35rem)
   .blog__menu-date {
       padding-left: 0;
   }

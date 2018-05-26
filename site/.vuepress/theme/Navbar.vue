@@ -35,11 +35,11 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './styles/config.styl'
+@import './css/variables.css'
 
 .navbar
   padding 0.7rem 1.5rem
-  line-height $navbarHeight - 1.4rem
+  line-height calc(var(--navbar-height) - 1.4rem)
   position relative
   border-bottom 1px solid transparent
   transition all 0.2s
@@ -53,7 +53,7 @@ export default {
   .site-name
     font-size 1.3rem
     font-weight 600
-    color $textColor
+    color var(--text-color)
     position relative
   .links
     font-size 0.9rem

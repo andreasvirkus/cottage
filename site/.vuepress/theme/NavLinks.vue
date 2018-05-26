@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './styles/config.styl'
+@import './css/variables.css'
 
 .nav-links
   display inline-block
@@ -82,15 +82,15 @@ export default {
     color inherit
     font-size: 1.3rem
     &:hover, &.router-link-active
-      color $accentColor
+      color var(--accent-color)
   .nav__item
     line-height 2rem
 
-@media (min-width: $MQMobile) and (max-width: 69rem)
+@media (min-width: 35rem) and (max-width: 69rem)
   .nav__item > a
     &:hover, &.router-link-active
       margin-bottom -2px
-      border-bottom 2px solid $darkAccentColor
+      border-bottom 2px solid var(--dark-accent-color)
 
 @media (min-width: 70rem)
   .nav-links
@@ -101,6 +101,6 @@ export default {
     writing-mode vertical-lr
   .nav__item > a
     &:hover, &.router-link-active
-      color $textColor
-      border-left 2px solid $darkAccentColor
+      color var(--text-color)
+      border-left 2px solid var(--dark-accent-color)
 </style>

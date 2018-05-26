@@ -113,7 +113,7 @@ function find (page, items = [], offset) {
 </script>
 
 <style lang="stylus">
-@import './styles/config.styl'
+@import './css/variables.css'
 
 .page
   padding-bottom 2rem
@@ -121,7 +121,7 @@ function find (page, items = [], offset) {
 .edit-link.content
   padding-top 0 !important
   a
-    color lighten($textColor, 25%)
+    color var(--link-color)
     margin-right 0.25rem
 
 .page-nav.content
@@ -130,7 +130,7 @@ function find (page, items = [], offset) {
   .inner
     min-height 2rem
     margin-top 0 !important
-    border-top 1px solid $borderColor
+    border-top 1px solid var(--border-color)
     padding-top 1rem
   .next
     float right
