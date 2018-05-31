@@ -40,7 +40,6 @@ export default {
   created () {
     if (this.$ssrContext) {
       const { titleSeparator, titleStatic } = this.$site.themeConfig
-      console.log('ssrContext title', this.$title, this.$page)
       this.$ssrContext.title = getTitle(this.$title, this.$page, titleSeparator, titleStatic)
       this.$ssrContext.lang = this.$lang
       this.$ssrContext.description = this.$page.description || this.$description
@@ -83,7 +82,7 @@ export default {
     updateMetaTags(null, this.currentMetaTags)
   },
   methods: {
-    // side swipe
+    // TODO: add side swipe for menu open/close
     onTouchStart (e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,

@@ -4,7 +4,7 @@ meta:
     content: View my contact details and hit me up!
 ---
 
-### Wish to get in touch?
+# wish to get in touch?
 
 I'm always looking for interesting, small(ish?) projects to tinker on, so let me
 know if you'd like to collab!

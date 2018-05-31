@@ -66,6 +66,11 @@ export default {
         if (matches(p)) {
           res.push(p)
         } else if (p.headers) {
+          // console.log('headers:', p.headers)
+          // console.log('tags:', p.tags)
+          // TODO: Also search through tags frontmatter on pages
+          p.tags && p.headers.join(p.tags)
+
           for (let j = 0; j < p.headers.length; j++) {
             if (res.length >= max) break
             const h = p.headers[j]
@@ -122,7 +127,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './styles/config.styl'
+@import './css/variables.css'
 
 .search-box
   display inline-block
@@ -130,67 +135,60 @@ export default {
   margin-right 0.5rem
   input
     width 10rem
-    color lighten($textColor, 25%)
+    color var(--text-color)
     display inline-block
     border none
-    border-bottom 1px solid darken($borderColor, 10%)
+    border-bottom 1px solid var(--border-color)
     font-size 0.9rem
     line-height 2rem
     padding 0 0.5rem 0 2rem
     outline none
     transition all .2s ease
-    background #fff url(./search.svg) 0.6rem 0.5rem no-repeat
+    background transparent url(./search.svg) 0.6rem 0.5rem no-repeat
     background-size 1rem
     &:focus
       cursor auto
-      border-color $accentColor
+      border-color var(--accent-color)
   .suggestions
     background #fff
     width 20rem
     position absolute
     top 1.5rem
-    border 1px solid darken($borderColor, 10%)
-    border-radius 6px
+    right 0
+    // border 1px solid darken(var(--border-color), 10%)
+    box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
     padding 0.4rem
     list-style-type none
-    &.align-right
-      right 0
   .suggestion
     line-height 1.4
     padding 0.4rem 0.6rem
     border-radius 4px
+    z-index 5
     a
-      color lighten($textColor, 35%)
+      color var(--text-color)
       .page-title
         font-weight 600
       .header
         font-size 0.9em
         margin-left 0.25em
     &.focused
-      background-color #f3f4f5
+      background-color rgba(220, 220, 220, .4)
       a
-        color $accentColor
+        color var(--accent-color)
 
-@media (max-width: $MQNarrow)
-  .search-box input
-    width 0
-    border-color transparent
-    position relative
-    left 1rem
-    &:focus
-      left 0
-      width 10rem
-
-@media (max-width: $MQMobile)
+@media (max-width: 70rem)
   .search-box
     margin-right 0
-    .suggestions
-      right 0
 
-@media (max-width: $MQMobileNarrow)
-  .search-box
     .suggestions
-      width calc(100vw - 4rem)
-    input:focus
-      width 8rem
+      width 70vw
+
+    input
+      width 0
+      border-color transparent
+      position relative
+      left 1rem
+      &:focus
+        left 0
+        width 10rem
 </style>

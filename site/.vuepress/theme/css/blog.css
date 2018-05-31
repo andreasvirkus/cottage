@@ -36,9 +36,3 @@ pre code {
 pre code {
   user-select: all;
 }
-
-@media screen and (min-width: 35em) {
-    footer {
-        padding-right: 3em;
-    }
-}

@@ -79,14 +79,15 @@ hr {
   background-image: var(--default-divider);
 }
 
-@media screen and (max-width: 45em) {
+/* @media screen and (max-width: 45em) { */
+@media screen and (max-width: 70em) {
   body {
     padding: 0;
   }
   main {
     min-height: 60vh;
     transform: translateY(-1.5em);
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
   main p {
     font-size: 1.2em;

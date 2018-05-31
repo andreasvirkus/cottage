@@ -1,18 +1,21 @@
 # andreasvirkus.github.io
-### A humble homepage of sorts...
+## A humble homepage of sorts...
 
 ~Metalsmith~ Vuepress setup for my current portfolio-ish site.
 
 Hosted on [Netlify](https://netlify.com).
 
-#### Want a site like this?
+## Want a site like this?
 
+### Metalsmith
 Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or follow this **one-click-wonder-deploy**!
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
 
-Vuepress-way:
-Add `ajv` to your `.vuepress/config.js` `theme` parameter.
+### Vuepress (new)
+Add `ajv` to your `.vuepress/config.js`'s `theme` parameter. Check out
+[the theme](https://github.com/andreasvirkus/vuepress-theme-ajv) for the config
+params and details.
 
 ----------
 ### TODO:
@@ -26,11 +29,24 @@ Add `ajv` to your `.vuepress/config.js` `theme` parameter.
 - ~~Update CV~~
 - ~Refactor to [Vuepress](https://vuepress.vuejs.org/)~
 - ~Add Keen tracking to Vuepress via npm~
+  - Add Keen for all pages not just dashboard
+- Add jump.js once it's packagised
+- Clean up theme package/repo and dogfood it
 - Vuetify dashboard.js solution + import keen styles and flexbox grid (or rewrite one)
 - Refactor Stylus to native CSS + css custom properties
+  - Use CSS custom properties in a proper manner (meaning don't use hover specific variables, etc.);
+    this will also ease theming later on (single var for bg colour, font colour, link colour, the works)
 - Add vue-tweezing for morphing SVG (menu border)
 - Add dark theme
+- Add page transitions
+- Add tags support in page frontmatter and use it in search results
 - Add theme customiser
+- Add build-specific statistics
+  - no. of times built
+  - latest build (get touch date of times built tracker file)
+  - avg build time
+  - bundle/site filesize, etc.)
+-
 
 ----------
 ### Roadmap

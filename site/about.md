@@ -2,6 +2,11 @@
 meta:
   - name: description
     content: Get to know me. Long walks on the beach included.
+tags:
+  - cv
+  - employment
+  - history
+  - education
 ---
 
 # me
@@ -30,7 +35,7 @@ I've also dabbled in other fields (and hope to perfect them in the future), like
 - accessibility
 - security
 - UNIX-based systems
-- dockerisation/Kubernetes
+- dockerisation, Kubernetes
 - UX & user flow
 - interaction design
 - Googling for solutions (near master level 💯)
