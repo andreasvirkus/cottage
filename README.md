@@ -46,7 +46,7 @@ params and details.
   - latest build (get touch date of times built tracker file)
   - avg build time
   - bundle/site filesize, etc.)
--
+- Generate sitemap
 
 ----------
 ### Roadmap

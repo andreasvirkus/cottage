@@ -70,6 +70,7 @@ import NavLinks from './NavLinks'
 	position: relative;
 	font-weight: 800;
 	font-size: 2rem;
+	padding-bottom: .2em;
 }
 
 .nav__item:first-child::before {
@@ -101,7 +102,7 @@ import NavLinks from './NavLinks'
 .morph-shape {
 	position: absolute;
 	top: 0;
-	right: -11.5rem;
+	right: -12rem;
 	width: 240px;
 	pointer-events: none;
 	/* Testing new responsive styles */
@@ -145,14 +146,19 @@ import NavLinks from './NavLinks'
 		transition-delay: 0.05s;
 	}
 
+	.nav__item::before {
+		display: inline-block;
+		transform: translateY(2px);
+		padding-right: .2em;
+	}
+
 	.menu__handle {
 		display: block;
 		position: absolute;
 		top: 0;
 		right: -7rem;
 		background-color: transparent;
-		width: 30px; /* old style */
-		width: 35px;
+		width: 25px;
 		height: 24px;
 		padding: 0;
 		border: none;
