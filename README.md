@@ -8,7 +8,10 @@ Hosted on [Netlify](https://netlify.com).
 ## Want a site like this?
 
 ### Metalsmith
-Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or follow this **one-click-wonder-deploy**!
+
+The previous version of this site is still available under [metalsmith-ajv.netlify.com](https://metalsmith-ajv.netlify.com).\
+Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or follow this **one-click-wonder-deploy** to
+get one yourself:
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
 
@@ -36,8 +39,9 @@ params and details.
 - Refactor Stylus to native CSS + css custom properties
   - Use CSS custom properties in a proper manner (meaning don't use hover specific variables, etc.);
     this will also ease theming later on (single var for bg colour, font colour, link colour, the works)
+  - Refactor to use either scoped styles or CSS modules
+  - Add dark theme
 - Add vue-tweezing for morphing SVG (menu border)
-- Add dark theme
 - Add page transitions
 - Add tags support in page frontmatter and use it in search results
 - Add theme customiser
@@ -47,6 +51,9 @@ params and details.
   - avg build time
   - bundle/site filesize, etc.)
 - Generate sitemap
+- Add contact form to /contact
+- Prettify permalinks
+- Fine-tune burger animation
 
 ----------
 ### Roadmap

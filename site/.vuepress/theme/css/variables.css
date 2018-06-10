@@ -1,5 +1,6 @@
 :root {
   --content-bg: #fff; /* #223; */
+  --bg-dark: #223;
   --bg-light: #fff;
   --bg-border: 0.5em;
   --menu-overlay: rgba(255, 255, 255, 0.9);

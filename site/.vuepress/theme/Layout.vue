@@ -4,7 +4,7 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd">
 
-    <Navbar/>
+    <SearchBox/>
     <Sidebar/>
 
     <component v-if="$page.frontmatter.layout" :is="$page.frontmatter.layout"/>
@@ -21,7 +21,7 @@ import nprogress from 'nprogress'
 import Blog from './Blog'
 import Post from './Post'
 import Dashboard from './Dashboard'
-import Navbar from './Navbar'
+import SearchBox from './SearchBox'
 import Sidebar from './Sidebar'
 import Page from './Page'
 import PageFooter from './PageFooter'
@@ -33,7 +33,7 @@ export default {
     Post,
     Page,
     PageFooter,
-    Navbar,
+    SearchBox,
     Sidebar,
     Dashboard
   },
@@ -68,7 +68,7 @@ export default {
     nprogress.configure({ showSpinner: false })
 
     this.$router.beforeEach((to, from, next) => {
-      if (to.path !== from.path && !Vue.component(pathToComponentName(to.path))) {
+      if (to.path !== from.path && !Vue.component(to.name)) {
         nprogress.start()
       }
       next()

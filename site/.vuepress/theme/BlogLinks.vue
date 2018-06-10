@@ -15,7 +15,10 @@
 </template>
 
 <script>
-import moment from 'moment'
+import dayjs from 'dayjs'
+import format from 'dayjs/plugin/advancedFormat'
+
+dayjs.extend(format)
 
 export default {
   props: {
@@ -24,7 +27,7 @@ export default {
   methods: {
     formatPostDate(date, short = false) {
       const format = short ? 'MMM, Do' : 'Do of MMM, YYYY'
-      return moment(date, 'YYYY-MM-DD').format(format)
+      return dayjs(date).format(format)
     }
   }
 }

@@ -130,23 +130,32 @@ export default {
 @import './css/variables.css'
 
 .search-box
-  display inline-block
-  position relative
-  margin-right 0.5rem
+  display flex
+  position fixed
+  right 2rem
+  top 2rem
+  z-index 5
+  background-color var(--menu-overlay)
+
   input
-    width 10rem
+    width 0
+    left 1rem
+    cursor pointer
     color var(--text-color)
     display inline-block
     border none
-    border-bottom 1px solid var(--border-color)
+    border-bottom 2px dashed transparent
     font-size 0.9rem
     line-height 2rem
+    margin-left auto
     padding 0 0.5rem 0 2rem
     outline none
     transition all .2s ease
-    background transparent url(./search.svg) 0.6rem 0.5rem no-repeat
+    background url(./search.svg) 0.6rem 0.5rem no-repeat
     background-size 1rem
     &:focus
+      left 0
+      width 10rem
       cursor auto
       border-color var(--accent-color)
   .suggestions
@@ -155,7 +164,6 @@ export default {
     position absolute
     top 1.5rem
     right 0
-    // border 1px solid darken(var(--border-color), 10%)
     box-shadow 0 2px 10px -4px rgba(0, 0, 0, 0.2)
     padding 0.4rem
     list-style-type none
@@ -178,17 +186,6 @@ export default {
 
 @media (max-width: 70rem)
   .search-box
-    margin-right 0
-
     .suggestions
       width 70vw
-
-    input
-      width 0
-      border-color transparent
-      position relative
-      left 1rem
-      &:focus
-        left 0
-        width 10rem
 </style>

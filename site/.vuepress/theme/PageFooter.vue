@@ -40,7 +40,7 @@ export default {
 
 @media screen and (max-width: 35em) {
     .site-footer {
-        padding-right: 1em;
+        padding-right: 1.5rem;
         font-size: 0.8rem;
     }
 }

@@ -64,6 +64,7 @@ import NavLinks from './NavLinks'
 .nav__item {
 	margin-bottom: 2em;
 	cursor: pointer;
+	flex-grow: 1;
 }
 .nav__item::before {
 	content: '≀';
@@ -102,11 +103,11 @@ import NavLinks from './NavLinks'
 .morph-shape {
 	position: absolute;
 	top: 0;
-	right: -12rem;
+	right: -12.5rem;
 	width: 240px;
 	pointer-events: none;
 	/* Testing new responsive styles */
-	height: 90vh;
+	height: 85vh;
 	transition: top .2s, height .2s;
 }
 
@@ -121,7 +122,13 @@ import NavLinks from './NavLinks'
 		transform: translateX(0);
 	}
 
+	.nav-links {
+		transform: translateX(50px);
+	}
+
 	.nav__item {
+		display: flex;
+		align-items: center;
 		will-change: transform;
 		transform: translate3d(-160px, 0, 0);
 		transition: transform 0.6s;
@@ -156,7 +163,7 @@ import NavLinks from './NavLinks'
 		display: block;
 		position: absolute;
 		top: 0;
-		right: -7rem;
+		right: -7.5rem;
 		background-color: transparent;
 		width: 25px;
 		height: 24px;
@@ -175,7 +182,7 @@ import NavLinks from './NavLinks'
 		position: absolute;
 		height: 3px; /* old style */
 		height: 2px;
-		transition: transform 0.25s ease-in-out 0.3s, width 0.2s ease-in-out 0.2s, opacity 0.4s ease-in-out 0.3s;
+		transition: transform 0.25s ease-in-out 0.3s, width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s, opacity 0.4s ease-in-out 0.3s;
 		left: 0;
 	}
 
@@ -253,7 +260,7 @@ import NavLinks from './NavLinks'
 	}
 	.menu__handle span::before {
 		content: '';
-		background-color: rgba(255, 255, 255, 0.9);
+		background-color: var(--menu-overlay);
 		position: absolute;
 		top: -20px;
 		left: -7px;
@@ -265,7 +272,7 @@ import NavLinks from './NavLinks'
 
 	/* Menu background overlay */
 	.menu--open::after {
-		background-color: rgba(255, 255, 255, 0.9);
+		background-color: var(--menu-overlay);
 		pointer-events: inherit;
 	}
 	.menu.menu--open + main {
