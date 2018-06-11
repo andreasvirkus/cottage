@@ -34,7 +34,7 @@
 
       <p>
         If you're looking to get in touch, just reach out to me on
-        <a href="https://ee.linkedin.com/pub/andreas-johan-virkus/a4/928/22" title="View my LinkedIn profile">LinkedIn</a> or via
+        <a href="https://www.linkedin.com/in/andreasvirkus" title="View my LinkedIn profile">LinkedIn</a> or via
         <a href="mailto:write@andreasvirkus.me" title="Shoot me a mail!">e-mail</a>.
       </p>
     </div>
