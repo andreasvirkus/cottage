@@ -20,7 +20,9 @@ export default {
   components: { BlogLinks, OutboundLink },
   computed: {
     posts () {
-      return this.$site.pages.filter(page => page.path.startsWith('/thoughts/') && !page.frontmatter.draft)
+      return this.$site.pages.filter(page => page.path.startsWith('/thoughts/')
+        && !page.frontmatter.draft
+        && !page.path.endsWith('/thoughts/'))
     },
     // TODO: Move editLink, prev & next to a mixin
     editLink () {

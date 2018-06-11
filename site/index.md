@@ -13,7 +13,7 @@ technologies, but also to provide a bit of insight about [me](/about).
 ### Poke me
 
 If you're looking to get in touch, just reach out to me on
-[linkedIn](https://ee.linkedin.com/pub/andreas-johan-virkus/a4/928/22 "View my LinkedIn profile") or via
+[linkedIn](https://www.linkedin.com/in/andreasvirkus "View my LinkedIn profile") or via
 [e-mail](mailto:write@andreasvirkus.me "Shoot me a mail!").
 
 ### Roadmap

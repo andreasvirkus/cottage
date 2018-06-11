@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
   color: var(--content-color);
   background-color: var(--bg-light);
-  /* box-shadow: 0 0 0 var(--bg-border) var(--bg-dark) inset; */
+  box-shadow: 0 0 0 var(--bg-border) var(--bg-dark) inset;
   font-family: var(--font-mono);
   font-size: 18px;
 }

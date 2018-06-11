@@ -35,24 +35,24 @@ module.exports = {
     hostName: 'Netlify',
     nav: [
       {
-        text: 'Home',
+        text: '~/',
         link: '/',
       },
       {
         text: 'Me',
-        link: '/about'
+        link: '/about/'
       },
       {
         text: 'Stats',
-        link: '/dashboard'
+        link: '/dashboard/'
       },
       {
         text: 'Thoughts',
-        link: '/thoughts'
+        link: '/thoughts/'
       },
       {
         text: 'Contact',
-        link: '/contact'
+        link: '/contact/'
       },
     ]
   }
