@@ -3,8 +3,9 @@
     <!-- user links -->
     <div
       class="nav__item"
-      v-for="item in userLinks"
-      :key="item.link">
+      v-for="(item, i) in userLinks"
+      :key="item.link"
+      :class="{ 'nav__item--horizontal': i === 0 }">
       <NavLink :item="item" @click="$emit('nav')"/>
     </div>
     <!-- repo link -->
@@ -13,18 +14,16 @@
       class="nav__item repo-link"
       target="_blank"
       rel="noopener noreferrer">Source
-      <OutboundLink/>
     </a>
   </nav>
 </template>
 
 <script>
-import OutboundLink from './OutboundLink'
 import { isActive, resolveNavLinkItem } from './util'
 import NavLink from './NavLink'
 
 export default {
-  components: { OutboundLink, NavLink },
+  components: { NavLink },
   computed: {
     userNav () {
       return this.$site.themeConfig.nav || []
@@ -99,8 +98,14 @@ export default {
     justify-content space-between
     flex-direction row
     writing-mode vertical-lr
-  .nav__item > a
+  .nav__item:not(:first-child) > a
     &:hover, &.router-link-active
       color var(--text-color)
       border-left 2px solid var(--dark-accent-color)
+  .nav__item--horizontal
+    writing-mode horizontal-tb
+    & > a:hover
+      border-color transparent
+    &::before
+      content none
 </style>

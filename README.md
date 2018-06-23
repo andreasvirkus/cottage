@@ -32,7 +32,7 @@ params and details.
 - ~~Update CV~~
 - ~Refactor to [Vuepress](https://vuepress.vuejs.org/)~
 - ~Add Keen tracking to Vuepress via npm~
-  - Add Keen for all pages not just dashboard
+  - Add Keen for all pages not just dashboard (but import visualisation only on dashboard page)
 - Add jump.js once it's packagised
 - Clean up theme package/repo and dogfood it
 - Vuetify dashboard.js solution + import keen styles and flexbox grid (or rewrite one)

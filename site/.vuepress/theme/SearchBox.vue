@@ -150,9 +150,10 @@ export default {
     margin-left auto
     padding 0 0.5rem 0 2rem
     outline none
-    transition all .2s ease
+    transition width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55), border-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55)
     background url(./search.svg) 0.6rem 0.5rem no-repeat
     background-size 1rem
+    will-change width
     &:focus
       left 0
       width 10rem

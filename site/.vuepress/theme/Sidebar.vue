@@ -75,7 +75,7 @@ import NavLinks from './NavLinks'
 }
 
 .nav__item:first-child::before {
-	color: #A6D865;
+	content: none;
 }
 .nav__item:nth-child(2)::before {
 	color: #DBD253;

@@ -1,6 +1,6 @@
 <template>
   <nav class="blog__menu content" role="navigation">
-    <ul class="blog__menu-list">
+    <ol reversed class="blog__menu-list">
       <li v-for="(post, i) in posts" :key="i" class="blog__menu-item" :class="{ active: post.path === $router.path }">
         <router-link :to="post.path" class="blog__menu-link">
           <div class="blog__menu-title">{{ post.frontmatter.pageTitle }}</div>
@@ -10,7 +10,7 @@
           </div>
         </router-link>
       </li>
-    </ul>
+    </ol>
   </nav>
 </template>
 
@@ -39,10 +39,10 @@ export default {
 .blog__menu-list {
     display: flex;
     flex-direction: column;
-    list-style: none;
     flex-wrap: wrap;
     padding-left: 0;
     font-style: normal;
+    margin-top: 0;
 }
 
 .blog__menu-link {
@@ -86,7 +86,10 @@ export default {
   }
 }
 
-@media (max-width: 35rem)
+@media (max-width: 35rem) {
+  .blog__menu-list {
+    list-style: none;
+  }
   .blog__menu-date {
       padding-left: 0;
   }
@@ -100,4 +103,5 @@ export default {
   .blog__menu-title {
     text-overflow: ellipsis;
   }
+}
 </style>

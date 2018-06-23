@@ -33,6 +33,7 @@ module.exports = {
     hostUrl: 'https://netlify.com',
     hostTitle: 'Static sites with superpowers!',
     hostName: 'Netlify',
+    lastUpdated: 'Last updated',
     nav: [
       {
         text: '~/',
