@@ -15,9 +15,7 @@
   height var(--navbar-height)
 
 .content
-  max-width $contentWidth
   margin 0 auto
-  padding 2rem 2.5rem
   > *:first-child:not(.blog__menu-list)
     margin-top var(--navbar-height)
   p.demo
@@ -39,26 +37,6 @@ kbd
   border-bottom solid 0.25rem #ddd
   border-radius 0.15rem
   padding 0 0.15em
-
-blockquote
-    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 #004EFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 10rem;
-    font-size: 2rem;
-    padding: 2rem;
-    margin: 2rem;
-    background-color: #fbfbfb;
-
-blockquote p
-  margin 0
-
-blockquote p:last-child
-    font-size .6em
-    align-self flex-end
-
 
 ul, ol
   padding-left 1.2em
@@ -102,7 +80,7 @@ a.header-anchor
     text-decoration none
 
 code, kbd
-  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+  font-family var(--font-mono)
 
 p, ul, ol
   line-height 1.7

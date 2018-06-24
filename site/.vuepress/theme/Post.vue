@@ -16,6 +16,7 @@
     </article>
 
     <footer>
+      <p>Thanks for giving this a read 🖖</p>
       <div class="content edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
         <OutboundLink/>
