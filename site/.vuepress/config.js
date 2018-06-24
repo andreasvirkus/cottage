@@ -17,12 +17,6 @@ module.exports = {
     ['meta', { name: 'msapplication-navbutton-color', content: '#222233'}],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#222233'}]
   ],
-  // configureWebpack: {
-  //   resolve: {
-  //     symlinks: false,
-  //     modules: [path.resolve(__dirname, 'node_modules')]
-  //   }
-  // },
   themeConfig: {
     repo: 'andreasvirkus/andreasvirkus.github.io',
     docsDir: 'site',

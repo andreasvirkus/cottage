@@ -54,8 +54,8 @@ params and details.
 - ~~Add contact form to /contact~~
 - ~~Prettify permalinks~~
 - Fine-tune burger animation
-- Enhance blog posts
-  - Add guesstimated reading time
+- ~~Enhance blog posts~~
+  - ~~Add guesstimated reading time~~
   - ~~Add prev/next posts~~
 - Add ASCII message to source, something similar to:
   ```sh

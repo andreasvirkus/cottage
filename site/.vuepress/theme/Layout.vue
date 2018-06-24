@@ -42,7 +42,7 @@ export default {
   created () {
     if (this.$ssrContext) {
       const { titleSeparator, titleStatic } = this.$site.themeConfig
-      this.$ssrContext.title = getTitle(this.$title, this.$page, titleSeparator, titleStatic)
+      this.$ssrContext.title = this.$title
       this.$ssrContext.lang = this.$lang
       this.$ssrContext.description = this.$page.description || this.$description
     }
@@ -128,10 +128,6 @@ function getTitle(siteTitle, page, separator = '|', staticTitle = false) {
   if (staticTitle || selfTitle === siteTitle) return siteTitle
 
   return siteTitle
-    ? selfTitle
-      ? (`${siteTitle} | ${selfTitle}`)
-      : siteTitle
-    : selfTitle || 'VuePress'
 }
 </script>
 
