@@ -29,7 +29,7 @@ params and details.
 - ~~First posts~~
 - ~~Link to [status page](https://status.andreasvirkus.me)~~
 - ~~Make dashboard's timeframe dynamic~~
-- Update CV
+- ~~Update CV~~
 - ~~Refactor to [Vuepress](https://vuepress.vuejs.org/)~~
 - Add Keen tracking to Vuepress via npm
   - Add Keen for all pages not just dashboard (but import visualisation only on dashboard page)

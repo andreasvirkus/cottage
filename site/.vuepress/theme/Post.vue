@@ -1,15 +1,17 @@
 <template>
   <main class="page">
-    <article>
+    <article ref="article">
 
       <header>
         <h1>{{ $page.frontmatter.pageTitle }}</h1>
-        <span v-if="readingTime">Reading time {{ readingTime }} min |</span>
-        <span>published {{ formatPostDate($page.frontmatter.pageDate) }}</span>
-        <span v-if="lastUpdated">and last updated {{ formatPostDate($page.frontmatter.lastUpdated) }}</span>
+        <div class="post-stats">
+          <span>published on the {{ formatPostDate($page.frontmatter.postDate, false) }}</span>
+          <div v-if="$page.frontmatter.lastUpdated"> last updated on the {{ formatPostDate($page.frontmatter.lastUpdated, false) }}</div>
+          <div v-if="readingTime"><em>{{ readingTime.text || readingTime }}</em></div>
+        </div>
       </header>
 
-      <Content ref="content" />
+      <Content/>
 
       <footer>
         <p>Thanks for giving this a read 🖖</p>
@@ -17,16 +19,13 @@
           <hr class="blog__divider" />
           <div class="page-nav">
             <span v-if="prev" class="prev">
-              ← {{ formatPostDate(prev.frontmatter.postDate) }}
-              <router-link v-if="prev" class="prev" :to="prev.path">
+              ← <router-link v-if="prev" class="prev" :to="prev.path">
                 {{ prev.frontmatter.pageTitle || prev.path }}
               </router-link>
             </span>
             <span v-if="next" class="next">
-              {{ formatPostDate(next.frontmatter.postDate) }}
               <router-link v-if="next" :to="next.path">
-                {{ next.frontmatter.pageTitle || next.path }}
-              </router-link> →
+                {{ next.frontmatter.pageTitle || next.path }}</router-link> →
             </span>
           </div>
           <hr class="blog__divider" />
@@ -42,6 +41,11 @@ import { resolvePage, normalize, outboundRE, endingSlashRE, formatPostDate } fro
 import readingTime from 'reading-time'
 
 export default {
+  data () {
+    return {
+      readingTime: '1 min read'
+    }
+  },
   methods: {
     formatPostDate: (date, short = true) => formatPostDate(date, short)
   },
@@ -66,9 +70,10 @@ export default {
         return resolveNext(this.$page)
       }
     },
-    readingTime () {
-      return readingTime(this.$refs.content)
-    }
+  },
+  mounted () {
+    const content = this.$refs.article.querySelector('.content')
+    this.readingTime = readingTime(content.textContent)
   }
 }
 
@@ -101,4 +106,8 @@ function find (page, items = [], offset) {
 <style src="./css/blog.css"></style>
 <style lang="stylus">
 @import './css/variables.css'
+
+.post-stats {
+  font-size: .8em;
+}
 </style>

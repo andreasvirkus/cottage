@@ -57,7 +57,6 @@
     background: none;
     border-bottom: 2px dashed var(--border-color);
     display: block;
-    margin: 1rem 0;
     font-family: var(--font-mono);
     font-size: 1.3rem;
     transition: border .3s ease;
@@ -96,11 +95,20 @@
     cursor: pointer;
     transition: box-shadow 350ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  button:hover {
-      box-shadow: inset 0px 0px 0px 3px #fff;
+  button:hover,
+  button:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 0px 3px #fff;
   }
 
   blockquote {
     margin-top: 6rem;
+  }
+
+  @media (max-width: 70em) {
+    form {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 </style>

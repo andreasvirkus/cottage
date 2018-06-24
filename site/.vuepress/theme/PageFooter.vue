@@ -63,7 +63,8 @@ export default {
 
 <style>
 .site-footer {
-  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .site-footer p {
@@ -73,6 +74,7 @@ export default {
 }
 .edit-link {
   text-align: right;
+  font-size: .8em;
 }
 
 @media screen and (min-width: 35em) {
