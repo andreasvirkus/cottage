@@ -74,7 +74,7 @@ export default {
 }
 .edit-link {
   text-align: right;
-  font-size: .8em;
+  font-size: .9em;
 }
 
 @media screen and (min-width: 35em) {

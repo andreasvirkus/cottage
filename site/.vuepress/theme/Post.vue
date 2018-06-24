@@ -7,7 +7,7 @@
         <div class="post-stats">
           <span>published on the {{ formatPostDate($page.frontmatter.postDate, false) }}</span>
           <div v-if="$page.frontmatter.lastUpdated"> last updated on the {{ formatPostDate($page.frontmatter.lastUpdated, false) }}</div>
-          <div v-if="readingTime"><em>{{ readingTime.text || readingTime }}</em></div>
+          <div v-if="readingTime"><em>{{ readingTime }}</em></div>
         </div>
       </header>
 
@@ -43,7 +43,7 @@ import readingTime from 'reading-time'
 export default {
   data () {
     return {
-      readingTime: '1 min read'
+      readingTime: null
     }
   },
   methods: {
@@ -69,11 +69,14 @@ export default {
       } else {
         return resolveNext(this.$page)
       }
-    },
+    }
   },
   mounted () {
-    const content = this.$refs.article.querySelector('.content')
-    this.readingTime = readingTime(content.textContent)
+    const article = this.$refs.article
+    if (!article) return
+
+    const content = article.querySelector('.content')
+    this.readingTime = readingTime(content.textContent).text
   }
 }
 
