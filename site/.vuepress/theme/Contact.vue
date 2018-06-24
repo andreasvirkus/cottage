@@ -32,7 +32,7 @@
         sent: false
       }
     },
-    created () {
+    mounted () {
       this.sent = window.location.search.includes('sent')
     }
   }

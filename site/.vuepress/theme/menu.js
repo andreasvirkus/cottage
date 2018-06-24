@@ -5,8 +5,8 @@ export default () => {
     }
 
     SVGMenu.prototype.init = function() {
-        this.trigger = this.el.querySelector('button.menu__handle');
-        this.shapeEl = this.el.querySelector('div.morph-shape');
+        this.trigger = this.el.querySelector('#menu-handle');
+        this.shapeEl = this.el.querySelector('#menu-shape');
 
         var s = Snap(this.shapeEl.querySelector('svg'));
         this.pathEl = s.select('path');
@@ -42,7 +42,7 @@ export default () => {
             // Loop through nav links, find one whose href matches page slug
             [].forEach.call(menuLinks, function(link) {
                 link.parentElement.removeAttribute('aria-current');
-        
+
                 if (link.getAttribute('href') === location.pathname) {
                     link.parentElement.setAttribute('aria-current', 'page');
                     isBlogPost = false;
