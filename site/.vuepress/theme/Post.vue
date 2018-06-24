@@ -18,34 +18,35 @@
 
     <footer>
       <p>Thanks for giving this a read 🖖</p>
-      <div class="content edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink/>
-      </div>
-      <div class="content page-nav" v-if="prev || next">
-        <p class="inner">
+      <template v-if="prev || next">
+        <hr class="blog__divider" />
+        <div class="page-nav">
           <span v-if="prev" class="prev">
-            ← <router-link v-if="prev" class="prev" :to="prev.path">
-              {{ prev.title || prev.path }}
+            ← {{ formatPostDate(prev.frontmatter.postDate) }}
+            <router-link v-if="prev" class="prev" :to="prev.path">
+              {{ prev.frontmatter.pageTitle || prev.path }}
             </router-link>
           </span>
           <span v-if="next" class="next">
+            {{ formatPostDate(next.frontmatter.postDate) }}
             <router-link v-if="next" :to="next.path">
-              {{ next.title || next.path }}
+              {{ next.frontmatter.pageTitle || next.path }}
             </router-link> →
           </span>
-        </p>
-      </div>
+        </div>
+        <hr class="blog__divider" />
+      </template>
     </footer>
   </main>
 </template>
 
 <script>
-import OutboundLink from './OutboundLink'
-import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
+import { resolvePage, normalize, outboundRE, endingSlashRE, formatPostDate } from './util'
 
 export default {
-  components: { OutboundLink },
+  methods: {
+    formatPostDate: (date, short = true) => formatPostDate(date, short)
+  },
   computed: {
     prev () {
       const prev = this.$page.frontmatter.prev
@@ -66,39 +67,6 @@ export default {
       } else {
         return resolveNext(this.$page)
       }
-    },
-    editLink () {
-      const {
-        repo,
-        editLinks,
-        docsDir = '',
-        docsBranch = 'master'
-      } = this.$site.themeConfig
-
-      let path = normalize(this.$page.path)
-      if (endingSlashRE.test(path)) {
-        path += 'README.md'
-      } else {
-        path += '.md'
-      }
-
-      if (repo && editLinks) {
-        const base = outboundRE.test(repo)
-          ? repo
-          : `https://github.com/${repo}`
-        return (
-          base.replace(endingSlashRE, '') +
-          `/edit/${docsBranch}/` +
-          docsDir.replace(endingSlashRE, '') +
-          path
-        )
-      }
-    },
-    editLinkText () {
-      return (
-        this.$site.themeConfig.editLinkText ||
-        `Edit this page`
-      )
     }
   }
 }

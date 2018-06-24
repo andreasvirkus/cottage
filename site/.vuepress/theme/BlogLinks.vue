@@ -15,20 +15,14 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-import format from 'dayjs/plugin/advancedFormat'
-
-dayjs.extend(format)
+import { formatPostDate}  from './util'
 
 export default {
   props: {
     posts: Array
   },
   methods: {
-    formatPostDate(date, short = false) {
-      const format = short ? 'MMM, Do' : 'Do of MMM, YYYY'
-      return dayjs(date).format(format)
-    }
+    formatPostDate: (date, short = false) => formatPostDate(date, short)
   }
 }
 </script>

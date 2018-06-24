@@ -3,6 +3,8 @@ pageTitle: Building dashboards for your site
 layout: Post
 description: I'll go through setting up these dashboards that I don't have yet.
 postDate: 2017-05-20
+prev: /thoughts/building-dashboards-for-your-site/
+next: /thoughts/appending-lines-to-xml/
 ---
 
 In this post, I'll go through the approaches that I explored in order to set up my

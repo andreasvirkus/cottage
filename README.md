@@ -29,9 +29,9 @@ params and details.
 - ~~First posts~~
 - ~~Link to [status page](https://status.andreasvirkus.me)~~
 - ~~Make dashboard's timeframe dynamic~~
-- ~~Update CV~~
-- ~Refactor to [Vuepress](https://vuepress.vuejs.org/)~
-- ~Add Keen tracking to Vuepress via npm~
+- Update CV
+- ~~Refactor to [Vuepress](https://vuepress.vuejs.org/)~~
+- Add Keen tracking to Vuepress via npm
   - Add Keen for all pages not just dashboard (but import visualisation only on dashboard page)
 - Add jump.js once it's packagised
 - Clean up theme package/repo and dogfood it
@@ -41,7 +41,7 @@ params and details.
     this will also ease theming later on (single var for bg colour, font colour, link colour, the works)
   - Refactor to use either scoped styles or CSS modules
   - Add dark theme
-- Add vue-tweezing for morphing SVG (menu border)
+- ~~Add vue-tweezing for morphing SVG (menu border)~~
 - Add page transitions
 - Add tags support in page frontmatter and use it in search results
 - Add theme customiser
@@ -51,8 +51,8 @@ params and details.
   - avg build time
   - bundle/site filesize, etc.)
 - Generate sitemap
-- Add contact form to /contact
-- Prettify permalinks
+- ~~Add contact form to /contact~~
+- ~~Prettify permalinks~~
 - Fine-tune burger animation
 - Enhance blog posts
   - Add guesstimated reading time

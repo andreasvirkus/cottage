@@ -24,7 +24,10 @@ module.exports = {
   //   }
   // },
   themeConfig: {
-    repo: 'andreasvirkus',
+    repo: 'andreasvirkus/andreasvirkus.github.io',
+    docsDir: 'site',
+    editLinks: true,
+    editLinkText: 'Help me improve this page',
     logo: 'svg/logo.svg',
     titleSeparator: '--',
     generatorUrl: 'https://vuepress.vuejs.org',

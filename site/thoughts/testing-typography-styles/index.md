@@ -3,6 +3,7 @@ pageTitle: Testing typography styles
 layout: Post
 description: Styling code and quote blocks and other various typography bits.
 postDate: 2017-06-24
+next: /thoughts/my-site-stack/
 ---
 
 Every now and then, a blog will come across a need to quote someone or maybe
