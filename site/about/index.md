@@ -14,7 +14,7 @@ tags:
 I'm not much of a talker, but let me rant about myself for a bit. You can skip ahead to:
 my [passions](#superpowers-), overview about my [education](#education) or my [work](#labor).
 
-My full curriculum vitae can be viewed [here](/cv) and downloaded through the link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf).
+My full curriculum vitae can be viewed [here](/cv/) and downloaded through the link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf).
 
 ## superpowers ⚡
 
@@ -73,6 +73,7 @@ Favourite learning resources:
     - [Front End Happy Hour](http://frontendhappyhour.com/)
     - [CodePen Radio](https://blog.codepen.io/radio/)
     - [Friends Talk Frontend](https://friendstalkfrontend.com/)
+    - [Changelog](https://changelog.com/podcast)
 - **News/article feeds**
     - [CSS-Tricks](https://css-tricks.com/)
     - [Front-End Front](https://frontendfront.com/)
@@ -91,22 +92,27 @@ Favourite learning resources:
 
 I like fiddling small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus).
 I started out creating websites for neighbours and small companies, which really sparked a passion. Here's what I've been up to since:
-- **FE -> full-stack developer at Bigbank**
-    - _July 2015–current_
+- **Full-stack developer @ Qualitista**
+    - _July 2018_
+- **FE -> Full-stack developer @ Bigbank**
+    - _July 2015 – July 2018_
     - I started out supporting an in-house Wordpress theme, helping marketers create pages
     with a page builder. Worked with the design team to unify the corporate visuals
     across multiple countries and platforms (also implemented a pattern library).
     I then shifted bit more towards Node's full-stack world and worked with microservices
     and the Wordpress REST API to render its contents as a separate Vue application.
     I've learned heaps about virtualisation, dockerisation, CI & CD, security,
-    authentication, and too much about front-end itself to even list.
-- **Programming teacher at Saue High school**
-    - _Autumn 2015–Spring 2016_
+    authentication, and too much about front-end itself to even list.\
+    My last product in the company was a Vue-based component library, coupled with
+    an in-house Express middleware and some internal `vue-cli@3` plugins to help developers
+    quickly spin up new applications & product instances.
+- **Programming teacher @ Saue High school**
+    - _Autumn 2015 – Spring 2016_
     - My job was to give my students a basic understanding of the principles of
     programming, whilst keeping it a fun learning experience. I teach Python
     mostly through games and active user input, so their first experience
     with programming wouldn't be stale.
-- **Freelancing**
+- **Freelancing @ interwebs**
     - _Started 2014_
     - Programming has long been an interest of mine. Having also a soft spot
     for the artsy side in me—front-end development seemed like an excellent

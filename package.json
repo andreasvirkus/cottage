@@ -8,7 +8,7 @@
     "prestart": "npm install",
     "dev": "vuepress dev site",
     "build": "vuepress build site",
-    "generate-pdf": "markdown-pdf site/cv.md -o assets/cv/cv.pdf -s dist/assets/css/styles.min.css"
+    "generate-pdf": "markdown-pdf site/cv.md -o site/.vuepress/public/cv.pdf -s dist/assets/css/styles.min.css"
   },
   "repository": {
     "type": "git",
