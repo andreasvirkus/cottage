@@ -3,6 +3,7 @@ pageTitle: Testing typography styles
 layout: Post
 description: Styling code and quote blocks and other various typography bits.
 postDate: 2017-06-24
+lastUpdated: 2018-06-21
 next: /thoughts/my-site-stack/
 ---
 
@@ -51,8 +52,7 @@ Now let's quote someone with questionable views:
 >
 > &mdash; Me
 
-Then some default text styles\
-(content by the ever-amusing [hipsum](https://hipsum.co)):
+Then some default text styles (content by the ever-amusing [hipsum](https://hipsum.co)):
 
 <hr>
 

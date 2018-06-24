@@ -3,7 +3,7 @@ pageTitle: Appending lines to XML
 layout: Post
 description: Showing how to easily append lines at the end of an XML file (like your sitemap).
 postDate: 2017-09-30
-prev: /thoughts/appending-lines-to-xml/
+prev: /thoughts/building-dashboards-for-your-site/
 ---
 
 So I faced an interesting problem the other day, where
