@@ -1,49 +1,51 @@
 <template>
   <main class="page">
-    <!-- <header>
-      {{#if readingTime}}
-          Reading time {{ readingTime }} min |
-      {{/if}}
+    <article ref="article">
 
-      published on the {{ date postDate }}
-
-      {{#if lastUpdated }}
-          and last updated {{ date lastUpdated }}
-      {{/if}}
-    </header> -->
-    <article>
-      <h1>{{ $page.frontmatter.pageTitle }}</h1>
-      <Content />
-    </article>
-
-    <footer>
-      <p>Thanks for giving this a read 🖖</p>
-      <template v-if="prev || next">
-        <hr class="blog__divider" />
-        <div class="page-nav">
-          <span v-if="prev" class="prev">
-            ← {{ formatPostDate(prev.frontmatter.postDate) }}
-            <router-link v-if="prev" class="prev" :to="prev.path">
-              {{ prev.frontmatter.pageTitle || prev.path }}
-            </router-link>
-          </span>
-          <span v-if="next" class="next">
-            {{ formatPostDate(next.frontmatter.postDate) }}
-            <router-link v-if="next" :to="next.path">
-              {{ next.frontmatter.pageTitle || next.path }}
-            </router-link> →
-          </span>
+      <header>
+        <h1>{{ $page.frontmatter.pageTitle }}</h1>
+        <div class="post-stats">
+          <span>published on the {{ formatPostDate($page.frontmatter.postDate, false) }}</span>
+          <div v-if="$page.frontmatter.lastUpdated"> last updated on the {{ formatPostDate($page.frontmatter.lastUpdated, false) }}</div>
+          <div v-if="readingTime"><em>{{ readingTime.text || readingTime }}</em></div>
         </div>
-        <hr class="blog__divider" />
-      </template>
-    </footer>
+      </header>
+
+      <Content/>
+
+      <footer>
+        <p>Thanks for giving this a read 🖖</p>
+        <template v-if="prev || next">
+          <hr class="blog__divider" />
+          <div class="page-nav">
+            <span v-if="prev" class="prev">
+              ← <router-link v-if="prev" class="prev" :to="prev.path">
+                {{ prev.frontmatter.pageTitle || prev.path }}
+              </router-link>
+            </span>
+            <span v-if="next" class="next">
+              <router-link v-if="next" :to="next.path">
+                {{ next.frontmatter.pageTitle || next.path }}</router-link> →
+            </span>
+          </div>
+          <hr class="blog__divider" />
+        </template>
+      </footer>
+
+    </article>
   </main>
 </template>
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE, formatPostDate } from './util'
+import readingTime from 'reading-time'
 
 export default {
+  data () {
+    return {
+      readingTime: '1 min read'
+    }
+  },
   methods: {
     formatPostDate: (date, short = true) => formatPostDate(date, short)
   },
@@ -67,7 +69,11 @@ export default {
       } else {
         return resolveNext(this.$page)
       }
-    }
+    },
+  },
+  mounted () {
+    const content = this.$refs.article.querySelector('.content')
+    this.readingTime = readingTime(content.textContent)
   }
 }
 
@@ -100,4 +106,8 @@ function find (page, items = [], offset) {
 <style src="./css/blog.css"></style>
 <style lang="stylus">
 @import './css/variables.css'
+
+.post-stats {
+  font-size: .8em;
+}
 </style>

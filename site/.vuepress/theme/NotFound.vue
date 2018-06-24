@@ -44,12 +44,15 @@
         </p>
       </div>
     </main>
+
+    <PageFooter/>
   </div>
 </template>
 
 <script>
 import SearchBox from './SearchBox'
 import Sidebar from './Sidebar'
+import PageFooter from './PageFooter'
 
 const msgs = [
   `Why, it's obvious, Watson... There's nothing here.`,
@@ -60,7 +63,7 @@ const msgs = [
 ]
 
 export default {
-  components: { SearchBox, Sidebar },
+  components: { SearchBox, Sidebar, PageFooter },
   methods: {
     getMsg () {
       return msgs[Math.floor(Math.random() * msgs.length)]

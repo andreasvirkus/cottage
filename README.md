@@ -25,11 +25,11 @@ params and details.
 
 - ~~Initial content~~
 - ~~Service workers~~
-- ~~Sitemap & robots.txt~~
+- ~~Sitemap, humans.txt & robots.txt~~
 - ~~First posts~~
 - ~~Link to [status page](https://status.andreasvirkus.me)~~
 - ~~Make dashboard's timeframe dynamic~~
-- Update CV
+- ~~Update CV~~
 - ~~Refactor to [Vuepress](https://vuepress.vuejs.org/)~~
 - Add Keen tracking to Vuepress via npm
   - Add Keen for all pages not just dashboard (but import visualisation only on dashboard page)
@@ -56,7 +56,29 @@ params and details.
 - Fine-tune burger animation
 - Enhance blog posts
   - Add guesstimated reading time
-  - Add prev/next posts
+  - ~~Add prev/next posts~~
+- Add ASCII message to source, something similar to:
+  ```sh
+<!--
+        _
+       (_)      
+   __ _ ___   __
+  / _` | \ \ / /
+ | (_| | |\ V / 
+  \__,_| | \_/  
+      _/ |      
+     |__/
+
+  Because ASCII art matters...
+
+  I salute you young h@x0r.
+  I invite you to open the /humans.txt file for more info about some cool stuff used to make this blog.
+
+  May the source be with you :)
+
+  ~ ajv();
+-->
+  ```
 
 ----------
 ### Roadmap
@@ -79,37 +101,3 @@ params and details.
     - Add custom styles
     - Remove front matter from `.md` before generating `.pdf`
 - Gist snippets to Vuepress vault
-
-### Article/blog post/snippet-sharing ideas
-
-- Properly setting selectable text limit (textareas, pre/code blocks, etc.)
-- Setting element focus only on tab/keyboard events (better accessibility); event listeners on body (look up from my [Codepen](https://codepen.io/ajv/pen/dMRwyQ))
-- Dashboard walkthrough (WIP)
-- KeepAlive monitoring (PingPong + Heroku) walkthrough (WIP)
-- Snippet: adding event listeners to nodeList ([gist](https://gist.github.com/andreasvirkus/0072d8530ac35e4b99a302196152b123))
-- Setting up Metalsmith with StealJS (or Brunch)
-- Snippet: adding current section (heading ID/hash) to URL/navbar
-- Error handling for SPAs (Vue.js examples) - getting the best of status codes and elegant redirects
-- Srcset IE fix with base64 src attr
-    ```
-    `<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">`
-    ```
-- Adding images to gists
-- ES6 template literals http://wesbos.com/template-strings-html/
-    ```
-    const markup = `
-    <ul class="dogs">
-        ${dogs.map(dog => `<li>${dog.name} is ${dog.age * 7}</li>`)}
-    </ul>
-    `;
-    ```
-- ES6 imports with relative paths (also how to resolve Vue files without extension)
-- Gradient animation for any svg [example fiddle](https://jsfiddle.net/andreasvirkus/9jpbw915/)
-- pre, code and kbd elements  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
-- Generator-based ES6 chatbot
-- CSS hacks (amend current hacks pen with tooltip and tabs)
-- Rundown of browser APIs (bluetooth, battery, etc.)
-- Nifty 'hidden' footers: https://helpie.netlify.com
-- Horizontal content/page scrolling by vertical/natural mouse scrolling [my example](https://jsfiddle.net/andreasvirkus/k85fp66y/1/)  [example in the wild](http://tlmagazine.com/jongerius-breathing-colour/)
-- Vue-router `<router-back>` link element: [discussion](https://github.com/vuejs/vue-router/issues/880#issuecomment-321190433)
-- Delay promise resolvement in dev envs [example](https://gist.github.com/andreasvirkus/e3b2b849ed25fa7c04c0caa3fe14498d) (also add check for NODE_ENV in `wait.js`)

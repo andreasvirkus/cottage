@@ -80,7 +80,7 @@ export default {
   }
 }
 
-@media (max-width: 35rem) {
+@media (max-width: 70rem) {
   .blog__menu-list {
     list-style: none;
   }
