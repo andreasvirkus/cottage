@@ -1,47 +1,56 @@
 <template>
   <div class="theme-container">
-    <div class="content">
-      <h1>404</h1>
-      <blockquote>{{ getMsg() }}</blockquote>
 
-      <!-- 404 credits go to Constantine Apostolou
-      https://codepen.io/conmarap/pen/mVMvVv -->
-      <div class="code-area">
-          <span style="color: #777;font-style:italic;">
-              // 404 page not found.
-          </span>
-          <span>
-              <span style="color:#d65562;">
-              if
-              </span>
-              (<span style="color:#4ca8ef;">!</span><span style="font-style: italic;color:#1abc9c;">found</span>)
-              {
-          </span>
-          <span>
-              <span style="padding-left: 15px;color:#2796ec">
-              <i style="width: 10px;display:inline-block"></i>throw
-              </span>
-              <span>
-              (<span style="color: #a6a61f">"(╯°□°)╯︵ ┻━┻"</span>);
-              </span>
-              <span style="display:block">}</span>
-          </span>
+    <SearchBox/>
+    <Sidebar/>
+
+    <main>
+      <div class="content">
+        <h1>404</h1>
+        <blockquote v-if="flip()">{{ getMsg() }}</blockquote>
+
+        <!-- 404 credits go to Constantine Apostolou
+        https://codepen.io/conmarap/pen/mVMvVv -->
+        <div class="code-area" v-else>
+            <span style="color: #777;font-style:italic;">
+                // 404 page not found.
+            </span>
+            <span>
+                <span style="color:#d65562;">
+                if
+                </span>
+                (<span style="color:#4ca8ef;">!</span><span style="font-style: italic;color:#1abc9c;">found</span>)
+                {
+            </span>
+            <span>
+                <span style="padding-left: 15px;color:#2796ec">
+                <i style="width: 10px;display:inline-block"></i>throw
+                </span>
+                <span>
+                (<span style="color: #a6a61f">"(╯°□°)╯︵ ┻━┻"</span>);
+                </span>
+                <span style="display:block">}</span>
+            </span>
+        </div>
+
+        <p>You've sailed into uncharted territories! I'm not sure why you thought this
+        page would exist, but I didn't have the coding skills to pull it off.</p>
+        <a href="javascript:history.back()">Navigate back</a> or hop to the <router-link to="/">homepage</router-link>.
+
+        <p>
+          If you're looking to get in touch, just reach out to me on
+          <a href="https://www.linkedin.com/in/andreasvirkus" title="View my LinkedIn profile">LinkedIn</a> or via
+          <a href="mailto:write@andreasvirkus.me" title="Shoot me a mail!">e-mail</a>.
+        </p>
       </div>
-
-      <p>You've sailed into uncharted territories! I'm not sure why you thought this
-      page would exist, but I didn't have the coding skills to pull it off.</p>
-      <a href="javascript:history.back()">Navigate back</a> or hop to the <router-link to="/">homepage</router-link>.
-
-      <p>
-        If you're looking to get in touch, just reach out to me on
-        <a href="https://www.linkedin.com/in/andreasvirkus" title="View my LinkedIn profile">LinkedIn</a> or via
-        <a href="mailto:write@andreasvirkus.me" title="Shoot me a mail!">e-mail</a>.
-      </p>
-    </div>
+    </main>
   </div>
 </template>
 
 <script>
+import SearchBox from './SearchBox'
+import Sidebar from './Sidebar'
+
 const msgs = [
   `Why, it's obvious, Watson... There's nothing here.`,
   `How did we get here? Is this a Hangover IV in the making?`,
@@ -51,9 +60,13 @@ const msgs = [
 ]
 
 export default {
+  components: { SearchBox, Sidebar },
   methods: {
     getMsg () {
       return msgs[Math.floor(Math.random() * msgs.length)]
+    },
+    flip () {
+      return (Math.floor(Math.random() * 2) == 0);
     }
   }
 }

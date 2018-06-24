@@ -12,7 +12,8 @@
       {{/if}}
     </header> -->
     <article>
-      <Content :custom="false"/>
+      <h1>{{ $page.frontmatter.pageTitle }}</h1>
+      <Content />
     </article>
 
     <footer>

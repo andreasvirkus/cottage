@@ -3,7 +3,7 @@
         <p>Social links</p>
         <ul class="social__list">
             <li class="social__icon" v-for="link in links">
-                <a class="social__link"
+                <a class="social__link fuzzy-interact"
                     :href="link.link"
                     :title="link.title"
                     v-html="link.icon"
@@ -11,6 +11,33 @@
                     :type="link.type"></a>
             </li>
         </ul>
+
+        <svg class="fuzzy-filters">
+            <filter id="turbulence-1">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
+            </filter>
+
+            <filter id="turbulence-2">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="7" />
+            </filter>
+
+            <filter id="turbulence-3">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
+            </filter>
+
+            <filter id="turbulence-4">
+                <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="4" />
+            </filter>
+
+            <filter id="turbulence-5">
+                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="3" />
+            </filter>
+        </svg>
     </section>
 </template>
 
@@ -88,7 +115,7 @@ export default {
 }
 
 @media (min-width: 35rem) {
-    .social__link::after {
+    /* .social__link::after {
         content: '';
         position: absolute;
         width: 3em;
@@ -101,7 +128,7 @@ export default {
     }
     .social__link:hover::after {
         border-color: #444;
-    }
+    } */
 }
 
 .social__link svg {

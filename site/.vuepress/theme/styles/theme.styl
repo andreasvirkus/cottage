@@ -16,8 +16,6 @@
 
 .content
   margin 0 auto
-  > *:first-child:not(.blog__menu-list)
-    margin-top var(--navbar-height)
   p.demo
     padding 1rem 1.5rem
     border 1px solid #ddd
@@ -48,6 +46,7 @@ h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.25
   .content > &
+  article > &
     margin-top calc(0.5rem - var(--navbar-height))
     padding-top calc(var(--navbar-height) + 1rem)
     margin-bottom 0
@@ -124,5 +123,9 @@ th, td
   .theme-container.no-sidebar
     .sidebar
       display none
+  main article,
+  main .content
+    & > *:first-child:not(.blog__menu-list)
+      margin-top var(--navbar-height)
 
 @require './mobile.styl'

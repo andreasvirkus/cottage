@@ -1,22 +1,23 @@
 <template>
   <main>
 
-    <Content :custom="false" />
+    <Content :custom="false" v-if="!sent" />
 
-    <div v-if="sent" class="tip custom-block">
-      <p class="custom-block-title">cheers;</p>
+    <blockquote v-else>
+      <p>cheers;</p>
       <p>i'll be sure to get in touch</p>
-    </div>
+      <p>- well, me</p>
+    </blockquote>
 
-    <form netlify name="contact" action="/contact?sent">
+    <form id="form" netlify name="contact" action="/contact?sent">
       <label for="name">i am:</label>
-      <input name="name" id="name" type="text" placeholder="Jane, Really Doe" required autocomplete="name">
+      <input name="name" id="name" type="text" required autocomplete="name">
 
       <label for="email">write back to:</label>
-      <input name="email" id="email" type="email" placeholder="some@fancy.domain" required autocomplete="email">
+      <input name="email" id="email" type="email" required autocomplete="email">
 
       <label for="content">i just want to say that...</label>
-      <textarea name="content" id="content" placeholder="Tell me about your day. Or not." required></textarea>
+      <textarea name="content" id="content" required></textarea>
 
       <button type="submit">reach out</button>
     </form>
@@ -39,9 +40,9 @@
 
 <style scoped>
   form {
-    max-width: 35rem;
-    margin: 0 auto;
-    padding: 0 2.5rem;
+    width: 25rem;
+    max-width: 90%;
+    margin: 2rem;
   }
   .custom-block.tip {
     /* TODO: Add gradient instead of border color */
@@ -54,19 +55,23 @@
   input, textarea {
     border: none;
     background: none;
-    border-bottom: 2px dashed cornflowerblue;
+    border-bottom: 2px dashed var(--border-color);
     display: block;
     margin: 1rem 0;
     font-family: var(--font-mono);
     font-size: 1.3rem;
-    transition: border .2s ease;
+    transition: border .3s ease;
   }
   input:focus,
   textarea:focus {
-    border-style: solid;
     border: none;
-    border-bottom: 2px solid cornflowerblue;
     outline: none;
+  }
+  input:focus {
+    border-bottom: 2px solid var(--border-color);
+  }
+  textarea:focus {
+    border: 2px solid var(--border-color);
   }
   input + label {
     display: block;
@@ -74,20 +79,28 @@
   }
 
   textarea {
+    border: 2px dashed var(--border-color);
     resize: vertical;
-    width: 30rem;
+    width: 100%;
     min-height: 5rem;
   }
 
   button {
-    border: 2px solid cornflowerblue;
-    background: none;
+    border: 2px solid var(--border-color);
+    color: #fff;
+    background: var(--border-color);
+    margin-top: 1.5rem;
     padding: .7rem 2rem;
     font-size: 1.3rem;
     font-family: var(--font-mono);
     cursor: pointer;
+    transition: box-shadow 350ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   button:hover {
+      box-shadow: inset 0px 0px 0px 3px #fff;
+  }
 
+  blockquote {
+    margin-top: 6rem;
   }
 </style>

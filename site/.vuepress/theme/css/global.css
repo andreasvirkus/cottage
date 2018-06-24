@@ -110,7 +110,32 @@ blockquote p:last-child {
     align-self: flex-end;
 }
 
-/* @media screen and (max-width: 45em) { */
+@keyframes fuzzy {
+    0% {
+        filter: url("#turbulence-1");
+    }
+    25% {
+        filter: url("#turbulence-2");
+    }
+    50% {
+        filter: url("#turbulence-3");
+    }
+    75% {
+        filter: url("#turbulence-4");
+    }
+    100% {
+        filter: url("#turbulence-5");
+    }
+}
+
+.fuzzy-interact:hover {
+    cursor: pointer;
+    animation: fuzzy 0.6s linear infinite alternate;
+}
+.fuzzy-filters {
+    position: fixed;
+    pointer-events: none;
+}
 
 @media screen and (max-width: 70em) {
     body {
@@ -120,9 +145,10 @@ blockquote p:last-child {
         min-height: 60vh;
         transform: translateY(-1.5em);
         padding: 2rem;
+        font-size: 1rem
     }
     main p {
-        font-size: 1rem;
+        font-size: 1em;
     }
     img {
         height: auto;
@@ -134,5 +160,7 @@ blockquote p:last-child {
     }
     blockquote {
         font-size: 1.3rem;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
