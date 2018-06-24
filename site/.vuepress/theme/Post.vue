@@ -1,47 +1,45 @@
 <template>
   <main class="page">
-    <!-- <header>
-      {{#if readingTime}}
-          Reading time {{ readingTime }} min |
-      {{/if}}
-
-      published on the {{ date postDate }}
-
-      {{#if lastUpdated }}
-          and last updated {{ date lastUpdated }}
-      {{/if}}
-    </header> -->
     <article>
-      <h1>{{ $page.frontmatter.pageTitle }}</h1>
-      <Content />
-    </article>
 
-    <footer>
-      <p>Thanks for giving this a read 🖖</p>
-      <template v-if="prev || next">
-        <hr class="blog__divider" />
-        <div class="page-nav">
-          <span v-if="prev" class="prev">
-            ← {{ formatPostDate(prev.frontmatter.postDate) }}
-            <router-link v-if="prev" class="prev" :to="prev.path">
-              {{ prev.frontmatter.pageTitle || prev.path }}
-            </router-link>
-          </span>
-          <span v-if="next" class="next">
-            {{ formatPostDate(next.frontmatter.postDate) }}
-            <router-link v-if="next" :to="next.path">
-              {{ next.frontmatter.pageTitle || next.path }}
-            </router-link> →
-          </span>
-        </div>
-        <hr class="blog__divider" />
-      </template>
-    </footer>
+      <header>
+        <h1>{{ $page.frontmatter.pageTitle }}</h1>
+        <span v-if="readingTime">Reading time {{ readingTime }} min |</span>
+        <span>published {{ formatPostDate($page.frontmatter.pageDate) }}</span>
+        <span v-if="lastUpdated">and last updated {{ formatPostDate($page.frontmatter.lastUpdated) }}</span>
+      </header>
+
+      <Content ref="content" />
+
+      <footer>
+        <p>Thanks for giving this a read 🖖</p>
+        <template v-if="prev || next">
+          <hr class="blog__divider" />
+          <div class="page-nav">
+            <span v-if="prev" class="prev">
+              ← {{ formatPostDate(prev.frontmatter.postDate) }}
+              <router-link v-if="prev" class="prev" :to="prev.path">
+                {{ prev.frontmatter.pageTitle || prev.path }}
+              </router-link>
+            </span>
+            <span v-if="next" class="next">
+              {{ formatPostDate(next.frontmatter.postDate) }}
+              <router-link v-if="next" :to="next.path">
+                {{ next.frontmatter.pageTitle || next.path }}
+              </router-link> →
+            </span>
+          </div>
+          <hr class="blog__divider" />
+        </template>
+      </footer>
+
+    </article>
   </main>
 </template>
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE, formatPostDate } from './util'
+import readingTime from 'reading-time'
 
 export default {
   methods: {
@@ -67,6 +65,9 @@ export default {
       } else {
         return resolveNext(this.$page)
       }
+    },
+    readingTime () {
+      return readingTime(this.$refs.content)
     }
   }
 }
