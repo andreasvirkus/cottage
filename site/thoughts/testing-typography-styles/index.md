@@ -3,6 +3,7 @@ pageTitle: Testing typography styles
 layout: Post
 description: Styling code and quote blocks and other various typography bits.
 postDate: 2017-06-24
+next: /thoughts/my-site-stack/
 ---
 
 Every now and then, a blog will come across a need to quote someone or maybe
@@ -19,8 +20,9 @@ So let's run through some rudimentary elements essential for a half-decent blog!
 
 **Edit** This also turned out to be very useful whilst refactoring this site from
 [Metalsmith to Vuepress]() (and I'd imagine likewise for a style makeover).
+<!-- TODO: Link to Vuepress migration post in the future -->
 
-Some headings:
+We'll start off with some headings
 
 # Heading 1
 
@@ -39,17 +41,20 @@ And a content link style with sexy underlines - [Gargoyle Gigglypuff jamming it 
 - Of
 - Sorts
 
-A default line separator:
+A default line separator, which I like using a little too often
 
 <hr>
 
-Let's style a quote.
+Now let's quote someone with questionable views:
 
 > Normality is a waste of potential.
 >
 > &mdash; Me
 
-Then some default text styles (content by the ever-amusing [hipsum](https://hipsum.co)):
+Then some default text styles\
+(content by the ever-amusing [hipsum](https://hipsum.co)):
+
+<hr>
 
 Edison bulb godard craft beer, leggings keytar organic XOXO disrupt irony hell of. Yuccie fam glossier, yr health goth la croix four dollar toast swag 3 wolf moon aesthetic waistcoat prism leggings tattooed. Farm-to-table pug listicle scenester blue bottle hashtag. Wayfarers food truck blue bottle celiac leggings. Pug waistcoat polaroid fingerstache messenger bag flannel tumeric migas pinterest salvia. Artisan ugh health goth unicorn keffiyeh pabst direct trade. Master cleanse coloring book meditation tbh fashion axe activated charcoal, shaman migas aesthetic gastropub health goth.
 
@@ -62,8 +67,10 @@ And now some code blocks:
 const pi = 'I never remembered it 😶';
 ```
 
+We can even have them
+
 ``` html
-<h2>With different syntaxes</h2>
+<h2>with <u>different</u> syntaxes</h2>
 ```
 
 ``` css
@@ -73,7 +80,7 @@ body {
 }
 ```
 
-Also the `<tbd>` element is great for writing inline styles!
+Also the `<kbd>` element is great for writing inline styles!
 
-~Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.~ (covered by migrating to Vuepress)
+~~Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.~~ (covered by migrating to Vuepress)
 <!-- TODO: Link to Vuepress migration post in the future -->

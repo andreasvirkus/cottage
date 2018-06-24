@@ -3,7 +3,6 @@
     <Content :custom="false"/>
     <div class="content edit-link" v-if="editLink">
       <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-      <OutboundLink/>
     </div>
     <div class="content page-nav" v-if="prev || next">
       <p class="inner">
@@ -23,11 +22,9 @@
 </template>
 
 <script>
-import OutboundLink from './OutboundLink'
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 
 export default {
-  components: { OutboundLink },
   computed: {
     prev () {
       const prev = this.$page.frontmatter.prev
@@ -118,20 +115,21 @@ function find (page, items = [], offset) {
 .page
   padding-bottom 2rem
 
-.edit-link.content
-  padding-top 0 !important
-  a
-    color var(--link-color)
-    margin-right 0.25rem
-
-.page-nav.content
-  padding-top 1rem !important
-  padding-bottom 0 !important
-  .inner
-    min-height 2rem
-    margin-top 0 !important
-    border-top 1px solid var(--border-color)
-    padding-top 1rem
+.page-nav
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 3rem;
   .next
-    float right
+    margin-left auto
+
+@media (max-width: 35em) {
+  .prev {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  .prev + .next {
+    margin-top: .5rem;
+  }
+}
 </style>

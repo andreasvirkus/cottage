@@ -3,7 +3,6 @@
     <Content :custom="false"/>
     <div class="content edit-link" v-if="editLink">
       <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-      <OutboundLink/>
     </div>
     <div class="content page-nav" v-if="prev || next">
       <p class="inner">
@@ -24,11 +23,9 @@
 
 <script>
 // TODO: Link GitHub repos and go through them descriptively? Show off done websites
-import OutboundLink from './OutboundLink'
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 
 export default {
-  components: { OutboundLink },
   computed: {
     prev () {
       const prev = this.$page.frontmatter.prev

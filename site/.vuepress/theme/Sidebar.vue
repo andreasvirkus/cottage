@@ -1,9 +1,11 @@
 <template>
-  <aside id="menu" class="menu" :class="{ 'menu--open': open }" role="navigation">
-    <button class="menu__handle" title="Open menu" @click="open = !open"><span>Menu</span></button>
-		<NavLinks @nav="open = false" />
+  <aside id="menu" ref="menu" class="menu" :class="{ 'menu--open': open }" role="navigation">
+    <button class="menu__handle" ref="handle" id="menu-handle" title="Open menu" @click="toggle"><span>Menu</span></button>
+		<NavLinks @nav="toggle" />
 
-    <div class="morph-shape" data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410" data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
+    <div class="morph-shape" id="menu-shape" ref="shape"
+			data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410"
+			data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
       <svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
         <path fill="none" d="M300-10c0,0,0,164,0,410c0,232,0,410,0,410"/>
       </svg>
@@ -12,25 +14,64 @@
 </template>
 
 <script>
-// import Snap from './snap.svg.min'
-// import menu from './menu'
-// TODO: Add v-clickaway directive for backdrop
-// TODO: Refactor styles
-
 import NavLinks from './NavLinks'
-	// Replace morph-shape snap.svg with tweenlite or some other lighter SVG morph lib
-	// Look into vue-tweezing!
-  export default {
-		components: { NavLinks },
-		data () {
-			return {
-				open: false
-			}
+
+export default {
+	name: 'sidebar',
+	components: { NavLinks },
+	data () {
+		return {
+			open: false,
+			narrowViewport: false,
+			menu: null,
+			pathEl: [],
+			paths: [],
 		}
-		// mounted () {
-			// menu()
-		// }
+	},
+	mounted () {
+		this.narrowViewport = document.body.clientWidth < 790
+		if (this.narrowViewport) {
+			window.Snap = require('snapsvg-cjs')
+			this.init()
+		}
+	},
+	methods: {
+		init () {
+			this.shapeEl = this.$refs.shape
+
+			const s = window.Snap(this.shapeEl.querySelector('svg'))
+			this.pathEl = s.select('path')
+			this.paths = {
+					reset : this.pathEl.attr('d'),
+					open : this.shapeEl.getAttribute('data-morph-open'),
+					close : this.shapeEl.getAttribute('data-morph-close')
+			}
+		},
+		toggle () {
+			if (!this.narrowViewport) {
+				this.open = !this.open
+				return
+			}
+
+			// Tween path's d coordinates with snapSVG
+			this.pathEl.stop().animate({
+				'path': this.open
+						? this.paths.close
+						: this.paths.open
+				},
+				350,
+				mina.easeout,
+				() => {
+					this.pathEl.stop().animate({ 'path' : this.paths.reset },
+						800,
+						mina.elastic
+					)
+			})
+
+			this.open = !this.open
+    }
 	}
+}
 </script>
 
 <style>
@@ -75,7 +116,7 @@ import NavLinks from './NavLinks'
 }
 
 .nav__item:first-child::before {
-	color: #A6D865;
+	content: none;
 }
 .nav__item:nth-child(2)::before {
 	color: #DBD253;
@@ -117,11 +158,6 @@ import NavLinks from './NavLinks'
 }
 
 @media screen and (max-width: 70rem) {
-	.menu.menu--anim li {
-		will-change: transform;
-		transform: translateX(0);
-	}
-
 	.nav-links {
 		transform: translateX(50px);
 	}

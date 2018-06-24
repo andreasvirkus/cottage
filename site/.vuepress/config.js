@@ -24,7 +24,10 @@ module.exports = {
   //   }
   // },
   themeConfig: {
-    repo: 'andreasvirkus',
+    repo: 'andreasvirkus/andreasvirkus.github.io',
+    docsDir: 'site',
+    editLinks: true,
+    editLinkText: 'Help me improve this page',
     logo: 'svg/logo.svg',
     titleSeparator: '--',
     generatorUrl: 'https://vuepress.vuejs.org',
@@ -33,6 +36,7 @@ module.exports = {
     hostUrl: 'https://netlify.com',
     hostTitle: 'Static sites with superpowers!',
     hostName: 'Netlify',
+    lastUpdated: 'Last updated',
     nav: [
       {
         text: '~/',

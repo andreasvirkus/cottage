@@ -21,6 +21,7 @@ import nprogress from 'nprogress'
 import Blog from './Blog'
 import Post from './Post'
 import Dashboard from './Dashboard'
+import Contact from './Contact'
 import SearchBox from './SearchBox'
 import Sidebar from './Sidebar'
 import Page from './Page'
@@ -35,7 +36,8 @@ export default {
     PageFooter,
     SearchBox,
     Sidebar,
-    Dashboard
+    Dashboard,
+    Contact
   },
   created () {
     if (this.$ssrContext) {

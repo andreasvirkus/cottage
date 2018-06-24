@@ -1,4 +1,4 @@
-.blog__title-divider {
+.blog__divider {
     background-color: var(--blog-post-divider);
     background-image: var(--blog-post-divider);
 }
@@ -12,27 +12,7 @@
     color: #888;
     font-style: italic;
 }
-/*
-code {
-    border: 1px solid #d8e0e4;
-    border-radius: 2px;
-    color: #c25;
-    font-size: .8em;
-    line-height: 1em;
-    white-space: pre-wrap;
-    vertical-align: middle;
-    padding: .2rem .3rem .1rem;
-    font-family: var(--font-mono);
-}
-pre code {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    color: #333;
-    background: #fff;
-    font-size: .8rem;
-    line-height: 1.2em;
-} */
+
 pre code {
   user-select: all;
 }

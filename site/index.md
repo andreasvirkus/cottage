@@ -8,7 +8,7 @@ meta:
 
 Glad to have you in my small corner of the web.
 This site's main purpose is to act as my personal playground for different web
-technologies, but also to provide a bit of insight about [me](/about).
+technologies, but also to provide a bit of insight about [me](/about/).
 
 ### Poke me
 
@@ -20,7 +20,7 @@ If you're looking to get in touch, just reach out to me on
 
 ⚠️ Currently refactoring from Metalsmith to Vuepress ⚠️
 
-I'll soon try and write some posts under the [blog](/thoughts) section. They'll
+I'll soon try and write some posts under the [blog](/thoughts/) section. They'll
 mostly be about small development techniques or explanations of snippets
 that I often find useful.
 

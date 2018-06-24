@@ -15,11 +15,7 @@
   height var(--navbar-height)
 
 .content
-  max-width $contentWidth
   margin 0 auto
-  padding 2rem 2.5rem
-  > *:first-child:not(ul)
-    margin-top var(--navbar-height)
   p.demo
     padding 1rem 1.5rem
     border 1px solid #ddd
@@ -40,26 +36,6 @@ kbd
   border-radius 0.15rem
   padding 0 0.15em
 
-blockquote
-    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 #004EFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 10rem;
-    font-size: 2rem;
-    padding: 2rem;
-    margin: 2rem;
-    background-color: #fbfbfb;
-
-blockquote p
-  margin 0
-
-blockquote p:last-child
-    font-size .6em
-    align-self flex-end
-
-
 ul, ol
   padding-left 1.2em
 
@@ -70,6 +46,7 @@ h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.25
   .content > &
+  article > &
     margin-top calc(0.5rem - var(--navbar-height))
     padding-top calc(var(--navbar-height) + 1rem)
     margin-bottom 0
@@ -102,7 +79,7 @@ a.header-anchor
     text-decoration none
 
 code, kbd
-  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+  font-family var(--font-mono)
 
 p, ul, ol
   line-height 1.7
@@ -146,5 +123,9 @@ th, td
   .theme-container.no-sidebar
     .sidebar
       display none
+  main article,
+  main .content
+    & > *:first-child:not(.blog__menu-list)
+      margin-top var(--navbar-height)
 
 @require './mobile.styl'

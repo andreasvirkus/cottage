@@ -3,6 +3,9 @@ pageTitle: My site stack
 layout: Post
 description: What this shindig consists of.
 postDate: 2017-09-03
+prev: /thoughts/testing-typography-styles/
+next: /thoughts/creating-keep-alive-monitoring/
+#next: /thoughts/my-site-stack/
 ---
 
 I feel like this is the _must-have_ first post for every/any developer
