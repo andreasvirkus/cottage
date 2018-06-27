@@ -91,6 +91,10 @@ Favourite learning resources:
 ## labor
 
 I like fiddling small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus).
+
+_* Unfortunately, I can't show most of my recent work on here for [legal reasons](https://en.wikipedia.org/wiki/Non-disclosure_agreement).
+It's good stuff though._
+
 I started out creating websites for neighbours and small companies, which really sparked a passion. Here's what I've been up to since:
 - **Full-stack developer @ Qualitista**
     - _July 2018_
