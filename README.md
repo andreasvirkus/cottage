@@ -31,11 +31,13 @@ params and details.
 - ~~Make dashboard's timeframe dynamic~~
 - ~~Update CV~~
 - ~~Refactor to [Vuepress](https://vuepress.vuejs.org/)~~
-- Add Keen tracking to Vuepress via npm
-  - Add Keen for all pages not just dashboard (but import visualisation only on dashboard page)
+- Add Keen tracking to Vuepress
+  - ~~Add Keen for all pages not just dashboard - solved via lovely Netlify post-processing~~
+  - Import visualisation only on dashboard page
 - Add jump.js once it's packagised
 - Clean up theme package/repo and dogfood it
-- Vuetify dashboard.js solution + import keen styles and flexbox grid (or rewrite one)
+- ~~Vue up the dashboard.js solution + import keen styles and flexbox grid~~
+- Rewrite custom flexbox grid and more lightweight styles for dashboard boxes
 - Refactor Stylus to native CSS + css custom properties
   - Use CSS custom properties in a proper manner (meaning don't use hover specific variables, etc.);
     this will also ease theming later on (single var for bg colour, font colour, link colour, the works)
@@ -57,30 +59,10 @@ params and details.
 - ~~Enhance blog posts~~
   - ~~Add guesstimated reading time~~
   - ~~Add prev/next posts~~
-- Add ASCII message to source, something similar to:
-  ```sh
-<!--
-        _
-       (_)      
-   __ _ ___   __
-  / _` | \ \ / /
- | (_| | |\ V / 
-  \__,_| | \_/  
-      _/ |      
-     |__/
-
-  Because ASCII art matters...
-
-  I salute you young h@x0r.
-  I invite you to open the /humans.txt file for more info about some cool stuff used to make this blog.
-
-  May the source be with you :)
-
-  ~ ajv();
--->
-  ```
+- ~~Add ASCII message to source (Netlify post processing <3 )~~
 
 ----------
+
 ### Roadmap
 
 - ~~Dynamic navigation (Vuepress)~~

@@ -13,12 +13,12 @@ technologies, but also to provide a bit of insight about [me](/about/).
 ### Poke me
 
 If you're looking to get in touch, just reach out to me on
-[linkedIn](https://www.linkedin.com/in/andreasvirkus "View my LinkedIn profile") or via
-[e-mail](mailto:write@andreasvirkus.me "Shoot me a mail!").
+[linkedIn](https://www.linkedin.com/in/andreasvirkus "View my LinkedIn profile"), via
+[e-mail](mailto:write@andreasvirkus.me "Shoot me a mail!") or by my [contact](/contact/) page.
 
 ### Roadmap
 
-⚠️ Currently refactoring from Metalsmith to Vuepress ⚠️
+Freshly refactored from Metalsmith to Vuepress 🌈
 
 I'll soon try and write some posts under the [blog](/thoughts/) section. They'll
 mostly be about small development techniques or explanations of snippets

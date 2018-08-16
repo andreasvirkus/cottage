@@ -11,13 +11,13 @@
 
     <form id="form" netlify name="contact" action="/contact?sent">
       <label for="name">i am:</label>
-      <input name="name" id="name" type="text" required autocomplete="name">
+      <input name="name" id="name" type="text" placeholder="Jayden Smith" required autocomplete="name">
 
       <label for="email">write back to:</label>
-      <input name="email" id="email" type="email" required autocomplete="email">
+      <input name="email" id="email" type="email" required placeholder="unique+lead@mail.com" autocomplete="email">
 
       <label for="content">i just want to say that...</label>
-      <textarea name="content" id="content" required></textarea>
+      <textarea name="content" id="content" required placeholder="Pour your heart out; I'm all ears"></textarea>
 
       <button type="submit">reach out</button>
     </form>
@@ -44,50 +44,41 @@
     max-width: 90%;
     margin: 2rem;
   }
-  .custom-block.tip {
-    /* TODO: Add gradient instead of border color */
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
 
   input, textarea {
     border: none;
     background: none;
-    border-bottom: 2px dashed var(--border-color);
     display: block;
     font-family: var(--font-mono);
-    font-size: 1.3rem;
-    transition: border .3s ease;
+    font-size: 1rem;
+    color: #4a4a4a;
+    transition: box-shadow .3s ease-out;
+    margin: 1rem 0;
+    padding: .6rem .4rem;
   }
   input:focus,
   textarea:focus {
     border: none;
     outline: none;
-  }
-  input:focus {
-    border-bottom: 2px solid var(--border-color);
-  }
-  textarea:focus {
-    border: 2px solid var(--border-color);
+    box-shadow: 0 16px 24px 0 rgba(118,143,255,.2);
   }
   input + label {
     display: block;
-    margin-top: 3rem;
   }
 
   textarea {
-    border: 2px dashed var(--border-color);
     resize: vertical;
     width: 100%;
     min-height: 5rem;
   }
+  label {
+    cursor: pointer;
+  }
 
   button {
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--content-color);
     color: #fff;
-    background: var(--border-color);
+    background: var(--content-color);
     margin-top: 1.5rem;
     padding: .7rem 2rem;
     font-size: 1.3rem;
