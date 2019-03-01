@@ -48,6 +48,7 @@ export default {
     border-bottom: 0;
     text-align: center;
     font-style: normal;
+    // width: 50%;
 }
 .blog__menu-link::before {
     content: '';

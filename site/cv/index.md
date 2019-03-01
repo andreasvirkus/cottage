@@ -6,14 +6,15 @@ meta:
 ---
 
 # Andreas Johan Virkus
-_Updated July 2018_  
-_Herne 22-5, 10135 Tallinn, Estonia_  
-_+372 52 80 234 | write@andreasvirkus.me_
+_Updated July 2018_\
+_Tallinn, Estonia_\
+_+372 52 80 234 | [write@andreasvirkus.me](mailto:write@andreasvirkus.me)_
 
 ## Desired positions
 - Front-End/interface/interaction developer
 - Node.js full-stack engineer
 - Performance engineer
+- Security engineer
 
 ## Work
 - **Qualitista**\
