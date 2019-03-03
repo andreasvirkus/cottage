@@ -6,11 +6,13 @@
       :value="query"
       autocomplete="off"
       spellcheck="false"
+      ref="input"
       @focus="focused = true"
       @blur="focused = false"
       @keyup.enter="go(focusIndex)"
       @keyup.up="onUp"
-      @keyup.down="onDown">
+      @keyup.down="onDown"
+      @keyup.esc="unfocusSearchBox">
     <ul class="suggestions"
       v-if="showSuggestions"
       :class="{ 'align-right': alignRight }"
@@ -121,6 +123,9 @@ export default {
     },
     unfocus () {
       this.focusIndex = -1
+    },
+    unfocusSearchBox () {
+      this.$refs.input.blur()
     }
   }
 }
@@ -158,7 +163,7 @@ export default {
       left 0
       width 10rem
       cursor auto
-      border-color var(--accent-color)
+      border-color #22223398
   .suggestions
     background #fff
     width 20rem
