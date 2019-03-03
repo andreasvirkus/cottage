@@ -290,7 +290,7 @@ export default {
 
 	.menu {
 		top: 2rem;
-		transform: translateX(-190px);
+		transform: translateX(-185px);
 	}
 	.sticky + .menu {
 		top: 3rem;

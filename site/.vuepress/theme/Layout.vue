@@ -48,24 +48,6 @@ export default {
     }
   },
   mounted () {
-    // update title / meta tags
-    this.currentMetaTags = []
-    const updateMeta = () => {
-      const { titleSeparator, titleStatic } = this.$site.themeConfig
-
-      document.title = getTitle(this.$title, this.$page, titleSeparator, titleStatic)
-      const meta = [
-        {
-          name: 'description',
-          content: this.$description
-        },
-        ...(this.$page.frontmatter.meta || [])
-      ]
-      this.currentMetaTags = updateMetaTags(meta, this.currentMetaTags)
-    }
-    // this.$watch('$page', updateMeta)
-    updateMeta()
-
     // configure progress bar
     nprogress.configure({ showSpinner: false })
 
@@ -145,5 +127,7 @@ function getTitle(siteTitle, page, separator = '|', staticTitle = false) {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: var(--bg-light);
+  margin: var(--bg-border);
 }
 </style>
