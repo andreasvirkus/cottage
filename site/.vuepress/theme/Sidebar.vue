@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { bus } from './util/bus'
 import NavLinks from './NavLinks'
 
 export default {
@@ -32,6 +33,9 @@ export default {
 			pathEl: [],
 			paths: [],
 		}
+	},
+	created () {
+		bus.$on('sidebar-toggle', this.toggle)
 	},
 	mounted () {
 		this.narrowViewport = document.body.clientWidth < 790
@@ -52,9 +56,9 @@ export default {
 					close: this.shapeEl.getAttribute('data-morph-close')
 			}
 		},
-		toggle () {
+		toggle (forcedState) {
 			// Simply toggling atm since Snap breaks CSP
-			this.open = !this.open
+			this.open = Boolean(forcedState) ? forcedState : !this.open
 			return
 
 			// FIXME: Snap uses Function(), so need to

@@ -20,6 +20,7 @@ Here you can have a look at some of this site's metrics. It'll (hopefully)
 present user statistics (no. of visits, devices used, duration of session)
 and performance metrics (avg. load time, site weight, etc.).
 
+_**Note:** The load time (TTFB estimation) displays the correct time only if you reload this sub-page (since it makes use of [`performance.timing.navigationStart`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/navigationStart))._
 
 Sections:
 - [visitor data](#visitor-data)
