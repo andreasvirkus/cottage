@@ -42,12 +42,18 @@ export default {
 			const s = window.Snap(this.shapeEl.querySelector('svg'))
 			this.pathEl = s.select('path')
 			this.paths = {
-					reset : this.pathEl.attr('d'),
-					open : this.shapeEl.getAttribute('data-morph-open'),
-					close : this.shapeEl.getAttribute('data-morph-close')
+					reset: this.pathEl.attr('d'),
+					open: this.shapeEl.getAttribute('data-morph-open'),
+					close: this.shapeEl.getAttribute('data-morph-close')
 			}
 		},
 		toggle () {
+			// Simply toggling atm since Snap breaks CSP
+			this.open = !this.open
+			return
+
+			// FIXME: Snap uses Function(), so need to
+			// call Snap.animate() instead
 			if (!this.narrowViewport) {
 				this.open = !this.open
 				return
@@ -62,11 +68,13 @@ export default {
 				350,
 				mina.easeout,
 				() => {
-					this.pathEl.stop().animate({ 'path' : this.paths.reset },
+					this.pathEl.stop().animate(
+						{ 'path' : this.paths.reset },
 						800,
 						mina.elastic
 					)
-			})
+				}
+			)
 
 			this.open = !this.open
     }
