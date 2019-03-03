@@ -1,5 +1,10 @@
 <template>
-  <aside id="menu" ref="menu" class="menu" :class="{ 'menu--open': open }" role="navigation">
+  <aside id="menu"
+  	ref="menu"
+  	class="menu"
+  	:class="{ 'menu--open': open }"
+  	role="navigation"
+  	@keyup.esc="toggle">
     <button class="menu__handle" ref="handle" id="menu-handle" title="Open menu" @click="toggle"><span>Menu</span></button>
 		<NavLinks @nav="toggle" />
 

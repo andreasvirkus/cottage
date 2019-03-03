@@ -44,6 +44,7 @@ params and details.
   - Refactor to use either scoped styles or CSS modules
   - Add dark theme
 - ~~Add vue-tweezing for morphing SVG (menu border)~~
+- Update to vuepress 1.alpha
 - Add page transitions
 - Add tags support in page frontmatter and use it in search results
 - Add theme customiser

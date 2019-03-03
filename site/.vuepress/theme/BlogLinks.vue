@@ -4,7 +4,8 @@
       <li v-for="(post, i) in posts" :key="i" class="blog__menu-item" :class="{ active: post.path === $router.path }">
         <router-link :to="post.path" class="blog__menu-link">
           <div class="blog__menu-title">{{ post.frontmatter.pageTitle }}</div>
-          <div class="blog__menu-date"
+          <div v-if="false"
+            class="blog__menu-date"
             :data-short-date="formatPostDate(post.frontmatter.postDate, true)">
             <time :datetime="post.frontmatter.postDate">{{ formatPostDate(post.frontmatter.postDate) }}</time>
           </div>
@@ -43,7 +44,7 @@ export default {
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: .5rem 0;
     text-decoration: none;
     border-bottom: 0;
     text-align: center;
@@ -51,7 +52,7 @@ export default {
     // width: 50%;
 }
 .blog__menu-link::before {
-    content: '';
+    // content: '';
     left: 0;
     bottom: 1rem;
     width: 100%;
@@ -77,7 +78,7 @@ export default {
 @media (min-width: 35rem) {
   .blog__menu-title::after {
     letter-spacing: 4px;
-    content: " .........................................................................";
+    // content: " .........................................................................";
   }
 }
 

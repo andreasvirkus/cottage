@@ -74,8 +74,11 @@ export default {
 @import './css/variables.css'
 
 .nav-links
+  position relative
   display inline-block
-  transform: translate(50px, 30px)
+  z-index 1
+  transform translate(50px, 30px)
+
   a
     line-height 1.7rem
     color inherit
