@@ -1,11 +1,10 @@
 <template>
   <nav class="blog__menu content" role="navigation">
-    <ol reversed class="blog__menu-list">
+    <ol reversed class="blog__menu-links">
       <li v-for="(post, i) in posts" :key="i" class="blog__menu-item" :class="{ active: post.path === $router.path }">
         <router-link :to="post.path" class="blog__menu-link">
           <div class="blog__menu-title">{{ post.frontmatter.pageTitle }}</div>
-          <div v-if="false"
-            class="blog__menu-date"
+          <div class="blog__menu-date"
             :data-short-date="formatPostDate(post.frontmatter.postDate, true)">
             <time :datetime="post.frontmatter.postDate">{{ formatPostDate(post.frontmatter.postDate) }}</time>
           </div>
@@ -31,7 +30,7 @@ export default {
 <style lang="stylus">
 @import './css/variables.css'
 
-.blog__menu-list {
+.blog__menu-links {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -41,31 +40,40 @@ export default {
 }
 
 .blog__menu-link {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: .5rem 0;
-    text-decoration: none;
-    border-bottom: 0;
-    text-align: center;
-    font-style: normal;
-    // width: 50%;
-}
-.blog__menu-link::before {
-    // content: '';
-    left: 0;
-    bottom: 1rem;
-    width: 100%;
-    height: 2px;
-    background-color: var(--dark-accent-color);
-    position: absolute;
-    transition: transform .5s ease;
-    transform: scaleX(0);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 0;
+  text-decoration: none;
+  border-bottom: 0;
+  text-align: center;
+  font-style: normal;
+
+  &:hover .blog__menu-title::before {
+    transform: scaleX(1);
+  }
 }
 
 .blog__menu-title {
+  position: relative;
   overflow: hidden;
   white-space: nowrap;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0;
+    width: 100%;
+    height: .5rem;
+    // background-color: var(--dark-accent-color);
+    background-color: var(--accent-color);
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: 0%;
+    opacity: .5;
+  }
 }
 
 .blog__menu-date {
@@ -74,27 +82,19 @@ export default {
     padding-left: 7px;
 }
 
-
-@media (min-width: 35rem) {
-  .blog__menu-title::after {
-    letter-spacing: 4px;
-    // content: " .........................................................................";
-  }
-}
-
 @media (max-width: 70rem) {
-  .blog__menu-list {
+  .blog__menu-links {
     list-style: none;
   }
   .blog__menu-date {
-      padding-left: 0;
+    display: none;
   }
   .blog__menu-date time {
-      position: fixed;
-      opacity: 0;
+    position: fixed;
+    opacity: 0;
   }
   .blog__menu-date::before {
-      content: attr(data-short-date);
+    content: attr(data-short-date);
   }
   .blog__menu-title {
     text-overflow: ellipsis;

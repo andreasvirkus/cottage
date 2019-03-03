@@ -63,7 +63,7 @@ export default {
       ]
       this.currentMetaTags = updateMetaTags(meta, this.currentMetaTags)
     }
-    this.$watch('$page', updateMeta)
+    // this.$watch('$page', updateMeta)
     updateMeta()
 
     // configure progress bar
