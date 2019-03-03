@@ -64,7 +64,7 @@ export default {
     })
   },
   beforeDestroy () {
-    updateMetaTags(null, this.currentMetaTags)
+    // updateMetaTags(null, this.currentMetaTags)
   },
   methods: {
     // TODO: add side swipe for menu open/close
