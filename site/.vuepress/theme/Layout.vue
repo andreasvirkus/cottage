@@ -1,15 +1,12 @@
 <template>
   <div class="theme-container"
-    :class="$page.frontmatter.pageClass"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd">
+    :class="$page.frontmatter.pageClass">
+    <search-box/>
+    <sidebar/>
 
-    <SearchBox/>
-    <Sidebar/>
-
-    <component v-if="$page.frontmatter.layout" :is="$page.frontmatter.layout"/>
-
-    <Page v-else />
+    <component v-if="$page.frontmatter.layout"
+      :is="$page.frontmatter.layout"/>
+    <page v-else />
 
     <page-footer/>
   </div>
@@ -26,7 +23,6 @@ import Sidebar from './Sidebar'
 import Dashboard from './Dashboard'
 import SearchBox from './SearchBox'
 import PageFooter from './PageFooter'
-import { bus } from './util/bus'
 import { pathToComponentName, getLang } from '@app/util'
 
 export default {
@@ -65,23 +61,6 @@ export default {
   },
   beforeDestroy () {
     // updateMetaTags(null, this.currentMetaTags)
-  },
-  methods: {
-    // TODO: add side swipe for menu open/close
-    onTouchStart (e) {
-      this.touchStart = {
-        x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
-      }
-    },
-    onTouchEnd (e) {
-      const dx = e.changedTouches[0].clientX - this.touchStart.x
-      const dy = e.changedTouches[0].clientY - this.touchStart.y
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-        const swipedOpen = dx > 0 && this.touchStart.x <= 80
-        bus.$emit('sidebar-toggle', swipedOpen)
-      }
-    }
   }
 }
 
@@ -101,13 +80,6 @@ function updateMetaTags (meta, current) {
       return tag
     })
   }
-}
-
-function getTitle(siteTitle, page, separator = '|', staticTitle = false) {
-  const selfTitle = page.frontmatter.pageTitle || page.title
-  if (staticTitle || selfTitle === siteTitle) return siteTitle
-
-  return siteTitle
 }
 </script>
 

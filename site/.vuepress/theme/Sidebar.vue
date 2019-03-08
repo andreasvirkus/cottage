@@ -5,8 +5,17 @@
   	:class="{ 'menu--open': open }"
   	role="navigation"
   	@keyup.esc="toggle">
-    <button class="menu__handle" ref="handle" id="menu-handle" title="Open menu" @click="toggle"><span>Menu</span></button>
-		<NavLinks @nav="toggle" />
+    <!-- @touchstart="onTouchStart"
+    @touchend="onTouchEnd"> -->
+    <button class="menu__handle"
+    	ref="handle"
+    	id="menu-handle"
+    	title="Open menu"
+    	@click="toggle">
+    	<span>Menu</span>
+    </button>
+
+		<nav-links @nav="toggle" />
 
     <div class="morph-shape" id="menu-shape" ref="shape"
 			data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410"
@@ -19,7 +28,6 @@
 </template>
 
 <script>
-import { bus } from './util/bus'
 import NavLinks from './NavLinks'
 
 export default {
@@ -34,15 +42,18 @@ export default {
 			paths: [],
 		}
 	},
-	created () {
-		bus.$on('sidebar-toggle', this.toggle)
-	},
 	mounted () {
 		this.narrowViewport = document.body.clientWidth < 790
 		if (this.narrowViewport) {
-			window.Snap = require('snapsvg-cjs')
-			this.init()
+			// window.Snap = require('snapsvg-cjs')
+			// this.init()
+			window.addEventListener('touchstart', this.onTouchStart)
+			window.addEventListener('touchend', this.onTouchEnd)
 		}
+	},
+	beforeDestroy () {
+		window.removeEventListener('touchstart', this.onTouchStart)
+		window.removeEventListener('touchend', this.onTouchEnd)
 	},
 	methods: {
 		init () {
@@ -51,18 +62,21 @@ export default {
 			const s = window.Snap(this.shapeEl.querySelector('svg'))
 			this.pathEl = s.select('path')
 			this.paths = {
-					reset: this.pathEl.attr('d'),
-					open: this.shapeEl.getAttribute('data-morph-open'),
-					close: this.shapeEl.getAttribute('data-morph-close')
+				reset: this.pathEl.attr('d'),
+				open: this.shapeEl.getAttribute('data-morph-open'),
+				close: this.shapeEl.getAttribute('data-morph-close')
 			}
 		},
 		toggle (forcedState) {
+			// this.open = typeof forcedState === 'boolean' ? forcedState : !this.open
+
 			// Simply toggling atm since Snap breaks CSP
-			this.open = Boolean(forcedState) ? forcedState : !this.open
+			this.open = !this.open
 			return
 
 			// FIXME: Snap uses Function(), so need to
 			// call Snap.animate() instead
+			// or switch it to a custom easing.
 			if (!this.narrowViewport) {
 				this.open = !this.open
 				return
@@ -86,6 +100,26 @@ export default {
 			)
 
 			this.open = !this.open
+    },
+    onTouchStart (e) {
+      this.touchStart = {
+        x: e.changedTouches[0].clientX,
+        y: e.changedTouches[0].clientY
+      }
+    },
+    onTouchEnd (e) {
+      if ([e.target.id, e.target.parentNode.id].includes('menu-handle')) {
+        return
+      }
+      const dx = e.changedTouches[0].clientX - this.touchStart.x
+      const dy = e.changedTouches[0].clientY - this.touchStart.y
+
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+        const swipedOpen = dx > 0 && this.touchStart.x <= 80
+        const swipedClose = dx < 0
+        const shouldToggle = !this.open && swipedOpen || this.open && swipedClose
+        shouldToggle && this.toggle()
+      }
     }
 	}
 }
