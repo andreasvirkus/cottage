@@ -18,7 +18,7 @@ My full curriculum vitae can be viewed [here](/cv/) and downloaded through the l
 
 ## superpowers ⚡
 
-I'm an aspiring full-stack developer (with a light front-ended tilt). I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces. I love (and preach) all things Node.js, semantic HTML, the power of CSS & progressive enhancement.\
+I'm an aspiring full-stack developer (with a light front-ended tilt). I'm interested in all kinds of visual communication, but my major focus is on designing web applications & interfaces. I love (and preach) all things Node.js, semantic HTML, the power of CSS & progressive enhancement.\
 Lately I've really enjoyed tinkering with:
 - Vue.js ♥
 - PWAs and service-workers
