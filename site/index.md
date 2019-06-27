@@ -20,7 +20,7 @@ If you're looking to get in touch, just reach out to me on
 
 Freshly refactored from Metalsmith to Vuepress 🌈
 
-I'll soon try and write some posts under the [blog](/thoughts/) section. They'll
+I'll Soon™ try and write some posts under the [blog](/thoughts/) section. They'll
 mostly be about small development techniques or explanations of snippets
 that I often find useful.
 
