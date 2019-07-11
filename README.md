@@ -1,7 +1,9 @@
-# andreasvirkus.github.io
+# Cottage
+[![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
+
 ## A humble homepage of sorts...
 
-~Metalsmith~ Vuepress setup for my current portfolio-ish site.
+~~Metalsmith~~ [Vuepress](https://vuepress.vuejs.org) setup for my current portfolio-ish site.
 
 Hosted on [Netlify](https://netlify.com).
 
@@ -16,8 +18,8 @@ get one yourself:
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
 
 ### Vuepress (new)
-Add `ajv` to your `.vuepress/config.js`'s `theme` parameter. Check out
-[the theme](https://github.com/andreasvirkus/vuepress-theme-ajv) for the config
+Add `ajv` to your `.vuepress/config.js`'s `theme` parameter. Head over to
+[vuepress-theme-ajv](https://github.com/andreasvirkus/vuepress-theme-ajv)'s repo for the config
 params and details.
 
 ----------
@@ -44,7 +46,7 @@ params and details.
   - Refactor to use either scoped styles or CSS modules
   - Add dark theme
 - ~~Add vue-tweezing for morphing SVG (menu border)~~
-- Update to vuepress 1.alpha
+- Update to Vuepress v1
 - Add page transitions
 - Add tags support in page frontmatter and use it in search results
 - Add theme customiser
@@ -56,7 +58,7 @@ params and details.
 - Generate sitemap
 - ~~Add contact form to /contact~~
 - ~~Prettify permalinks~~
-- Fine-tune burger animation
+- Fine-tune burger animation (gooey line transition/bounce)
 - ~~Enhance blog posts~~
   - ~~Add guesstimated reading time~~
   - ~~Add prev/next posts~~
@@ -70,15 +72,15 @@ params and details.
     - ~~History API support~~
     - Smooth page transitions (menu overlay into the next page's solid white background)
 - ~~Offline support & manifest.json~~
-- ~Syntax highlighting if posts get code-heavy (Vuepress)~
+- ~~Syntax highlighting if posts get code-heavy (Vuepress)~~
 - ~~Analytics & dashboard~~
     - ~~Visitor statistics~~
     - Performance metrics
     - ~~Build stats/time~~
 - Theming. Since the site is built on CSS custom properties, wouldn't be too much of an effort.
     - LocalStorage/IndexedDB for saving themes
-- ~Set up Webpack, since I miss my ES6 modules (Vuepress)~
-- ~Metalsmith~ Vue helper for random (or within range) gradient custom properties
+- ~~Set up Webpack, since I miss my ES6 modules (Vuepress)~~
+- ~~Metalsmith~~ Vue helper for random (or within range) gradient custom properties
 - Make CV dynamic
     - ~~Generate CV's PDF from Markdown~~
     - Add custom styles
