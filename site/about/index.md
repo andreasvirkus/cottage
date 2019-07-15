@@ -12,7 +12,7 @@ tags:
 # me
 
 I'm not much of a talker, but let me rant about myself for a bit. You can skip ahead to:
-my [passions](#superpowers-), overview about my [education](#education) or my [work](#labor).
+my [passions](#superpowers-%E2%9A%A1), overview about my [education](#education) or my [work](#labor).
 
 My full curriculum vitae can be viewed [here](/cv/) and downloaded through the link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf).
 
