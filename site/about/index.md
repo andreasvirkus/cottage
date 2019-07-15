@@ -91,7 +91,7 @@ Favourite learning resources:
     - [Code Kraft](https://abdulapopoola.com/)
     - [A List Apart](https://alistapart.com/)
     - [Jag Talon](https://www.jagtalon.com/)
-    - Too many Smashing Magazine and Medium articles
+    - Too many Smashing Magazine and Medium articles to count 😵
 
 ## labor
 
