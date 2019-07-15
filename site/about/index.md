@@ -101,8 +101,11 @@ _* Unfortunately, I can't show most of my recent work on here for [legal reasons
 It's good stuff though._
 
 I started out creating websites for neighbours and small companies, which really sparked a passion. Here's what I've been up to since:
-- **Full-stack developer @ Qualitista**
+- **Full-stack developer @ [Klaus](https://klausapp.com?utm_source=andreasvirkus.me)**
     - _July 2018_
+    - One of the lead front-end engineers in a nifty start-up. I've helped Klaus build an intricate SaaS SPA, that lets customer support agents conduct conversation reviews. I also wrote and manage a [chrome extension](https://chrome.google.com/webstore/detail/klaus/kpkjfbkkjolmhnjpcmfmgleobfkakejj?utm_source=andreasvirkus.me), a Zendesk app and couple of other small widgets. I advocate open-source, best practises and security to the best of my abilities and try to integrate them into the developer culture of a growing start-up.
+- **Technical consultatnt @ Bigbank**
+    - _July 2018 – June 2019_
 - **FE -> Full-stack developer @ Bigbank**
     - _July 2015 – July 2018_
     - I started out supporting an in-house Wordpress theme, helping marketers create pages
@@ -127,4 +130,4 @@ I started out creating websites for neighbours and small companies, which really
     for the artsy side in me—front-end development seemed like an excellent
     field to start gaining some experience.
 
-In my free time I enjoy working on my motorcycle, disc golfing, practising muay thai & BJJ... and starring GitHub repos ⭐.
+In my free time I enjoy working on my motorcycle, disc golfing, practising muay thai & BJJ... and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.
