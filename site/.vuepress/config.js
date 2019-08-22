@@ -5,6 +5,7 @@ module.exports = {
   description: 'Homepage of Andreas J Virkus',
   evergreen: true,
   host: 'localhost',
+  ga: 'UA-99596348-1',
   // theme: 'ajv',
   serviceWorker: true,
   head: [
