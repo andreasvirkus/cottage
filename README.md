@@ -1,4 +1,7 @@
 # 🏡 Cottage
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3c4e0613-7ab3-4343-957d-ff778c957fcd/deploy-status)](https://app.netlify.com/sites/ajv/deploys)
+
 [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
 
 ## A humble homepage of sorts...
@@ -9,7 +12,7 @@ Hosted on [Netlify](https://netlify.com).
 
 ## Want a site like this?
 
-### Metalsmith
+### Metalsmith (legacy)
 
 The previous version of this site is still available under [metalsmith-ajv.netlify.com](https://metalsmith-ajv.netlify.com).\
 Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or follow this **one-click-wonder-deploy** to
