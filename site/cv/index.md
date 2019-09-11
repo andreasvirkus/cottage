@@ -6,23 +6,23 @@ meta:
 ---
 
 # Andreas Johan Virkus
-_Updated July 2018_\
+_Updated September 2019_\
 _Tallinn, Estonia_\
-_+372 52 80 234 | [write@andreasvirkus.me](mailto:write@andreasvirkus.me)_
+_[write@andreasvirkus.me](mailto:write@andreasvirkus.me)_
 
 ## Desired positions
 - Front-End/interface/interaction developer
-- Node.js full-stack engineer
+- Node.js engineer
 - Performance engineer
 - Security engineer
 
 ## Work
 - **Klaus**\
     _July 2018_\
-    Full-Stack developer
+    Developer
 - **Bigbank**\
     _July 2015 – July 2018_\
-    Front-End developer
+    Front-End & Node.js developer
 - **Saue High School**\
     _January 2015 – May 2016_\
     Programming teacher\
