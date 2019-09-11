@@ -17,7 +17,7 @@ _+372 52 80 234 | [write@andreasvirkus.me](mailto:write@andreasvirkus.me)_
 - Security engineer
 
 ## Work
-- **Qualitista**\
+- **Klaus**\
     _July 2018_\
     Full-Stack developer
 - **Bigbank**\
