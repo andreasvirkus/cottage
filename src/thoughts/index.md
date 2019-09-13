@@ -2,7 +2,6 @@
 meta:
   - name: description
     content: My thoughts and musings
-layout: Blog
 ---
 
 # thoughts

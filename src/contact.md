@@ -1,5 +1,5 @@
 ---
-layout: Contact
+layout: contact.njk
 meta:
   - name: description
     content: View my contact details and hit me up!

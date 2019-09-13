@@ -5,8 +5,8 @@
   "description": "A humble homepage of sorts.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "eleventy --input=content --serve --port=8088",
-    "build": "npx @11ty/eleventy --input=content",
+    "dev": "eleventy --serve --port=8088",
+    "build": "npx @11ty/eleventy",
     "generate-pdf": "npx markdown-pdf site/cv.md -o site/.vuepress/public/cv.pdf -s dist/assets/css/styles.min.css"
   },
   "repository": {

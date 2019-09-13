@@ -6,23 +6,31 @@ const pluginPWA = require('eleventy-plugin-pwa')
 const { DateTime } = require('luxon')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
+const lostPageMessages = [
+  `Why, it's obvious, Watson... There's nothing here.`,
+  `How did we get here? Is this a Hangover IV in the making?`,
+  `Feelin' mighty adventurous, aren't we?`,
+  `That's your standard Four-Oh-Four right there, cap'n`,
+  `Looks like we've got some broken links. How about you help me fix them?`
+]
+
 module.exports = (conf) => {
   conf.addFilter('makeUppercase', (str) => str.toUpperCase())
 
   conf.addPlugin(pluginRss)
   conf.addPlugin(pluginSyntaxHighlight)
   conf.setDataDeepMerge(true)
-
   conf.addLayoutAlias('post', 'layouts/post.njk')
 
   conf.addFilter('readableDate', dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('dd LLL yyyy')
   })
-
+  conf.addFilter('coinFlip', () => (Math.floor(Math.random() * 2) == 0))
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  conf.addFilter('htmlDateString', (dateObj) => {
+  conf.addFilter('htmlDateString', dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd')
   })
+  conf.addFilter('getRandom404Msg', () => lostPageMessages[Math.floor(Math.random() * lostPageMessages.length)])
 
   // Get the first `n` elements of a collection.
   conf.addFilter('head', (array, n) => {
@@ -33,7 +41,7 @@ module.exports = (conf) => {
     return array.slice(0, n)
   })
 
-  conf.addCollection('tagList', require('./_11ty/getTagList'))
+  // conf.addCollection('tagList', require('./_11ty/getTagList'))
 
   conf.addPassthroughCopy('img')
   conf.addPassthroughCopy('css')
@@ -58,7 +66,7 @@ module.exports = (conf) => {
 
   conf.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, browserSync) {
+      ready (err, browserSync) {
         const content_404 = fs.readFileSync('_site/404.html')
 
         browserSync.addMiddleware('*', (req, res) => {
@@ -83,8 +91,8 @@ module.exports = (conf) => {
     dataTemplateEngine: 'njk',
     passthroughFileCopy: true,
     dir: {
-      input: 'content',
-      includes: '_includes',
+      input: 'src',
+      includes: '_layouts',
       data: '_data',
       output: '_site'
     }
