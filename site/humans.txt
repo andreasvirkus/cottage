@@ -6,12 +6,11 @@ Site: <write@andreasvirkus.me> (https://andreasvirkus.me/contact)
 Location: Tallinn, Estonia
 
 /* THANKS */
-Vue: https://vuejs.org
-Vuepress: https://vuepress.vuejs.org
+Eleventy: https://11ty.io
 Netlify: https://www.netlify.com
 
 /* SITE */
-Last update: 2019/02/28
+Last update: 2019/09/13
 Standards: HTML5, CSS3, ES6
-Components: Vuepress, Vue, Webpack
+Components: Eleventy
 Software: Sublime Text 3, iTerm2, vim, cookies
