@@ -1,0 +1,16 @@
+{
+  "title": "ajv | Cottage",
+  "url": "https://andreasvirkus.me",
+  "description": "A humble homepage of sorts",
+  "feed": {
+    "subtitle": "My thoughts and musings",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "https://andreasvirkus.me/feed/feed.xml",
+    "id": "https://andreasvirkus.me/"
+  },
+  "author": {
+    "name": "andreas virkus",
+    "email": "write@andreasvirkus.me"
+  }
+}
