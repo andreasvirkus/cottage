@@ -6,7 +6,7 @@ meta:
   - name: description
     content: A humble homepage of sorts
 tags: nav
-navTitle: ~
+navTitle: &bull;
 ---
 
 # welcome, welcome
