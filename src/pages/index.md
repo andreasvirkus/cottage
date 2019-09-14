@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: index.html
-title: home
+title: cottage
 meta:
   - name: description
     content: A humble homepage of sorts

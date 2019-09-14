@@ -15,7 +15,7 @@ html {
   flex-direction: column;
   min-height: 100vh;
   color: var(--color-content);
-  background-color: var(--color-background);
+  /*background-color: var(--color-background);*/
   box-shadow: 0 0 0 var(--bg-border) var(--color-background) inset;
   font-family: var(--font-mono);
   font-size: 1.125rem;
