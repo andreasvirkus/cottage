@@ -1,6 +1,7 @@
 const fs = require('fs')
 const dayjs = require('dayjs')
 const cssmin = require('clean-css')
+// const htmlmin = require('html-minifier')
 const { DateTime } = require('luxon')
 
 const pluginRss = require('@11ty/eleventy-plugin-rss')
@@ -9,7 +10,6 @@ const pluginReadingTime = require('eleventy-plugin-reading-time')
 const pluginCacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
-const outputDirectory = '_site'
 const lostPageMessages = [
   `Why, it's obvious, Watson... There's nothing here.`,
   `How did we get here? Is this a Hangover IV in the making?`,
@@ -27,7 +27,7 @@ module.exports = (conf) => {
   conf.addPlugin(pluginReadingTime)
   conf.setDataDeepMerge(true)
   conf.addLayoutAlias('post', 'layouts/post.njk')
-  conf.addPlugin(pluginCacheBuster({ outputDirectory }))
+  // conf.addPlugin(pluginCacheBuster({ outputDirectory: 'dist' }))
 
   conf.addFilter('readableDate', dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('dd LLL yyyy')
@@ -37,6 +37,13 @@ module.exports = (conf) => {
   conf.addFilter('htmlDateString', dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd')
   })
+  conf.addFilter('iso', (date) => {
+    return DateTime.fromJSDate(date).toISO({
+      includeOffset: false,
+      suppressMilliseconds: true
+    })
+  })
+
   conf.addFilter('getRandom404Msg', () =>
     lostPageMessages[Math.floor(Math.random() * lostPageMessages.length)])
   conf.addFilter('cssmin', (code) => new cssmin({}).minify(code).styles)
@@ -48,6 +55,15 @@ module.exports = (conf) => {
 
   // conf.addCollection('tagList', require('./_11ty/getTagList'))
 
+  // Layouts
+  conf.addLayoutAlias('base', 'layouts/base.njk')
+  conf.addLayoutAlias('page', 'layouts/page.njk')
+  conf.addLayoutAlias('post', 'layouts/post.njk')
+
+  // Pass-through files
+  conf.addPassthroughCopy('src/manifest.json')
+  conf.addPassthroughCopy('src/humans.txt')
+  conf.addPassthroughCopy('src/robots.txt')
   conf.addPassthroughCopy('img')
   conf.addPassthroughCopy('css')
 
@@ -65,41 +81,44 @@ module.exports = (conf) => {
     permalinkSymbol: '#'
   }
 
+  // config.addTransform('htmlmin', (content, outputPath) => {
+  //   if (outputPath.endsWith('.html') && isProduction) {
+  //     return htmlmin.minify(content, {
+  //       useShortDoctype: true,
+  //       removeComments: true,
+  //       collapseWhitespace: true
+  //     })
+  //   }
+  //   return content
+  // })
   conf.setLibrary('md', markdownIt(options)
-    .use(markdownItAnchor, opts)
-  )
+    .use(markdownItAnchor, opts))
 
-  conf.setBrowserSyncConfig({
-    callbacks: {
-      ready (err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html')
+  // conf.setBrowserSyncConfig({
+  //   callbacks: {
+  //     ready (err, browserSync) {
+  //       const content_404 = fs.readFileSync('dist/404.html')
 
-        browserSync.addMiddleware('*', (req, res) => {
-          // Provides the 404 content without redirect.
-          res.write(content_404)
-          res.end()
-        })
-      }
-    }
-  })
+  //       browserSync.addMiddleware('*', (req, res) => {
+  //         // Provides the 404 content without redirect.
+  //         res.write(content_404)
+  //         res.end()
+  //       })
+  //     }
+  //   }
+  // })
 
   return {
-    templateFormats: [
-      'md',
-      'njk',
-      'html'
-    ],
-    pathPrefix: '/',
-    markdownTemplateEngine: 'md',
-    htmlTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
-    passthroughFileCopy: true,
     dir: {
       input: 'src',
-      includes: '_includes',
-      layouts: '_layouts',
-      data: '_data',
-      output: outputDirectory
-    }
+      includes: 'includes',
+      data: 'data',
+      output: 'dist'
+    },
+    templateFormats: ['md', 'njk'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
+    // dataTemplateEngine: 'njk',
+    passthroughFileCopy: true
   }
 }
