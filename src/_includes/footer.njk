@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <p class="content edit-link">
+    <a href="{{ data.repo }}/tree/master/{{ page.inputPath }}"
+      target="_blank"
+      rel="noopener noreferrer">Help me improve this page</a>
+  </p>
+
+  {% include 'social-links.njk' %}
+  <p>Proudly generated with
+    <a :href="$site.themeConfig.generatorUrl"
+      :title="$site.themeConfig.generatorTitle"
+      >{{ $site.themeConfig.generatorName }}</a>,
+  </p>
+  <p>safely hosted on
+    <a :href="$site.themeConfig.hostUrl"
+      :title="$site.themeConfig.hostTitle"
+      >{{ $site.themeConfig.hostName }}</a>.
+  </p>
+</footer>

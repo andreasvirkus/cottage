@@ -2,6 +2,7 @@
   "title": "ajv | Cottage",
   "url": "https://andreasvirkus.me",
   "description": "A humble homepage of sorts",
+  "repo": "https://github.com/andreasvirkus/cottage",
   "feed": {
     "subtitle": "My thoughts and musings",
     "filename": "feed.xml",

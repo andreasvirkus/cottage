@@ -2,6 +2,7 @@
 meta:
   - name: description
     content: My thoughts and musings
+tags: nav
 ---
 
 # thoughts

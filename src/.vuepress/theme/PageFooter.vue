@@ -65,6 +65,7 @@ export default {
 .site-footer {
   margin-top: 3rem;
   margin-bottom: 2.5rem;
+  padding-right: 3em;
 }
 
 .site-footer p {
@@ -75,12 +76,6 @@ export default {
 .edit-link {
   text-align: right;
   font-size: .9em;
-}
-
-@media screen and (min-width: 35em) {
-    .site-footer {
-        padding-right: 3em;
-    }
 }
 
 @media screen and (max-width: 35em) {

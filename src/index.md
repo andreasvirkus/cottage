@@ -2,6 +2,8 @@
 meta:
   - name: description
     content: A humble homepage of sorts
+tags: nav
+navTitle: /
 ---
 
 # welcome, welcome

@@ -1,11 +1,11 @@
 ---
-pageTitle: My site stack
-layout: Post
+title: My site stack
+layout: post.njk
 description: What this shindig consists of.
 postDate: 2017-09-03
 prev: /thoughts/testing-typography-styles/
 next: /thoughts/creating-keep-alive-monitoring/
-#next: /thoughts/my-site-stack/
+tags: post
 ---
 
 I feel like this is the _must-have_ first post for every/any developer

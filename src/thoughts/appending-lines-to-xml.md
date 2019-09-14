@@ -1,9 +1,10 @@
 ---
-pageTitle: Appending lines to XML
-layout: Post
+title: Appending lines to XML
+layout: post.njk
 description: Showing how to easily append lines at the end of an XML file (like your sitemap).
 postDate: 2017-09-30
 prev: /thoughts/building-dashboards-for-your-site/
+tags: post
 ---
 
 So I faced an interesting problem the other day, where
@@ -32,7 +33,7 @@ const closingTag = '</urlset>';
 ```
 
 Then we'll go ahead and create a buffer containing our new content (the line
-we're appending) and the closing tag we just defined  
+we're appending) and the closing tag we just defined
 ...aand also need to know the file's path and size.
 
 ```js

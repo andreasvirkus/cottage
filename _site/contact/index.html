@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ajv | Cottage</title>
     <meta name="description" content="A humble homepage of sorts">
-    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/prism-tomorrow.css">
-    <link rel="stylesheet" href="/css/variables.css">
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/theme.css">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="ajv | Cottage">
 
-    <style src="./styles/theme.styl"></style>
     <style>
-    /*TODO: Add "ciritcal skeleton"*/
+    /* TODO: Add "ciritcal skeleton" and fade in content from it? */
     ::selection {
       background-color: #a29bfe;
       color: #fff;
@@ -37,7 +34,7 @@
       </h1>
 
       <!-- Side bar -->
-      <ul class="nav"></ul>
+      <ul class="nav"><li class="nav-item"><a href="/thoughts/"></a></li><li class="nav-item"><a href="/"></a></li><li class="nav-item nav-item-active"><a href="/contact/"></a></li><li class="nav-item"><a href="/about/"></a></li></ul>
     </header>
 
     <!-- TODO: Display latest posts? -->
@@ -110,7 +107,66 @@
 
     </main>
 
-    <footer></footer>
+    <footer class="site-footer">
+  <p class="content edit-link">
+    <a href="/tree/master/./src/contact.md"
+      target="_blank"
+      rel="noopener noreferrer">Help me improve this page</a>
+  </p>
+
+  <section class="social">
+  <p>Social links</p>
+  <ul class="social__list">
+    <li class="social__icon" v-for="link in links">
+      <a class="social__link fuzzy-interact"
+        :href="link.link"
+        :title="link.alt"
+        v-html="link.icon"
+        :rel="link.rel"
+        :type="link.type"></a>
+    </li>
+  </ul>
+
+  <svg class="fuzzy-filters">
+    <filter id="turbulence-1">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" />
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
+    </filter>
+
+    <filter id="turbulence-2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" />
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="7" />
+    </filter>
+
+    <filter id="turbulence-3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" />
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
+    </filter>
+
+    <filter id="turbulence-4">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" />
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="4" />
+    </filter>
+
+    <filter id="turbulence-5">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" />
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="3" />
+    </filter>
+  </svg>
+</section>
+
+  <p>Proudly generated with
+    <a :href="$site.themeConfig.generatorUrl"
+      :title="$site.themeConfig.generatorTitle"
+      ></a>,
+  </p>
+  <p>safely hosted on
+    <a :href="$site.themeConfig.hostUrl"
+      :title="$site.themeConfig.hostTitle"
+      ></a>.
+  </p>
+</footer>
+
 
     <!-- Current page: /contact/ -->
   </body>

@@ -1,9 +1,11 @@
 const fs = require('fs')
-const time = require('reading-time')
 const dayjs = require('dayjs')
+const cssmin = require('clean-css')
+const { DateTime } = require('luxon')
+
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginPWA = require('eleventy-plugin-pwa')
-const { DateTime } = require('luxon')
+const pluginReadingTime = require('eleventy-plugin-reading-time')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 const lostPageMessages = [
@@ -18,7 +20,9 @@ module.exports = (conf) => {
   conf.addFilter('makeUppercase', (str) => str.toUpperCase())
 
   conf.addPlugin(pluginRss)
-  conf.addPlugin(pluginSyntaxHighlight)
+  // conf.addPlugin(pluginPWA)
+  conf.addPlugin(pluginSyntaxHighlight, { templateFormats: ["md"] })
+  conf.addPlugin(pluginReadingTime)
   conf.setDataDeepMerge(true)
   conf.addLayoutAlias('post', 'layouts/post.njk')
 
@@ -30,16 +34,14 @@ module.exports = (conf) => {
   conf.addFilter('htmlDateString', dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd')
   })
-  conf.addFilter('getRandom404Msg', () => lostPageMessages[Math.floor(Math.random() * lostPageMessages.length)])
+  conf.addFilter('getRandom404Msg', () =>
+    lostPageMessages[Math.floor(Math.random() * lostPageMessages.length)])
+  conf.addFilter('cssmin', (code) => new cssmin({}).minify(code).styles)
 
   // Get the first `n` elements of a collection.
-  conf.addFilter('head', (array, n) => {
-    if( n < 0 ) {
-      return array.slice(n)
-    }
-
-    return array.slice(0, n)
-  })
+  conf.addFilter('head', (array, n) => n < 0
+    ? array.slice(n)
+    : array.slice(0, n))
 
   // conf.addCollection('tagList', require('./_11ty/getTagList'))
 
@@ -82,17 +84,17 @@ module.exports = (conf) => {
     templateFormats: [
       'md',
       'njk',
-      'html',
-      'liquid'
+      'html'
     ],
     pathPrefix: '/',
-    markdownTemplateEngine: 'liquid',
+    markdownTemplateEngine: 'md',
     htmlTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
     passthroughFileCopy: true,
     dir: {
       input: 'src',
-      includes: '_layouts',
+      includes: '_includes',
+      layouts: '_layouts',
       data: '_data',
       output: '_site'
     }

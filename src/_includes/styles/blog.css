@@ -1,0 +1,18 @@
+.blog__divider {
+    background-color: var(--blog-post-divider);
+    background-image: var(--blog-post-divider);
+}
+
+.blog__post-info {
+    font-style: italic;
+    margin-top: 0.4em;
+}
+
+.blog__post-description {
+    color: #888;
+    font-style: italic;
+}
+
+pre code {
+  user-select: all;
+}

@@ -1,10 +1,11 @@
 ---
-pageTitle: Testing typography styles
-layout: Post
+title: Testing typography styles
+layout: post.njk
 description: Styling code and quote blocks and other various typography bits.
 postDate: 2017-06-24
 lastUpdated: 2018-06-21
 next: /thoughts/my-site-stack/
+tags: post
 ---
 
 Every now and then, a blog will come across a need to quote someone or maybe
