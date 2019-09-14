@@ -1,6 +1,6 @@
 ---
 title: Testing typography styles
-layout: post.njk
+layout: post
 description: Styling code and quote blocks and other various typography bits.
 postDate: 2017-06-24
 lastUpdated: 2018-06-21

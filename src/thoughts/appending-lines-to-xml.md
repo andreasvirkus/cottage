@@ -1,6 +1,6 @@
 ---
 title: Appending lines to XML
-layout: post.njk
+layout: post
 description: Showing how to easily append lines at the end of an XML file (like your sitemap).
 postDate: 2017-09-30
 prev: /thoughts/building-dashboards-for-your-site/

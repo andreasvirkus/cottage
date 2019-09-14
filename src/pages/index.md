@@ -1,9 +1,12 @@
 ---
+layout: page
+permalink: index.html
+title: home
 meta:
   - name: description
     content: A humble homepage of sorts
 tags: nav
-navTitle: /
+navTitle: ~
 ---
 
 # welcome, welcome
@@ -20,7 +23,7 @@ If you're looking to get in touch, just reach out to me on
 
 ### Roadmap
 
-Freshly refactored from Metalsmith to Vuepress 🌈
+Refactored from [Metalsmith](https://metalsmith.io) to [Vuepress](https://vuepress.vuejs.org)... and now to [Eleventy](https://11ty.io)! 🌈
 
 I'll Soon™ try and write some posts under the [blog](/thoughts/) section. They'll
 mostly be about small development techniques or explanations of snippets

@@ -1,6 +1,6 @@
 ---
 title: Creating keep alive monitoring
-layout: post.njk
+layout: post
 description: Using Keen.io's PingPong for monitoring
 postDate: 2017-07-30
 prev: /thoughts/my-site-stack/

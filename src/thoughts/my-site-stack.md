@@ -1,6 +1,6 @@
 ---
 title: My site stack
-layout: post.njk
+layout: post
 description: What this shindig consists of.
 postDate: 2017-09-03
 prev: /thoughts/testing-typography-styles/

@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ renderData.title or title or metadata.title }} | ajv</title>
+    <meta name="description" content="{{ renderData.description or description or metadata.description }}">
+
+    {% set css %}
+    {% include 'styles/variables.css' %}
+    {% include 'styles/global.css' %}
+    {% include 'styles/theme.css' %}
+    {% include 'styles/footer.css' %}
+    {% endset %}
+    <style>{{ css | cssmin | safe }}</style>
+    <!-- {% include 'styles.njk' %} -->
+    <!-- <link rel="stylesheet" href="{{ '/css/prism-tomorrow.css' | url }}"> -->
+    <!-- <link rel="stylesheet" href="{{ '/css/theme.css' | url }}"> -->
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    {% include 'meta.njk' %}
+
+    <style>
+    /* TODO: Add "ciritcal skeleton" and fade in content from it? */
+    </style>
+
+    <script>
+      (localStorage.getItem('_ajv_darkMode') === 'true') && document.documentElement.classList.add('theme--dark')
+    </script>
+  </head>
+  <body class="theme-container">
+    <!--[if lte IE 9]>
+    <div class="legacy-warning">
+        <div class="container">
+            Seems like your browser is quite outdated. Why not <a href="http://browsehappy.com/">
+            upgrade to a modern one</a> for free and improve your experience?
+        </div>
+    </div>
+    <![endif]-->
+
+    <a href="#main" class="a11y__skip-link">skip to main content</a>
+
+    {# include 'search.njk' #}
+    {% include 'nav.njk' %}
+
+    <main class="main" role="main" id="main" tabindex="-1">
+      {{ content | safe }}
+    </main>
+
+    <!-- TODO: Display latest posts? -->
+
+    {% include 'footer.njk' %}
+
+    <!--! LAST BUILD: {{ build.timestamp | iso }} -->
+    <script>
+      document.documentElement.classList.remove('no-js')
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 ---
 title: Building dashboards for your site
-layout: post.njk
+layout: post
 description: I'll go through setting up these dashboards that I don't have yet.
 postDate: 2017-05-20
 prev: /thoughts/creating-keep-alive-monitoring/

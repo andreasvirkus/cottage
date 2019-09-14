@@ -1,9 +1,12 @@
 ---
-layout: contact.njk
+layout: page
+permalink: contact/index.html
+title: contact
 meta:
   - name: description
     content: View my contact details and hit me up!
 tags: nav
+navTitle: contact
 ---
 
 # wish to get in touch?
