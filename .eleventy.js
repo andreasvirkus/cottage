@@ -6,8 +6,10 @@ const { DateTime } = require('luxon')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginPWA = require('eleventy-plugin-pwa')
 const pluginReadingTime = require('eleventy-plugin-reading-time')
+const pluginCacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
+const outputDirectory = '_site'
 const lostPageMessages = [
   `Why, it's obvious, Watson... There's nothing here.`,
   `How did we get here? Is this a Hangover IV in the making?`,
@@ -25,6 +27,7 @@ module.exports = (conf) => {
   conf.addPlugin(pluginReadingTime)
   conf.setDataDeepMerge(true)
   conf.addLayoutAlias('post', 'layouts/post.njk')
+  conf.addPlugin(pluginCacheBuster({ outputDirectory }))
 
   conf.addFilter('readableDate', dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('dd LLL yyyy')
@@ -96,7 +99,7 @@ module.exports = (conf) => {
       includes: '_includes',
       layouts: '_layouts',
       data: '_data',
-      output: '_site'
+      output: outputDirectory
     }
   }
 }
