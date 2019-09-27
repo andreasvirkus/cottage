@@ -1,18 +1,16 @@
 ---
 layout: base
 ---
-<article class="page">
-    <header class="page__header">
-        {% if pageTitle %}
-            <p class="page__title">{{ pageTitle | safe }}</p>
-        {% endif %}
+{% if pageTitle %}
+<header class="page__header">
+  <p class="page__title">{{ pageTitle | safe }}</p>
 
-        {% if subtitle %}
-            <p class="page__subtitle">{{ pageSubtitle | safe }}</p>
-        {% endif %}
-    </header>
+  {% if subtitle %}
+    <p class="page__subtitle">{{ pageSubtitle | safe }}</p>
+  {% endif %}
+</header>
+{% endif %}
 
-    <div class="page__content markdown">
-        {{ content | safe }}
-    </div>
-</article>
+<div class="page__content markdown">
+  {{ content | safe }}
+</div>

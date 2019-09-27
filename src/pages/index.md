@@ -6,14 +6,15 @@ meta:
   - name: description
     content: A humble homepage of sorts
 tags: nav
-navTitle: &bull;
+navTitle: ░
+navOrder: 1
 ---
 
 # welcome, welcome
 
 Glad to have you in my small corner of the web.
 This site's main purpose is to act as my personal playground for different web
-technologies, but also to provide a bit of insight about [me](/about/).
+technologies, but also to provide a bit of insight about [me](/about) & to help me thrive in my [writing](/thoughts) skills.
 
 ### Poke me
 

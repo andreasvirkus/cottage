@@ -1,6 +1,13 @@
-<aside>
+---
+navOrder:
+  - pages/index
+  - pages/about
+  - thoughts/index
+  - pages/contact
+---
+<aside class="nav__wrapper">
   <ul class="nav">
-  {% for nav in collections.nav | reverse %}
+  {% for nav in collections.nav | navSort(navOrder) %}
     <li class="nav__item{% if nav.url === page.url %} nav__item--active{% endif %}">
       <a href="{{ nav.url | url }}">
         {{ nav.data.navTitle }}

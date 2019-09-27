@@ -7,6 +7,7 @@ meta:
     content: View my contact details and hit me up!
 tags: nav
 navTitle: contact
+navOrder: 4
 ---
 
 # wish to get in touch?

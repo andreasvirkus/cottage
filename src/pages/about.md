@@ -7,6 +7,7 @@ meta:
     content: Get to know me. Long walks on the beach included.
 tags: nav
 navTitle: me
+navOrder: 2
 ---
 
 # me

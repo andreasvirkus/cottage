@@ -43,6 +43,9 @@ module.exports = (conf) => {
       suppressMilliseconds: true
     })
   })
+  conf.addFilter('navSort', (c, order) => c.sort((a, b) => {
+    return order.indexOf(a.filePathStem) - order.indexOf(b.filePathStem)
+  }))
 
   conf.addFilter('getRandom404Msg', () =>
     lostPageMessages[Math.floor(Math.random() * lostPageMessages.length)])
@@ -118,7 +121,6 @@ module.exports = (conf) => {
     templateFormats: ['md', 'njk'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    // dataTemplateEngine: 'njk',
     passthroughFileCopy: true
   }
 }

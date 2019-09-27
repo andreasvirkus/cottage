@@ -1,26 +1,25 @@
 :root {
-  /*
-    Light theme: https://coolors.co/a29bfe-f7f2fa-e0daf2-282c34-2c3e50
-    Dark theme: https://coolors.co/a29bfe-2c3e50-282c34-dee8e8-f4f8f9
-  */
+  /* Theme base: https://coolors.co/a29bfe-f7f2fa-e0daf2-282c34-2c3e50 */
   --color-accent: #A29BFE;
-  --color-dark-primary: #282C34;
-  --color-dark-secondary: #2C3E50;
+  --color-accent-strong: #7c73fe;
+  --color-dark-1: #282C34;
+  --color-dark-2: #2C3E50;
+  --color-dark-3: #223;
   --color-light-1: #F7F2FA;
   --color-light-2: #F4F8F9;
   --color-light-3: #E0DAF2;
-  --white: #FFF;
-  --black: #000;
+  --color-gray: #333;
+  --color-white: #FFF;
+  --color-black: #000;
 
   --color-primary: var(--color-light-1);
   --color-secondary: var(--color-light-3);
-  --color-background: var(--color-dark-primary);
-  --color-content: var(--color-dark-secondary);
-  --color-content-secondary: var(--color-dark-primary);
+  --color-background: var(--color-dark-1);
+  --color-background-secondary: var(--color-dark-3);
+  --color-content: var(--color-dark-2);
+  --color-content-secondary: var(--color-dark-1);
 
   --menu-overlay: rgba(255, 255, 255, 0.9);
-  --link-color: #333;
-  --link-color__hover: #7c73fe;
   --link-border-color: #444;
   --link-bullet-gray__hover: #555;
   --menu-color: #5f656f;
@@ -45,8 +44,8 @@
 }
 
 .app--dark {
-  --color-primary: var(--color-dark-primary);
-  --color-secondary: var(--color-dark-secondary);
+  --color-primary: var(--color-dark-1);
+  --color-secondary: var(--color-dark-2);
   --color-background: var(--color-light-1);
   --color-content: var(--color-light-1);
   --color-content-secondary: var(--color-light-2);
