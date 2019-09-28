@@ -1,16 +1,14 @@
 <template>
   <nav class="posts content" role="navigation">
-    Posts list component |
-    {{ posts }}
     <ol reversed class="posts__links">
       <li v-for="post in posts" :key="post.permalink" class="posts__item">
         <saber-link :to="post.permalink" class="posts__link">
           <div class="posts__title">{{ post.title }}</div>
-          <!-- <div class="posts__date"
+          <div class="posts__date"
             :data-short-date="formatPostDate(post.createdAt, true)">
             <time :datetime="post.createdAt"
             >{{ formatPostDate(post.createdAt) }}</time>
-          </div> -->
+          </div>
         </saber-link>
       </li>
     </ol>
@@ -34,9 +32,8 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding-left: 0;
   font-style: normal;
-  margin-top: 0;
+  margin-top: 2rem;
 }
 
 .posts__link {
@@ -44,7 +41,6 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: .5rem 0;
-  text-decoration: none;
   border-bottom: 0;
   text-align: center;
   font-style: normal;
@@ -65,6 +61,7 @@ export default {
 @media (max-width: 70rem) {
   .posts__links {
     list-style: none;
+    padding: 0;
   }
   .posts__date {
     display: none;

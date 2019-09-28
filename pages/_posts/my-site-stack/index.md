@@ -2,6 +2,7 @@
 title: My site stack
 layout: post
 description: What this shindig consists of.
+date: 2017-09-03
 ---
 
 I feel like this is the _must-have_ first post for every/any developer

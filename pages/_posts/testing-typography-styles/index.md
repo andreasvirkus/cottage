@@ -2,6 +2,7 @@
 title: Testing typography styles
 layout: post
 description: Styling code and quote blocks and other various typography bits.
+date: 2017-06-24
 ---
 
 Every now and then, a blog will come across a need to quote someone or maybe

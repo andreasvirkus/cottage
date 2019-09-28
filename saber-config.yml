@@ -26,7 +26,7 @@ permalinks:
   page: /:slug
   post: /thoughts/:slug
 
-build:
+# build:
   #extractCSS: true
 
 plugins:

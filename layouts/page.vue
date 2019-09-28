@@ -5,6 +5,8 @@
 
     <main class="content">
       <slot name="default"/>
+
+      <posts-list v-if="page.posts" :posts="page.posts"/>
     </main>
 
     <page-footer :page="page"/>
@@ -13,6 +15,7 @@
 
 <script>
 import Sidebar from '@/components/Sidebar'
+import PostsList from '@/components/PostsList'
 import SearchBox from '@/components/SearchBox'
 import PageFooter from '@/components/PageFooter'
 
@@ -21,15 +24,17 @@ export default {
   props: ['page'],
   components: {
     Sidebar,
+    PostsList,
     SearchBox,
     PageFooter
   },
   head () {
     const { title, description, excerpt } = this.page
+    const defaultTitle = this.$siteConfig.title
     return {
-      title: title
-        ? `${title} | ${this.$siteConfig.title}`
-        : this.$siteConfig.title,
+      title: (title && title !== defaultTitle)
+        ? `${title} | ${defaultTitle}`
+        : defaultTitle,
       meta: [
         {
           name: 'description',
