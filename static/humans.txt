@@ -7,11 +7,11 @@ Location: Tallinn, Estonia
 
 /* THANKS */
 Vue: https://vuejs.org
-Vuepress: https://vuepress.vuejs.org
+Saber: https://saber.land
 Netlify: https://www.netlify.com
 
 /* SITE */
 Last update: 2019/02/28
 Standards: HTML5, CSS3, ES6
-Components: Vuepress, Vue, Webpack
+Components: Saber, Vue, Webpack
 Software: Sublime Text 3, iTerm2, vim, cookies

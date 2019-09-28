@@ -10,8 +10,8 @@ siteConfig:
   repoLink: https://github.com/andreasvirkus/cottage
 
 permalinks:
-  post: /thoughts/:slug
   page: /:slug
+  post: /thoughts/:slug
 
 plugins:
   - resolve: saber-plugin-query-posts

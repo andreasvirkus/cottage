@@ -120,4 +120,3 @@ metalsmith(__dirname)
         appendToSitemap(`<url> <loc>https://andreasvirkus.me/assets/cv/CV-Andreas-Johan-Virkus.pdf</loc> </url>`);
     });
 ```
-

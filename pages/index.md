@@ -13,7 +13,7 @@ technologies, but also to provide a bit of insight about [me](/about/).
 
 If you're looking to get in touch, just reach out to me on
 [linkedIn](https://www.linkedin.com/in/andreasvirkus "View my LinkedIn profile"), via
-[e-mail](mailto:write@andreasvirkus.me "Shoot me a mail!") or by my [contact](/contact/) page.
+[e-mail](mailto:write@andreasvirkus.me "Shoot me an e-mail!") or by my [contact](/contact/) page.
 
 ### Roadmap
 

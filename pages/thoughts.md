@@ -1,6 +1,7 @@
 ---
 description: My thoughts and musings
 layout: page
+injectAllPosts: true
 ---
 
 # thoughts
@@ -12,7 +13,7 @@ anything dev-related or just nice tips/hacks I enjoy having in my utility belt.
 
 {{ page }}
 
-<posts-list :posts="page"/>
+<posts-list :posts="page.posts"/>
 
 <script>
 import PostsList from '@/components/Posts'

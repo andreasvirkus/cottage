@@ -18,14 +18,15 @@
         <template v-if="prev || next">
           <hr class="blog__divider" />
           <div class="page-nav">
-            <span v-if="prev" class="prev">
-              ← <saber-link v-if="prev" class="prev" :to="prev.path">
-                {{ prev.frontmatter.pageTitle || prev.path }}
+            <span v-if="page.prevPost" class="prev">
+              ← <saber-link :to="page.prevPost.permalink">
+                {{ page.prevPost.title }}
               </saber-link>
             </span>
-            <span v-if="next" class="next">
-              <saber-link v-if="next" :to="next.path">
-                {{ next.frontmatter.pageTitle || next.path }}</saber-link> →
+            <span v-if="page.nextPost" class="next">
+              <saber-link :to="page.nextPost.permalink">
+                {{ page.nextPost.title }}
+              </saber-link> →
             </span>
           </div>
           <hr class="blog__divider" />

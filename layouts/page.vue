@@ -61,7 +61,7 @@ export default {
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity .2s;
 }
 .page-enter, .page-leave-to {
   opacity: 0;

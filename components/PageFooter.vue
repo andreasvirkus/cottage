@@ -1,6 +1,6 @@
 <template>
   <footer class="site-footer">
-    <p class="content edit-link">
+    <p class="content edit-link" v-if="repoLink">
       <a :href="repoLink" target="_blank" rel="noopener noreferrer"
       >Help me improve this page</a>
     </p>
@@ -11,9 +11,10 @@
         <a class="social__link fuzzy-interact"
           :href="link.link"
           :title="link.alt"
-          v-html="link.icon"
           :rel="link.rel"
-          :type="link.type"></a>
+          :type="link.type">
+          <img :src="`/svg/${link.name.toLowerCase().replace('-', '')}.svg`">
+        </a>
       </li>
     </ul>
 
@@ -58,17 +59,47 @@
 </template>
 
 <script>
-import SocialLinks from './SocialLinks'
-
 export default {
   props: ['page'],
-  components: { SocialLinks },
+  data () {
+    return {
+      links: [
+        {
+          alt: 'Glimpse at my code (GitHub)',
+          link: 'https://www.github.com/andreasvirkus',
+          name: 'GitHub'
+        },
+        {
+          alt: 'View my scribblings (Codepen)',
+          link: 'https://codepen.io/ajv/pens/popular/',
+          name: 'Codepen'
+        },
+        {
+          alt: 'See my network (LinkedIn)',
+          link: 'https://www.linkedin.com/in/andreasvirkus',
+          name: 'LinkedIn'
+        },
+        {
+          alt: 'Pen pal me (e-mail)',
+          link: 'mailto:write@andreasvirkus.me',
+          name: 'E-mail',
+        },
+        {
+          alt: 'Hear first of my posts (RSS)',
+          link: '/rss.xml',
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          name: 'RSS'
+        }
+      ]
+    }
+  },
   computed: {
     repoLink () {
-      console.log('page', this.page)
+      if (!this.page) return false
       return [
         this.$siteConfig.repoLink,
-        `/edit/master/`,
+        `/edit/master/pages/`,
         `${this.page.slug}.md`
       ].join('')
     }
@@ -90,6 +121,27 @@ export default {
 .edit-link {
   text-align: right;
   font-size: .9em;
+}
+
+.social__list {
+    text-align: right;
+}
+
+.social__icon {
+    display: inline-block;
+}
+.social__icon + .social__icon {
+    margin-left: 2em;
+}
+.social__link {
+    position: relative;
+    color: transparent;
+    font-size: 0;
+}
+
+.social__link img {
+    width: 30px;
+    height: auto;
 }
 
 @media screen and (min-width: 35em) {
