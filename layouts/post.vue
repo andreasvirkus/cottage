@@ -14,12 +14,13 @@
             <div v-if="readingTime"><em>{{ readingTime }}</em></div>
           </div>
         </header>
+        <hr>
 
         <slot name="default"/>
 
-        <footer>
+        <footer class="blog__footer">
           <p>Thanks for giving this a read 🖖</p>
-          <template v-if="prev || next">
+          <template v-if="page.prevPost || page.nextPost">
             <hr class="blog__divider" />
             <div class="page-nav">
               <span v-if="page.prevPost" class="prev">
@@ -68,8 +69,7 @@ export default {
     const article = this.$refs.article
     if (!article) return
 
-    const content = article.querySelector('.content')
-    this.readingTime = readingTime(content.textContent).text
+    this.readingTime = readingTime(article.textContent).text
   },
   head () {
     const { title, description, excerpt } = this.page
@@ -104,7 +104,13 @@ export default {
   color: #888;
   font-style: italic;
 }
-
+.blog__footer {
+  margin-top: 4.5rem;
+}
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+}
 pre code {
   user-select: all;
 }

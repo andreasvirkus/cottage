@@ -114,8 +114,9 @@ blockquote p:last-child {
 
 code {
   padding: 0 .25rem;
-  background-color: var(--bg-dark);
-  color: var(--bg-light);
+  background-color: #f2e8e5;
+  color: #4a4a71;
+  user-select: all;
 }
 
 @keyframes fuzzy {
