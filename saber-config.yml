@@ -1,4 +1,5 @@
 siteConfig:
+  lang: en
   title: cottage
   description: A humble homepage of sorts...
   generatorUrl: https://saber.land
@@ -18,3 +19,11 @@ build:
 plugins:
   - resolve: saber-plugin-query-posts
   - resolve: saber-plugin-prismjs
+  - resolve: saber-plugin-search
+  - resolve: saber-plugin-google-analytics
+    options:
+      trackId: 'UA-99596348-1'
+  - resolve: saber-plugin-code-copy
+    options:
+      buttonStyle:
+        border: 'none'

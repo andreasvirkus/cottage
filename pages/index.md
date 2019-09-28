@@ -19,7 +19,7 @@ Freshly refactored from Metalsmith to Vuepress 🌈
 
 ...And now from Vuepress to Saber ⚔️ !
 
-I'll Soon™ try and write some posts under the [blog](/thoughts/) section.
+I'll `Soon™` try and write some posts under the [blog](/thoughts/) section.
 They'll mostly be about small development techniques or
 explanations of snippets that I often find useful.
 
