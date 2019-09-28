@@ -1,8 +1,6 @@
 ---
-layout: Contact
-meta:
-  - name: description
-    content: View my contact details and hit me up!
+description: View my contact details and hit me up!
+layout: page
 ---
 
 # wish to get in touch?

@@ -1,0 +1,114 @@
+<template>
+  <main class="page">
+    <article ref="article">
+
+      <header>
+        <h1>{{ $page.frontmatter.pageTitle }}</h1>
+        <div class="post-stats">
+          <span>published on the {{ formatPostDate($page.frontmatter.postDate, false) }}</span>
+          <div v-if="$page.frontmatter.lastUpdated"> last updated on the {{ formatPostDate($page.frontmatter.lastUpdated, false) }}</div>
+          <div v-if="readingTime"><em>{{ readingTime }}</em></div>
+        </div>
+      </header>
+
+      <slot name="default"/>
+
+      <footer>
+        <p>Thanks for giving this a read 🖖</p>
+        <template v-if="prev || next">
+          <hr class="blog__divider" />
+          <div class="page-nav">
+            <span v-if="prev" class="prev">
+              ← <saber-link v-if="prev" class="prev" :to="prev.path">
+                {{ prev.frontmatter.pageTitle || prev.path }}
+              </saber-link>
+            </span>
+            <span v-if="next" class="next">
+              <saber-link v-if="next" :to="next.path">
+                {{ next.frontmatter.pageTitle || next.path }}</saber-link> →
+            </span>
+          </div>
+          <hr class="blog__divider" />
+        </template>
+      </footer>
+
+    </article>
+  </main>
+</template>
+
+<script>
+import { formatPostDate } from '@/util'
+import readingTime from 'reading-time'
+
+export default {
+  data () {
+    return {
+      readingTime: null
+    }
+  },
+  methods: {
+    formatPostDate: (date, short = true) => formatPostDate(date, short)
+  },
+  computed: {
+    prev () {
+      const prev = this.$page.frontmatter.prev
+      if (prev === false) {
+        return
+      } else if (prev) {
+        return resolvePage(this.$site.pages, prev, this.$route.path)
+      } else {
+        return resolvePrev(this.$page)
+      }
+    },
+    next () {
+      const next = this.$page.frontmatter.next
+      if (next === false) {
+        return
+      } else if (next) {
+        return resolvePage(this.$site.pages, next, this.$route.path)
+      } else {
+        return resolveNext(this.$page)
+      }
+    }
+  },
+  mounted () {
+    const article = this.$refs.article
+    if (!article) return
+
+    const content = article.querySelector('.content')
+    this.readingTime = readingTime(content.textContent).text
+  }
+}
+
+function resolvePrev (page, items) {
+  return find(page, items, -1)
+}
+
+function resolveNext (page, items) {
+  return find(page, items, 1)
+}
+
+function find (page, items = [], offset) {
+  const res = []
+  items.forEach(item => {
+    if (item.type === 'group') {
+      res.push(...item.children || [])
+    } else {
+      res.push(item)
+    }
+  })
+  for (let i = 0; i < res.length; i++) {
+    const cur = res[i]
+    if (cur.type === 'page' && cur.path === page.path) {
+      return res[i + offset]
+    }
+  }
+}
+</script>
+
+<style src="@/css/blog.css"></style>
+<style>
+.post-stats {
+  font-size: .8em;
+}
+</style>

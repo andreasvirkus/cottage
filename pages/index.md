@@ -1,7 +1,6 @@
 ---
-meta:
-  - name: description
-    content: A humble homepage of sorts
+description: A humble homepage of sorts
+layout: page
 ---
 
 # welcome, welcome

@@ -1,7 +1,6 @@
 ---
-meta:
-  - name: description
-    content: Get to know me. Long walks on the beach included.
+description: Get to know me. Long walks on the beach included.
+layout: page
 tags:
   - cv
   - employment

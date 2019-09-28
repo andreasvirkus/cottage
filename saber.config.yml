@@ -1,0 +1,17 @@
+siteConfig:
+  title: cottage
+  description: A humble homepage of sorts...
+  generatorUrl: https://saber.land
+  generatorTitle: Static-site generator for Vue
+  generatorName: Saber
+  hostUrl: https://netlify.com
+  hostTitle: Super-powers for static sites!
+  hostName: Netlify
+  repoLink: https://github.com/andreasvirkus/cottage
+
+permalinks:
+  post: /thoughts/:slug
+  page: /:slug
+
+plugins:
+  - resolve: saber-plugin-query-posts
