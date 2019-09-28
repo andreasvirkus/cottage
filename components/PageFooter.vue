@@ -51,7 +51,7 @@ export default {
 .site-footer p {
   padding-right: 0;
   text-align: right;
-  margin: 0;
+  margin: .25rem;
 }
 .edit-link {
   text-align: right;

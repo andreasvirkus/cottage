@@ -14,7 +14,6 @@
       @keyup.esc="unfocusSearchBox">
     <ul class="suggestions"
       v-if="showSuggestions"
-      :class="{ 'align-right': alignRight }"
       @mouseleave="unfocus">
       <li class="suggestion" v-for="(s, i) in suggestions"
         :class="{ focused: i === focusIndex }"
@@ -47,12 +46,6 @@ export default {
         this.focused &&
         this.suggestions.length
       )
-    },
-    // make suggestions align right when there are not enough items
-    alignRight () {
-      const navCount = (this.$site.themeConfig.nav || []).length
-      const repo = this.$site.repo ? 1 : 0
-      return navCount + repo <= 2
     }
   },
   watch: {
@@ -62,8 +55,10 @@ export default {
       // TODO: Also go through the page's headers & tags
       this.suggestions = database.filter(page =>
         page.title.includes(keyword) ||
+        page.permalink.includes(keyword) ||
         page.excerpt.includes(keyword) ||
-        page.markdownHeadings.some(h => h.slug.includes(keyword)))
+        (page.markdownHeadings || []).some(h => h.slug.includes(keyword)))
+        .slice(0, 5)
     }
   },
   methods: {
@@ -86,7 +81,7 @@ export default {
       }
     },
     go (i) {
-      this.$router.push(this.suggestions[i].path)
+      this.$router.push(this.suggestions[i].permalink)
       this.query = ''
       this.focusIndex = 0
     },

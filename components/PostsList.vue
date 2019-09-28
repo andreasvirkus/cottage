@@ -1,15 +1,16 @@
 <template>
   <nav class="posts content" role="navigation">
+    Posts list component |
     {{ posts }}
     <ol reversed class="posts__links">
-      <li v-for="(post, i) in posts" :key="i" class="posts__item">
+      <li v-for="post in posts" :key="post.permalink" class="posts__item">
         <saber-link :to="post.permalink" class="posts__link">
           <div class="posts__title">{{ post.title }}</div>
-          <div class="posts__date"
+          <!-- <div class="posts__date"
             :data-short-date="formatPostDate(post.createdAt, true)">
             <time :datetime="post.createdAt"
             >{{ formatPostDate(post.createdAt) }}</time>
-          </div>
+          </div> -->
         </saber-link>
       </li>
     </ol>

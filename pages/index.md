@@ -1,4 +1,5 @@
 ---
+title: cottage
 description: A humble homepage of sorts
 layout: page
 ---

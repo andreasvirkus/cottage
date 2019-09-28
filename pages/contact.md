@@ -1,4 +1,5 @@
 ---
+title: contact
 description: View my contact details and hit me up!
 layout: page
 ---

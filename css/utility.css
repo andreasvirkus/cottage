@@ -1,13 +1,23 @@
 .skewed-section {
-    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
+
+.m-bottom-s {
+  margin-bottom: 1rem;
+}
+.m-bottom-m {
+  margin-bottom: 1.5rem;
+}
+.m-bottom-l {
+  margin-bottom: 2rem;
 }
 
 .text__line-through {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 hr.divider {
-    height: 3px;
-    background-image: var(--blog-post-divider);
-    border: none;
+  height: 3px;
+  background-image: var(--blog-post-divider);
+  border: none;
 }
