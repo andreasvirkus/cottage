@@ -27,12 +27,15 @@
     "url": "https://github.com/andreasvirkus/cottage/issues"
   },
   "homepage": "https://andreasvirkus.me",
-  "browserslist": ["last 2 versions", "> 3%"],
+  "browserslist": [
+    "last 2 versions",
+    "> 3%"
+  ],
   "dependencies": {
     "dayjs": "^1.6.6",
     "nprogress": "^0.2.0",
     "reading-time": "^1.1.2",
-    "saber": "^0.8.1",
+    "saber": "^0.9.1",
     "saber-plugin-query-posts": "^0.4.2",
     "snapsvg-cjs": "0.0.6"
   },
