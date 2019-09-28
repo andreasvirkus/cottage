@@ -27,7 +27,7 @@ permalinks:
   post: /thoughts/:slug
 
 build:
-  extractCSS: true
+  #extractCSS: true
 
 plugins:
   - resolve: saber-plugin-query-posts
@@ -37,6 +37,7 @@ plugins:
   - resolve: saber-plugin-google-analytics
     options:
       trackId: 'UA-99596348-1'
+      anonymizeIp: true
   - resolve: saber-plugin-copy-code
     options:
       buttonStyle:

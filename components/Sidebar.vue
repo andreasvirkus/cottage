@@ -16,10 +16,12 @@
     </button>
 
 		<nav class="menu__list">
-			<saber-link to="/" class="menu__link">👾</saber-link>
-			<saber-link to="/about" class="menu__link">me</saber-link>
-			<saber-link to="/thoughts" class="menu__link">thoughts</saber-link>
-			<saber-link to="/contact" class="menu__link">contact</saber-link>
+      <div class="menu__blob"
+        :style="{ '--activeIndex': activeLinkIndex }"></div>
+			<saber-link v-for="link in links"
+        :key="link.path"
+        :to="link.path"
+        class="menu__link">{{ link.label }}</saber-link>
 		</nav>
 
     <div v-if="false" class="morph-shape" id="menu-shape" ref="shape"
@@ -42,6 +44,24 @@ export default {
 			menu: null,
 			pathEl: [],
 			paths: [],
+      links: [
+        {
+          label: '👾',
+          path: '/'
+        },
+        {
+          label: 'me',
+          path: '/about'
+        },
+        {
+          label: 'thoughts',
+          path: '/thoughts'
+        },
+        {
+          label: 'contact',
+          path: '/contact'
+        },
+      ]
 		}
 	},
 	props: ['page'],
@@ -58,13 +78,12 @@ export default {
 		window.removeEventListener('touchstart', this.onTouchStart)
 		window.removeEventListener('touchend', this.onTouchEnd)
 	},
+  computed: {
+    activeLinkIndex () {
+      return this.links.findIndex(link => link.path === this.$route.path) || 0
+    }
+  },
 	methods: {
-		isActive (link) {
-      if (!link) return false
-      return link[0] === '#'
-        ? link === this.$route.hash
-        : link === this.$route.path
-    },
 		init () {
 			this.shapeEl = this.$refs.shape
 
@@ -142,21 +161,43 @@ export default {
 	left: 0;
 	z-index: 5;
 	transition: transform 0.6s, top .4s;
-	border-right: 8px solid #22223320;
+}
+.menu::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 84vh;
+  top: 6vh;
+  left: 100%;
+  z-index: 5;
+  width: 2px;
+  background-color: #22223320;
 }
 .menu__list {
+  position: relative;
 	display: flex;
 	flex-direction: column;
-	padding: 2rem;
-	margin-top: 10vh;
+  text-align: center;
+	padding: 2rem 2rem 2rem 3.5rem;
+	margin-top: 6vh;
 }
 .menu__link {
-	margin-bottom: 2em;
+	padding: 1em 0;
 	cursor: pointer;
 	flex-grow: 1;
 }
 .menu__handle {
 	display: none;
+}
+.menu__blob {
+  position: absolute;
+  top: 2.65rem;
+  right: -.25rem;
+  width: 6px;
+  height: 2.75rem;
+  background-color: var(--bg-dark);
+  transform: translateY(calc(var(--activeIndex, 0) * 3.7rem));
+  transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .morph-shape {
@@ -175,7 +216,7 @@ export default {
 	stroke-width: 5px;
 }
 
-@media screen and (max-width: 70rem) {
+@media screen and (max-width: 74rem) {
 	.menu::after {
 		content: '';
 		width: 140vw;
@@ -191,7 +232,7 @@ export default {
 		display: block;
 		position: absolute;
 		bottom: 5rem;
-		right: -7.5rem;
+		right: -4.75rem;
 		background-color: transparent;
 		width: 25px;
 		height: 24px;
@@ -295,6 +336,9 @@ export default {
 		background-color: var(--menu-overlay);
 		pointer-events: inherit;
 	}
+  .menu--open::before {
+    background-color: #22223340;
+  }
 	.menu.menu--open + main {
 		opacity: 0.6;
 		pointer-events: none;

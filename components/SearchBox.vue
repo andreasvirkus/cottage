@@ -1,7 +1,7 @@
 <template>
   <div class="search-box">
     <input
-      @v-model="query"
+      v-model="query"
       ref="input"
       aria-label="Search"
       autocomplete="off"
@@ -36,7 +36,8 @@ export default {
     return {
       query: '',
       focused: false,
-      focusIndex: 0
+      focusIndex: 0,
+      suggestions: []
     }
   },
   props: ['page'],
@@ -44,52 +45,25 @@ export default {
     showSuggestions () {
       return (
         this.focused &&
-        this.suggestions &&
         this.suggestions.length
       )
-    },
-    suggestions () {
-      const query = this.query.trim().toLowerCase()
-      if (!query) return
-
-      const max = 5
-      const { pages } = this.page
-      const matches = item => (
-        item.title &&
-        item.title.toLowerCase().indexOf(query) > -1
-      )
-      const res = []
-      for (let i = 0; i < pages.length; i++) {
-        if (res.length >= max) break
-        const p = pages[i]
-
-        if (matches(p)) {
-          res.push(p)
-        } else if (p.headers) {
-          // console.log('headers:', p.headers)
-          // console.log('tags:', p.tags)
-          // TODO: Also search through tags frontmatter on pages
-          p.tags && p.headers.join(p.tags)
-
-          for (let j = 0; j < p.headers.length; j++) {
-            if (res.length >= max) break
-            const h = p.headers[j]
-            if (matches(h)) {
-              res.push(Object.assign({}, p, {
-                path: p.path + '#' + h.slug,
-                header: h
-              }))
-            }
-          }
-        }
-      }
-      return res
     },
     // make suggestions align right when there are not enough items
     alignRight () {
       const navCount = (this.$site.themeConfig.nav || []).length
       const repo = this.$site.repo ? 1 : 0
       return navCount + repo <= 2
+    }
+  },
+  watch: {
+    async query () {
+      const database = await this.$fetchSearchDatabase()
+      const keyword = this.query
+      // TODO: Also go through the page's headers & tags
+      this.suggestions = database.filter(page =>
+        page.title.includes(keyword) ||
+        page.excerpt.includes(keyword) ||
+        page.markdownHeadings.some(h => h.slug.includes(keyword)))
     }
   },
   methods: {
