@@ -111,6 +111,7 @@ export default {
 .site-footer {
   margin-top: 3rem;
   margin-bottom: 2.5rem;
+  padding-right: 5vw;
 }
 
 .site-footer p {
@@ -144,16 +145,10 @@ export default {
     height: auto;
 }
 
-@media screen and (min-width: 35em) {
-    .site-footer {
-        padding-right: 3em;
-    }
-}
-
 @media screen and (max-width: 35em) {
-    .site-footer {
-        padding-right: 1.5rem;
-        font-size: 0.8rem;
-    }
+  .site-footer {
+    padding-right: 1.5rem;
+    font-size: 0.8rem;
+  }
 }
 </style>

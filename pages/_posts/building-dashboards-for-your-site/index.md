@@ -2,9 +2,6 @@
 title: Building dashboards for your site
 layout: post
 description: I'll go through setting up these dashboards that I don't have yet.
-postDate: 2017-05-20
-prev: /thoughts/creating-keep-alive-monitoring/
-next: /thoughts/appending-lines-to-xml/
 ---
 
 In this post, I'll go through the approaches that I explored in order to set up my

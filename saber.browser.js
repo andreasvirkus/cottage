@@ -1,13 +1,11 @@
 import 'prismjs/themes/prism-tomorrow.css'
 import 'saber-highlight-css/default.css'
-import './css/variables.css'
-import './css/global.css'
-import './css/utility.css'
 
 export default ({ router }) => {
   // Progress bar is not needed on server-side
   if (process.browser) {
     // These dependencies are only bundled in client build
+    const snap = require('snapsvg')
     const nprogress = require('nprogress')
     require('nprogress/nprogress.css')
 

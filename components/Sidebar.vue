@@ -10,17 +10,19 @@
     <button class="menu__handle"
     	ref="handle"
     	id="menu-handle"
-    	title="Open menu"
+    	:title="`${open ? 'Close' : 'Open'} menu`"
     	@click="toggle">
     	<span>Menu</span>
     </button>
 
-		<saber-link to="/">Home</saber-link>
-		<saber-link to="/about">Me</saber-link>
-		<saber-link to="/thoughts">Thoughts</saber-link>
-		<saber-link to="/contact">Contact</saber-link>
+		<nav class="menu__list">
+			<saber-link to="/" class="menu__link">Home</saber-link>
+			<saber-link to="/about" class="menu__link">Me</saber-link>
+			<saber-link to="/thoughts" class="menu__link">Thoughts</saber-link>
+			<saber-link to="/contact" class="menu__link">Contact</saber-link>
+		</nav>
 
-    <div class="morph-shape" id="menu-shape" ref="shape"
+    <div v-if="false" class="morph-shape" id="menu-shape" ref="shape"
 			data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410"
 			data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
       <svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
@@ -129,66 +131,24 @@ export default {
 <style>
 .menu {
 	position: fixed;
-	height: 90vh;
-	top: 5.5rem;
+	height: 100vh;
+	top: 0;
 	left: 0;
 	z-index: 5;
 	transition: transform 0.6s, top .4s;
+	border-right: 8px solid #22223320;
 }
-.menu::after {
-	content: '';
-	width: 140vw;
-	height: 130vh;
-	position: absolute;
-	top: -5em;
-	left: 0;
-	transition: ease-in background-color .1s;
-	z-index: -1;
-	pointer-events: none;
-}
-
 .menu__list {
-	list-style: none;
-	padding-left: 50px;
-	margin: 0;
-	width: 180px;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	margin-top: 10vh;
 }
-
-.nav__item {
+.menu__link {
 	margin-bottom: 2em;
 	cursor: pointer;
 	flex-grow: 1;
 }
-.nav__item::before {
-	content: '≀';
-	position: relative;
-	font-weight: 800;
-	font-size: 2rem;
-	padding-bottom: .2em;
-}
-
-.nav__item:first-child::before {
-	content: none;
-}
-.nav__item:nth-child(2)::before {
-	color: #DBD253;
-}
-.nav__item:nth-child(3)::before {
-	color: #F484D4;
-}
-.nav__item:nth-child(4)::before {
-	color: #EF835F;
-}
-.nav__item:nth-child(5)::before {
-	color: #8F6EF4;
-}
-.nav__item:nth-child(6)::before {
-	color: #00A0B0;
-}
-.nav__item:nth-child(7)::before {
-	color: #00d2d3;
-}
-
 .menu__handle {
 	display: none;
 }
@@ -210,47 +170,21 @@ export default {
 }
 
 @media screen and (max-width: 70rem) {
-	.nav-links {
-		transform: translateX(50px);
+	.menu::after {
+		content: '';
+		width: 140vw;
+		height: 130vh;
+		position: absolute;
+		top: -5em;
+		left: 0;
+		transition: ease-in background-color .1s;
+		z-index: -1;
+		pointer-events: none;
 	}
-
-	.nav__item {
-		display: flex;
-		align-items: center;
-		will-change: transform;
-		transform: translate3d(-160px, 0, 0);
-		transition: transform 0.6s;
-	}
-
-	.nav__item:first-child {
-		transition-delay: 0.3s;
-	}
-	.nav__item:nth-child(2) {
-		transition-delay: 0.25s;
-	}
-	.nav__item:nth-child(3) {
-		transition-delay: 0.2s;
-	}
-	.nav__item:nth-child(4) {
-		transition-delay: 0.15s;
-	}
-	.nav__item:nth-child(5) {
-		transition-delay: 0.1s;
-	}
-	.nav__item:nth-child(6) {
-		transition-delay: 0.05s;
-	}
-
-	.nav__item::before {
-		display: inline-block;
-		transform: translateY(2px);
-		padding-right: .2em;
-	}
-
 	.menu__handle {
 		display: block;
 		position: absolute;
-		top: 0;
+		bottom: 5rem;
 		right: -7.5rem;
 		background-color: transparent;
 		width: 25px;
@@ -261,6 +195,7 @@ export default {
 		z-index: 4;
 		cursor: pointer;
 		pointer-events: all;
+  	/*box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 #004EFF;*/
 	}
 
 	.menu__handle::before,
@@ -270,8 +205,10 @@ export default {
 		position: absolute;
 		height: 3px; /* old style */
 		height: 2px;
-		transition: transform 0.25s ease-in-out 0.3s, width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s, opacity 0.4s ease-in-out 0.3s;
 		left: 0;
+		transition: transform 0.25s ease-in-out 0.3s,
+			width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s,
+			opacity 0.4s ease-in-out 0.3s;
 	}
 
 	.menu__handle::before,
@@ -330,17 +267,6 @@ export default {
 	.menu {
 		top: 2rem;
 		transform: translateX(-185px);
-	}
-	.sticky + .menu {
-		top: 3rem;
-	}
-	.sticky + .menu .menu__handle {
-		top: 2rem;
-	}
-	/* Testing new responsive styles */
-	.sticky + .menu .morph-shape {
-		top: 2rem;
-		height: 75vh;
 	}
 	.menu.menu--open,
 	.menu.menu--open .nav__item {

@@ -15,7 +15,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
   color: var(--content-color);
-  /*background-color: var(--bg-light);*/
   background-color: var(--bg-dark);
   box-shadow: 0 0 0 var(--bg-border) var(--bg-dark) inset;
   font-family: var(--font-mono);
@@ -48,9 +47,8 @@ a {
 
 main {
   max-width: 45em;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 2em;
+  width: 95%;
+  margin: 5vh auto;
   transition: opacity 0.6s;
   flex: 1;
 }
@@ -60,27 +58,10 @@ main {
 main a,
 footer p a {
   display: initial;
-  border-bottom: 3px solid var(--link-border-color);
   font-weight: 500;
   font-style: italic;
-}
-
-@supports (text-decoration-skip: ink) {
-  main a,
-  footer p a {
-    border-bottom: none;
-    text-decoration: underline;
-    text-decoration-skip: ink;
-  }
-}
-
-@supports (text-decoration-skip-ink: auto) {
-  main a,
-  footer p a {
-    border-bottom: none;
-    text-decoration: underline;
-    text-decoration-skip-ink: auto;
-  }
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
 }
 
 main a:hover,
@@ -158,7 +139,7 @@ blockquote p:last-child {
   main {
     min-height: 60vh;
     transform: translateY(-1.5em);
-    padding: 2rem;
+    padding: 1rem;
     font-size: 1rem
   }
   main p {

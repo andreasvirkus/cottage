@@ -1,6 +1,6 @@
 <template>
   <div class="theme-container">
-    <search-box/>
+    <search-box v-if="false"/>
     <sidebar/>
 
     <main class="content">
@@ -41,39 +41,14 @@ export default {
 }
 </script>
 
+<style src="../css/variables.css"></style>
+<style src="../css/global.css"></style>
+<style src="../css/utility.css"></style>
 <style>
-.content {
-  padding-bottom: 2rem;
-}
-
-.page-nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 3rem;
-}
-.page-nav.next {
-  margin-left: auto;
-}
-
-#nprogress .bar {
-  background: red !important;
-}
-
 .page-enter-active, .page-leave-active {
-  transition: opacity .2s;
+  transition: opacity .2s cubic-bezier(.84,-0.43,.14,.82);
 }
 .page-enter, .page-leave-to {
   opacity: 0;
-}
-
-@media (max-width: 35em) {
-  .prev {
-    display: block;
-    margin-bottom: .5rem;
-  }
-  .prev + .next {
-    margin-top: .5rem;
-  }
 }
 </style>
