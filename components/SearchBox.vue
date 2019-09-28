@@ -1,12 +1,11 @@
 <template>
   <div class="search-box">
     <input
-      @input="query = $event.target.value"
+      @v-model="query"
+      ref="input"
       aria-label="Search"
-      :value="query"
       autocomplete="off"
       spellcheck="false"
-      ref="input"
       @focus="focused = true"
       @blur="focused = false"
       @keyup.enter="go(focusIndex)"
@@ -40,6 +39,7 @@ export default {
       focusIndex: 0
     }
   },
+  props: ['page'],
   computed: {
     showSuggestions () {
       return (
@@ -50,12 +50,10 @@ export default {
     },
     suggestions () {
       const query = this.query.trim().toLowerCase()
-      if (!query) {
-        return
-      }
+      if (!query) return
 
       const max = 5
-      const { pages } = this.$site
+      const { pages } = this.page
       const matches = item => (
         item.title &&
         item.title.toLowerCase().indexOf(query) > -1

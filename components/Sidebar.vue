@@ -17,9 +17,9 @@
 
 		<nav class="menu__list">
 			<saber-link to="/" class="menu__link">👾</saber-link>
-			<saber-link to="/about" class="menu__link">Me</saber-link>
-			<saber-link to="/thoughts" class="menu__link">Thoughts</saber-link>
-			<saber-link to="/contact" class="menu__link">Contact</saber-link>
+			<saber-link to="/about" class="menu__link">me</saber-link>
+			<saber-link to="/thoughts" class="menu__link">thoughts</saber-link>
+			<saber-link to="/contact" class="menu__link">contact</saber-link>
 		</nav>
 
     <div v-if="false" class="morph-shape" id="menu-shape" ref="shape"

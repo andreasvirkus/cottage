@@ -11,7 +11,8 @@ siteConfig:
   repoLink: https://github.com/andreasvirkus/cottage
 
 permalinks:
-  page: /:slug/
+  page: /:slug
+  post: /thoughts/:slug
 
 build:
   extractCSS: true
@@ -23,7 +24,12 @@ plugins:
   - resolve: saber-plugin-google-analytics
     options:
       trackId: 'UA-99596348-1'
-  - resolve: saber-plugin-code-copy
+  - resolve: saber-plugin-copy-code
     options:
       buttonStyle:
         border: 'none'
+  - resolve: saber-plugin-feed
+    options:
+      atomFeed: true
+      rss2Feed: true
+      jsonFeed: true

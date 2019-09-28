@@ -3,7 +3,7 @@ import './css/variables.css'
 import './css/global.css'
 import './css/utility.css'
 
-export default ({ router }) => {
+export default ({ router, setHead }) => {
   // Progress bar is not needed on server-side
   if (process.browser) {
     // These dependencies are only bundled in client build
@@ -26,4 +26,14 @@ export default ({ router }) => {
       nprogress.done()
     })
   }
+
+  setHead(vm => ({
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/icons/icon-128x128.png'
+      }
+    ]
+  }))
 }
