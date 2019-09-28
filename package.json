@@ -29,7 +29,9 @@
   "homepage": "https://andreasvirkus.me",
   "browserslist": [
     "last 2 versions",
-    "> 3%"
+    "> 3%",
+    "not ie all",
+    "not op_mini all"
   ],
   "dependencies": {
     "autoprefixer": "^9.6.1",
