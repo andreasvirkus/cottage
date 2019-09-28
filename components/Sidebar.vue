@@ -1,32 +1,32 @@
 <template>
   <aside id="menu"
-  	ref="menu"
-  	class="menu"
-  	:class="{ 'menu--open': open }"
-  	role="navigation"
-  	@keyup.esc="toggle">
+    ref="menu"
+    class="menu"
+    :class="{ 'menu--open': open }"
+    role="navigation"
+    @keyup.esc="toggle">
     <!-- @touchstart="onTouchStart"
     @touchend="onTouchEnd"> -->
     <button class="menu__handle"
-    	ref="handle"
-    	id="menu-handle"
-    	:title="`${open ? 'Close' : 'Open'} menu`"
-    	@click="toggle">
-    	<span>Menu</span>
+      ref="handle"
+      id="menu-handle"
+      :title="`${open ? 'Close' : 'Open'} menu`"
+      @click="toggle">
+      <span>Menu</span>
     </button>
 
-		<nav class="menu__list">
+    <nav class="menu__list">
       <div class="menu__blob"
         :style="{ '--activeIndex': activeLinkIndex }"></div>
-			<saber-link v-for="link in links"
+      <saber-link v-for="link in links"
         :key="link.path"
         :to="link.path"
         class="menu__link">{{ link.label }}</saber-link>
 		</nav>
 
     <div v-if="false" class="morph-shape" id="menu-shape" ref="shape"
-			data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410"
-			data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
+      data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410"
+      data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
       <svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
         <path fill="none" d="M300-10c0,0,0,164,0,410c0,232,0,410,0,410"/>
       </svg>
@@ -36,14 +36,14 @@
 
 <script>
 export default {
-	name: 'sidebar',
-	data () {
-		return {
-			open: false,
-			narrowViewport: false,
-			menu: null,
-			pathEl: [],
-			paths: [],
+  name: 'sidebar',
+  data () {
+    return {
+      open: false,
+      narrowViewport: false,
+      menu: null,
+      pathEl: [],
+      paths: [],
       links: [
         {
           label: '👾',
@@ -66,17 +66,17 @@ export default {
 	},
 	props: ['page'],
 	mounted () {
-		this.narrowViewport = document.body.clientWidth < 790
-		if (this.narrowViewport) {
-			// window.Snap = require('snapsvg-cjs')
-			// this.init()
-			window.addEventListener('touchstart', this.onTouchStart)
-			window.addEventListener('touchend', this.onTouchEnd)
-		}
+    this.narrowViewport = document.body.clientWidth < 790
+    if (this.narrowViewport) {
+      // window.Snap = require('snapsvg-cjs')
+      // this.init()
+      window.addEventListener('touchstart', this.onTouchStart)
+      window.addEventListener('touchend', this.onTouchEnd)
+    }
 	},
 	beforeDestroy () {
-		window.removeEventListener('touchstart', this.onTouchStart)
-		window.removeEventListener('touchend', this.onTouchEnd)
+    window.removeEventListener('touchstart', this.onTouchStart)
+    window.removeEventListener('touchend', this.onTouchEnd)
 	},
   computed: {
     activeLinkIndex () {
@@ -191,13 +191,13 @@ export default {
 }
 .menu__blob {
   position: absolute;
-  top: 2.65rem;
+  top: 2.75rem;
   right: -.25rem;
   width: 6px;
   height: 2.75rem;
   background-color: var(--bg-dark);
-  transform: translateY(calc(var(--activeIndex, 0) * 3.7rem));
-  transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateY(calc(var(--activeIndex, 0) * 3.5625rem));
+  transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .morph-shape {
