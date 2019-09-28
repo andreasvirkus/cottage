@@ -17,13 +17,13 @@ anything dev-related or just nice tips/hacks I enjoy having in my utility belt.
 <script>
 import PostsList from '@/components/Posts'
 
-export const data {
+export const data = {
   injectAllPosts: true
 }
 
 export default {
   props: ['page'],
-  components: { PostsList }
+  components: { PostsList },
   computed: {
     posts () {
       return (this.page || {}).posts
