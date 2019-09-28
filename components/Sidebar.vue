@@ -59,6 +59,12 @@ export default {
 		window.removeEventListener('touchend', this.onTouchEnd)
 	},
 	methods: {
+		isActive (link) {
+      if (!link) return false
+      return link[0] === '#'
+        ? link === this.$route.hash
+        : link === this.$route.path
+    },
 		init () {
 			this.shapeEl = this.$refs.shape
 

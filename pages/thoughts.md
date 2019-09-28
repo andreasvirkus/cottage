@@ -1,7 +1,6 @@
 ---
 description: My thoughts and musings
 layout: page
-injectAllPosts: true
 ---
 
 # thoughts
@@ -13,13 +12,22 @@ anything dev-related or just nice tips/hacks I enjoy having in my utility belt.
 
 {{ page }}
 
-<posts-list :posts="page.posts"/>
+<posts-list :posts="posts"/>
 
 <script>
 import PostsList from '@/components/Posts'
 
+export const data {
+  injectAllPosts: true
+}
+
 export default {
   props: ['page'],
   components: { PostsList }
+  computed: {
+    posts () {
+      return (this.page || {}).posts
+    }
+  }
 }
 </script>

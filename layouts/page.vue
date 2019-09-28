@@ -41,9 +41,6 @@ export default {
 }
 </script>
 
-<style src="../css/variables.css"></style>
-<style src="../css/global.css"></style>
-<style src="../css/utility.css"></style>
 <style>
 .page-enter-active, .page-leave-active {
   transition: opacity .2s cubic-bezier(.84,-0.43,.14,.82);
