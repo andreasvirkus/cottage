@@ -44,6 +44,7 @@
     "saber-plugin-feed": "^0.4.2",
     "saber-plugin-google-analytics": "^0.2.1",
     "saber-plugin-prismjs": "^0.2.3",
+    "saber-plugin-pwa": "^0.4.3",
     "saber-plugin-query-posts": "^0.4.2",
     "saber-plugin-search": "^0.1.0",
     "snapsvg-cjs": "0.0.6"
