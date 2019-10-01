@@ -23,10 +23,10 @@ export default {
 </script>
 
 <style>
-.page-enter-active .content, .page-leave-active .content {
+.page-enter-active, .page-leave-active {
   transition: opacity .2s cubic-bezier(.84,-0.43,.14,.82);
 }
-.page-enter .content, .page-leave-to .content {
+.page-enter, .page-leave-to {
   opacity: 0;
 }
 </style>
