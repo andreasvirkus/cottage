@@ -3,7 +3,7 @@
     <search-box/>
     <sidebar/>
     <slot/>
-    <page-footer :page="page"/>
+    <page-footer/>
   </div>
 </template>
 
