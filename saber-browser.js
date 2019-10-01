@@ -1,9 +1,12 @@
+import Wrapper from '@/layouts/Chrome'
 import 'prismjs/themes/prism-tomorrow.css'
 import '@/css/variables.css'
 import '@/css/global.css'
 import '@/css/utility.css'
 
-export default ({ router, setHead }) => {
+export default ({ router, setHead, setRootComponent }) => {
+  setRootComponent(Wrapper)
+
   // Progress bar is not needed on server-side
   if (process.browser) {
     // These dependencies are only bundled in client build

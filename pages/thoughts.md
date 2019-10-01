@@ -1,7 +1,7 @@
 ---
 title: thoughts
 description: My thoughts and musings
-layout: page
+layout: Page
 injectAllPosts: true
 ---
 

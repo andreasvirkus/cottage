@@ -1,47 +1,40 @@
 <template>
-  <div class="theme-container">
-    <search-box/>
-    <sidebar/>
+  <main class="content">
+    <article ref="article">
+      <header>
+        <h1>{{ page.title }}</h1>
+        <div class="post-stats">
+          <span>published on the {{ formatPostDate(page.date) }}</span>
+          <div v-if="page.lastUpdated"> last updated on the
+          {{ formatPostDate(page.lastUpdated) }}</div>
+          <div v-if="readingTime"><em>{{ readingTime }}</em></div>
+        </div>
+      </header>
+      <hr>
 
-    <main class="content">
-      <article ref="article">
-        <header>
-          <h1>{{ page.title }}</h1>
-          <div class="post-stats">
-            <span>published on the {{ formatPostDate(page.date) }}</span>
-            <div v-if="page.lastUpdated"> last updated on the
-            {{ formatPostDate(page.lastUpdated) }}</div>
-            <div v-if="readingTime"><em>{{ readingTime }}</em></div>
+      <slot name="default"/>
+
+      <footer class="blog__footer">
+        <p>Thanks for giving this a read 🖖</p>
+        <template v-if="page.prevPost || page.nextPost">
+          <hr class="blog__divider" />
+          <div class="page-nav">
+            <span v-if="page.prevPost" class="prev">
+              ← <saber-link :to="page.prevPost.permalink">
+                {{ page.prevPost.title }}
+              </saber-link>
+            </span>
+            <span v-if="page.nextPost" class="next">
+              <saber-link :to="page.nextPost.permalink">
+                {{ page.nextPost.title }}
+              </saber-link> →
+            </span>
           </div>
-        </header>
-        <hr>
-
-        <slot name="default"/>
-
-        <footer class="blog__footer">
-          <p>Thanks for giving this a read 🖖</p>
-          <template v-if="page.prevPost || page.nextPost">
-            <hr class="blog__divider" />
-            <div class="page-nav">
-              <span v-if="page.prevPost" class="prev">
-                ← <saber-link :to="page.prevPost.permalink">
-                  {{ page.prevPost.title }}
-                </saber-link>
-              </span>
-              <span v-if="page.nextPost" class="next">
-                <saber-link :to="page.nextPost.permalink">
-                  {{ page.nextPost.title }}
-                </saber-link> →
-              </span>
-            </div>
-            <hr class="blog__divider" />
-          </template>
-        </footer>
-      </article>
-    </main>
-
-    <page-footer :page="page"/>
-  </div>
+          <hr class="blog__divider" />
+        </template>
+      </footer>
+    </article>
+  </main>
 </template>
 
 <script>
@@ -53,6 +46,7 @@ import SearchBox from '@/components/SearchBox'
 import PageFooter from '@/components/PageFooter'
 
 export default {
+  name: 'post',
   data () {
     return {
       readingTime: null

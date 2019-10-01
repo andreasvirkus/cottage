@@ -1,6 +1,6 @@
 ---
 title: My site stack
-layout: post
+layout: Post
 description: What this shindig consists of.
 date: 2017-09-03
 ---

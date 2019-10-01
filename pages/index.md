@@ -1,7 +1,7 @@
 ---
 title: cottage
 description: A humble homepage of sorts
-layout: page
+layout: Page
 ---
 
 # welcome, welcome

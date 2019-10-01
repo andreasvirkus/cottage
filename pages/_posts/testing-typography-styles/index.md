@@ -1,6 +1,6 @@
 ---
 title: Testing typography styles
-layout: post
+layout: Post
 description: Styling code and quote blocks and other various typography bits.
 date: 2017-06-24
 ---

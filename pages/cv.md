@@ -1,7 +1,7 @@
 ---
 title: curriculum vitae
 description: Curriculum vitae of Andreas Johan Virkus
-layout: page
+layout: Page
 ---
 
 # Andreas Johan Virkus

@@ -1,7 +1,7 @@
 ---
 title: about me
 description: Get to know me. Long walks on the beach included.
-layout: page
+layout: Page
 tags:
   - cv
   - employment
