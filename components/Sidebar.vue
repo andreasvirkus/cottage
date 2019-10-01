@@ -80,8 +80,10 @@ export default {
   },
   computed: {
     activeLinkIndex () {
-      if (this.$route.path.startsWith('/thoughts')) return 2
-      return this.links.findIndex(link => link.path === this.$route.path) || 0
+      const path = this.$route.path
+      if (path.startsWith('/thoughts')) return 2
+      return this.links.findIndex(link => link.path === path ||
+        link.path + '/' === path) || 0
     }
   },
   methods: {
