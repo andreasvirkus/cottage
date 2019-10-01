@@ -7,7 +7,8 @@
           :title="link.alt"
           :rel="link.rel"
           :type="link.type">
-          <img :src="`/svg/${link.name.toLowerCase().replace('-', '')}.svg`">
+          <img :alt="link.name"
+            :src="`/svg/${link.name.toLowerCase().replace('-', '')}.svg`">
         </a>
       </li>
     </ul>
