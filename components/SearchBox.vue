@@ -15,7 +15,7 @@
     <ul class="suggestions"
       v-if="showSuggestions"
       @mouseleave="unfocus">
-      <li class="suggestion" v-for="s in suggestions"
+      <li class="suggestion" v-for="(s, i) in suggestions"
         :class="{ focused: i === focusIndex }"
         :key="s.permalink"
         @mousedown="go(i)"
