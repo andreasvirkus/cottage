@@ -15,15 +15,15 @@
     <ul class="suggestions"
       v-if="showSuggestions"
       @mouseleave="unfocus">
-      <li class="suggestion" v-for="(s, i) in suggestions"
+      <li class="suggestion" v-for="s in suggestions"
         :class="{ focused: i === focusIndex }"
-        :key="i"
+        :key="s.permalink"
         @mousedown="go(i)"
         @mouseenter="focus(i)">
-        <a :href="s.path" @click.prevent>
+        <saber-link :to="s.permalink" @click.prevent>
           <span class="page-title">{{ s.title || s.path }}</span>
           <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
-        </a>
+        </saber-link>
       </li>
     </ul>
   </div>
