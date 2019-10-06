@@ -10,8 +10,10 @@ I discovered my CV's downloadable PDF link isn't indexed (aka included in my
 `sitemap.xml` file). And it [should be](https://www.thewebmaster.com/seo/2016/feb/24/google-we-index-pdfs-just-like-any-other-web-page/). So we've established that PDFs should end up in our sitemap.
 
 To achieve that, I'll run you through a snippet to append it as an entry to the sitemap.
-The way we'll go through this is first set up a basic working node module and
-then later (maybe?) also turn it into a Metalsmith plugin (WIP).
+The way we'll go through this is to first set up a basic working node module and
+then later also turn it into a Metalsmith plugin.
+
+### Node module
 
 We'll need Node's native `fs` and `path` modules and also the file's name
 (which you can later make dynamic, but currently we'll settle for the default
@@ -32,7 +34,7 @@ const closingTag = '</urlset>';
 
 Then we'll go ahead and create a buffer containing our new content (the line
 we're appending) and the closing tag we just defined
-...aand also need to know the file's path and size.
+...aand we also need to know the file's path and size.
 
 ```js
 let content = `<url> <loc>https://andreasvirkus.me/assets/cv/CV-Andreas-Johan-Virkus.pdf</loc> </url>`,
@@ -54,6 +56,8 @@ fs.open(filePath, 'r+', (err, fd) => {
     });
 });
 ```
+
+### Result
 
 So what we've got so far is this:
 ```js
@@ -78,6 +82,8 @@ fs.open(filePath, 'r+', (err, fd) => {
 
 Now we can run it as any other Node script: `node appendToSitemap.js` and
 it should add our `content` variable as the last entry of the file's `urlset`.
+
+### Bringing in Metalsmith
 
 Since I wish to automate this process, I'll add it to my Metalsmith
 build's callback as a module:
