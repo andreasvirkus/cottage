@@ -33,7 +33,7 @@ body {
 
 .theme-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 97vh;
   flex-direction: column;
   background-color: var(--bg-light);
   margin: var(--bg-border);

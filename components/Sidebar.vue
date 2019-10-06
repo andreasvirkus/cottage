@@ -20,6 +20,7 @@
       <saber-link v-for="link in links"
         :key="link.path"
         :to="link.path"
+        @click.native="hideMenu"
         class="menu__link">{{ link.label }}</saber-link>
     </nav>
 
@@ -133,6 +134,9 @@ export default {
       )
 
       this.open = !this.open
+    },
+    hideMenu () {
+      setTimeout(() => this.open = false, 300)
     },
     onKeyUp (e) {
       console.log('Keyup event', e.key)
