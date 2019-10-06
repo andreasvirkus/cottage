@@ -1,28 +1,31 @@
 <template>
-  <div class="search-box">
+  <div class="search">
     <input
       v-model="query"
       ref="input"
       aria-label="Search"
       autocomplete="off"
       spellcheck="false"
+      class="search__box"
       @focus="focused = true"
       @blur="focused = false"
       @keyup.enter="go(focusIndex)"
       @keyup.up="onUp"
       @keyup.down="onDown"
       @keyup.esc="unfocusSearchBox">
-    <ul class="suggestions"
+    <ul class="search__suggestions"
       v-if="showSuggestions"
       @mouseleave="unfocus">
-      <li class="suggestion" v-for="(s, i) in suggestions"
-        :class="{ focused: i === focusIndex }"
+      <li class="search__suggestion" v-for="(s, i) in suggestions"
+        :class="{ '-focused': i === focusIndex }"
         :key="s.permalink"
         @mousedown="go(i)"
         @mouseenter="focus(i)">
-        <saber-link :to="s.permalink" @click.prevent>
-          <span class="page-title">{{ s.title || s.path }}</span>
-          <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
+        <saber-link :to="s.permalink"
+          class="search__link"
+          :class="{ '-focused': i === focusIndex }">
+          <span class="search__suggestion-title">{{ s.title || s.path }}</span>
+          <span v-if="s.header" class="search__suggestion-desc">&gt; {{ s.header.title }}</span>
         </saber-link>
       </li>
     </ul>
@@ -99,7 +102,7 @@ export default {
 </script>
 
 <style>
-.search-box {
+.search {
   display: flex;
   position: fixed;
   right: 2rem;
@@ -107,7 +110,7 @@ export default {
   z-index: 5;
   background-color: var(--menu-overlay);
 }
-.search-box input {
+.search__box {
   width: 0;
   left: 1rem;
   cursor: pointer;
@@ -125,13 +128,13 @@ export default {
   background-size: 1rem;
   will-change: width;
 }
-.search-box input:focus {
+.search__box:focus {
   left: 0;
   width: 10rem;
   cursor: auto;
   border-color: rgba(34,34,51,0.596);
 }
-.search-box .suggestions {
+.search__suggestions {
   background: #fff;
   width: 20rem;
   position: absolute;
@@ -141,30 +144,30 @@ export default {
   padding: 0.4rem;
   list-style-type: none;
 }
-.search-box .suggestion {
+.search__suggestion {
   line-height: 1.4;
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
   z-index: 5;
 }
-.search-box .suggestion a {
+.search__link {
   color: var(--text-color);
 }
-.search-box .suggestion a .page-title {
+.search__suggestion-title {
   font-weight: 600;
 }
-.search-box .suggestion a .header {
+.search__suggestion-desc {
   font-size: 0.9em;
   margin-left: 0.25em;
 }
-.search-box .suggestion.focused {
+.search__suggestion.-focused {
   background-color: rgba(220,220,220,0.4);
 }
-.search-box .suggestion.focused a {
+.search__link.-focused {
   color: var(--accent-color);
 }
 @media (max-width: 70rem) {
-  .search-box .suggestions {
+  .search__suggestions {
     width: 70vw;
   }
 }

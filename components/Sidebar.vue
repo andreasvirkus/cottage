@@ -1,10 +1,9 @@
 <template>
-  <aside id="menu"
+  <aside
     ref="menu"
     class="menu"
     :class="{ 'menu--open': open }"
-    role="navigation"
-    @keyup.esc="toggle">
+    role="navigation">
     <!-- @touchstart="onTouchStart"
     @touchend="onTouchEnd"> -->
     <button class="menu__handle"
@@ -39,9 +38,9 @@ export default {
   name: 'sidebar',
   data () {
     return {
+      menu: null,
       open: false,
       narrowViewport: false,
-      menu: null,
       pathEl: [],
       paths: [],
       links: [
@@ -66,17 +65,20 @@ export default {
   },
   props: ['page'],
   mounted () {
-    this.narrowViewport = document.body.clientWidth < 790
+    this.narrowViewport = document.body.clientWidth < 1120
     if (this.narrowViewport) {
       // window.Snap = require('snapsvg-cjs')
       // this.init()
       window.addEventListener('touchstart', this.onTouchStart)
       window.addEventListener('touchend', this.onTouchEnd)
     }
+
+    window.addEventListener('keyup', this.onKeyUp)
   },
   beforeDestroy () {
     window.removeEventListener('touchstart', this.onTouchStart)
     window.removeEventListener('touchend', this.onTouchEnd)
+    window.removeEventListener('keyup', this.onKeyUp)
   },
   computed: {
     activeLinkIndex () {
@@ -131,6 +133,10 @@ export default {
       )
 
       this.open = !this.open
+    },
+    onKeyUp (e) {
+      console.log('Keyup event', e.key)
+      if (e.key === 'Escape' && this.open) this.open = false
     },
     onTouchStart (e) {
       this.touchStart = {
