@@ -3,11 +3,12 @@
     <article ref="article">
       <header>
         <h1>{{ page.title }}</h1>
-        <div class="post-stats">
+        <div class="blog__stats">
           <span>published on the {{ formatPostDate(page.date) }}</span>
-          <div v-if="page.lastUpdated"> last updated on the
+          <div v-if="page.lastUpdated">& last updated on the
           {{ formatPostDate(page.lastUpdated) }}</div>
-          <div v-if="readingTime"><em>{{ readingTime }}</em></div>
+          <div v-if="readingTime"
+            class="blog__read-time"><em>{{ readingTime }}</em></div>
         </div>
       </header>
       <hr>
@@ -87,6 +88,14 @@ export default {
 .blog__divider {
   background-color: var(--blog-post-divider);
   background-image: var(--blog-post-divider);
+}
+.blog__stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: .825rem;
+}
+.blog__read-time {
+  margin-left: 1rem;
 }
 
 .blog__post-info {
