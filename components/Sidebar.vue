@@ -208,7 +208,7 @@ export default {
   right: -.25rem;
   width: 6px;
   height: 2.75rem;
-  background-color: var(--bg-dark);
+  background-color: var(--color-background);
   transform: translateY(calc(var(--activeIndex, 0) * 3.5625rem));
   transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }

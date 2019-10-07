@@ -7,8 +7,7 @@
           :title="link.alt"
           :rel="link.rel"
           :type="link.type"
-          :target="link.type ? '_blank' : null"
-          :saber-ignore="link.type || null">
+          :target="link.type ? '_blank' : null">
           <img :alt="link.name"
             :src="`/svg/${link.name.toLowerCase().replace('-', '')}.svg`">
         </a>
