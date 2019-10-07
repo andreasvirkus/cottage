@@ -15,13 +15,15 @@
     </button>
 
     <nav class="menu__list">
-      <div class="menu__blob"
+      <div class="menu__blob -isolate"
         :style="{ '--activeIndex': activeLinkIndex }"></div>
       <saber-link v-for="link in links"
         :key="link.path"
         :to="link.path"
         @click.native="hideMenu"
-        class="menu__link">{{ link.label }}</saber-link>
+        class="menu__link"
+        :class="link.path === '/' && '-isolate'"
+      >{{ link.label }}</saber-link>
     </nav>
 
     <div v-if="false" class="morph-shape" id="menu-shape" ref="shape"
@@ -208,7 +210,7 @@ export default {
   right: -.25rem;
   width: 6px;
   height: 2.75rem;
-  background-color: var(--bg-dark);
+  background-color: var(--color-background);
   transform: translateY(calc(var(--activeIndex, 0) * 3.5625rem));
   transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -244,7 +246,7 @@ export default {
   .menu__handle {
     display: block;
     position: absolute;
-    bottom: 5rem;
+    bottom: 4rem;
     right: -4.75rem;
     background-color: transparent;
     width: 25px;
@@ -348,9 +350,6 @@ export default {
   .menu--open::after {
     background-color: var(--menu-overlay);
     pointer-events: inherit;
-  }
-  .menu--open::before {
-    background-color: #22223340;
   }
   .menu.menu--open + main {
     opacity: 0.6;
