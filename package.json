@@ -39,7 +39,7 @@
     "nprogress": "^0.2.0",
     "prismjs": "^1.17.1",
     "reading-time": "^1.1.2",
-    "saber": "^0.10.2",
+    "saber": "^0.10.4",
     "saber-plugin-copy-code": "^0.2.0",
     "saber-plugin-feed": "^0.4.2",
     "saber-plugin-google-analytics": "^0.2.1",
