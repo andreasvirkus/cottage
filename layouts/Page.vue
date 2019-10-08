@@ -30,7 +30,7 @@ export default {
         {
           rel: 'alternate',
           type: 'application/rss+xml',
-          title: 'Sub for new content',
+          title: 'Cottage - Thoughts of andreas virkus',
           href: 'https://andreasvirkus.me/rss2.xml'
         }
       ]
