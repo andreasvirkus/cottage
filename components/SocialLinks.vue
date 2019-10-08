@@ -13,33 +13,6 @@
         </a>
       </li>
     </ul>
-
-    <svg class="fuzzy-filters">
-      <filter id="turbulence-1">
-        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" />
-        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
-      </filter>
-
-      <filter id="turbulence-2">
-        <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" />
-        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="7" />
-      </filter>
-
-      <filter id="turbulence-3">
-        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" />
-        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
-      </filter>
-
-      <filter id="turbulence-4">
-        <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" />
-        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="4" />
-      </filter>
-
-      <filter id="turbulence-5">
-        <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" />
-        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="3" />
-      </filter>
-    </svg>
   </div>
 </template>
 

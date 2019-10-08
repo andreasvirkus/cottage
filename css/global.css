@@ -28,13 +28,19 @@ body {
 
 .theme-container {
   display: flex;
-  min-height: 97.5vh;
+  min-height: 96.5vh;
   flex-direction: column;
   background-color: var(--color-white);
   margin: var(--bg-border);
 }
 .-isolate {
   isolation: isolate;
+}
+.hidden-visually {
+  pointer-events: none;
+  position: fixed;
+  opacity: 0;
+  top: -10vh;
 }
 
 a {

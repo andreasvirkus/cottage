@@ -9,9 +9,12 @@
     <button class="menu__handle"
       ref="handle"
       id="menu-handle"
+      aria-label="Menu"
       :title="`${open ? 'Close' : 'Open'} menu`"
       @click="toggle">
-      <span>Menu</span>
+      <span class="menu__line"></span>
+      <span class="menu__line"></span>
+      <span class="menu__line"></span>
     </button>
 
     <nav class="menu__list">
@@ -230,6 +233,10 @@ export default {
 }
 
 @media screen and (max-width: 74rem) {
+  .menu {
+    top: 2rem;
+    transform: translateX(-185px);
+  }
   .menu::after {
     content: '';
     width: 140vw;
@@ -246,111 +253,74 @@ export default {
     position: absolute;
     bottom: 5rem;
     right: -4.75rem;
-    background-color: transparent;
-    width: 25px;
-    height: 24px;
-    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgba(255, 255, 255, .4);
+    padding: .25rem;
     border: none;
     outline: none;
-    z-index: 4;
     cursor: pointer;
-    pointer-events: all;
-    /*box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 #004EFF;*/
+    z-index: 4;
+    /*box-shadow: 0 16px 24px 0 rgba(118,143,255,.2);*/
   }
 
-  .menu__handle::before,
-  .menu__handle::after,
-  .menu__handle span {
+  .menu__line {
     background-color: var(--menu-color);
     position: absolute;
     height: 3px; /* old style */
     height: 2px;
     left: 0;
     transition: transform 0.25s ease-in-out 0.3s,
-      width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s,
-      opacity 0.4s ease-in-out 0.3s;
+      width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
   }
-
-  .menu__handle::before,
-  .menu__handle::after {
-    content: '';
+  .menu__line:nth-child(1),
+  .menu__line:nth-child(3) {
     top: 50%;
     width: 50%;
     transform-origin: 50% 50%;
+    will-change: transform;
   }
-
-  .menu__handle span {
-    width: 55%; /* old style */
-    width: 100%;
-    text-indent: 200%;
-    color: transparent;
-  }
-
-  .menu__handle::before {
+  .menu__line:nth-child(1) {
     transform: translate3d(0, -8px, 0);
     z-index: 3;
-    /* width: 100%; old style */
   }
-
-  .menu__handle::after {
+  .menu__line:nth-child(2) {
+    width: 100%;
+    transition: opacity .1s ease-out;
+    will-change: opacity;
+  }
+  .menu__line:nth-child(3) {
     transform: translate3d(0, 8px, 0);
     right: 0;
     left: initial;
-    /* width: 75%; old style*/
   }
 
-  .menu--open .menu__handle span {
-    opacity: 0;
-  }
-
-  .menu--open .menu__handle span,
-  .menu--open .menu__handle::before,
-  .menu--open .menu__handle::after {
-    transition: transform 0.25s 0.7s ease-in-out, width 0.2s 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  }
-  .menu--open .menu__handle::before,
-  .menu--open .menu__handle::after {
+  .menu--open .menu__line {
     width: 100%;
   }
-  .menu--open .menu__handle::before {
+  .menu--open .menu__line:nth-child(1),
+  .menu--open .menu__line:nth-child(3) {
+    transition: transform 0.25 ease-in-out,
+      width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .menu--open .menu__line:nth-child(1) {
     transform: rotate3d(0, 0, 1, 45deg);
   }
-
-  .menu--open .menu__handle::after {
+  .menu--open .menu__line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu--open .menu__line:nth-child(3) {
     transform: rotate3d(0, 0, 1, -45deg);
   }
 
-  .menu:not(.menu--open) {
-    pointer-events: none;
-  }
-
-  .menu {
-    top: 2rem;
-    transform: translateX(-185px);
-  }
-  .menu.menu--open,
-  .menu.menu--open .nav__item {
+  .menu.menu--open {
     transform: translateX(0);
-  }
-  .menu__handle span::before {
-    content: '';
-    background-color: var(--menu-overlay);
-    position: absolute;
-    top: -20px;
-    left: -7px;
-    right: -7px;
-    bottom: -20px;
-    z-index: -1;
-    width: 45px;
   }
 
   /* Menu background overlay */
   .menu--open::after {
     background-color: var(--menu-overlay);
     pointer-events: inherit;
-  }
-  .menu--open::before {
-    background-color: #22223340;
   }
   .menu.menu--open + main {
     opacity: 0.6;
