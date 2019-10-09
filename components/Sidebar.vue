@@ -139,10 +139,9 @@ export default {
       this.open = !this.open
     },
     hideMenu () {
-      setTimeout(() => this.open = false, 300)
+      setTimeout(() => this.open = false, 400)
     },
     onKeyUp (e) {
-      console.log('Keyup event', e.key)
       if (e.key === 'Escape' && this.open) this.open = false
     },
     onTouchStart (e) {
@@ -249,40 +248,36 @@ export default {
     pointer-events: none;
   }
   .menu__handle {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     position: absolute;
     bottom: 5rem;
     right: -4.75rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: rgba(255, 255, 255, .4);
-    padding: .25rem;
     border: none;
     outline: none;
     cursor: pointer;
     z-index: 4;
-    /*box-shadow: 0 16px 24px 0 rgba(118,143,255,.2);*/
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, .92);
+    padding: .5rem;
+    box-shadow: 0 16px 24px 0 rgba(118,143,255,.2);
+    border: 1px solid #EDF2F7;
   }
 
   .menu__line {
     background-color: var(--menu-color);
-    position: absolute;
     height: 3px; /* old style */
     height: 2px;
-    left: 0;
     transition: transform 0.25s ease-in-out 0.3s,
       width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
   }
   .menu__line:nth-child(1),
   .menu__line:nth-child(3) {
-    top: 50%;
     width: 50%;
     transform-origin: 50% 50%;
     will-change: transform;
-  }
-  .menu__line:nth-child(1) {
-    transform: translate3d(0, -8px, 0);
-    z-index: 3;
   }
   .menu__line:nth-child(2) {
     width: 100%;
@@ -290,9 +285,7 @@ export default {
     will-change: opacity;
   }
   .menu__line:nth-child(3) {
-    transform: translate3d(0, 8px, 0);
-    right: 0;
-    left: initial;
+    align-self: flex-end;
   }
 
   .menu--open .menu__line {
@@ -304,13 +297,13 @@ export default {
       width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   .menu--open .menu__line:nth-child(1) {
-    transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg) translate(5px, 5px);
   }
   .menu--open .menu__line:nth-child(2) {
     opacity: 0;
   }
   .menu--open .menu__line:nth-child(3) {
-    transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 3, -45deg) translate(4px, -3px);
   }
 
   .menu.menu--open {

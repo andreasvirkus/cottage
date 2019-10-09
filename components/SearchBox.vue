@@ -108,7 +108,10 @@ export default {
   right: 2rem;
   top: 2rem;
   z-index: 5;
-  background-color: var(--menu-overlay);
+  height: 2rem;
+  background-color: rgba(255, 255, 255, .92);
+  box-shadow: 0 16px 24px 0 rgba(118,143,255,.2);
+  border: 1px solid #EDF2F7;
 }
 .search__box {
   width: 0;
@@ -117,8 +120,9 @@ export default {
   color: var(--text-color);
   display: inline-block;
   border: none;
-  border-bottom: 2px dashed transparent;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 550;
+  font-family: var(--font-mono);
   line-height: 2rem;
   margin-left: auto;
   padding: 0 0.5rem 0 2rem;
