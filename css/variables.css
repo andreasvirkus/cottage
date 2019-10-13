@@ -5,8 +5,6 @@
   --link-color: #333;
   --link-color__hover: #7c73fe;
   --blog-post-divider: linear-gradient(90deg, #0ec1f6, #8823de);
-  --accent-color: cornflowerblue;
-  --text-color: #2c3e50;
 
   /*New variables*/
   --color-accent: #A29BFE;
@@ -37,7 +35,6 @@
   --font-mono: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", Courier, monospace;
   --bg-border: 0.85em;
 
-  --accent-color: cornflowerblue;
   --dark-accent-color: #a29bfe;
   --border-color: #a29bfe;
   --code-bg-color: #282c34;
