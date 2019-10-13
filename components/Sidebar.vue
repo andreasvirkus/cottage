@@ -260,10 +260,10 @@ export default {
     z-index: 4;
     width: 2rem;
     height: 2rem;
-    background-color: rgba(255, 255, 255, .92);
+    background-color: rgba(255, 255, 255, .95);
     padding: .5rem;
-    box-shadow: 0 16px 24px 0 rgba(118,143,255,.2);
-    border: 1px solid #EDF2F7;
+    box-shadow: 0 16px 24px 0 rgba(118, 143, 255, .2);
+    border: 1px solid #DBE5EF;
   }
 
   .menu__line {

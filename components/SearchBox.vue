@@ -5,6 +5,7 @@
       ref="input"
       aria-label="Search"
       autocomplete="off"
+      placeholder="e.g. about"
       spellcheck="false"
       class="search__box"
       @focus="focused = true"
@@ -110,26 +111,23 @@ export default {
   z-index: 5;
   height: 2rem;
   background-color: rgba(255, 255, 255, .92);
-  box-shadow: 0 16px 24px 0 rgba(118,143,255,.2);
-  border: 1px solid #EDF2F7;
+  box-shadow: 0 16px 24px 0 rgba(118, 143, 255, .2);
+  border: 1px solid #DBE5EF;
 }
 .search__box {
   width: 0;
   left: 1rem;
   cursor: pointer;
-  color: var(--text-color);
+  color: var(--content-color);
   display: inline-block;
   border: none;
   font-size: 0.85rem;
   font-weight: 550;
   font-family: var(--font-mono);
-  line-height: 2rem;
-  margin-left: auto;
-  padding: 0 0.5rem 0 2rem;
+  padding: 0 0 0 2rem;
   outline: none;
   transition: width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55), border-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background: url("/svg/search.svg") 0.6rem 0.5rem no-repeat;
-  background-size: 1rem;
+  background: url("/svg/search.svg") 0.6rem 0.55rem no-repeat;
   will-change: width;
 }
 .search__box:focus {
@@ -155,7 +153,7 @@ export default {
   z-index: 5;
 }
 .search__link {
-  color: var(--text-color);
+  color: var(--content-color);
 }
 .search__suggestion-title {
   font-weight: 600;
@@ -168,7 +166,7 @@ export default {
   background-color: rgba(220,220,220,0.4);
 }
 .search__link.-focused {
-  color: var(--accent-color);
+  color: var(--color-accent);
 }
 @media (max-width: 70rem) {
   .search__suggestions {
