@@ -41,6 +41,9 @@
 export default {
   name: 'sidebar',
   data () {
+    const emojis = ['👾', '😶', '🐨', '🐹', '🦊', '🧙‍♂️', '🚀']
+    const homeLabel = emojis[Math.floor(Math.random() * emojis.length)]
+
     return {
       menu: null,
       open: false,
@@ -49,7 +52,7 @@ export default {
       paths: [],
       links: [
         {
-          label: '👾',
+          label: homeLabel,
           path: '/'
         },
         {
@@ -193,11 +196,11 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 2rem 2rem 2rem 3.5rem;
+  padding: 2rem 0;
   margin-top: 6vh;
 }
 .menu__link {
-  padding: 1em 0;
+  padding: 1rem 2rem 1rem 3.5rem;
   cursor: pointer;
   flex-grow: 1;
 }
@@ -211,7 +214,7 @@ export default {
   width: 6px;
   height: 2.75rem;
   background-color: var(--color-background);
-  transform: translateY(calc(var(--activeIndex, 0) * 3.5625rem));
+  transform: translateY(calc(var(--activeIndex, 0) * 3.25rem));
   transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 

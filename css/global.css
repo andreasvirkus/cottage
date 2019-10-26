@@ -67,6 +67,7 @@ footer p a {
   font-style: italic;
   text-decoration: underline;
   text-decoration-skip-ink: auto;
+  text-decoration-thickness: 2px;
 }
 
 main a:hover,

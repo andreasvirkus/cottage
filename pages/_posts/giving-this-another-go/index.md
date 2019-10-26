@@ -11,8 +11,7 @@ whole writing show another go (maybe it'll go easier with rhyming involved).
 
 I feel I'll need something more than mere promises this time around, though, if
 I am to make this habit stick. Therefore, I'm starting off with a
-[series] (`Will Link Soon™`).
-<!-- (/thoughts/open-your-mouth-part-1). -->
+[series](/thoughts/open-your-mouth-part-1).
 
 I've agreed to give my first public talk at the end of November (in just 2 months!)
 and think this'll be an excellent journey to document. You'll find more details
