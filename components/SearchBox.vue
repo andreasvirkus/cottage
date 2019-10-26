@@ -111,8 +111,9 @@ export default {
   z-index: 5;
   height: 2rem;
   background-color: rgba(255, 255, 255, .92);
-  box-shadow: 0 16px 24px 0 rgba(118, 143, 255, .2);
-  border: 1px solid #DBE5EF;
+  box-shadow: 0px 2px 6px rgba(45, 55, 72, 0.05),
+    0px 6px 15px rgba(45, 55, 72, 0.1);
+  border: 2px dashed #223;
 }
 .search__box {
   width: 0;
@@ -163,10 +164,7 @@ export default {
   margin-left: 0.25em;
 }
 .search__suggestion.-focused {
-  background-color: rgba(220,220,220,0.4);
-}
-.search__link.-focused {
-  color: var(--color-accent);
+  background-color: rgba(220,220,220,0.55);
 }
 @media (max-width: 70rem) {
   .search {
