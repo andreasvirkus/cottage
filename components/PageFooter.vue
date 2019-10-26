@@ -58,10 +58,15 @@ export default {
   font-size: .9em;
 }
 
-@media screen and (max-width: 35em) {
+@media screen and (max-width: 35rem) {
   .site-footer {
     padding-right: 1.5rem;
     font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 74rem) {
+  .site-footer {
+    margin-bottom: 5.5rem;
   }
 }
 </style>
