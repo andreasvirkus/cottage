@@ -27,7 +27,22 @@ export default ({ router, setHead, setRootComponent }) => {
       loaded[to.path] = true
       // Stop progress bar after entering page
       nprogress.done()
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     })
+
+    router.scrollBehavior = (to, from, savedPosition) => {
+      if (to.hash) {
+        return { selector: to.hash }
+      } else if (savedPosition) {
+        return savedPosition
+      } else {
+        return { x: 0, y: 0 }
+      }
+    }
   }
 
   setHead(vm => ({
@@ -36,6 +51,14 @@ export default ({ router, setHead, setRootComponent }) => {
         rel: 'icon',
         type: 'image/png',
         href: '/icons/icon-128x128.png'
+      }
+    ],
+    link: [
+      {
+        rel: 'alternate',
+        type: 'application/rss+xml',
+        title: 'Cottage - Thoughts of andreas virkus',
+        href: 'https://andreasvirkus.me/rss2.xml'
       }
     ]
   }))

@@ -116,15 +116,11 @@ export default {
     background: #fff;
     border: 15px solid #223;
     border-top: none;
+    box-shadow: 0px -4px 6px rgba(45, 55, 72, 0.1),
+      0px -4px 4px rgba(45, 55, 72, 0.06);
   }
   .menu::before {
-    height: 3px;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 80vw;
-    max-width: 35rem;
+    content: none;
   }
   .menu__list {
     flex-direction: row;

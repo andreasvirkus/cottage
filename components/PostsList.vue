@@ -57,6 +57,11 @@ export default {
   flex-shrink: 0;
   padding-left: 7px;
 }
+.posts__item {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipses;
+}
 
 @media (max-width: 70rem) {
   .posts__links {

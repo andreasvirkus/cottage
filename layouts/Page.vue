@@ -25,14 +25,6 @@ export default {
           name: 'description',
           content: description || excerpt || this.$siteConfig.description
         }
-      ],
-      link: [
-        {
-          rel: 'alternate',
-          type: 'application/rss+xml',
-          title: 'Cottage - Thoughts of andreas virkus',
-          href: 'https://andreasvirkus.me/rss2.xml'
-        }
       ]
     }
   }
