@@ -142,6 +142,7 @@ export default {
   }
   .router-link-exact-active {
     border-color: var(--color-accent);
+    font-weight: 600;
   }
   .menu__blob {
     opacity: 0;
