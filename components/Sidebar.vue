@@ -214,6 +214,7 @@ export default {
   right: -.25rem;
   width: 6px;
   height: 2.75rem;
+  border-radius: 3px;
   background-color: var(--color-background);
   transform: translateY(calc(var(--activeIndex, 0) * 3rem));
   transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -236,7 +237,8 @@ export default {
 }
 
 @media screen and (max-width: 74rem) {
-  .menu {
+  /* Old menu styles */
+  /*.menu {
     top: 2rem;
     transform: translateX(-185px);
   }
@@ -272,7 +274,7 @@ export default {
 
   .menu__line {
     background-color: var(--menu-color);
-    height: 3px; /* old style */
+    height: 3px; // old style
     height: 2px;
     transition: transform 0.25s ease-in-out 0.3s,
       width 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
@@ -314,7 +316,7 @@ export default {
     transform: translateX(0);
   }
 
-  /* Menu background overlay */
+  // Menu background overlay
   .menu--open::after {
     background-color: var(--menu-overlay);
     pointer-events: inherit;
@@ -322,6 +324,42 @@ export default {
   .menu.menu--open + main {
     opacity: 0.6;
     pointer-events: none;
+  }*/
+
+  /* New menu (fixed bottom bar) */
+  .menu {
+    bottom: 0;
+    top: initial;
+    height: auto;
+    width: 100vw;
+  }
+  .menu::before {
+    height: 3px;
+    top: 0;
+    left: 10vw;
+    width: 80vw;
+  }
+  .menu__list {
+    flex-direction: row;
+    width: 100%;
+    background: #fff;
+    border: 15px solid #223;
+    border-top: none;
+    padding: 0 1rem;
+    margin: 0;
+  }
+  .menu__link {
+    flex: 1;
+    font-size: .875rem;
+    padding: 1rem .5rem;
+  }
+  .menu__blob {
+    top: -.125rem;
+    height: 6px;
+    right: initial;
+    left: 2rem;
+    width: 2rem;
+    transform: translateX(calc(var(--activeIndex, 0) * 4rem));
   }
 }
 

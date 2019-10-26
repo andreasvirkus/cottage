@@ -169,8 +169,8 @@ export default {
   color: var(--color-accent);
 }
 @media (max-width: 70rem) {
-  .search__suggestions {
-    width: 70vw;
+  .search {
+    display: none;
   }
 }
 </style>
