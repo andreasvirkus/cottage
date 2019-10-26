@@ -203,6 +203,7 @@ export default {
   padding: 1rem 2rem 1rem 3.5rem;
   cursor: pointer;
   flex-grow: 1;
+  line-height: 1;
 }
 .menu__handle {
   display: none;
@@ -214,7 +215,7 @@ export default {
   width: 6px;
   height: 2.75rem;
   background-color: var(--color-background);
-  transform: translateY(calc(var(--activeIndex, 0) * 3.25rem));
+  transform: translateY(calc(var(--activeIndex, 0) * 3rem));
   transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 

@@ -3,6 +3,8 @@ title: Giving this another go
 layout: Post
 description: Getting into the groove of writing regularly
 date: 2019-10-06
+tags:
+  - learning
 ---
 
 Taking a chapter from the book of [Max Böck](https://mxb.dev/blog/good-enough/),

@@ -1,13 +1,15 @@
 ---
-title: Open your mouth - part I
+title: Open your mouth - part Ⅰ
 layout: Post
 description: Public speaking is a great form of learning through sharing - so let me share my first experience
 date: 2019-10-26
+tags:
+  - talking
 ---
 
 <div style="font-size: .875rem">
 
-**Note** _This post is rather a prologue than a part 1 to the series.
+**Note** _This post is rather a prologue than a first part to the series.
 Feel free to skip to the next post ([Topic](/thoughts/open-your-mouth-part-2-topic)) if some backstory and ranting doesn't interest you._
 
 </div>

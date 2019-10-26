@@ -3,6 +3,9 @@ title: Building dashboards for your site
 layout: Post
 description: I'll go through setting up these dashboards that I don't have yet.
 date: 2017-05-20
+tags:
+  - learning
+  - javascript
 ---
 
 In this post, I'll go through the approaches that I explored in order to set up my

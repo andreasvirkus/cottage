@@ -3,6 +3,8 @@ title: My site stack
 layout: Post
 description: What this shindig consists of.
 date: 2017-09-03
+tags:
+  - architecture
 ---
 
 I feel like this is the _must-have_ first post for every/any developer

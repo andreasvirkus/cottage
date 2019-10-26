@@ -3,6 +3,8 @@ title: Testing typography styles
 layout: Post
 description: Styling code and quote blocks and other various typography bits.
 date: 2017-06-24
+tags:
+  - css
 ---
 
 Every now and then, a blog will come across a need to quote someone or maybe
@@ -39,6 +41,10 @@ And a content link style with sexy underlines - [Gargoyle Gigglypuff jamming it 
 - List
 - Of
 - Sorts
+
+1. And an ordered
+2. List with
+3. Some numbers
 
 A default line separator, which I like using a little too often
 
