@@ -76,6 +76,7 @@ footer p a {
   font-weight: 600;
   font-style: italic;
   text-decoration: underline;
+  text-decoration-style: dashed;
   text-decoration-skip-ink: auto;
   text-decoration-thickness: 2px;
 }
@@ -83,6 +84,7 @@ footer p a {
 main a:hover,
 footer p a:hover {
   color: var(--link-color__hover);
+  text-decoration-style: solid;
 }
 
 img {
@@ -134,9 +136,11 @@ blockquote p:last-child {
 }
 
 code {
-  padding: 0 .25rem;
-  background-color: #f2e8e5;
-  color: #4a4a71;
+  padding: .125rem .25rem;
+  background-color: var(--color-light-1);
+  color: #c7254e;
+  font-size: 90%;
+  border-radius: .25rem;
   user-select: all;
 }
 
