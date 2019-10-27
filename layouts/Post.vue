@@ -16,7 +16,7 @@
       <slot name="default"/>
 
       <footer class="blog__footer">
-        <p>Thanks for giving this a read 🖖</p>
+        <p>&ndash; Thanks for giving this a read 🖖</p>
         <template v-if="page.prevPost || page.nextPost">
           <hr class="blog__divider" />
           <div class="page-nav">
@@ -85,10 +85,6 @@ export default {
 </script>
 
 <style>
-.blog__divider {
-  background-color: var(--blog-post-divider);
-  background-image: var(--blog-post-divider);
-}
 .blog__stats {
   display: flex;
   justify-content: space-between;
@@ -108,7 +104,7 @@ export default {
   font-style: italic;
 }
 .blog__footer {
-  margin-top: 4.5rem;
+  margin-top: 3.5rem;
 }
 .page-nav {
   display: flex;
