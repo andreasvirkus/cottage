@@ -9,8 +9,15 @@ tags:
 ---
 
 Welcome back to my journey of giving my first ever public talk.
+In order for me to give a talk, I'll need something to talk about.
+My instinct & common sense tells me that people will find your talk
+more attractive and easier to listen to when you're passionate
+about the topic.
 
-Today we'll be talking about how to pick a topic for a talk.
+Ideally, you'd want to convey a message and not just a technical detail.
+
+Do not be afraid of the questions in the end - take them as
+a vibrant community discussion (where you just happen to be able to help out)
 
 
 > I've always felt that a person's intelligence is directly reflected by the number of conflicting points of view he can entertain simultaneously on the same topic.

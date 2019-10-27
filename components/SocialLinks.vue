@@ -1,14 +1,15 @@
 <template>
   <div class="social">
     <ul class="social__list">
-      <li class="social__icon" v-for="link in links">
-        <a class="social__link fuzzy-interact"
+      <li v-for="link in links" :key="link.name">
+        <a class="social__link fuzzy-interact foxy-box"
           :href="link.link"
           :title="link.alt"
           :rel="link.rel"
           :type="link.type"
           :target="link.type ? '_blank' : null">
           <img :alt="link.name"
+            class="social__icon"
             :src="`/svg/${link.name.toLowerCase().replace('-', '')}.svg`">
         </a>
       </li>
@@ -58,23 +59,21 @@ export default {
 
 <style>
 .social__list {
-    text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin-top: 0;
 }
-
 .social__icon {
-    display: inline-block;
-}
-.social__icon + .social__icon {
-    margin-left: 2em;
+  width: 1.4rem;
+  height: auto;
 }
 .social__link {
-    position: relative;
-    color: transparent;
-    font-size: 0;
-}
-
-.social__link img {
-    width: 30px;
-    height: auto;
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  font-size: 0;
+  padding: .5rem;
+  margin-left: 1rem;
 }
 </style>

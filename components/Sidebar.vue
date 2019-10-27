@@ -94,10 +94,14 @@ export default {
   cursor: pointer;
   flex-grow: 1;
   line-height: 1;
+  transition: transform .2s ease-out;
+}
+.menu__link:hover {
+  transform: translateX(.75rem);
 }
 .menu__blob {
   position: absolute;
-  top: 2.75rem;
+  top: 2.45rem;
   right: -.25rem;
   width: 6px;
   height: 2.75rem;
