@@ -1,7 +1,7 @@
 ---
-title: Open your mouth - part Ⅱ
+title: open your mouth - part Ⅱ
 layout: Post
-description: Choose a topic you are passionate about and share the passion
+description: choose a topic you are passionate about and share the passion
 date: 2019-10-30
 draft: true
 tags:

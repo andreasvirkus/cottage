@@ -1,7 +1,7 @@
 ---
-title: Testing typography styles
+title: testing typography styles
 layout: Post
-description: Styling code and quote blocks and other various typography bits.
+description: styling code and quote blocks and other various typography bits
 date: 2017-06-24
 tags:
   - css

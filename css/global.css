@@ -102,6 +102,15 @@ hr,
   box-shadow: 5px 5px 0 -1px
     hsl(151, 62%, 79%);
 }
+.-padded-s {
+  padding: .5rem;
+}
+.-padded-m {
+  padding: 1rem;
+}
+.-padded-l {
+  padding: 2rem;
+}
 
 h1 {
   margin-bottom: 2.5rem;

@@ -1,7 +1,7 @@
 ---
-title: Open your mouth - part Ⅰ
+title: open your mouth - part Ⅰ
 layout: Post
-description: Public speaking is a great form of learning through sharing - so let me share my first experience
+description: public speaking is a great form of learning through sharing - so let me share my first experience
 date: 2019-10-26
 tags:
   - talking

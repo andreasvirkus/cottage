@@ -1,7 +1,7 @@
 ---
-title: My site stack
+title: my site stack
 layout: Post
-description: What this shindig consists of.
+description: what this shindig consists of
 date: 2017-09-03
 tags:
   - architecture
