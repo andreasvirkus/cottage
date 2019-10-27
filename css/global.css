@@ -90,11 +90,15 @@ img {
 }
 
 hr {
-  height: 3px;
-  border: none;
-  background-color: var(--default-divider);
-  background-image: var(--default-divider);
+  height: 10px;
   isolation: isolate;
+}
+hr,
+.foxy-box {
+  border: 2px solid rgb(17, 17, 17);
+  border-radius: 14px;
+  box-shadow: 5px 5px 0 -1px
+    hsl(151, 62%, 79%);
 }
 
 h1 {
@@ -134,13 +138,6 @@ code {
   background-color: #f2e8e5;
   color: #4a4a71;
   user-select: all;
-}
-
-.foxy-box {
-  border: 2px solid rgb(17, 17, 17);
-  border-radius: 14px;
-  box-shadow: 5px 5px 0 -1px
-    hsl(151, 62%, 79%);
 }
 
 @keyframes fuzzy {
