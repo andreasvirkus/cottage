@@ -136,6 +136,13 @@ code {
   user-select: all;
 }
 
+.foxy-box {
+  border: 2px solid rgb(17, 17, 17);
+  border-radius: 14px;
+  box-shadow: 5px 5px 0 -1px
+    hsl(151, 62%, 79%);
+}
+
 @keyframes fuzzy {
   0% {
     filter: url("#turbulence-1");

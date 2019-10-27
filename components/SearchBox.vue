@@ -1,5 +1,5 @@
 <template>
-  <div class="search">
+  <div class="search foxy-box">
     <input
       v-model="query"
       ref="input"
@@ -110,10 +110,6 @@ export default {
   top: 2rem;
   z-index: 5;
   height: 2rem;
-  background-color: rgba(255, 255, 255, .92);
-  box-shadow: 0px 2px 6px rgba(45, 55, 72, 0.05),
-    0px 6px 15px rgba(45, 55, 72, 0.1);
-  border: 2px dashed #223;
 }
 .search__box {
   width: 0;
