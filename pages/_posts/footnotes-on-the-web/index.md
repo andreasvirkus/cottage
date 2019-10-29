@@ -13,13 +13,23 @@ tags:
 ---
 
 **Note** <span style="font-size:85%">_This article uses the very technique described. Feel free to `Inspect` along!\
-Note that for example purposes, all external links are footnotes, but this shouldn't
-be their use case._</span>
+For example purposes, all external links are also footnotes, but this shouldn't
+be their actual use case._</span>
 
-I recently found a nifty `:target` trick by [CSS-Tricks](https://www.instagram.com/p/B38OLOjgGPO/)
+I recently found a nifty
+<a aria-describedby="footnote-label"
+  id="note-ref-target-pseudo-class"
+  href="#note-target-pseudo-class"
+  saber-ignore>`:target`</a>
+trick by [CSS-Tricks](https://www.instagram.com/p/B38OLOjgGPO/)
 and decided to play around with the technique. Googling for other footnote techniques,
 I stumbled upon a [Sitepoint article](https://www.sitepoint.com/accessible-footnotes-css/)
-that uses [CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters). This article is about putting those two techniques together (with a bit of my own flair ontop).
+that uses
+<a aria-describedby="footnote-label"
+  id="note-ref-css-counters"
+  href="#note-css-counters"
+  saber-ignore>CSS counters</a>.
+This article is about putting those two techniques together (with a bit of my own flair ontop).
 
 ## The `:target` trick
 
@@ -85,11 +95,32 @@ We then display the counter value in a pseudo-element, since a pseudo-element's
   <a aria-describedby="footnote-label" href="#footnotes">offal</a> lyft cloud bread. Wayfarers direct trade listicle, actually synth af cred tousled edison bulb
   <a aria-describedby="footnote-label" href="#footnotes">meditation</a> brooklyn pug. Single-origin coffee live-edge microdosing tbh truffaut ethical, disrupt bicycle rights. Distillery cred polaroid meditation keffiyeh glossier. Meh lo-fi deep v hell of authentic.
 
-
   <footer>
     footnotes here!
   </footer>
 </section>
+
+<footer class="-space-top">
+  <em>Footnotes:</em>
+  <ol class="footnotes">
+    <li id="note-target-pseudo-class"><code>:target</code> is a CSS pseudo-class selector -
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">MDN docs</a>
+      (<span class="emoji">☝️</span>
+      <a href="#note-ref-target-pseudo-class"
+        aria-label="Back to content"
+        saber-ignore>
+      back up</a>)
+    </li>
+    <li id="note-css-counters">CSS counters are custom iterations of list markers
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">MDN docs</a>
+      (<span class="emoji">☝️</span>
+      <a href="#note-ref-css-counters"
+        aria-label="Back to content"
+        saber-ignore>
+      back up</a>)
+    </li>
+  </ol>
+</footer>
 
 <style>
 article {
@@ -101,6 +132,9 @@ a[aria-describedby="footnote-label"] {
   text-decoration: none;
   color: inherit;
   outline: none;
+}
+a[aria-describedby="footnote-label"]:target {
+  animation: highlight 3s;
 }
 
 /**
@@ -127,5 +161,14 @@ a[aria-describedby="footnote-label"]::after {
 a[aria-describedby="footnote-label"]:focus::after {
   outline: thin dotted;
   outline-offset: 2px;
+}
+
+.footnotes :target {
+  animation: highlight 2.75s;
+}
+
+@keyframes highlight {
+  from { outline: 10px solid cornflowerblue; }
+  to { outline: 10px solid transparent; }
 }
 </style>

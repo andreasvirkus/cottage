@@ -111,6 +111,9 @@ hr,
 .-padded-l {
   padding: 2rem;
 }
+.-space-top {
+  margin-top: 1.5rem;
+}
 
 h1 {
   margin-bottom: 2.5rem;
