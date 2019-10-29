@@ -12,9 +12,11 @@ tags:
 #- Change all references for footnotes in this article
 ---
 
-**Note** <span style="font-size:85%">_This article uses the very technique described. Feel free to `Inspect` along!\
-For example purposes, all external links are also footnotes, but this shouldn't
-be their actual use case._</span>
+**Note** <span style="font-size:85%">_This article uses the very technique described.\
+  Feel free to <a aria-describedby="footnote-label"
+  id="note-ref-inspect"
+  href="#note-inspect"
+  saber-ignore><code>Inspect</code></a> along!_</span>
 
 I recently found a nifty
 <a aria-describedby="footnote-label"
@@ -103,6 +105,14 @@ We then display the counter value in a pseudo-element, since a pseudo-element's
 <footer class="-space-top">
   <em>Footnotes:</em>
   <ol class="footnotes">
+    <li id="note-inspect">Right-click > Inspect will open up your browser's
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">Developer tools</a>
+      (<span class="emoji">☝️</span>
+      <a href="#note-ref-inspect"
+        aria-label="Back to content"
+        saber-ignore>
+      back up</a>)
+    </li>
     <li id="note-target-pseudo-class"><code>:target</code> is a CSS pseudo-class selector -
       <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">MDN docs</a>
       (<span class="emoji">☝️</span>
