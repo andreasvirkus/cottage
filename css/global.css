@@ -156,6 +156,10 @@ code {
   user-select: all;
 }
 
+pre[class*="language-"] {
+  border-radius: 5px;
+}
+
 @keyframes fuzzy {
   0% {
     filter: url("#turbulence-1");

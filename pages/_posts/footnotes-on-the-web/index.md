@@ -12,7 +12,7 @@ tags:
 #- Change all references for footnotes in this article
 ---
 
-**Note** <span style="font-size:85%">_This article uses the very technique described.\
+**Note** <span style="font-size:85%">_This article uses the very technique described.
   Feel free to <a aria-describedby="footnote-label"
   id="note-ref-inspect"
   href="#note-inspect"
@@ -33,7 +33,7 @@ that uses
   saber-ignore>CSS counters</a>.
 This article is about putting those two techniques together (with a bit of my own flair ontop).
 
-## The `:target` trick
+## 1. The `:target` trick
 
 The gist of it is to use regular anchor links (`<a>`) and the browser's ability to scroll
 to a matching [fragment ID](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
@@ -47,11 +47,8 @@ to take them to that anchor, the `:target` selector's styles will be applied.
 
 <h3 id="demo-target">Demo 👇</h3>
 
-Link to <a href="#target-styles-demo" saber-ignore>Section 42</a> will style it via the `:target` pseudo-class
-once clicked.
-
-(Amazing ipsum by [hipsum](https://hipsum.co))\
-Lorem ipsum dolor amet schlitz austin 90's banh mi DIY affogato street art banjo. Taxidermy chartreuse ethical kickstarter. Tacos farm-to-table jianbing vinyl pork belly, you probably haven't heard of them chicharrones vegan tofu fixie gluten-free. Keffiyeh next level banjo 90's four dollar toast taiyaki. Vaporware leggings shabby chic quinoa.
+Link to <a href="#target-styles-demo" saber-ignore>Section 42</a> will
+style it via the `:target` pseudo-class once clicked.
 
 ```css
 #target-styles-demo:target {
@@ -75,9 +72,9 @@ Lorem ipsum dolor amet schlitz austin 90's banh mi DIY affogato street art banjo
 
 We can then leverage this "active fragment" styling to highlight the relevant footnote.
 
-## The CSS counter
+## 2. The CSS counter
 
-I really like this one, as I rarely see a great use for CSS counters outside
+I really like this one, as I rarely see a great use-case for CSS counters outside
 lists and I always find them super nifty! I find that counters make perfect sense
 for footnotes and they almost seem made to fit for this very purpose.
 
@@ -86,21 +83,93 @@ and then assigning our CSS counter to that. Free accessibility bonus!
 We then display the counter value in a pseudo-element, since a pseudo-element's
 `content` property can access the counter and display its value.
 
-<section class="foxy-box -padded-m">
+```css
+/* Let's create a counter on a wrapper element */
+article {
+  counter-reset: footnotes;
+}
+/* Here we increment the counter for every footnote reference */
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+/**
+ * Actual numbered references
+ * 1. Display the current state of the counter (e.g. `[1]`)
+ * 2. Style text as superscript
+ */
+a[aria-describedby="footnote-label"]::after {
+  content: '[' counter(footnotes) ']';
+  vertical-align: super;
+  font-size: 0.5em;
+  margin-left: 2px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
-  <h3 id="demo-counter">Demo 👇</h3>
+a[aria-describedby="footnote-label"]:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+```
 
-  <a aria-describedby="footnote-label" href="#footnotes">Some footnote</a> and words.
+Here's the HTML for the footnote references we sprinkle into our content
+<span style="font-size: 85%">(we give it an `id` so we could link back to it from the footnotes - providing
+the user a way to jump back right where they left off)</span>
+```html
+<a aria-describedby="footnote-label"
+  id="note-ref-target-pseudo-class"
+  href="#note-target-pseudo-class">Section 42</a>
+```
 
-  Whatever hella wayfarers kombucha. Hammock butcher hoodie, 90's swag crucifix enamel pin chambray master cleanse brooklyn viral gluten-free.
-  <a aria-describedby="footnote-label" href="#footnotes">Biodiesel</a> jean shorts chartreuse, schlitz pitchfork try-hard
-  <a aria-describedby="footnote-label" href="#footnotes">offal</a> lyft cloud bread. Wayfarers direct trade listicle, actually synth af cred tousled edison bulb
-  <a aria-describedby="footnote-label" href="#footnotes">meditation</a> brooklyn pug. Single-origin coffee live-edge microdosing tbh truffaut ethical, disrupt bicycle rights. Distillery cred polaroid meditation keffiyeh glossier. Meh lo-fi deep v hell of authentic.
+## 3. Indicating active footnote
 
-  <footer>
-    footnotes here!
-  </footer>
-</section>
+With almost all the pieces in place, we can now add a touch of magic
+so that the user would know what footnote they were taken to (and vice-versa
+when throwing them back into content).
+
+If you haven't already experimented, click on
+<a aria-describedby="footnote-label"
+  id="note-ref-highlight"
+  href="#note-highlight"
+  saber-ignore>this footnote</a> to see the effect.
+
+```css
+/* Inline footnotes */
+a[aria-describedby="footnote-label"]:target {
+  animation: highlight 3s;
+}
+
+/* Wrapper of your footnotes */
+footer :target {
+  animation: highlight 2.75s;
+}
+
+@keyframes highlight {
+  from { outline: 10px solid cornflowerblue; }
+  to { outline: 10px solid transparent; }
+}
+```
+
+### Bonus:
+
+I'm including a "back to top" link with every footnote in our footer.
+
+---
+
+## Issues
+
+Turns out SPAs have a hard time with this, since the HTML5 History API's
+`pushState()` method does not active the `:target` selector's styles.
+
+## Practicality
+
+
+---
+
 
 <footer class="-space-top">
   <em>Footnotes:</em>
@@ -125,6 +194,13 @@ We then display the counter value in a pseudo-element, since a pseudo-element's
       <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">MDN docs</a>
       (<span class="emoji">☝️</span>
       <a href="#note-ref-css-counters"
+        aria-label="Back to content"
+        saber-ignore>
+      back up</a>)
+    </li>
+    <li id="note-highlight">Well... what do you know? It worked ✨
+      (<span class="emoji">☝️</span>
+      <a href="#note-ref-highlight"
         aria-label="Back to content"
         saber-ignore>
       back up</a>)
