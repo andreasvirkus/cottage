@@ -73,16 +73,15 @@ p {
 main a,
 footer p a {
   display: initial;
-  font-weight: 600;
   font-style: italic;
   text-decoration: underline;
   text-decoration-style: dashed;
   text-decoration-skip-ink: auto;
-  text-decoration-thickness: 2px;
 }
 
 main a:hover,
 footer p a:hover {
+  font-weight: 600;
   color: var(--link-color__hover);
   text-decoration-style: solid;
 }
