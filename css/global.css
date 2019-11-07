@@ -72,18 +72,39 @@ p {
 
 main a,
 footer p a {
+  position: relative;
+  overflow: hidden;
   display: initial;
   font-style: italic;
   text-decoration: underline;
-  text-decoration-style: dashed;
   text-decoration-skip-ink: auto;
+  vertical-align: bottom;
+  z-index: 2;
+}
+main a::before,
+footer p a::before {
+  /* TODO: Uncomment this for "marker highlight" anchor styles */
+  /* content: ''; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #a8ebcb;
+  transition: transform 0.2s;
+  transform: translateY(80%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 main a:hover,
 footer p a:hover {
   font-weight: 600;
-  color: var(--link-color__hover);
   text-decoration-style: solid;
+}
+main a:hover::before,
+footer p a:hover::before {
+  transform: translateY(0);
 }
 
 img {
@@ -148,7 +169,7 @@ blockquote p:last-child {
 
 code {
   padding: .125rem .25rem;
-  background-color: var(--color-light-1);
+  background-color: var(--color-light);
   color: #c7254e;
   font-size: 90%;
   border-radius: .25rem;

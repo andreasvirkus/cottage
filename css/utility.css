@@ -15,9 +15,3 @@
 .text__line-through {
   text-decoration: line-through;
 }
-
-hr.divider {
-  height: 3px;
-  background-image: var(--blog-post-divider);
-  border: none;
-}

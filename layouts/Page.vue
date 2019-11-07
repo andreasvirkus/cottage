@@ -30,3 +30,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  .nprogress {
+    height: .75rem;
+    background-color: cornflowerblue;
+  }
+</style>
