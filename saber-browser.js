@@ -1,9 +1,9 @@
 import Wrapper from '@/layouts/Chrome'
+import 'prismjs/themes/prism-tomorrow.css'
+// import 'prismjs/themes/prism.css'
 import '@/css/variables.css'
 import '@/css/global.css'
 import '@/css/utility.css'
-// import 'prismjs/themes/prism.css'
-import 'prismjs/themes/prism-tomorrow.css'
 
 export default ({ router, setHead, setRootComponent }) => {
   setRootComponent(Wrapper)

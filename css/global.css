@@ -176,8 +176,12 @@ code {
   user-select: all;
 }
 
+.saber-highlight {
+  position: relative;
+}
 pre[class*="language-"] {
   border-radius: 5px;
+  background-color: #223;
 }
 
 @keyframes fuzzy {
