@@ -9,7 +9,8 @@ tags:
 ---
 
 Welcome back to my journey of giving my first ever public talk.
-In order for me to give a talk, I'll need something to talk about.
+In order for me to give a talk, I'll need something to talk _about_.
+
 My instinct & common sense tells me that people will find your talk
 more attractive and easier to listen to when you're passionate
 about the topic.
