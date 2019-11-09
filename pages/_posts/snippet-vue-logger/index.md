@@ -1,5 +1,5 @@
 ---
-title: "snippet #1 - Vue Logger"
+title: "snippet #1 - vue vogger"
 layout: Post
 description: Conditional logging - check!
 date: 2019-11-07
