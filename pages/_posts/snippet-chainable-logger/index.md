@@ -2,8 +2,7 @@
 title: "snippet #3 - Chainable Logger"
 layout: Post
 description: Logging is always the missing link of your dev chain
-date: 2019-11-07
-draft: true
+date: 2019-11-08
 tags:
   - snippet
   - javascript
