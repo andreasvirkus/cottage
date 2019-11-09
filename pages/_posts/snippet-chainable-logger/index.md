@@ -30,6 +30,13 @@ Even though the first approach is aesthetic for me personally and reads nicely
 when chained with other Higher-Order Functions (like `.map()`), it has a major
 drawback when it comes to debugging.
 
+This should now be the part where I preach about using your browser's developer
+tools correctly, firing up those breakpoints and stepping through your code.
+But I'm a realist. Either you've never took the time to learn the
+[Debugger]()
+or you're thinking that this quick anomaly _has_ to have a simple reason and
+it's not worth the effort of breakpoints.
+
 ```js
 // A chainable logger
 // https://dev.to/easilybaffled/why-we-make-room-for-console-log-2j52
