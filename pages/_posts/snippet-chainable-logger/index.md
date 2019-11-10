@@ -1,5 +1,5 @@
 ---
-title: "snippet #3 - Chainable Logger"
+title: "snippet #3 - chainable logger"
 layout: Post
 description: Logging is always the missing link of your dev chain
 date: 2019-11-08

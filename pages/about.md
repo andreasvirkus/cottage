@@ -40,7 +40,7 @@ I've also dabbled in other fields (and hope to perfect them in the future), like
 - dockerisation, Kubernetes
 - UX & user flow
 - interaction design
-- Googling for solutions (near master level 💯)
+- Google-fu (near master level 💯)
 
 ## education
 

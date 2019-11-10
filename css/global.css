@@ -63,8 +63,10 @@ main {
   flex: 1;
   padding-left: 3rem;
 }
-
 p {
+  margin: .25rem 0;
+}
+article > p {
   margin-top: 1.85rem;
 }
 
@@ -137,9 +139,11 @@ hr,
 
 h1 {
   margin-bottom: 2.5rem;
+  font-size: 1.75rem;
 }
 h2 {
   margin: 2.5rem 0 1.5rem;
+  font-size: 1.45rem;
 }
 
 blockquote {
