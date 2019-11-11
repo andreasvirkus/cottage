@@ -66,6 +66,7 @@ main {
 p {
   margin: .25rem 0;
 }
+main > p,
 article > p {
   margin-top: 1.85rem;
 }
