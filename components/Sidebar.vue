@@ -96,9 +96,6 @@ export default {
   line-height: 1;
   transition: transform .2s ease-out;
 }
-.menu__link:hover {
-  transform: translateX(.75rem);
-}
 .menu__blob {
   position: absolute;
   top: 2.45rem;
@@ -110,7 +107,11 @@ export default {
   transform: translateY(calc(var(--activeIndex, 0) * 3rem));
   transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
+@media screen and (min-width: 74rem) {
+  .menu__link:hover {
+    transform: translateX(.75rem);
+  }
+}
 @media screen and (max-width: 74rem) {
   .menu {
     bottom: 0;
