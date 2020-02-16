@@ -64,7 +64,7 @@ main {
   padding-left: 3rem;
 }
 p {
-  margin: .25rem 0;
+  margin: 0.25rem 0;
 }
 main > p,
 article > p {
@@ -80,34 +80,15 @@ footer p a {
   display: initial;
   font-style: italic;
   text-decoration: underline;
+  text-decoration-style: wavy;
   text-decoration-skip-ink: auto;
   vertical-align: bottom;
   z-index: 2;
 }
-main a::before,
-footer p a::before {
-  /* TODO: Uncomment this for "marker highlight" anchor styles */
-  /* content: ''; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #a8ebcb;
-  transition: transform 0.2s;
-  transform: translateY(80%);
-  pointer-events: none;
-  z-index: -1;
-}
-
 main a:hover,
 footer p a:hover {
   font-weight: 600;
   text-decoration-style: solid;
-}
-main a:hover::before,
-footer p a:hover::before {
-  transform: translateY(0);
 }
 
 img {
@@ -122,11 +103,10 @@ hr,
 .foxy-box {
   border: 2px solid rgb(17, 17, 17);
   border-radius: 14px;
-  box-shadow: 5px 5px 0 -1px
-    hsl(151, 62%, 79%);
+  box-shadow: 5px 5px 0 -1px hsl(151, 62%, 79%);
 }
 .-padded-s {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 .-padded-m {
   padding: 1rem;
@@ -151,7 +131,7 @@ blockquote {
   position: relative;
   font-style: italic;
   color: #555;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 #004EFF;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 #004eff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,20 +144,20 @@ blockquote {
 }
 
 blockquote p {
-  margin: 0
+  margin: 0;
 }
 
 blockquote p:last-child {
-  font-size: .7em;
+  font-size: 0.7em;
   align-self: flex-end;
 }
 
 code {
-  padding: .125rem .25rem;
+  padding: 0.125rem 0.25rem;
   background-color: var(--color-light);
   color: #c7254e;
   font-size: 90%;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   user-select: all;
 }
 
@@ -224,7 +204,7 @@ pre[class*="language-"] {
     min-height: 60vh;
     transform: translateY(-1.5em);
     padding: 1rem;
-    font-size: 1rem
+    font-size: 1rem;
   }
   main p {
     font-size: 1em;
@@ -234,7 +214,7 @@ pre[class*="language-"] {
     color: #c00;
   }
   h1 {
-    line-height: 1.0;
+    line-height: 1;
     font-size: 2rem;
   }
   blockquote {

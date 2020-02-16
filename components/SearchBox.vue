@@ -1,5 +1,5 @@
 <template>
-  <div class="search foxy-box">
+  <div class="search foxy-box fuzzy-interact">
     <input
       v-model="query"
       ref="input"
@@ -13,20 +13,30 @@
       @keyup.enter="go(focusIndex)"
       @keyup.up="onUp"
       @keyup.down="onDown"
-      @keyup.esc="unfocusSearchBox">
-    <ul class="search__suggestions"
+      @keyup.esc="unfocusSearchBox"
+    />
+    <ul
+      class="search__suggestions"
       v-if="showSuggestions"
-      @mouseleave="unfocus">
-      <li class="search__suggestion" v-for="(s, i) in suggestions"
+      @mouseleave="unfocus"
+    >
+      <li
+        class="search__suggestion"
+        v-for="(s, i) in suggestions"
         :class="{ '-focused': i === focusIndex }"
         :key="s.permalink"
         @mousedown="go(i)"
-        @mouseenter="focus(i)">
-        <saber-link :to="s.permalink"
+        @mouseenter="focus(i)"
+      >
+        <saber-link
+          :to="s.permalink"
           class="search__link"
-          :class="{ '-focused': i === focusIndex }">
+          :class="{ '-focused': i === focusIndex }"
+        >
           <span class="search__suggestion-title">{{ s.title || s.path }}</span>
-          <span v-if="s.header" class="search__suggestion-desc">&gt; {{ s.header.title }}</span>
+          <span v-if="s.header" class="search__suggestion-desc"
+            >&gt; {{ s.header.title }}</span
+          >
         </saber-link>
       </li>
     </ul>
@@ -35,71 +45,71 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      query: '',
+      query: "",
       focused: false,
       focusIndex: 0,
       suggestions: []
-    }
+    };
   },
-  props: ['page'],
+  props: ["page"],
   computed: {
-    showSuggestions () {
-      return (
-        this.focused &&
-        this.suggestions.length
-      )
+    showSuggestions() {
+      return this.focused && this.suggestions.length;
     }
   },
   watch: {
-    async query () {
-      const database = await this.$fetchSearchDatabase()
-      const keyword = this.query
+    async query() {
+      const database = await this.$fetchSearchDatabase();
+      const keyword = this.query;
       // TODO: Also go through the page's headers & tags
-      this.suggestions = database.filter(page =>
-        page.title.includes(keyword) ||
-        page.permalink.includes(keyword) ||
-        page.excerpt.includes(keyword) ||
-        (page.markdownHeadings || []).some(h => h.slug.includes(keyword)))
-        .slice(0, 5)
+      this.suggestions = database
+        .filter(
+          page =>
+            page.title.includes(keyword) ||
+            page.permalink.includes(keyword) ||
+            page.excerpt.includes(keyword) ||
+            (page.markdownHeadings || []).some(h => h.slug.includes(keyword))
+        )
+        .slice(0, 5);
     }
   },
   methods: {
-    onUp () {
+    onUp() {
       if (this.showSuggestions) {
         if (this.focusIndex > 0) {
-          this.focusIndex--
+          this.focusIndex--;
         } else {
-          this.focusIndex = this.suggestions.length - 1
+          this.focusIndex = this.suggestions.length - 1;
         }
       }
     },
-    onDown () {
+    onDown() {
       if (this.showSuggestions) {
         if (this.focusIndex < this.suggestions.length - 1) {
-          this.focusIndex++
+          this.focusIndex++;
         } else {
-          this.focusIndex = 0
+          this.focusIndex = 0;
         }
       }
     },
-    go (i) {
-      this.$router.push(this.suggestions[i].permalink)
-      this.query = ''
-      this.focusIndex = 0
+    go(i) {
+      this.$router.push(this.suggestions[i].permalink);
+      this.query = "";
+      this.focusIndex = 0;
     },
-    focus (i) {
-      this.focusIndex = i
+    focus(i) {
+      this.focusIndex = i;
     },
-    unfocus () {
-      this.focusIndex = -1
+    unfocus() {
+      this.focusIndex = -1;
     },
-    unfocusSearchBox () {
-      this.$refs.input.blur()
+    unfocusSearchBox() {
+      this.$refs.input.blur();
     }
   }
-}
+};
 </script>
 
 <style>
@@ -123,7 +133,8 @@ export default {
   font-family: var(--font-mono);
   padding: 0 0 0 2rem;
   outline: none;
-  transition: width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55), border-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    border-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   background: url("/svg/search.svg") 0.6rem 0.55rem no-repeat;
   will-change: width;
 }
@@ -131,7 +142,7 @@ export default {
   left: 0;
   width: 10rem;
   cursor: auto;
-  border-color: rgba(34,34,51,0.596);
+  border-color: rgba(34, 34, 51, 0.596);
 }
 .search__suggestions {
   background: #fff;
@@ -139,7 +150,7 @@ export default {
   position: absolute;
   top: 1.5rem;
   right: 0;
-  box-shadow: 0 2px 10px -4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px -4px rgba(0, 0, 0, 0.2);
   padding: 0.4rem;
   list-style-type: none;
 }
@@ -160,7 +171,7 @@ export default {
   margin-left: 0.25em;
 }
 .search__suggestion.-focused {
-  background-color: rgba(220,220,220,0.55);
+  background-color: rgba(220, 220, 220, 0.55);
 }
 @media (max-width: 70rem) {
   .search {

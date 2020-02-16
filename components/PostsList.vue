@@ -4,10 +4,13 @@
       <li v-for="post in posts" :key="post.permalink" class="posts__item">
         <saber-link :to="post.permalink" class="posts__link">
           <div class="posts__title">{{ post.title }}</div>
-          <div class="posts__date"
-            :data-short-date="formatPostDate(post.createdAt, true)">
-            <time :datetime="post.createdAt"
-            >{{ formatPostDate(post.createdAt) }}</time>
+          <div
+            class="posts__date"
+            :data-short-date="formatPostDate(post.createdAt, true)"
+          >
+            <time :datetime="post.createdAt">{{
+              formatPostDate(post.createdAt)
+            }}</time>
           </div>
         </saber-link>
       </li>
@@ -16,15 +19,15 @@
 </template>
 
 <script>
-import { formatPostDate }  from '@/util'
+import { formatPostDate } from "@/util";
 
 export default {
-  name: 'posts-list',
+  name: "posts-list",
   props: {
     posts: Array
   },
   methods: { formatPostDate }
-}
+};
 </script>
 
 <style>
@@ -32,23 +35,20 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  font-style: normal;
   margin-top: 2rem;
+  list-style: decimal-leading-zero;
 }
 
 .posts__link {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: .5rem 0;
-  border-bottom: 0;
-  text-align: center;
-  font-style: normal;
+  margin: 0.5rem 0;
 }
 
 .posts__title {
-  position: relative;
   overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -57,29 +57,10 @@ export default {
   flex-shrink: 0;
   padding-left: 7px;
 }
-.posts__item {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipses;
-}
 
 @media (max-width: 70rem) {
-  .posts__links {
-    list-style: none;
-    padding: 0;
-  }
   .posts__date {
     display: none;
-  }
-  .posts__date time {
-    position: fixed;
-    opacity: 0;
-  }
-  .posts__date::before {
-    content: attr(data-short-date);
-  }
-  .posts__title {
-    text-overflow: ellipsis;
   }
 }
 </style>
