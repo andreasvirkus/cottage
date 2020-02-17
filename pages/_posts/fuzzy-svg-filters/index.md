@@ -115,3 +115,5 @@ And now we can apply the filters with CSS:
 <div>And it works on <em>any</em> content:
   <button type="button" class="foxy-box fuzzy-interact -padded-m">Fuzzy Button 🐨</button>
 </div>
+
+**Edit**: I also found a very clever use of this technique by Lucas Bebber: [Squiggly Text](https://codepen.io/lbebber/pen/KwGEQv) on CodePen, that I feel is worth highlighting!
