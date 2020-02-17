@@ -2,7 +2,7 @@
 title: "do your pixels justice"
 layout: Post
 description: Respect your elders. I mean... your pixels!
-date: 2020-02-17
+date: 2020-02-16
 tags:
   - javascript
 ---

@@ -170,6 +170,8 @@ export default {
     position: absolute;
     z-index: -1;
     bottom: 1rem;
+    left: 0;
+    right: 0;
   }
 }
 </style>
