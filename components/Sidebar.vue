@@ -173,5 +173,18 @@ export default {
     left: 0;
     right: 0;
   }
+  @keyframes animateWave {
+    0% {
+      transform: scale(1, 0);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+  .menu__waves > svg {
+    display: block;
+    transform-origin: bottom;
+    animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
 }
 </style>
