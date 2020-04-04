@@ -1,13 +1,18 @@
 <template>
-  <nav class="posts content" role="navigation">
-    <ol reversed class="posts__links">
-      <li v-for="post in posts" :key="post.permalink" class="posts__item">
-        <saber-link :to="post.permalink" class="posts__link">
-          <div class="posts__title">{{ post.title }}</div>
-          <div class="posts__date" :data-short-date="formatPostDate(post.createdAt, true)">
+  <nav class="content" role="navigation">
+    <ol reversed :class="$style.links">
+      <li v-for="post in posts" :key="post.permalink" :class="$style.item">
+        <saber-link :to="post.permalink" :class="$style.link">
+          <div :class="$style.title">{{ post.title }}</div>
+          <div :class="$style.subtitle" :data-short-date="formatPostDate(post.createdAt, true)">
             <time :datetime="post.createdAt">{{ formatPostDate(post.createdAt) }}</time>
+
+            <span :class="$style.tags">
+              <code v-for="tag in post.tags" :key="tag">{{ tag }}</code>
+            </span>
           </div>
         </saber-link>
+        <div v-html="post.excerpt"></div>
       </li>
     </ol>
   </nav>
@@ -25,8 +30,8 @@ export default {
 }
 </script>
 
-<style>
-.posts__links {
+<style module>
+.links {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -34,30 +39,30 @@ export default {
   list-style: decimal-leading-zero;
 }
 
-.posts__link {
+.link {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 0.5rem 0;
+  margin-top: 2rem;
   border-color: transparent;
   box-shadow: none;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+.link:hover {
+  background: none;
+}
+.link code + code {
+  margin-left: 0.5rem;
 }
 
-.posts__title {
+.title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-.posts__date {
-  margin-left: auto;
-  flex-shrink: 0;
-  padding-left: 7px;
-}
-
-@media (max-width: 70rem) {
-  .posts__date {
-    display: none;
-  }
+.subtitle {
+  font-size: 14px;
 }
 </style>
