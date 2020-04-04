@@ -1,5 +1,5 @@
 ---
-title: "javascript bookmarklets"
+title: 'javascript bookmarklets'
 layout: Post
 description: Bring back bookmarklets to enhance your browsing experience
 date: 2020-02-16
@@ -7,7 +7,7 @@ tags:
   - javascript
 ---
 
-Here's something novel: using JavaScript bookmarklets to enhance your web experience.
+Here's something novel: using [JavaScript bookmarklets](https://en.m.wikipedia.org/wiki/Bookmarklet) to enhance your web experience.
 Since a bookmark follows the spec of an HTML anchor element's `href` attribute, then you can execute
 inline JavaScript in it, same as you could write:
 
@@ -31,24 +31,24 @@ https://www.youtuberepeat.com/watch?v=YDWEz1mia1I
 Now let's automate it via a bookmarklet. We'll start off with a self-invoking method:
 
 ```js
-(() => {
-  const id = location.search.split("v=")[1];
-  location.href = `https://youtuberepeat.com?v=${id}`;
-})();
+;(() => {
+  const id = location.search.split('v=')[1]
+  location.href = `https://youtuberepeat.com?v=${id}`
+})()
 ```
 
 And since browsers usually don't like whitespaces nor new-lines in their bookmark's location declarations,
 we'll run it through a home-brewn minifier when stiching it together (or use a proper minifier online)
 
 ```js
-const minify = code => code.replace(/\n/g, "");
+const minify = (code) => code.replace(/\n/g, '')
 
 minify(`
   javascript: (() => {
     const id = location.search.split('v=')[1];
     location.href = 'https://youtuberepeat.com?v=' + id;
   })();
-`);
+`)
 ```
 
 Now you can paste the output into the destination of a new bookmarklet, but the core of Open Web is
@@ -65,10 +65,10 @@ the starting point, destination and date every time I visit their URL:
 javascript: (() => {
   const e = new Date(),
     t = e.getDate(),
-    l = e.getMonth() + 1;
-  let n = `https://elron.pilet.ee/et/otsing/Tondi/Pääsküla/${`${e.getFullYear()}-${l}-${t}`}`;
-  location.href = n;
-})();
+    l = e.getMonth() + 1
+  let n = `https://elron.pilet.ee/et/otsing/Tondi/Pääsküla/${`${e.getFullYear()}-${l}-${t}`}`
+  location.href = n
+})()
 ```
 
 I feel that this is all another great example of why we need to keep to the standards of the web and
