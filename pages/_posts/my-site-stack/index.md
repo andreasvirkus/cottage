@@ -14,6 +14,7 @@ I feel like this is the `Hello World!` post for every/any developer
 who's managed to set up a blog with a static-site generator. Since
 I'm an avid [generator-hopper](/thoughts/generator-hopping), I've
 broken this post down to different eras:
+
 - .
 - [Metalsmith](#metalsmith) (2017)
 - [Vuepress](#vuepress) (2018)
@@ -36,13 +37,14 @@ you can [JAM](https://jamstack.wtf/)-ify anything.
 
 Since I really do love the JAM stack (and alongside it, anything static-first or
 progressively enhanced), I feel it's my duty to quickly sell you on some benefits.
+
 - _Time to Interactive_ (or at least perceived) performance gains
 - Less expensive, if not free (👋 Netlify!)
 - A robust stack that doesn't confuse you 6 months later
 - `Host-it-and-forget-it`, which is especially nice for a typical devloper's or
-designer's portfolio/CV sites
+  designer's portfolio/CV sites
 - Maybe a sense of pride, knowing that your site is not just human-friendly,
-but also accessible to a wide range of readers/parsers? 🤖
+  but also accessible to a wide range of readers/parsers? 🤖
 
 ### Metalsmith
 
@@ -85,6 +87,7 @@ what it can achieve as a framework. I cannot wait for it to mature even further
 ---
 
 Bonus round:
+
 - The awesome-sauce that is Netlify
 - Building a JAM stack (this site really isn't one, but we'll talk a bit about what a JAM stack is)
 - Stuff other similar posts don't usually mention
