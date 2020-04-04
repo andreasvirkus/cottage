@@ -10,7 +10,7 @@
       default-src 'self' https:;
       connect-src 'self';
       object-src 'none';
-      image-src 'self' https: data:;
+      img-src 'self' https: data:;
       style-src  'self' 'unsafe-inline';
       script-src 'self' 'unsafe-inline';
       script-src-elem 'self' https://storage.googleapis.com https://www.google-analytics.com/analytics.js;'''
