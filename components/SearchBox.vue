@@ -15,11 +15,7 @@
       @keyup.down="onDown"
       @keyup.esc="unfocusSearchBox"
     />
-    <ul
-      class="search__suggestions"
-      v-if="showSuggestions"
-      @mouseleave="unfocus"
-    >
+    <ul class="search__suggestions" v-if="showSuggestions" @mouseleave="unfocus">
       <li
         class="search__suggestion"
         v-for="(s, i) in suggestions"
@@ -28,15 +24,9 @@
         @mousedown="go(i)"
         @mouseenter="focus(i)"
       >
-        <saber-link
-          :to="s.permalink"
-          class="search__link"
-          :class="{ '-focused': i === focusIndex }"
-        >
+        <saber-link :to="s.permalink" class="search__link" :class="{ '-focused': i === focusIndex }">
           <span class="search__suggestion-title">{{ s.title || s.path }}</span>
-          <span v-if="s.header" class="search__suggestion-desc"
-            >&gt; {{ s.header.title }}</span
-          >
+          <span v-if="s.header" class="search__suggestion-desc">&gt; {{ s.header.title }}</span>
         </saber-link>
       </li>
     </ul>
@@ -47,69 +37,69 @@
 export default {
   data() {
     return {
-      query: "",
+      query: '',
       focused: false,
       focusIndex: 0,
       suggestions: []
-    };
+    }
   },
-  props: ["page"],
+  props: ['page'],
   computed: {
     showSuggestions() {
-      return this.focused && this.suggestions.length;
+      return this.focused && this.suggestions.length
     }
   },
   watch: {
     async query() {
-      const database = await this.$fetchSearchDatabase();
-      const keyword = this.query;
+      const database = await this.$fetchSearchDatabase()
+      const keyword = this.query
       // TODO: Also go through the page's headers & tags
       this.suggestions = database
         .filter(
-          page =>
-            page.title.includes(keyword) ||
+          (page) =>
+            (page.title && page.title.includes(keyword)) ||
             page.permalink.includes(keyword) ||
-            page.excerpt.includes(keyword) ||
-            (page.markdownHeadings || []).some(h => h.slug.includes(keyword))
+            (page.excerpt && page.excerpt.includes(keyword)) ||
+            (page.markdownHeadings || []).some((h) => h.slug.includes(keyword))
         )
-        .slice(0, 5);
+        .slice(0, 5)
     }
   },
   methods: {
     onUp() {
       if (this.showSuggestions) {
         if (this.focusIndex > 0) {
-          this.focusIndex--;
+          this.focusIndex--
         } else {
-          this.focusIndex = this.suggestions.length - 1;
+          this.focusIndex = this.suggestions.length - 1
         }
       }
     },
     onDown() {
       if (this.showSuggestions) {
         if (this.focusIndex < this.suggestions.length - 1) {
-          this.focusIndex++;
+          this.focusIndex++
         } else {
-          this.focusIndex = 0;
+          this.focusIndex = 0
         }
       }
     },
     go(i) {
-      this.$router.push(this.suggestions[i].permalink);
-      this.query = "";
-      this.focusIndex = 0;
+      this.$router.push(this.suggestions[i].permalink)
+      this.query = ''
+      this.focusIndex = 0
     },
     focus(i) {
-      this.focusIndex = i;
+      this.focusIndex = i
     },
     unfocus() {
-      this.focusIndex = -1;
+      this.focusIndex = -1
     },
     unfocusSearchBox() {
-      this.$refs.input.blur();
+      this.$refs.input.blur()
     }
   }
-};
+}
 </script>
 
 <style>
@@ -135,7 +125,7 @@ export default {
   outline: none;
   transition: width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
     border-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background: url("/svg/search.svg") 0.6rem 0.55rem no-repeat;
+  background: url('/svg/search.svg') 0.6rem 0.55rem no-repeat;
   will-change: width;
 }
 .search__box:focus {

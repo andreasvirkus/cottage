@@ -1,10 +1,5 @@
 <template>
-  <aside
-    ref="menu"
-    class="menu"
-    :class="{ 'menu--open': open }"
-    role="navigation"
-  >
+  <aside ref="menu" class="menu" :class="{ 'menu--open': open }" role="navigation">
     <div class="menu__waves">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
@@ -16,27 +11,20 @@
     </div>
 
     <nav class="menu__list">
-      <div
-        class="menu__blob"
-        :style="{ '--activeIndex': activeLinkIndex }"
-      ></div>
-      <saber-link
-        v-for="link in links"
-        :key="link.path"
-        :to="link.path"
-        class="menu__link"
-        >{{ link.label }}</saber-link
-      >
+      <div class="menu__blob" :style="{ '--activeIndex': activeLinkIndex }"></div>
+      <saber-link v-for="link in links" :key="link.path" :to="link.path" class="menu__link">{{
+        link.label
+      }}</saber-link>
     </nav>
   </aside>
 </template>
 
 <script>
 export default {
-  name: "sidebar",
+  name: 'sidebar',
   data() {
-    const emojis = ["👾", "😶", "🐨", "🐹", "🦊", "🧙‍♂️", "🚀"];
-    const homeLabel = emojis[Math.floor(Math.random() * emojis.length)];
+    const emojis = ['👾', '😶', '🐨', '🐹', '🦊', '🧙‍♂️', '🚀']
+    const homeLabel = emojis[Math.floor(Math.random() * emojis.length)]
 
     return {
       menu: null,
@@ -47,36 +35,32 @@ export default {
       links: [
         {
           label: homeLabel,
-          path: "/"
+          path: '/'
         },
         {
-          label: "me",
-          path: "/about"
+          label: 'me',
+          path: '/about'
         },
         {
-          label: "thoughts",
-          path: "/thoughts"
+          label: 'thoughts',
+          path: '/thoughts'
         },
         {
-          label: "contact",
-          path: "/contact"
+          label: 'contact',
+          path: '/contact'
         }
       ]
-    };
+    }
   },
-  props: ["page"],
+  props: ['page'],
   computed: {
     activeLinkIndex() {
-      const path = this.$route.path;
-      if (path.startsWith("/thoughts")) return 2;
-      return (
-        this.links.findIndex(
-          link => link.path === path || link.path + "/" === path
-        ) || 0
-      );
+      const path = this.$route.path
+      if (path.startsWith('/thoughts')) return 2
+      return this.links.findIndex((link) => link.path === path || link.path + '/' === path) || 0
     }
   }
-};
+}
 </script>
 
 <style>
@@ -89,7 +73,7 @@ export default {
   transition: transform 0.6s, top 0.4s;
 }
 .menu::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   height: 84vh;
@@ -140,6 +124,7 @@ export default {
     height: auto;
     width: 100vw;
     border: none;
+    background-color: #273036;
   }
   .menu::before {
     content: none;
@@ -150,9 +135,9 @@ export default {
     padding: 0 1rem;
     margin: 0 auto;
     max-width: 35rem;
-    background-color: #273036;
   }
   .menu__link {
+    position: relative;
     font-size: 0.875rem;
     padding: 1rem 0 1.4rem;
     color: #cecece;
@@ -161,6 +146,8 @@ export default {
   .router-link-exact-active {
     color: white;
     font-weight: 600;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 0px #666, 7px 7px 0px rgba(0, 0, 0, 0.2);
   }
   .menu__blob {
     display: none;

@@ -39,6 +39,8 @@ export default {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .posts__title {
