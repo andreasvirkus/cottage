@@ -4,13 +4,8 @@
       <li v-for="post in posts" :key="post.permalink" class="posts__item">
         <saber-link :to="post.permalink" class="posts__link">
           <div class="posts__title">{{ post.title }}</div>
-          <div
-            class="posts__date"
-            :data-short-date="formatPostDate(post.createdAt, true)"
-          >
-            <time :datetime="post.createdAt">{{
-              formatPostDate(post.createdAt)
-            }}</time>
+          <div class="posts__date" :data-short-date="formatPostDate(post.createdAt, true)">
+            <time :datetime="post.createdAt">{{ formatPostDate(post.createdAt) }}</time>
           </div>
         </saber-link>
       </li>
@@ -19,15 +14,15 @@
 </template>
 
 <script>
-import { formatPostDate } from "@/util";
+import { formatPostDate } from '@/util'
 
 export default {
-  name: "posts-list",
+  name: 'posts-list',
   props: {
     posts: Array
   },
   methods: { formatPostDate }
-};
+}
 </script>
 
 <style>
