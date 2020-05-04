@@ -20,12 +20,11 @@
 </template>
 
 <script>
+const emojis = ['👾', '😶', '🐨', '🐹', '🦊', '🧙‍♂️', '🚀']
+
 export default {
   name: 'sidebar',
   data() {
-    const emojis = ['👾', '😶', '🐨', '🐹', '🦊', '🧙‍♂️', '🚀']
-    const homeLabel = emojis[Math.floor(Math.random() * emojis.length)]
-
     return {
       menu: null,
       open: false,
@@ -34,7 +33,7 @@ export default {
       paths: [],
       links: [
         {
-          label: homeLabel,
+          label: this.pickRandomEmoji(),
           path: '/'
         },
         {
@@ -57,7 +56,17 @@ export default {
     activeLinkIndex() {
       const path = this.$route.path
       if (path.startsWith('/thoughts')) return 2
-      return this.links.findIndex((link) => link.path === path || link.path + '/' === path) || 0
+      return this.links.findIndex(link => link.path === path || link.path + '/' === path) || 0
+    }
+  },
+  watch: {
+    '$route.path'() {
+      this.$set(this.links[0], 'label', this.pickRandomEmoji())
+    }
+  },
+  methods: {
+    pickRandomEmoji() {
+      return emojis[Math.floor(Math.random() * emojis.length)]
     }
   }
 }

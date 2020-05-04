@@ -9,10 +9,13 @@ layout: Page
 That's `hello, hello` in Estonian.
 
 I'm currently helping [Klaus](https://klausapp.com) conquer
-the world of customer support's conversation quality.\
-But that's not to say I'll turn down an interesting, small(ish?) project
-to tinker on, so let me know if you'd like to collab!
+the world of customer support's conversation quality.
 
+When I'm not hanging out with the coolest cat in tech,
+I consult others on front-end best practises, help them
+execute their next big project or am tinkering on something small (and often silly).
+
+Do let me know if you'd like to collab!\
 Either shoot me an [e-mail](mailto:write@andreasvirkus.me) or find me from the onlines 👇
 
 <social-links/>
@@ -24,6 +27,15 @@ export default {
   components: { SocialLinks }
 }
 </script>
+
+<style scoped>
+.social {
+  margin-top: 2rem;
+}
+.social__link:hover {
+  background: transparent;
+}
+</style>
 
 ----
 

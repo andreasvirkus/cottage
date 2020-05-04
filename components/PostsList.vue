@@ -57,11 +57,6 @@ export default {
   margin-left: 0.5rem;
 }
 
-.title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .subtitle {
   font-size: 14px;
 }
