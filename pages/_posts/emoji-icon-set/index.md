@@ -5,7 +5,7 @@ description: A small timeout utility for development
 date: 2020-05-10
 tags:
   - snippet
-  - javascript
+  - css
 ---
 
 Before emojis, we had emoticons (dating back all the way to [1881](https://twitter.com/Libroantiguo/status/560209307393097730)).
