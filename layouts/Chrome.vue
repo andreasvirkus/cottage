@@ -1,9 +1,9 @@
 <template>
   <div class="theme-container">
-    <search-box/>
-    <sidebar/>
-    <slot/>
-    <page-footer/>
+    <search-box />
+    <sidebar />
+    <slot />
+    <page-footer />
 
     <svg class="fuzzy-filters">
       <filter id="turbulence-1">
@@ -50,10 +50,12 @@ export default {
 </script>
 
 <style>
-.page-enter-active, .page-leave-active {
-  transition: opacity .2s cubic-bezier(.84,-0.43,.14,.82);
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s cubic-bezier(0.84, -0.43, 0.14, 0.82);
 }
-.page-enter, .page-leave-to {
+.page-enter,
+.page-leave-to {
   opacity: 0;
 }
 </style>

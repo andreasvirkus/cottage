@@ -17,7 +17,7 @@ siteConfig:
   email: write@andreasvirkus.me
   # For our service worker
   pwaFirstTimeInstallMessage: Ready for offline use ⚡️
-  pwaUpdateFoundMessage: Loading content in the background...
+  pwaUpdateFoundMessage: Updating content...
   pwaUpdateReadyMessage: Fresh content is available!
   pwaUpdateButtonMessage: update
   pwaDismissMessage: dismiss
@@ -27,7 +27,7 @@ permalinks:
   post: /thoughts/:slug
 
 # build:
-  #extractCSS: true
+#extractCSS: true
 
 plugins:
   - resolve: saber-plugin-query-posts

@@ -15,7 +15,6 @@ who's managed to set up a blog with a static-site generator. Since
 I'm an avid [generator-hopper](/thoughts/generator-hopping), I've
 broken this post down to different eras:
 
-- .
 - [Metalsmith](#metalsmith) (2017)
 - [Vuepress](#vuepress) (2018)
 - [Eleventy](#eleventy) (2019)

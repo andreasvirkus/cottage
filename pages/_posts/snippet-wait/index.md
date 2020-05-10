@@ -1,7 +1,7 @@
 ---
 title: "snippet #2 - wait"
 layout: Post
-description: Wait a minute...
+description: A small timeout utility for development
 date: 2019-11-08
 tags:
   - snippet
