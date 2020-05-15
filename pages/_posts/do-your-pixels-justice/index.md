@@ -1,10 +1,11 @@
 ---
-title: "do your pixels justice"
+title: 'do your pixels justice'
 layout: Post
 description: Respect your elders. I mean... your pixels!
 date: 2020-02-16
 tags:
-  - javascript
+  - snippet
+  - css
 ---
 
 This is a quick one. A small CSS rule that will come in super handy when you

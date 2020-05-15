@@ -4,7 +4,7 @@ layout: Post
 description: Dynamic CSS transforms with a static offset
 date: 2020-04-04
 tags:
-  - javascript
+  - css
 ---
 
 This is something simple but it blew my mind when I discovered it. You can stack [CSS

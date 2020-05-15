@@ -4,12 +4,11 @@ layout: Post
 description: Referencing footnotes properly with only HTML & CSS
 date: 2019-11-01
 tags:
-  - til
   - css
 ---
 
 **Note** <span style="font-size:85%">_This article uses the very technique described.
-  Feel free to <a aria-describedby="footnote-label"
+Feel free to <a aria-describedby="footnote-label"
   id="cite-ref-1"
   href="#cite-1"
   saber-ignore><code>Inspect</code></a> along!_</span>
@@ -96,7 +95,7 @@ article {
   counter-reset: footnotes;
 }
 /* Here we increment the counter for every footnote reference */
-a[aria-describedby="footnote-label"] {
+a[aria-describedby='footnote-label'] {
   counter-increment: footnotes;
   text-decoration: none;
   color: inherit;
@@ -107,7 +106,7 @@ a[aria-describedby="footnote-label"] {
  * 1. Display the current state of the counter (e.g. `[1]`)
  * 2. Style text as superscript
  */
-a[aria-describedby="footnote-label"]::after {
+a[aria-describedby='footnote-label']::after {
   content: '[' counter(footnotes) ']';
   vertical-align: super;
   font-size: 0.5em;
@@ -117,7 +116,7 @@ a[aria-describedby="footnote-label"]::after {
   cursor: pointer;
 }
 
-a[aria-describedby="footnote-label"]:focus::after {
+a[aria-describedby='footnote-label']:focus::after {
   outline: thin dotted;
   outline-offset: 2px;
 }
@@ -126,10 +125,9 @@ a[aria-describedby="footnote-label"]:focus::after {
 Here's the HTML for the footnote references we sprinkle into our content
 <span style="font-size: 85%">(we give it an `id` so we could link back to it from the footnotes - providing
 the user a way to jump back right where they left off)</span>
+
 ```html
-<a aria-describedby="footnote-label"
-  id="cite-ref-1"
-  href="#cite-1">Section 42</a>
+<a aria-describedby="footnote-label" id="cite-ref-1" href="#cite-1">Section 42</a>
 ```
 
 ## 3. Indicating active footnote
@@ -146,7 +144,7 @@ If you haven't already experimented, click on
 
 ```css
 /* Inline footnotes */
-a[aria-describedby="footnote-label"]:target {
+a[aria-describedby='footnote-label']:target {
   animation: highlight 3s;
 }
 
@@ -156,8 +154,12 @@ footer :target {
 }
 
 @keyframes highlight {
-  from { outline: 10px solid cornflowerblue; }
-  to { outline: 10px solid transparent; }
+  from {
+    outline: 10px solid cornflowerblue;
+  }
+  to {
+    outline: 10px solid transparent;
+  }
 }
 ```
 
@@ -168,6 +170,7 @@ For this to work, we'll also add an ID to the link in the content that
 references a footnote. I'm using a [`cite-1`, `cite-ref-1`] convention
 here because at first I had long descriptive names per footnote, but
 it got cumbersome to
+
 - type them out each time
 - try and avoid clashes
 - remember what I had just typed when creating the "Back to top" button in the footer
@@ -195,8 +198,10 @@ There is also a [reported issue](https://bugs.chromium.org/p/chromium/issues/det
 and the behaviour seems consistent across browsers.
 
 Remedies:
+
 - Changing the URL the old-fashioned way (`window.location.href = 'page#some-hash'`) will trigger the styles
 - For Vue and React link components (e.g. `<router-link>`), you could add a click listener
+
 ```js
 <router-link
   to='/page#some-hash'
@@ -216,6 +221,7 @@ up in vanilla HTML every time. You might be able to get away with writing a Vue/
 for your Static Site Generator, or maybe a Markdown plugin to handle these.
 
 After all, one of Markdown's hyperlink syntaxes is itself a reference mechanism:
+
 ```markdown
 [Link test][1]
 

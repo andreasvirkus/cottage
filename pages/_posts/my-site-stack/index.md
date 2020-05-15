@@ -4,7 +4,7 @@ layout: Post
 description: what this shindig consists of
 date: 2017-09-03
 tags:
-  - architecture
+  - learning
 ---
 
 <span style="font-size:85%">**Note**: This article has been updated throughout time,
@@ -15,10 +15,11 @@ who's managed to set up a blog with a static-site generator. Since
 I'm an avid [generator-hopper](/thoughts/generator-hopping), I've
 broken this post down to different eras:
 
-- [Metalsmith](#metalsmith) (2017)
-- [Vuepress](#vuepress) (2018)
-- [Eleventy](#eleventy) (2019)
-- [Saber](#saber) (2019)
+- [...static sites?](#static-sites)
+  - [Metalsmith](#metalsmith)
+  - [Vuepress](#vuepress)
+  - [Eleventy](#eleventy)
+  - [Saber](#saber)
 
 But first...
 

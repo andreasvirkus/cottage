@@ -1,10 +1,12 @@
 ---
-title: "fuzzy svg filters"
+title: 'fuzzy svg filters'
 layout: Post
 description: Fuzzy up your images
 date: 2020-02-17
 tags:
-  - javascript
+  - snippet
+  - css
+  - svg
 ---
 
 This is another quick one. I'll share a reusable SVG filter, since a couple
@@ -21,52 +23,27 @@ or straight into your `<body>` tag).
 <svg class="fuzzy-filters">
   <filter id="turbulence-1">
     <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" />
-    <feDisplacementMap
-      xChannelSelector="R"
-      yChannelSelector="G"
-      in="SourceGraphic"
-      scale="5"
-    />
+    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
   </filter>
 
   <filter id="turbulence-2">
     <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" />
-    <feDisplacementMap
-      xChannelSelector="R"
-      yChannelSelector="G"
-      in="SourceGraphic"
-      scale="7"
-    />
+    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="7" />
   </filter>
 
   <filter id="turbulence-3">
     <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" />
-    <feDisplacementMap
-      xChannelSelector="R"
-      yChannelSelector="G"
-      in="SourceGraphic"
-      scale="5"
-    />
+    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="5" />
   </filter>
 
   <filter id="turbulence-4">
     <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" />
-    <feDisplacementMap
-      xChannelSelector="R"
-      yChannelSelector="G"
-      in="SourceGraphic"
-      scale="4"
-    />
+    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="4" />
   </filter>
 
   <filter id="turbulence-5">
     <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" />
-    <feDisplacementMap
-      xChannelSelector="R"
-      yChannelSelector="G"
-      in="SourceGraphic"
-      scale="3"
-    />
+    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="3" />
   </filter>
 </svg>
 ```
@@ -83,19 +60,19 @@ And now we can apply the filters with CSS:
 /* Cycle through the filters */
 @keyframes fuzzy {
   0% {
-    filter: url("#turbulence-1");
+    filter: url('#turbulence-1');
   }
   25% {
-    filter: url("#turbulence-2");
+    filter: url('#turbulence-2');
   }
   50% {
-    filter: url("#turbulence-3");
+    filter: url('#turbulence-3');
   }
   75% {
-    filter: url("#turbulence-4");
+    filter: url('#turbulence-4');
   }
   100% {
-    filter: url("#turbulence-5");
+    filter: url('#turbulence-5');
   }
 }
 /* Apply the animation, play around with the values here to your liking */
