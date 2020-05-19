@@ -55,7 +55,7 @@ So here's a simple "Read more" element, that manipulates the `classList` API in 
   <button class="trigger">👇 Read more</button>
 </div>
 
----
+<hr class="-spaced" />
 
 Okay, I may have lied before. We're not actually limited to a single direction here.
 Let's make the example above collapsible as well:
@@ -85,7 +85,6 @@ on the wrapper element by accessing it via `this.parentNode` in the handler
 
 ```css
 .trigger-collapse,
-.expanded .trigger,
 .expanded .trigger-expand {
   display: none;
 }
@@ -94,8 +93,8 @@ on the wrapper element by accessing it via `this.parentNode` in the handler
 }
 ```
 
-<div class="foxy-box -padded-m">
-  <strong>PS (minirant)</strong> - going back to basics like this example feels very
+<div class="foxy-box -padded-m -space-top">
+  <strong>#minirant</strong> - going back to basics like this example feels very
   empowering to me. Knowing that I do not have to reach for tens or hundreds of
   kilobytes of JavaScript and various rendering libraries to accomplish simple
   interaction. It's like getting a fire started in the woods with a stick and some string.

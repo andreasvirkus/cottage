@@ -2,6 +2,16 @@
   clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
 
+.-padded-s {
+  padding: 0.5rem;
+}
+.-padded-m {
+  padding: 1rem;
+}
+.-padded-l {
+  padding: 2rem;
+}
+
 .m-bottom-s {
   margin-bottom: 1rem;
 }
@@ -10,6 +20,14 @@
 }
 .m-bottom-l {
   margin-bottom: 2rem;
+}
+
+.-space-top {
+  margin-top: 1.5rem;
+}
+.-spaced {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .text__line-through {
