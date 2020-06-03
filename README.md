@@ -37,7 +37,3 @@ Read my reasons for impulsive SSG-hopping [here]() and to find out why I've deci
 ## Development
 
 `yarn && yarn dev` will get you running smoothly.
-
-## License
-
-While I encourage you to look at
