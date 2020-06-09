@@ -20,7 +20,8 @@
 </template>
 
 <script>
-const emojis = ['👾', '😶', '🐨', '🐹', '🦊', '🧙‍♂️', '🚀']
+// const emojis = ['👾', '😶', '🐨', '🐹', '🦊', '🧙‍♂️', '🚀']
+const emojis = ['👾', '🦊', '🙊', '🐹']
 
 export default {
   name: 'sidebar',
@@ -33,7 +34,7 @@ export default {
       paths: [],
       links: [
         {
-          label: this.pickRandomEmoji(),
+          label: emojis[0],
           path: '/'
         },
         {
@@ -61,7 +62,7 @@ export default {
   },
   watch: {
     '$route.path'() {
-      this.$set(this.links[0], 'label', this.pickRandomEmoji())
+      this.$set(this.links[0], 'label', emojis[this.activeLinkIndex])
     }
   },
   methods: {
@@ -143,11 +144,12 @@ export default {
     width: 100%;
     padding: 0 1rem;
     margin: 0 auto;
-    max-width: 35rem;
+    max-width: 45rem;
   }
   .menu__link {
     position: relative;
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
+    font-size: 4vw;
     padding: 1rem 0 1.4rem;
     color: #cecece;
     transition: border-color 0.3s ease-out;
