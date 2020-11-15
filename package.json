@@ -34,18 +34,18 @@
     "not ie > 0"
   ],
   "dependencies": {
-    "autoprefixer": "^9.7.5",
-    "dayjs": "^1.8.23",
+    "autoprefixer": "^10.0.2",
+    "dayjs": "^1.9.6",
     "nprogress": "^0.2.0",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.22.0",
     "reading-time": "^1.2.0",
-    "saber": "^0.11.5",
+    "saber": "^0.11.7",
     "saber-plugin-copy-code": "^0.2.0",
     "saber-plugin-feed": "^0.4.3",
     "saber-plugin-google-analytics": "^0.2.1",
     "saber-plugin-prismjs": "^0.2.4",
     "saber-plugin-pwa": "^0.4.4",
-    "saber-plugin-query-posts": "^0.4.5",
+    "saber-plugin-query-posts": "^0.4.6",
     "saber-plugin-search": "^1.0.0"
   }
 }

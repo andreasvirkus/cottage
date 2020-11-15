@@ -24,12 +24,13 @@ I'm an aspiring full-stack developer (with a front-ended tilt). I'm interested i
 - Various bundlers, with a focus on bundling & performance optimisations
 - Headless CMS-s and Static-site generators
   - Metalsmith
-  - Vuepress
+  - ~~Vuepress~~ Vitepress ♥
   - Eleventy
   - Saber
   - Gridsome
 - Serverless
 - Golang
+- ESM build tools (Vite, Snowpack)
 
 I work great with designers (challenging their perspective on things),
 other devs 🤓 or _less-techy folk_ (pretty sure that's the technical term for it).
@@ -116,10 +117,10 @@ It's good stuff though._
 
 I started out creating websites for neighbours and small companies, which really sparked a passion. Here's what I've been up to since:
 
-- **Full-stack developer @ [Klaus](https://klausapp.com?utm_source=andreasvirkus.me)**
+- **Product engineer @ [Klaus](https://klausapp.com?utm_source=andreasvirkus.me)**
   <span style="font-size:85%">_July 2018 - present_</span>
   - Klaus is a SaaS product that lets customer support agents conduct
-    conversation reviews. Besides the main app (JAMstack) I also wrote and
+    conversation reviews. Besides the main app, I also wrote and
     manage Klaus' [browser extensions](https://klausapp.com/browser-extension),
     a Zendesk app and a couple of other small widgets. I advocate
     open-source, best practises, progressive enhancement and security to
