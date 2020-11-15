@@ -6,7 +6,7 @@
 
 ## A humble homepage of sorts...
 
-Hosted on [Netlify](https://netlify.com); built with [Saber](https://saber.land)
+Hosted on [Netlify](https://netlify.com) & built with [Saber](https://saber.land)
 
 ## Want a site like this?
 

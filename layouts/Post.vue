@@ -23,7 +23,7 @@
       <slot name="default" />
 
       <footer class="blog__footer">
-        <p>&ndash; Thanks for giving this a read 🖖</p>
+        <p class="blog__signout">~ Thanks for giving this a read 🖖 ~</p>
         <template v-if="page.prevPost || page.nextPost">
           <hr class="blog__divider" />
           <div class="page-nav">
@@ -125,6 +125,10 @@ export default {
 }
 .blog__footer {
   margin-top: 3.5rem;
+}
+.blog__signout {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 .page-nav {
   display: flex;

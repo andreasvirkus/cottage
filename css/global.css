@@ -38,6 +38,7 @@ body {
   flex-direction: column;
   background-color: var(--color-white);
   margin: var(--bg-border);
+  border-radius: 4px;
 }
 .-isolate {
   isolation: isolate;
@@ -51,8 +52,11 @@ body {
 
 a {
   display: inline-block;
-  color: var(--link-color);
+  color: inherit;
   text-decoration: none;
+}
+a:visited {
+  color: var(--color-dark);
 }
 
 main {

@@ -1,22 +1,20 @@
 <template>
   <footer class="site-footer">
     <p class="content edit-link" v-if="repoLink">
-      <a :href="repoLink" target="_blank" rel="noopener noreferrer"
-      >Help me improve this page</a>
+      <a :href="repoLink" target="_blank" rel="noopener noreferrer">Help me improve this page</a>
     </p>
 
     <p>Find me on</p>
-    <social-links/>
+    <social-links />
 
-    <p>Proudly generated with
-      <a :href="$siteConfig.generatorUrl"
-        :title="$siteConfig.generatorTitle"
-      >{{ $siteConfig.generatorName }}</a>,
+    <p>
+      Proudly generated with
+      <a :href="$siteConfig.generatorUrl" :title="$siteConfig.generatorTitle">{{ $siteConfig.generatorName }}</a
+      >,
     </p>
-    <p>safely hosted on
-      <a :href="$siteConfig.hostUrl"
-        :title="$siteConfig.hostTitle"
-      >{{ $siteConfig.hostName }}</a>.
+    <p>
+      safely hosted on <a :href="$siteConfig.hostUrl" :title="$siteConfig.hostTitle">{{ $siteConfig.hostName }}</a
+      >.
     </p>
   </footer>
 </template>
@@ -29,13 +27,9 @@ export default {
   props: ['page'],
   components: { SocialLinks },
   computed: {
-    repoLink () {
+    repoLink() {
       if (!this.page) return false
-      return [
-        this.$siteConfig.repoLink,
-        `/edit/master/pages/`,
-        `${this.page.slug}.md`
-      ].join('')
+      return [this.$siteConfig.repoLink, `/edit/master/pages/`, `${this.page.slug}.md`].join('')
     }
   }
 }
@@ -44,18 +38,18 @@ export default {
 <style>
 .site-footer {
   margin-top: 3rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 12.5rem;
   padding-right: 5vw;
 }
 
 .site-footer p {
   padding-right: 0;
   text-align: right;
-  margin: .25rem;
+  margin: 0.25rem;
 }
 .edit-link {
   text-align: right;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 @media screen and (max-width: 35rem) {

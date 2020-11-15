@@ -121,6 +121,31 @@ export default {
 }
 .menu__waves {
   display: none;
+  /* display: block; */
+  position: fixed;
+  z-index: -1;
+  /* Get min value between -80px and 8vw */
+  /* TODO: Use CSS clamp() */
+  bottom: -8vw;
+  bottom: -120px;
+  left: 0;
+  right: 0;
+}
+.menu__waves > svg {
+  display: block;
+  transform-origin: bottom;
+  animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+.menu__waves path {
+  fill: var(--color-background);
+}
+@keyframes animateWave {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 @media screen and (min-width: 74rem) {
   .menu__link:hover {
@@ -134,7 +159,7 @@ export default {
     height: auto;
     width: 100vw;
     border: none;
-    background-color: #273036;
+    background-color: var(--color-background);
   }
   .menu::before {
     content: none;
@@ -145,14 +170,16 @@ export default {
     padding: 0 1rem;
     margin: 0 auto;
     max-width: 45rem;
+    color: var(--color-light);
   }
   .menu__link {
     position: relative;
-    /* font-size: 0.875rem; */
     font-size: 4vw;
     padding: 1rem 0 1.4rem;
-    color: #cecece;
     transition: border-color 0.3s ease-out;
+  }
+  .menu__link:visited {
+    color: inherit;
   }
   .router-link-exact-active {
     color: white;
@@ -167,22 +194,9 @@ export default {
     display: block;
     position: absolute;
     z-index: -1;
-    bottom: 1rem;
+    bottom: 1.4rem;
     left: 0;
     right: 0;
-  }
-  @keyframes animateWave {
-    0% {
-      transform: scale(1, 0);
-    }
-    100% {
-      transform: scale(1, 1);
-    }
-  }
-  .menu__waves > svg {
-    display: block;
-    transform-origin: bottom;
-    animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 }
 </style>
