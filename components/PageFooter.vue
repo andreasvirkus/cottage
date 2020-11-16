@@ -23,7 +23,7 @@
 import SocialLinks from './SocialLinks'
 
 export default {
-  name: 'page-footer',
+  name: 'PageFooter',
   props: ['page'],
   components: { SocialLinks },
   computed: {

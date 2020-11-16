@@ -1,6 +1,7 @@
 <template>
   <div class="theme-container">
     <search-box />
+    <theme-toggle />
     <sidebar />
     <slot />
     <page-footer />
@@ -37,6 +38,7 @@
 <script>
 import Sidebar from '@/components/Sidebar'
 import SearchBox from '@/components/SearchBox'
+import ThemeToggle from '@/components/ThemeToggle'
 import PageFooter from '@/components/PageFooter'
 
 export default {
@@ -44,6 +46,7 @@ export default {
   components: {
     Sidebar,
     SearchBox,
+    ThemeToggle,
     PageFooter
   }
 }

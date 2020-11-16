@@ -24,7 +24,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-accent);
+  background-color: var(--accent-secondary);
   color: var(--color-white);
 }
 
@@ -36,9 +36,10 @@ body {
   display: flex;
   min-height: 96.5vh;
   flex-direction: column;
-  background-color: var(--color-white);
+  background-color: var(--content-background);
   margin: var(--bg-border);
   border-radius: 4px;
+  transition: background-color 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 .-isolate {
   isolation: isolate;
@@ -89,9 +90,9 @@ footer p a {
   vertical-align: bottom;
   z-index: 2;
 
-  border-bottom: 3px solid hsl(151, 62%, 79%);
+  border-bottom: 3px solid var(--accent-primary);
   text-decoration: none;
-  box-shadow: inset 0 -5px 0 hsl(151, 62%, 79%);
+  box-shadow: inset 0 -5px 0 var(--accent-primary);
   /* color: #000; */
   transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
@@ -100,7 +101,7 @@ main a:hover,
 footer p a:hover,
 footer p a:focus {
   font-weight: 600;
-  background: hsl(151, 62%, 79%);
+  background-color: var(--accent-primary);
 }
 
 img {
@@ -115,7 +116,7 @@ hr,
 .foxy-box {
   border: 2px solid rgb(17, 17, 17);
   border-radius: 14px;
-  box-shadow: 5px 5px 0 -1px hsl(151, 62%, 79%);
+  box-shadow: 5px 5px 0 -1px var(--accent-primary);
 }
 
 h1 {

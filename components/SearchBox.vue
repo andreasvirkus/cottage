@@ -35,6 +35,7 @@
 
 <script>
 export default {
+  name: 'Sidebar',
   data() {
     return {
       query: '',
@@ -56,11 +57,11 @@ export default {
       // TODO: Also go through the page's headers & tags
       this.suggestions = database
         .filter(
-          (page) =>
+          page =>
             (page.title && page.title.includes(keyword)) ||
             page.permalink.includes(keyword) ||
             (page.excerpt && page.excerpt.includes(keyword)) ||
-            (page.markdownHeadings || []).some((h) => h.slug.includes(keyword))
+            (page.markdownHeadings || []).some(h => h.slug.includes(keyword))
         )
         .slice(0, 5)
     }

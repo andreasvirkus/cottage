@@ -24,7 +24,7 @@
 const emojis = ['👾', '🦊', '🙊', '🐹']
 
 export default {
-  name: 'sidebar',
+  name: 'Sidebar',
   data() {
     return {
       menu: null,
@@ -126,8 +126,9 @@ export default {
   z-index: -1;
   /* Get min value between -80px and 8vw */
   /* TODO: Use CSS clamp() */
-  bottom: -8vw;
-  bottom: -120px;
+  /* bottom: -8vw;
+  bottom: -120px; */
+  bottom: calc(-1 * min(80px, 8vw));
   left: 0;
   right: 0;
 }

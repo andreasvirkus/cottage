@@ -20,7 +20,7 @@
 <script>
 // TODO: Replace <img> with vue-svg-loader and icons
 export default {
-  name: 'social-links',
+  name: 'SocialLinks',
   data() {
     return {
       links: [

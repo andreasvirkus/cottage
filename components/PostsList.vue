@@ -22,7 +22,7 @@
 import { formatPostDate } from '@/util'
 
 export default {
-  name: 'posts-list',
+  name: 'PostsList',
   props: {
     posts: Array
   },
