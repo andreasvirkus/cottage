@@ -91,7 +91,8 @@ export default {
   left: 100%;
   z-index: 5;
   width: 2px;
-  background-color: #22223320;
+  background-color: var(--contrast-color);
+  opacity: 0.2;
 }
 .menu__list {
   position: relative;

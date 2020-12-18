@@ -34,7 +34,7 @@
     "not ie > 0"
   ],
   "dependencies": {
-    "autoprefixer": "^10.0.2",
+    "autoprefixer": "^9.8.6",
     "dayjs": "^1.9.6",
     "nprogress": "^0.2.0",
     "prismjs": "^1.22.0",

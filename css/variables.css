@@ -4,6 +4,7 @@
   --accent-secondary: #a29bfe;
   --color-dark: #223;
   --color-dark2: #222;
+  --color-dark3: #111;
   --color-light: #f7f2fa;
   --color-white: #fff;
 
@@ -30,6 +31,8 @@
 /* Our dark theme specified by the user */
 :root[data-theme='dark'] {
   --content-color: var(--color-light);
-  --color-background: var(--color-dark);
+  --contrast-color: var(--color-light);
+  /* --color-background: #f1f1f1; */
+  --color-background: var(--color-light);
   --content-background: var(--color-dark);
 }

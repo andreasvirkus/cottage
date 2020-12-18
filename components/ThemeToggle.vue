@@ -23,8 +23,11 @@ export default {
   },
   mounted() {
     const theme = window.matchMedia('(prefers-color-scheme: dark)')
-    console.info('user OS theme', theme)
     this.darkTheme = theme.matches
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      this.darkTheme = e.matches
+    })
   },
   watch: {
     darkTheme: {
