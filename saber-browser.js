@@ -49,7 +49,7 @@ export default ({ router, setHead, setRootComponent }) => {
       {
         rel: 'icon',
         type: 'image/png',
-        href: '/icons/icon-128x128.png'
+        href: '/favicon.png'
       }
     ],
     link: [

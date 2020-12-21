@@ -15,9 +15,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: var(--content-color);
-  background-color: var(--color-background);
-  box-shadow: 0 0 0 var(--bg-border) var(--color-background) inset;
+  background-color: var(--bg);
+  color: var(--color);
   font-family: var(--font-mono);
   font-size: 18px;
   line-height: 1.5;
@@ -25,7 +24,7 @@ body {
 
 ::selection {
   background-color: var(--accent-secondary);
-  color: var(--color-white);
+  color: var(--color-contrast);
 }
 
 .emoji {
@@ -34,15 +33,11 @@ body {
 
 .theme-container {
   display: flex;
-  min-height: 96.5vh;
   flex-direction: column;
-  background-color: var(--content-background);
-  margin: var(--bg-border);
-  border-radius: 4px;
+  min-height: 100vh;
+  max-width: 80ch;
+  margin: 0 auto;
   transition: background-color 0.3s cubic-bezier(0.85, 0, 0.15, 1);
-}
-.-isolate {
-  isolation: isolate;
 }
 .hidden-visually {
   pointer-events: none;
@@ -56,35 +51,32 @@ a {
   text-decoration: none;
 }
 a:visited {
-  color: var(--contrast-color);
+  color: var(--color-contrast);
 }
 
 a,
 button,
 input,
 textarea {
-  color: inherit;
+  color: unset;
   font-family: inherit;
 }
 
 main {
-  max-width: 45em;
-  width: 95%;
-  margin: 5vh auto;
-  transition: opacity 0.6s;
+  margin: 5vh 1rem;
   flex: 1;
-  padding-left: 3rem;
 }
 p {
   margin: 0.25rem 0;
+  font-family: var(--font-secondary);
 }
 main > p,
 article > p {
   margin-top: 1.85rem;
+  font-size: 1.5rem;
 }
 
 /* Content links */
-
 main a,
 footer p a {
   position: relative;
@@ -96,18 +88,16 @@ footer p a {
   text-decoration-skip-ink: auto;
   vertical-align: bottom;
   z-index: 2;
-
-  border-bottom: 3px solid var(--accent-primary);
   text-decoration: none;
+  border-bottom: 3px solid var(--accent-primary);
   box-shadow: inset 0 -5px 0 var(--accent-primary);
-  /* color: #000; */
   transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
 main a:focus,
 main a:hover,
 footer p a:hover,
 footer p a:focus {
-  font-weight: 600;
+  border-bottom: 3px solid var(--color);
   background-color: var(--accent-primary);
 }
 
@@ -117,11 +107,10 @@ img {
 
 hr {
   height: 10px;
-  isolation: isolate;
 }
 hr,
 .foxy-box {
-  border: 2px solid var(--content-color);
+  border: 2px solid var(--color);
   border-radius: 14px;
   box-shadow: 5px 5px 0 -1px var(--accent-primary);
 }
@@ -173,8 +162,7 @@ code {
 }
 pre[class*='language-'] {
   border-radius: 5px;
-  background-color: #223;
-  border: 1px solid var(--color-light);
+  background-color: #334;
 }
 
 @keyframes fuzzy {
@@ -205,26 +193,13 @@ pre[class*='language-'] {
 }
 
 @media screen and (max-width: 70rem) {
-  body {
-    padding: 0;
+  :root {
+    font-size: 0.875rem;
   }
-  main {
-    min-height: 60vh;
-    transform: translateY(-1.5em);
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  main p {
-    font-size: 1em;
-  }
-  img {
-    height: auto;
-    color: #c00;
-  }
-  h1 {
+  /* h1 {
     line-height: 1;
     font-size: 2rem;
-  }
+  } */
   blockquote {
     font-size: 1.3rem;
     margin-left: 0;

@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
 button {
-  border: 1px dashed var(--content-color);
+  border: 1px dashed var(--color);
   border-radius: 4px;
   box-shadow: 0px 1px 4px rgba(45, 55, 72, 0.12), 0px 1px 2px rgba(45, 55, 72, 0.04);
   background: none;
@@ -89,7 +89,7 @@ button:hover {
   right: 0;
   transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translateX(100%);
-  background-color: var(--content-background);
+  background-color: var(--bg);
   box-shadow: 0px 1px 4px rgba(45, 55, 72, 0.12), 0px 1px 2px rgba(45, 55, 72, 0.04);
   padding: 3rem;
   z-index: 9;
@@ -103,7 +103,7 @@ button:hover {
   right: 0;
   transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translateY(100%);
-  background-color: var(--content-background);
+  background-color: var(--bg);
   box-shadow: 0px 1px 4px rgba(45, 55, 72, 0.12), 0px 1px 2px rgba(45, 55, 72, 0.04);
   padding: 1rem;
   z-index: 9;

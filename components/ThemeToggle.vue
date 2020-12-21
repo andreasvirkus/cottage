@@ -43,11 +43,15 @@ export default {
 
 <style module>
 .wrapper {
-  position: absolute;
-  top: 80px;
-  right: 36px;
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
   font-size: 0;
   color: transparent;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .toggle {
@@ -55,6 +59,6 @@ export default {
   height: 24px;
   width: 24px;
   cursor: pointer;
-  color: var(--content-color);
+  color: var(--color);
 }
 </style>

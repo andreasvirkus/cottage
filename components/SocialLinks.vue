@@ -60,9 +60,10 @@ export default {
 <style>
 .social__list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   list-style: none;
   margin-top: 0;
+  padding: 0;
 }
 .social__icon {
   width: 1.4rem;
@@ -74,6 +75,8 @@ export default {
   color: transparent;
   font-size: 0;
   padding: 0.5rem;
+}
+.social__list li:not(:first-child) {
   margin-left: 1rem;
 }
 </style>

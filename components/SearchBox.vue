@@ -105,10 +105,10 @@ export default {
 
 <style>
 .search {
-  display: flex;
   position: fixed;
   right: 2rem;
-  top: 2rem;
+  top: 1rem;
+  display: flex;
   z-index: 5;
   height: 2rem;
 }
@@ -116,7 +116,7 @@ export default {
   width: 0;
   left: 1rem;
   cursor: pointer;
-  color: var(--content-color);
+  color: var(--color);
   display: inline-block;
   border: none;
   font-size: 0.85rem;
@@ -152,7 +152,7 @@ export default {
   z-index: 5;
 }
 .search__link {
-  color: var(--content-color);
+  color: var(--color);
 }
 .search__suggestion-title {
   font-weight: 600;

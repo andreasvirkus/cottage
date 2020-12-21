@@ -38,29 +38,18 @@ export default {
 <style>
 .site-footer {
   margin-top: 3rem;
-  margin-bottom: 12.5rem;
+  margin-bottom: 7.5rem;
   padding-right: 5vw;
+  text-align: center;
 }
 
 .site-footer p {
   padding-right: 0;
-  text-align: right;
   margin: 0.25rem;
+  font-family: var(--font-secondary);
 }
 .edit-link {
   text-align: right;
   font-size: 0.9em;
-}
-
-@media screen and (max-width: 35rem) {
-  .site-footer {
-    padding-right: 1.5rem;
-    font-size: 0.8rem;
-  }
-}
-@media screen and (max-width: 74rem) {
-  .site-footer {
-    margin-bottom: 5.5rem;
-  }
 }
 </style>
