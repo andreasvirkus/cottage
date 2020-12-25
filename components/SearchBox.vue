@@ -89,6 +89,7 @@ export default {
       this.$router.push(this.suggestions[i].permalink)
       this.query = ''
       this.focusIndex = 0
+      this.$refs.input.blur()
     },
     focus(i) {
       this.focusIndex = i
@@ -113,20 +114,20 @@ export default {
   height: 2rem;
 }
 .search__box {
+  display: inline-block;
   width: 0;
   left: 1rem;
-  cursor: pointer;
-  display: inline-block;
+  padding-left: 2rem;
   border: none;
   font-size: 0.85rem;
-  font-weight: 550;
+  font-weight: 500;
   font-family: var(--font-mono);
-  padding: 0 0 0 2rem;
   outline: none;
   transition: width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
     border-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   background: url('/svg/search.svg') 0.6rem 0.55rem no-repeat;
   will-change: width;
+  cursor: pointer;
 }
 .search__box:focus {
   left: 0;
