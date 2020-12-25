@@ -15,11 +15,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--bg);
   color: var(--color);
   font-family: var(--font-mono);
   font-size: 18px;
   line-height: 1.5;
+
+  background-color: var(--bg);
+  transition: background-color 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 ::selection {
@@ -35,7 +37,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  transition: background-color 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 .hidden-visually {
   pointer-events: none;
@@ -147,7 +148,7 @@ blockquote p:last-child {
 
 code {
   padding: 0.125rem 0.25rem;
-  background-color: var(--color-light);
+  background-color: var(--bg);
   color: #c7254e;
   font-size: 90%;
   border-radius: 0.25rem;
