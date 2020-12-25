@@ -7,6 +7,7 @@
   --color-dark2: #222;
   --color-dark3: #111;
   --color-light: #f7f2fa;
+  --gradient: linear-gradient(90deg, rgba(97, 230, 149, 1) 0%, rgba(198, 255, 84, 1) 100%);
 
   /* Active theme */
   --color: var(--color-dark2);
@@ -27,4 +28,5 @@
   --color-contrast: var(--color-light);
   --bg: var(--color-dark);
   --bg-contrast: var(--accent-primary);
+  --gradient: linear-gradient(90deg, #0ec1f6, #8823de);
 }

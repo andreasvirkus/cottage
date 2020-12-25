@@ -92,11 +92,7 @@ export default {
   display: block;
   height: 4px;
   width: 100%;
-  background-image: linear-gradient(90deg, #0ec1f6, #8823de);
-}
-
-:root[data-theme='light'] .menu::after {
-  background: linear-gradient(90deg, rgba(97, 230, 149, 1) 0%, rgba(198, 255, 84, 1) 100%);
+  background-image: var(--gradient);
 }
 
 .menu__list {
@@ -117,6 +113,6 @@ export default {
 }
 .menu__link:hover {
   color: white;
-  background-image: linear-gradient(90deg, #0ec1f6, #8823de);
+  background-image: var(--gradient);
 }
 </style>
