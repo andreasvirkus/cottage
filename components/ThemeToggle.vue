@@ -22,20 +22,21 @@ export default {
     }
   },
   mounted() {
-    const theme = window.matchMedia('(prefers-color-scheme: dark)')
-    this.darkTheme = theme.matches
+    const savedTheme = document.documentElement.dataset.theme
+    const preference = window.matchMedia('(prefers-color-scheme: dark)')
+    this.darkTheme = savedTheme !== 'light' && preference.matches
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
       this.darkTheme = e.matches
     })
   },
   watch: {
-    darkTheme: {
-      immediate: true,
-      handler(isDark) {
-        if (process.server) return
-        document.body.parentNode.dataset.theme = isDark ? 'dark' : 'light'
-      }
+    darkTheme(isDark) {
+      if (process.server) return
+
+      const theme = isDark ? 'dark' : 'light'
+      document.documentElement.dataset.theme = theme
+      localStorage.setItem('theme', theme)
     }
   }
 }

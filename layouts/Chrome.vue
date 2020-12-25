@@ -32,6 +32,10 @@
         <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="3" />
       </filter>
     </svg>
+
+    <transition appear name="fade" mode="out-in">
+      <img v-show="appear" :src="watercolor" :class="$style.watercolor" />
+    </transition>
   </div>
 </template>
 
@@ -40,6 +44,7 @@ import Sidebar from '@/components/Sidebar'
 import SearchBox from '@/components/SearchBox'
 import ThemeToggle from '@/components/ThemeToggle'
 import PageFooter from '@/components/PageFooter'
+import watercolor from '@/assets/watercolor4.png'
 
 export default {
   name: 'chrome',
@@ -48,9 +53,32 @@ export default {
     SearchBox,
     ThemeToggle,
     PageFooter
+  },
+  data() {
+    return {
+      watercolor,
+      appear: false
+    }
+  },
+  mounted() {
+    setTimeout(() => (this.appear = true))
   }
 }
 </script>
+
+<style module>
+.watercolor {
+  position: fixed;
+  bottom: -30vh;
+  right: -25vw;
+  z-index: -1;
+  user-select: none;
+}
+
+:root[data-theme='light'] .watercolor {
+  filter: opacity(0.4);
+}
+</style>
 
 <style>
 .page-enter-active,

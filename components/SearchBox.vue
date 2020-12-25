@@ -106,8 +106,8 @@ export default {
 <style>
 .search {
   position: fixed;
-  right: 2rem;
-  top: 1rem;
+  right: 1rem;
+  top: 0.5rem;
   display: flex;
   z-index: 5;
   height: 2rem;
@@ -116,7 +116,6 @@ export default {
   width: 0;
   left: 1rem;
   cursor: pointer;
-  color: var(--color);
   display: inline-block;
   border: none;
   font-size: 0.85rem;
@@ -136,7 +135,7 @@ export default {
   border-color: rgba(34, 34, 51, 0.596);
 }
 .search__suggestions {
-  background: #fff;
+  background-color: var(--bg);
   width: 20rem;
   position: absolute;
   top: 1.5rem;
@@ -162,7 +161,8 @@ export default {
   margin-left: 0.25em;
 }
 .search__suggestion.-focused {
-  background-color: rgba(220, 220, 220, 0.55);
+  color: var(--color-contrast);
+  background-color: var(--bg-contrast);
 }
 @media (max-width: 70rem) {
   .search {

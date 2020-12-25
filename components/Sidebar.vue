@@ -34,7 +34,8 @@ export default {
       paths: [],
       links: [
         {
-          label: `H${emojis[0]}me`,
+          // label: `H[${emojis[0]}]me`,
+          label: `~/`,
           path: '/'
         },
         {
@@ -62,7 +63,8 @@ export default {
   },
   watch: {
     '$route.path'() {
-      this.$set(this.links[0], 'label', `H${emojis[this.activeLinkIndex]}me`)
+      // this.$set(this.links[0], 'label', `H[${emojis[this.activeLinkIndex]}]me`)
+      this.$set(this.links[0], 'label', `~/`)
     }
   },
   methods: {
@@ -78,27 +80,39 @@ export default {
   position: sticky;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 3;
-  border-top: 15px solid var(--accent-primary);
   transition: transform 0.6s, top 0.4s;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
+
+.menu::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-image: linear-gradient(90deg, #0ec1f6, #8823de);
+}
+
 .menu__list {
   position: relative;
   display: flex;
   flex-direction: row;
+  max-width: 80ch;
   text-align: center;
-  padding: 8px 0;
+  padding: 0;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
 }
 .menu__link {
-  padding: 8px;
+  padding: 1rem 0.5rem;
   cursor: pointer;
   flex-grow: 1;
   line-height: 1;
   transition: transform 0.2s ease-out;
+}
+.menu__link:hover {
+  color: white;
+  background-image: linear-gradient(90deg, #0ec1f6, #8823de);
 }
 </style>

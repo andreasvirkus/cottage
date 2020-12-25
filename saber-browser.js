@@ -1,6 +1,5 @@
 import Wrapper from '@/layouts/Chrome'
 import 'prismjs/themes/prism-tomorrow.css'
-// import 'prismjs/themes/prism.css'
 import '@/css/variables.css'
 import '@/css/global.css'
 import '@/css/utility.css'
@@ -44,21 +43,28 @@ export default ({ router, setHead, setRootComponent }) => {
     }
   }
 
-  setHead(vm => ({
+  setHead(() => ({
     link: [
       {
         rel: 'icon',
         type: 'image/png',
         href: '/favicon.png'
-      }
-    ],
-    link: [
+      },
       {
         rel: 'alternate',
         type: 'application/rss+xml',
         title: 'Cottage - Thoughts of andreas virkus',
         href: 'https://andreasvirkus.me/rss2.xml'
       }
-    ]
+    ],
+    script: [
+      {
+        vmid: 'themeLoader',
+        type: 'text/javascript',
+        innerHTML:
+          'if (localStorage.getItem("theme")) document.documentElement.dataset.theme = localStorage.getItem("theme")'
+      }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   }))
 }

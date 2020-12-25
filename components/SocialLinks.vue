@@ -69,6 +69,11 @@ export default {
   width: 1.4rem;
   height: auto;
 }
+
+:root[data-theme='dark'] .social__icon {
+  filter: invert(1);
+}
+
 .social__link {
   position: relative;
   display: inline-block;

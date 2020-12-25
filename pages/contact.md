@@ -18,25 +18,6 @@ execute their next big project or am tinkering on something small (and often sil
 Do let me know if you'd like to collab!\
 Either shoot me an [e-mail](mailto:write@andreasvirkus.me) or find me from the onlines 👇
 
-<social-links/>
-
-<script>
-import SocialLinks from '@/components/SocialLinks'
-
-export default {
-  components: { SocialLinks }
-}
-</script>
-
-<style scoped>
-.social {
-  margin-top: 2rem;
-}
-.social__link:hover {
-  background: transparent;
-}
-</style>
-
-----
+---
 
 🖖
