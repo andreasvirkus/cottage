@@ -13,8 +13,8 @@ This site's main purpose is to act as my personal playground for different web
 technologies, but also to provide a bit of insight about [me](/about/).
 
 If you're looking to get in touch, just reach out to me on
-[linkedIn](https://www.linkedin.com/in/andreasvirkus "View my LinkedIn profile") or via
-[e-mail](mailto:write@andreasvirkus.me "Shoot me an e-mail!").
+[LinkedIn](https://www.linkedin.com/in/andreasvirkus 'View my LinkedIn profile') or via
+[e-mail](mailto:write@andreasvirkus.me 'Shoot me an e-mail!').
 
 I'll ~~`Soon™`~~ (<span class="emoji">✔️</span>) also try and write up some
 [thoughts](/thoughts/).

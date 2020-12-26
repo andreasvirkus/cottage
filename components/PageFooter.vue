@@ -39,7 +39,6 @@ export default {
 .site-footer {
   margin-top: 3rem;
   margin-bottom: 7.5rem;
-  padding-right: 5vw;
   text-align: center;
 }
 
