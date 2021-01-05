@@ -4,9 +4,9 @@ description: View my contact details and hit me up!
 layout: Page
 ---
 
-# tere, tere
+# tere 🤙
 
-That's `hello, hello` in Estonian.
+That's `hello` in Estonian.
 
 I'm currently helping [Klaus](https://klausapp.com) conquer
 the world of customer support's conversation quality.

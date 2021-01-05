@@ -4,7 +4,7 @@ description: A humble homepage of sorts
 layout: Page
 ---
 
-# welcome, welcome
+# welcome 👋
 
 Glad to have you in my Small Corner of the Web™.
 I'm `Andreas` and I'm very enthusiastic about the magical

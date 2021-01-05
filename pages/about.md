@@ -4,7 +4,7 @@ description: Get to know me. Long walks on the beach included.
 layout: Page
 ---
 
-# me
+# me 🤓
 
 I'm not much of a talker, but let me rant about myself for a bit. You can skip ahead to:
 

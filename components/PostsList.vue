@@ -2,7 +2,7 @@
   <nav class="content" role="navigation">
     <ol reversed :class="$style.links">
       <li v-for="post in posts" :key="post.permalink" :class="$style.item">
-        <saber-link :to="post.permalink" :class="[$style.link, 'fuzzy-interact']">
+        <saber-link :to="post.permalink" :class="$style.link">
           <div :class="$style.title">{{ post.title }}</div>
           <div :class="$style.subtitle" :data-short-date="formatPostDate(post.createdAt, true)">
             <time :datetime="post.createdAt">{{ formatPostDate(post.createdAt) }}</time>

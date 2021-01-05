@@ -107,11 +107,11 @@ export default {
 <style>
 .search {
   position: fixed;
-  right: 1rem;
-  top: 0.5rem;
+  right: 2rem;
+  top: 1.25rem;
   display: flex;
-  z-index: 5;
   height: 2rem;
+  z-index: 5;
 }
 .search__box {
   display: inline-block;
@@ -131,8 +131,10 @@ export default {
 }
 .search__box:focus {
   left: 0;
-  width: 10rem;
+  width: 20rem;
   cursor: auto;
+  background-color: var(--bg);
+  border-radius: 1rem;
   border-color: rgba(34, 34, 51, 0.596);
 }
 .search__suggestions {

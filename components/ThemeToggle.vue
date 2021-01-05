@@ -1,5 +1,5 @@
 <template>
-  <label :class="$style.wrapper"
+  <label :class="$style.wrapper" @click.stop
     >Theme toggle
     <input v-model="darkTheme" type="checkbox" class="hidden-visually" />
 
@@ -45,8 +45,8 @@ export default {
 <style module>
 .wrapper {
   position: fixed;
-  bottom: 2rem;
-  right: 1.5rem;
+  top: 1rem;
+  left: 1.5rem;
   font-size: 0;
   color: transparent;
   z-index: 5;
@@ -61,5 +61,13 @@ export default {
   width: 24px;
   cursor: pointer;
   color: var(--color);
+}
+
+@media screen and (max-width: 70rem) {
+  .wrapper {
+    top: min(calc(100vh - 6rem), 90vh);
+    right: 1.5rem;
+    left: unset;
+  }
 }
 </style>

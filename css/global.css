@@ -42,7 +42,7 @@ body {
   pointer-events: none;
   position: fixed;
   opacity: 0;
-  top: -10vh;
+  left: -110vw;
 }
 
 a {
@@ -61,7 +61,7 @@ textarea {
 main {
   max-width: 80ch;
   margin: 0 auto;
-  padding: 5vh 1rem;
+  padding: 5vh 1.5rem;
   flex: 1;
 }
 p {
@@ -161,7 +161,7 @@ code {
 pre[class*='language-'] {
   border-radius: 5px;
   background-color: #334;
-  max-width: 96vw;
+  max-width: calc(100vw - 3rem);
 }
 
 @keyframes fuzzy {
