@@ -80,7 +80,6 @@ footer p a {
   position: relative;
   overflow: hidden;
   display: initial;
-  font-style: italic;
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-skip-ink: auto;
@@ -153,6 +152,9 @@ code {
   font-size: 90%;
   border-radius: 0.25rem;
   user-select: all;
+}
+a code {
+  background-color: transparent;
 }
 
 .saber-highlight {
