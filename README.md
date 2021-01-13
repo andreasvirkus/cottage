@@ -4,29 +4,22 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
 
-## A humble homepage of sorts...
+Cottage is my personal slice of the internet. My cozy corner, my safe haven & my technical playground.
 
 Hosted on [Netlify](https://netlify.com) & built with [Saber](https://saber.land)
 
-## Want a site like this?
+## `git log`
 
 ### Metalsmith (legacy)
 
-The second version of this site is still available under [metalsmith-ajv.netlify.com](https://metalsmith-ajv.netlify.com).\
-Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or follow this **one-click-wonder-deploy** to
-get one yourself:
+A previous version of this site is still available under [metalsmith-ajv.netlify.com](https://metalsmith-ajv.netlify.com).\
+Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)** or click here to host one yourself:
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
 
-### Vuepress (legacy)
-
-Add `ajv` to your `.vuepress/config.js`'s `theme` parameter. Head over to
-[vuepress-theme-ajv](https://github.com/andreasvirkus/vuepress-theme-ajv)'s repo for the config
-params and details.
-
 ### Saber (current)
 
-Read my reasons for impulsive SSG-hopping [here]() and to find out why I've decided to roll with Saber!
+Read my reasons for impulsive SSG-hopping [here]() (👈 TODO) and to find out why I've decided to stick with Saber!
 
 ---
 

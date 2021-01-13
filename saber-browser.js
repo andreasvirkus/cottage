@@ -1,5 +1,5 @@
 import Wrapper from '@/layouts/Chrome'
-import 'prismjs/themes/prism-tomorrow.css'
+import 'prism-themes/themes/prism-shades-of-purple.css'
 import '@/css/variables.css'
 import '@/css/global.css'
 import '@/css/utility.css'

@@ -160,10 +160,15 @@ a code {
 .saber-highlight {
   position: relative;
 }
+code[class*='language-'],
 pre[class*='language-'] {
   border-radius: 5px;
-  background-color: #334;
+  background-color: var(--color-dark);
   max-width: calc(100vw - 3rem);
+}
+
+pre[class*='language-'] {
+  padding: 2rem 1rem;
 }
 
 @keyframes fuzzy {

@@ -108,7 +108,7 @@ Who knows... but now you know how to.
   position: relative;
   overflow: hidden;
   max-height: 112px;
-  background-color: #CECECE;
+  border: 1px solid;
   color: var(--color);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
