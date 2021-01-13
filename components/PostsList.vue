@@ -12,7 +12,8 @@
             </span>
           </div>
         </saber-link>
-        <div v-html="post.excerpt"></div>
+
+        <div v-html="stripTags(post.excerpt)" :class="$style.excerpt"></div>
       </li>
     </ol>
   </nav>
@@ -26,7 +27,12 @@ export default {
   props: {
     posts: Array
   },
-  methods: { formatPostDate }
+  methods: {
+    formatPostDate,
+    stripTags(html) {
+      return html.replace(/<(?:.|\n)*?>/gm, '')
+    }
+  }
 }
 </script>
 
@@ -44,16 +50,23 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 4rem;
+  margin-top: 1rem;
   font-size: 1.6rem;
+  box-shadow: none;
 }
 
-.link code + code {
-  margin-left: 0.5rem;
+.link:hover {
+  background: transparent;
 }
 
-.subtitle {
+.title {
+  font-size: 1.4rem;
+}
+
+.subtitle,
+.excerpt {
   font-size: 0.875rem;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 70rem) {

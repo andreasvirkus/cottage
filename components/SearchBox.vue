@@ -1,5 +1,5 @@
 <template>
-  <div class="search foxy-box fuzzy-interact">
+  <div class="search foxy-box">
     <input
       v-model="query"
       ref="input"
@@ -151,6 +151,7 @@ export default {
   line-height: 1.4;
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
+  cursor: pointer;
   z-index: 5;
 }
 .search__link {
