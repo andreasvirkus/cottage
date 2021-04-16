@@ -133,6 +133,7 @@ export default {
 .page-nav {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 3rem 0;
 }
 .blog__next {

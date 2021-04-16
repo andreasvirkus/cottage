@@ -90,6 +90,7 @@ export default {
 .menu__link:hover {
   color: white;
   background-image: var(--gradient);
+  border-radius: 4px;
 }
 
 .menu__link.router-link-exact-active::after {

@@ -24,6 +24,22 @@ body {
   transition: background-color 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
+._background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: #e5e5f7;
+  background-image: repeating-radial-gradient(circle at 0px 0px, transparent 0px, rgb(229, 229, 247) 20px),
+    repeating-linear-gradient(rgba(68, 76, 247, 0.333), rgb(68, 76, 247));
+  opacity: 0.05;
+}
+:root[data-theme='dark'] ._background {
+  opacity: 0.01;
+}
+
 ::selection {
   background-color: var(--accent-primary);
   color: var(--color);
@@ -100,6 +116,7 @@ footer p a:focus {
 
 img {
   height: auto;
+  border-radius: 4px;
 }
 
 hr {

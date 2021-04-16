@@ -30,6 +30,8 @@
         <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="3" />
       </filter>
     </svg>
+
+    <div class="_background"></div>
   </div>
 </template>
 
