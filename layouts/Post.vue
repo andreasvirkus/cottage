@@ -25,22 +25,22 @@
       <footer class="blog__footer">
         <p class="blog__signout">~ Thanks for giving this a read 🖖 ~</p>
         <template v-if="page.prevPost || page.nextPost">
-          <hr class="blog__divider" />
+          <!-- <hr class="blog__divider" /> -->
           <div class="page-nav">
-            <span v-if="page.prevPost" class="prev">
+            <span v-if="page.prevPost">
               ←
               <saber-link :to="page.prevPost.permalink">
                 {{ page.prevPost.title }}
               </saber-link>
             </span>
-            <span v-if="page.nextPost" class="next">
+            <span v-if="page.nextPost" class="blog__next">
               <saber-link :to="page.nextPost.permalink">
                 {{ page.nextPost.title }}
               </saber-link>
               →
             </span>
           </div>
-          <hr class="blog__divider" />
+          <!-- <hr class="blog__divider" /> -->
         </template>
       </footer>
     </article>
@@ -132,7 +132,12 @@ export default {
 }
 .page-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 3rem 0;
+}
+.blog__next {
+  margin-top: 2rem;
+  margin-left: -4rem;
 }
 pre code {
   user-select: all;

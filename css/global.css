@@ -25,8 +25,8 @@ body {
 }
 
 ::selection {
-  background-color: var(--accent-secondary);
-  color: var(--color-contrast);
+  background-color: var(--accent-primary);
+  color: var(--color);
 }
 
 .emoji {

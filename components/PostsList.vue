@@ -11,9 +11,8 @@
               <code v-for="tag in post.tags" :key="tag">{{ tag }}</code>
             </span>
           </div>
+          <div v-html="stripTags(post.excerpt)" :class="$style.excerpt"></div>
         </saber-link>
-
-        <div v-html="stripTags(post.excerpt)" :class="$style.excerpt"></div>
       </li>
     </ol>
   </nav>
@@ -50,13 +49,16 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 3rem;
   font-size: 1.6rem;
-  box-shadow: none;
-}
 
+  padding: 2rem;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 20px 30px -20px rgb(0 0 0 / 15%);
+}
 .link:hover {
   background: transparent;
+  box-shadow: 0 30px 40px -30px rgb(0 0 0 / 50%);
 }
 
 .title {
