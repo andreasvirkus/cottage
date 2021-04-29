@@ -46,7 +46,6 @@ export default {
   color: transparent;
   z-index: 5;
   padding: 6px;
-  border-radius: 4px;
   cursor: pointer;
 }
 
