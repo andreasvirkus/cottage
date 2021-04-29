@@ -4,17 +4,17 @@ description: Get to know me. Long walks on the beach included.
 layout: Page
 ---
 
-# me 🤓
+# me
 
 I'm not much of a talker, but let me rant about myself for a bit. You can skip ahead to:
 
-- my [passions](#superpowers-⚡)
+- my [passions](#superpowers)
 - overview about my [education](#education)
 - or my [work](#labor).
 
 My full _curriculum vitae_ can be viewed [here](/cv/) and downloaded through the following link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf).
 
-## superpowers <span class="emoji">⚡</span>
+## superpowers
 
 I'm an aspiring full-stack developer (with a front-ended tilt). I'm interested in all kinds of visual communication, but my major focus is on designing web applications & interfaces. I love (and preach) all things JavaScript, semantic HTML, the power of CSS & progressive enhancement. Lately I've really enjoyed tinkering with:
 
@@ -33,7 +33,7 @@ I'm an aspiring full-stack developer (with a front-ended tilt). I'm interested i
 - ESM build tools (Vite, Snowpack)
 
 I work great with designers (challenging their perspective on things),
-other devs 🤓 or _less-techy folk_ (pretty sure that's the technical term for it).
+other devs or _less-techy folk_ (pretty sure that's the technical term for it).
 
 I've also dabbled in other fields (and hope to perfect them in the future), like:
 
@@ -47,7 +47,6 @@ I've also dabbled in other fields (and hope to perfect them in the future), like
 - dockerisation, Kubernetes
 - UX & user flow
 - interaction design
-- Google-fu (near master level 💯)
 
 ## education
 
@@ -106,7 +105,7 @@ If you care about the more _official_ part of this, here's a rundown:
 - [Hacker News](https://news.ycombinator.com/)
 - [Jag Talon](https://www.jagtalon.com/)
 - Too many [Smashing Magazine](https://www.smashingmagazine.com/articles/),
-  [dev.to](https://dev.to) & Medium articles to count 😵
+  [dev.to](https://dev.to) & Medium articles to count
 
 ## labor
 

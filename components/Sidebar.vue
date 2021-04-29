@@ -31,15 +31,15 @@ export default {
           path: '/'
         },
         {
-          label: 'Me',
-          path: '/about'
+          label: '/me',
+          path: '/me'
         },
         {
-          label: 'Thoughts',
+          label: '/thoughts',
           path: '/thoughts'
         },
         {
-          label: 'Contact',
+          label: '/contact',
           path: '/contact'
         }
       ]
@@ -57,15 +57,17 @@ export default {
 </script>
 
 <style>
-.menu {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  margin-top: 3.5rem;
-  transition: transform 0.6s, top 0.4s;
-  backdrop-filter: blur(20px);
+@supports (backdrop-filter: blur(20px)) {
+  .menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    margin-top: 3.5rem;
+    transition: transform 0.6s, top 0.4s;
+    backdrop-filter: blur(20px);
+  }
 }
 
 .menu__list {
@@ -87,13 +89,7 @@ export default {
   line-height: 1;
   transition: transform 0.2s ease-out;
 }
-.menu__link:hover {
-  color: white;
-  background-image: var(--gradient);
-  border-radius: 4px;
-}
-
-.menu__link.router-link-exact-active::after {
+.menu__link::after {
   content: '';
   display: block;
   position: absolute;
@@ -101,6 +97,12 @@ export default {
   bottom: 0;
   height: 4px;
   width: 100%;
+}
+.menu__link:not(.router-link-exact-active):hover::after {
+  background-color: var(--color);
+  opacity: 0.2;
+}
+.menu__link.router-link-exact-active::after {
   background-image: var(--gradient);
 }
 </style>

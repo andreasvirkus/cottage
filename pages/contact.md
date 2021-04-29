@@ -4,7 +4,7 @@ description: View my contact details and hit me up!
 layout: Page
 ---
 
-# tere 🤙
+# /tere/
 
 That's `hello` in Estonian.
 
@@ -16,8 +16,4 @@ I consult others on front-end best practises, help them
 execute their next big project or am tinkering on something small (and often silly).
 
 Do let me know if you'd like to collab!\
-Either shoot me an [e-mail](mailto:write@andreasvirkus.me) or find me from the onlines 👇
-
----
-
-🖖
+Either shoot me an [e-mail](mailto:write@andreasvirkus.me) or find me from the onlines.

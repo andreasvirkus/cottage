@@ -23,7 +23,7 @@
       <slot name="default" />
 
       <footer class="blog__footer">
-        <p class="blog__signout">~ Thanks for giving this a read 🖖 ~</p>
+        <p class="blog__signout">~ Thanks for giving this a read ~</p>
         <template v-if="page.prevPost || page.nextPost">
           <!-- <hr class="blog__divider" /> -->
           <div class="page-nav">

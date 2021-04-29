@@ -7,15 +7,17 @@
     <p>Find me on</p>
     <social-links />
 
-    <p>
-      Proudly generated with
-      <a :href="$siteConfig.generatorUrl" :title="$siteConfig.generatorTitle">{{ $siteConfig.generatorName }}</a
-      >,
-    </p>
-    <p>
-      safely hosted on <a :href="$siteConfig.hostUrl" :title="$siteConfig.hostTitle">{{ $siteConfig.hostName }}</a
-      >.
-    </p>
+    <div class="credits">
+      <p>
+        Proudly generated with
+        <a :href="$siteConfig.generatorUrl" :title="$siteConfig.generatorTitle">{{ $siteConfig.generatorName }}</a
+        >,
+      </p>
+      <p>
+        safely hosted on <a :href="$siteConfig.hostUrl" :title="$siteConfig.hostTitle">{{ $siteConfig.hostName }}</a
+        >.
+      </p>
+    </div>
   </footer>
 </template>
 
@@ -50,5 +52,9 @@ export default {
 .edit-link {
   text-align: right;
   font-size: 0.9em;
+}
+
+.credits {
+  margin-top: 3rem;
 }
 </style>
