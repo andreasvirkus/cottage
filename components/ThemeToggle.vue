@@ -45,7 +45,6 @@ export default {
   font-size: 0;
   color: transparent;
   z-index: 5;
-  background-color: rgba(255, 255, 255, 0.3);
   padding: 6px;
   border-radius: 4px;
   cursor: pointer;
