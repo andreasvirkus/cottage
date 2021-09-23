@@ -18,6 +18,7 @@ My full _curriculum vitae_ can be viewed [here](/cv/) and downloaded through the
 
 I'm an aspiring full-stack developer (with a front-ended tilt). I'm interested in all kinds of visual communication, but my major focus is on designing web applications & interfaces. I love (and preach) all things JavaScript, semantic HTML, the power of CSS & progressive enhancement. Lately I've really enjoyed tinkering with:
 
+- Blender
 - Vue.js ♥
 - Svelte ♥
 - PWAs and service-workers
@@ -151,4 +152,5 @@ I started out creating websites for neighbours and small companies, which really
     for the artsy side in me—front-end development seemed like an excellent
     field to start gaining some experience.
 
-In my free time I enjoy working on my motorcycle, disc golfing, practising muay thai & BJJ... and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.
+In my free time I enjoy working on my motorcycle, disc golfing, learning BJJ & Blender,
+bouldering... and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.

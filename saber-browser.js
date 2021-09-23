@@ -34,12 +34,11 @@ export default ({ router, setHead, setRootComponent }) => {
       })
     })
 
-    router.scrollBehavior = (to, from, savedPosition) => {
-      if (to.hash) {
-        return { selector: to.hash }
-      } else {
-        return { x: 0, y: 0 }
-      }
+    router.scrollBehavior = (to, _from, savedPosition) => {
+      if (savedPosition) return savedPosition
+      if (to.params.savePosition) return {}
+      if (to.hash) return { selector: to.hash }
+      return { x: 0, y: 0 }
     }
   }
 
