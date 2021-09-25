@@ -5,8 +5,17 @@
     <div class="blender__reel">
       <button :disabled="prevBtnDisabled" class="blender__nav" @click="goPrevious">&lang;</button>
 
-      <video v-if="renderType === VIDEO" :src="activeRender.url" loop muted autoplay class="blender__render" />
-      <img v-else :src="activeRender.url" class="blender__render" />
+      <div v-if="loading" class="blender__placeholder" />
+      <video
+        v-if="renderType === VIDEO"
+        :src="activeRender.url"
+        loop
+        muted
+        autoplay
+        class="blender__render"
+        @load="loading = false"
+      />
+      <img v-else :src="activeRender.url" class="blender__render" @load="loading = false" />
 
       <button :disabled="nextBtnDisabled" class="blender__nav" @click="goNext">&rang;</button>
     </div>
@@ -186,7 +195,13 @@ export default {
   name: 'blender',
   props: ['page'],
   data() {
-    return { videos, stills, activeRender: videos[0], VIDEO }
+    return {
+      videos,
+      stills,
+      VIDEO,
+      loading: true,
+      activeRender: videos[0]
+    }
   },
   head() {
     const { title, description, excerpt } = this.page
@@ -224,8 +239,7 @@ export default {
     activeRender: {
       handler(render) {
         const hash = this.$route.hash.slice(1)
-        if (render && render.label !== hash)
-          this.$router.replace({ hash: `#${render.label}`, params: { savePosition: true } })
+        if (render && render.label !== hash) history.replaceState({}, '', `#${render.label}`)
       }
     }
   },
@@ -253,6 +267,7 @@ export default {
 
 <style>
 .blender__reel {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -288,5 +303,14 @@ export default {
 .blender__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.blender__placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40rem;
+  width: 40rem;
+  background-color: var(--color-contrast);
 }
 </style>
