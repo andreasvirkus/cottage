@@ -13,9 +13,16 @@
         muted
         autoplay
         class="blender__render"
+        :class="loading && 'blender__render--loading'"
         @load="loading = false"
       />
-      <img v-else :src="activeRender.url" class="blender__render" @load="loading = false" />
+      <img
+        v-else
+        :src="activeRender.url"
+        class="blender__render"
+        :class="loading && 'blender__render--loading'"
+        @load="loading = false"
+      />
 
       <button :disabled="nextBtnDisabled" class="blender__nav" @click="goNext">&rang;</button>
     </div>
@@ -253,12 +260,15 @@ export default {
   },
   methods: {
     switchActiveRender(render) {
+      this.loading = true
       this.activeRender = render
     },
     goPrevious() {
+      this.loading = true
       this.activeRender = this.masterFeed[this.activeIndex - 1]
     },
     goNext() {
+      this.loading = true
       this.activeRender = this.masterFeed[this.activeIndex + 1]
     }
   }
@@ -279,9 +289,10 @@ export default {
   width: 90%;
   max-width: 40rem;
   height: auto;
-  /* min-height: 40rem; */
   border-radius: 8px;
-  /* TODO: Add intrinsic ratio? */
+}
+.blender__render--loading {
+  min-height: 40rem;
 }
 
 .blender__nav {
@@ -307,10 +318,13 @@ export default {
 
 .blender__placeholder {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   height: 40rem;
   width: 40rem;
-  background-color: var(--color-contrast);
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
 }
 </style>
