@@ -5,24 +5,18 @@
     <div class="blender__reel">
       <button :disabled="prevBtnDisabled" class="blender__nav" @click="goPrevious">&lang;</button>
 
-      <div v-if="loading" class="blender__placeholder" />
-      <video
-        v-if="renderType === VIDEO"
-        :src="activeRender.url"
-        loop
-        muted
-        autoplay
-        class="blender__render"
-        :class="loading && 'blender__render--loading'"
-        @load="loading = false"
-      />
-      <img
-        v-else
-        :src="activeRender.url"
-        class="blender__render"
-        :class="loading && 'blender__render--loading'"
-        @load="loading = false"
-      />
+      <div class="blender__media" :class="loading && 'blender__media--loading'">
+        <video
+          v-if="renderType === VIDEO"
+          :src="activeRender.url"
+          loop
+          muted
+          autoplay
+          class="blender__render"
+          @play="loading = false"
+        />
+        <img v-else :src="activeRender.url" class="blender__render" @load="loading = false" />
+      </div>
 
       <button :disabled="nextBtnDisabled" class="blender__nav" @click="goNext">&rang;</button>
     </div>
@@ -260,6 +254,7 @@ export default {
   },
   methods: {
     switchActiveRender(render) {
+      if (render === this.activeRender) return
       this.loading = true
       this.activeRender = render
     },
@@ -283,16 +278,34 @@ export default {
   justify-content: space-between;
 }
 
+.blender__media {
+  position: relative;
+  margin: 2rem auto;
+}
+.blender__media--loading::after {
+  content: '⏳';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  font-size: 3rem;
+}
+
 .blender__render {
   display: block;
-  margin: 2rem auto;
+  margin: 0 auto;
   width: 90%;
   max-width: 40rem;
   height: auto;
   border-radius: 8px;
-}
-.blender__render--loading {
-  min-height: 40rem;
 }
 
 .blender__nav {
@@ -314,17 +327,5 @@ export default {
 .blender__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
-
-.blender__placeholder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 40rem;
-  width: 40rem;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  border-radius: 4px;
 }
 </style>
