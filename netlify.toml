@@ -8,7 +8,7 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Content-Security-Policy = '''
       default-src 'self' https:;
-      connect-src https://gc.zgo.at https://kano.goatcounter.com;
+      connect-src 'self' https://gc.zgo.at https://kano.goatcounter.com;
       object-src 'none';
       img-src 'self' https: data:;
       style-src  'self' 'unsafe-inline';
