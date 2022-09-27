@@ -8,12 +8,12 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Content-Security-Policy = '''
       default-src 'self' https:;
-      connect-src 'self';
+      connect-src https://gc.zgo.at https://kano.goatcounter.com;
       object-src 'none';
       img-src 'self' https: data:;
       style-src  'self' 'unsafe-inline';
       script-src 'self' 'unsafe-inline';
-      script-src-elem 'self' https://storage.googleapis.com https://www.google-analytics.com/analytics.js 'sha256-xrvJjXPsVTsDWETQpggIjt8GbIuC6Sc86vw0ry9JYG4=';'''
+      script-src-elem 'self' https://gc.zgo.at 'sha256-xrvJjXPsVTsDWETQpggIjt8GbIuC6Sc86vw0ry9JYG4=';'''
 
 [[redirects]]
   from = "/about*"

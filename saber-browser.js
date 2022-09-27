@@ -63,6 +63,13 @@ export default ({ router, setHead, setRootComponent }) => {
           'if (localStorage.getItem("theme")) document.documentElement.dataset.theme = localStorage.getItem("theme")'
       }
     ],
+    script: [
+      {
+        async: true,
+        src: 'https://gc.zgo.at/count.js',
+        'data-goatcounter': 'https://kano.goatcounter.com/count'
+      }
+    ],
     __dangerouslyDisableSanitizers: ['script']
   }))
 }

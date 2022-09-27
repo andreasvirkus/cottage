@@ -34,10 +34,6 @@ plugins:
   - resolve: saber-plugin-prismjs
   - resolve: saber-plugin-search
   - resolve: saber-plugin-pwa
-  - resolve: saber-plugin-google-analytics
-    options:
-      trackId: 'UA-99596348-1'
-      anonymizeIp: true
   - resolve: saber-plugin-copy-code
     options:
       buttonStyle:
