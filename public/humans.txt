@@ -1,0 +1,18 @@
+/* humanstxt.org */
+
+/* TEAM */
+Your title: Andreas Johan Virkus
+Site: <write@andreasvirkus.me> (https://andreasvirkus.me/contact)
+Location: Tallinn, Estonia
+
+/* THANKS */
+Vue: https://vuejs.org
+Astro: https://astro.build
+Vercel: https://www.vercel.com
+Forestry: https://tina.io/forestry/
+
+/* SITE */
+Last update: 2023/05/17
+Standards: HTML5, CSS3, ES8
+Components: Astro, Vue
+Software: VSCode, Warp, tea & cookies
