@@ -1,32 +1,23 @@
 {
   "name": "ajv-homepage",
-  "version": "4.0.0",
+  "version": "5.0.0",
+  "type": "module",
   "private": true,
   "description": "A humble homepage of sorts.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "npm install",
-    "dev:old": "saber",
-    "build:old": "saber build",
     "generate-pdf": "markdown-pdf site/cv.md -o site/.vuepress/public/cv.pdf -s dist/assets/css/styles.min.css",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreasvirkus/cottage.git"
   },
-  "keywords": [
-    "saber",
-    "portfolio",
-    "blog",
-    "homepage",
-    "vue"
-  ],
   "author": "https://github.com/andreasvirkus",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/andreasvirkus/cottage/issues"
   },
@@ -38,23 +29,9 @@
     "not ie > 0"
   ],
   "dependencies": {
-    "@astrojs/tailwind": "^3.1.2",
-    "astro": "^2.4.5",
-    "autoprefixer": "^9.8.6",
-    "dayjs": "^1.9.7",
-    "nprogress": "^0.2.0",
-    "prism-themes": "^1.5.0",
-    "prismjs": "^1.27.0",
-    "reading-time": "^1.2.1",
-    "saber": "^0.11.7",
-    "saber-plugin-copy-code": "^0.2.0",
-    "saber-plugin-feed": "^0.4.3",
-    "saber-plugin-google-analytics": "^0.2.1",
-    "saber-plugin-prismjs": "^0.2.4",
-    "saber-plugin-pwa": "^0.4.4",
-    "saber-plugin-query-posts": "^0.4.6",
-    "saber-plugin-search": "^1.0.0",
-    "tailwindcss": "^3.3.2"
-  },
-  "packageManager": "yarn@3.6.3"
+    "@astrojs/mdx": "^1.1.5",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.3",
+    "astro": "^3.6.4"
+  }
 }
