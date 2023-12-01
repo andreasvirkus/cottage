@@ -220,13 +220,6 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"first-post.md": {
-	id: "first-post.md";
-  slug: "first-post";
-  body: string;
-  collection: "thoughts";
-  data: InferEntrySchema<"thoughts">
-} & { render(): Render[".md"] };
 "footnotes-on-the-web/index.md": {
 	id: "footnotes-on-the-web/index.md";
   slug: "footnotes-on-the-web";
@@ -297,13 +290,6 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"second-post.md": {
-	id: "second-post.md";
-  slug: "second-post";
-  body: string;
-  collection: "thoughts";
-  data: InferEntrySchema<"thoughts">
-} & { render(): Render[".md"] };
 "snippet-chainable-classlist/index.md": {
 	id: "snippet-chainable-classlist/index.md";
   slug: "snippet-chainable-classlist";
@@ -356,13 +342,6 @@ declare module 'astro:content' {
 "testing-typography-styles/index.md": {
 	id: "testing-typography-styles/index.md";
   slug: "testing-typography-styles";
-  body: string;
-  collection: "thoughts";
-  data: InferEntrySchema<"thoughts">
-} & { render(): Render[".md"] };
-"third-post.md": {
-	id: "third-post.md";
-  slug: "third-post";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">

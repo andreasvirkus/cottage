@@ -2,13 +2,12 @@
 import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/Base.astro'
 import FormattedDate from '../components/FormattedDate.astro'
-import { getReadingTime } from '../utils/reading-time'
 import { getConicGradient } from '../utils/conic-art'
 
-type Props = CollectionEntry<'thoughts'>['data']
+type Props = CollectionEntry<'thoughts'>
 
-const { title, pubDate, updatedDate } = Astro.props
-const { slug, post } = Astro.params
+const { title, pubDate, updatedDate, readingTime } = Astro.props.data
+const { slug } = Astro.params
 ---
 
 <Base>
@@ -36,11 +35,11 @@ const { slug, post } = Astro.params
       line-height: 1;
     }
     .title h1 {
-      margin: 0 0 0.5em 0;
+      margin-bottom: 0.5em;
     }
     .date {
       margin-bottom: 0.5em;
-      color: rgb(var(--gray));
+      font-size: 0.8em;
     }
     .last-updated-on {
       font-style: italic;
@@ -63,9 +62,9 @@ const { slug, post } = Astro.params
         }
       </div>
       {
-        post && (
+        readingTime && (
           <div class="reading-time">
-            {getReadingTime(post)} minutes to read
+            {readingTime} minutes to read
             <hr />
           </div>
         )
