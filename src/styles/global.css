@@ -16,7 +16,7 @@
   --background-color: #fff;
   --heading-color: #222;
   --text-color: #444;
-  --link-color: #3273dc;
+  --link-color: #a8ebcb;
   --visited-color:  #8b6fcb;
   --code-background-color: #f2f2f2;
   --code-color: #222;
@@ -30,6 +30,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
       --background-color: rgb(30, 26, 37);
+      --background-color: #0e141b;
       --heading-color: #eee;
       --text-color: #ddd;
       --link-color: #3363ff;

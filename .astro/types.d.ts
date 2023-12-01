@@ -346,13 +346,6 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"using-mdx.mdx": {
-	id: "using-mdx.mdx";
-  slug: "using-mdx";
-  body: string;
-  collection: "thoughts";
-  data: InferEntrySchema<"thoughts">
-} & { render(): Render[".mdx"] };
 "vue-html-variables/index.md": {
 	id: "vue-html-variables/index.md";
   slug: "vue-html-variables";
