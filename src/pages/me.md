@@ -12,7 +12,8 @@ I'm not much of a talker, but let me rant about myself for a bit. You can skip a
 - overview about my [education](#education)
 - or my [work](#labor).
 
-My full _curriculum vitae_ can be viewed [here](/cv/) and downloaded through the following link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf).
+My full _curriculum vitae_ can be viewed [here](/cv/).
+<!-- My full _curriculum vitae_ can be viewed [here](/cv/) and downloaded through the following link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf). -->
 
 ## superpowers
 

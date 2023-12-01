@@ -11,6 +11,10 @@ let isActive = href === pathname || href === pathname.replace(/\/$/, '')
 if (pathname.startsWith('/thoughts/') && href?.toString().startsWith('/thoughts')) {
   isActive = true
 }
+
+if (pathname === '/cv/' && href?.toString().startsWith('/me')) {
+  isActive = true
+}
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
