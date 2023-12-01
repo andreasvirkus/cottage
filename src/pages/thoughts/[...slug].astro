@@ -1,0 +1,52 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import BlogPost from '../../layouts/BlogPost.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('thoughts')
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }))
+}
+type Props = CollectionEntry<'thoughts'>
+
+const post = Astro.props
+const { Content, remarkPluginFrontmatter } = await post.render()
+
+const postList = await getStaticPaths()
+const currentIndex = postList.findIndex((p) => p.params.slug === post.slug)
+const prevPost = postList[currentIndex - 1]
+const nextPost = postList[currentIndex + 1]
+
+post.data.readingTime = remarkPluginFrontmatter.readingTime
+---
+
+<BlogPost {...post}>
+  <Content />
+
+  <footer>
+    <p>Down for more?</p>
+
+    {prevPost && <a href={`/thoughts/${prevPost.params.slug}/`}>← {prevPost.props.data.title}</a>}
+    {nextPost && <a href={`/thoughts/${nextPost.params.slug}/`}>{nextPost.props.data.title} →</a>}
+  </footer>
+</BlogPost>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  footer p {
+    font-size: 1.2rem;
+    flex: 1 0 100%;
+  }
+  footer a {
+    color: var(--color-primary);
+  }
+</style>

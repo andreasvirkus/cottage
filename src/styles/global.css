@@ -1,0 +1,204 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+:root {
+  --width: 74ch;
+  --font-primary: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-secondary: 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro',
+    serif;
+  --font-mono: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', Courier, monospace;
+
+  --font-scale: 1.2em;
+  --background-color: #fff;
+  --heading-color: #222;
+  --text-color: #444;
+  --link-color: #a8ebcb;
+  --visited-color:  #8b6fcb;
+  --code-background-color: #f2f2f2;
+  --code-color: #222;
+  --blockquote-color: #222;
+  --gradient: linear-gradient(90deg,#61e695,#c6ff54);
+	--box-shadow: 0 2px 6px rgba(var(--gray), 25%),
+    0 8px 24px rgba(var(--gray), 33%),
+    0 16px 32px rgba(var(--gray), 33%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --background-color: rgb(30, 26, 37);
+      --background-color: #0e141b;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #3363ff;
+      --visited-color:  #8cc2dd;
+      --code-background-color: #222;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+      --gradient: linear-gradient(90deg,#0ec1f6,#8823de);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media prefers-reduced-motion {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: 100%;
+  font-family: var(--font-secondary);
+  font-size: var(--font-scale);
+  margin: auto;
+  padding: 20px;
+  max-width: var(--width);
+  text-align: left;
+  background-color: var(--background-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+
+body::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #B49BFF;
+  box-shadow: inset 4px solid white;
+}
+
+a, button, input, textarea {
+  font-family: var(--font-mono);
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--heading-color);
+  scroll-margin-top: 100px;
+}
+
+a {
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+main a,
+footer a {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  border-bottom: 3px solid var(--link-color);
+  box-shadow: inset 0 -5px 0 var(--link-color);
+}
+main a:hover,
+footer a:hover {
+  background-color: var(--link-color);
+  border-bottom: 3px solid var(--text-color);
+}
+
+main p {
+  font-size: 1.2em;
+}
+
+strong, b {
+  color: var(--heading-color);
+}
+
+button {
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+content {
+  line-height: 1.6;
+}
+
+table {
+  width: 100%;
+}
+
+hr {
+  display: block;
+  border: 0;
+  /* border-top: 3px double; */
+  max-width: 30ch;
+  margin: 1em auto;
+  text-align: center;
+  overflow: visible;
+}
+
+hr::after {
+  position: relative;
+  display: inline-block;
+  /* content: '§'; */
+  content: '~';
+  background: var(--background-color);
+  padding: 0.25em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  border-left: 1px solid #999;
+  color: var(--code-color);
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.title:hover {
+  text-decoration: none;
+}
+
+.inline {
+  width: auto !important;
+}
+
+.astro-code {
+  padding: 0.5em;
+}
+
+p code {
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  padding: 0.2em;
+  border-radius: 3px;
+}
+
+/* blog post list */
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
+
+ul.blog-posts li {
+  display: flex;
+}
+
+ul.blog-posts li span {
+  flex: 0 0 130px;
+}
+
+ul.blog-posts a:visited {
+  color: var(--visited-color);
+}
