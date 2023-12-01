@@ -1,14 +1,14 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/Base.astro'
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
 import FormattedDate from '../components/FormattedDate.astro'
+import { getReadingTime } from '../utils/reading-time'
+import { getConicGradient } from '../utils/conic-art'
 
 type Props = CollectionEntry<'thoughts'>['data']
 
-const { title, pubDate, updatedDate, heroImage, readingTime } = Astro.props
+const { title, pubDate, updatedDate } = Astro.props
+const { slug, post } = Astro.params
 ---
 
 <Base>
@@ -20,10 +20,12 @@ const { title, pubDate, updatedDate, heroImage, readingTime } = Astro.props
     }
     .hero-image {
       width: 100%;
+      background-image: var(--hero-gradient);
     }
-    .hero-image img {
+    .hero-image {
       display: block;
       margin: 0 auto;
+      height: 200px;
       border-radius: 12px;
       box-shadow: var(--box-shadow);
     }
@@ -46,9 +48,7 @@ const { title, pubDate, updatedDate, heroImage, readingTime } = Astro.props
   </style>
 
   <article>
-    <div class="hero-image">
-      {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-    </div>
+    <div class="hero-image" style={`--hero-gradient: ${getConicGradient(slug || '')}`}></div>
 
     <div class="title">
       <h1>{title}</h1>
@@ -62,10 +62,14 @@ const { title, pubDate, updatedDate, heroImage, readingTime } = Astro.props
           )
         }
       </div>
-      <div class="reading-time">
-        Reading time: {readingTime} minutes
-        <hr />
-      </div>
+      {
+        post && (
+          <div class="reading-time">
+            {getReadingTime(post)} minutes to read
+            <hr />
+          </div>
+        )
+      }
     </div>
 
     <slot />

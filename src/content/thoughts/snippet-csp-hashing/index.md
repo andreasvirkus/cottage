@@ -9,8 +9,11 @@ tags:
 ---
 
 Another quick one - if you've ever wanted to add a short inline snippet to a
-site that's properly locked down with [Content Security Policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/), then
-you can add `'<hash-algorithm>-<base64-value>'` to your CSP to whitelist it.
+site that's properly locked down with [Content Security Policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/), then you can add the following to your CSP to whitelist it.
+
+```
+'<hash-algorithm>-<base64-value>'
+```
 
 The supported algorithms are sha256, sha384 or sha512. It also works for CSS and from
 CSP 3.0 it'll even work for the `script-src` directive for external scripts!

@@ -6,9 +6,13 @@
 
 :root {
   --width: 74ch;
-  --font-main: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu;
-  --font-secondary: Verdana, sans-serif;
-  --font-scale: 1.1em;
+  --font-primary: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-secondary: 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro',
+    serif;
+  --font-mono: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', Courier, monospace;
+
+  --font-scale: 1.2em;
   --background-color: #fff;
   --heading-color: #222;
   --text-color: #444;
@@ -30,7 +34,7 @@
       --text-color: #ddd;
       --link-color: #3363ff;
       --visited-color:  #8cc2dd;
-      --code-background-color: #000;
+      --code-background-color: #222;
       --code-color: #ddd;
       --blockquote-color: #ccc;
       --gradient: linear-gradient(90deg,#0ec1f6,#8823de);
@@ -56,8 +60,12 @@ body {
   color: var(--text-color);
 }
 
+a, button, input, textarea {
+  font-family: var(--font-mono);
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-main);
+  font-family: var(--font-primary);
   color: var(--heading-color);
 }
 
@@ -80,6 +88,10 @@ footer a:hover {
   border-bottom: 3px solid var(--text-color);
 }
 
+main p {
+  font-size: 1.2em;
+}
+
 strong, b {
   color: var(--heading-color);
 }
@@ -99,8 +111,11 @@ table {
 }
 
 hr {
+  display: block;
   border: 0;
   border-top: 3px dashed;
+  max-width: 30ch;
+  margin: 2em auto;
 }
 
 img {

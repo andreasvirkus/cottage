@@ -2,10 +2,18 @@
 import Base from '../../layouts/Base.astro'
 import { getCollection } from 'astro:content'
 import FormattedDate from '../../components/FormattedDate.astro'
+import { getConicGradient } from '../../utils/conic-art'
 
-const posts = ((await getCollection('thoughts')) || []).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
-)
+const posts = ((await getCollection('thoughts')) || [])
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .map((post) => ({
+    ...post,
+    // Generate custom gradient for each post, with the slug being seed
+    data: {
+      ...post.data,
+      heroImage: getConicGradient(post.slug || ''),
+    },
+  }))
 ---
 
 <Base>
@@ -23,6 +31,18 @@ const posts = ((await getCollection('thoughts')) || []).sort(
       width: calc(50% - 1rem);
       border-radius: 12px;
     }
+
+    ul a {
+      border: none;
+      box-shadow: none;
+    }
+    ul a:hover {
+      box-shadow: none;
+      background: none;
+    }
+    ul a:hover .gradient {
+      opacity: 0.4;
+    }
     ul li * {
       text-decoration: none;
       transition: 0.2s ease;
@@ -32,15 +52,17 @@ const posts = ((await getCollection('thoughts')) || []).sort(
       margin-bottom: 1rem;
       text-align: center;
     }
-    ul li:first-child img {
+    ul li:first-child .gradient {
       width: 100%;
     }
     ul li:first-child .title {
       font-size: 2.369rem;
     }
-    ul li img {
+    ul li .gradient {
       margin-bottom: 0.5rem;
       border-radius: 12px;
+      background-image: var(--hero-gradient);
+      height: 132px;
     }
     ul li a {
       display: block;
@@ -58,7 +80,7 @@ const posts = ((await getCollection('thoughts')) || []).sort(
     ul li a:hover .date {
       color: rgb(var(--accent));
     }
-    ul a:hover img {
+    ul a:hover .gradient {
       box-shadow: var(--box-shadow);
     }
     @media (max-width: 720px) {
@@ -83,6 +105,12 @@ const posts = ((await getCollection('thoughts')) || []).sort(
     Here you can read 'bout my questionable opinions on anything dev-related or just nice tips/hacks I enjoy having in
     my utility belt.
   </p>
+  <p>
+    <strong>PS!</strong>
+    <em
+      >I've yet to figure out what I want to do with images, so for now enjoy these randomly generated conic gradients.</em
+    >
+  </p>
   <hr />
 
   <section>
@@ -91,7 +119,7 @@ const posts = ((await getCollection('thoughts')) || []).sort(
         posts.map((post) => (
           <li>
             <a href={`/thoughts/${post.slug}/`}>
-              <img width={720} height={360} src={post.data.heroImage} alt="" />
+              <div class="gradient" style={`--hero-gradient: ${post.data.heroImage}`} />
               <h4 class="title">{post.data.title}</h4>
               <p class="date">
                 <FormattedDate date={post.data.pubDate} />
