@@ -4,11 +4,13 @@ const hour = today.getHours()
 const hourFormatted = hour < 10 ? '0' + hour : hour
 const min = today.getMinutes()
 const minFormatted = min < 10 ? '0' + min : min
-const timeOfDay = hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : 'evening'
+let timeOfDay = hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : 'evening'
+
+if (hour < 6) timeOfDay = 'night'
 ---
 
 <footer>
-  <div>~</div>
+  <hr />
   <p>Good {timeOfDay}! It's <time :datetime="today">{hourFormatted}:{minFormatted}</time>.</p>
 
   <div class="links">
