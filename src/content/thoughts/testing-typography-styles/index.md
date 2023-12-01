@@ -20,8 +20,11 @@ in the form of a blog post.
 So let's run through some rudimentary elements essential for a half-decent blog!
 
 **Edit** This also turned out to be very useful whilst refactoring this site from
-[Metalsmith to Vuepress]() (and I'd imagine likewise for a style makeover).
-<!-- TODO: Link to Vuepress migration post in the future -->
+[Metalsmith to Vuepress]() (and I'd imagine likewise for a future style makeover).
+
+**Edit 2019** *...and when migrating from Vuepress to Saber*
+
+**Edit 2023** *...and when migrating from Saber to Astro*
 
 We'll start off with some headings
 
@@ -84,7 +87,7 @@ body {
 }
 ```
 
-Also the `<kbd>` element is great for writing inline styles!
+Also inline code `<kbd>` examples need some love!
 
 ~~Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.~~ (covered by migrating to Vuepress)
 <!-- TODO: Link to Vuepress migration post in the future -->

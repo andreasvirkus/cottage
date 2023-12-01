@@ -6,7 +6,7 @@ layout: ../layouts/Base.astro
 
 # welcome
 
-Glad to have you in my Small Corner of the Web™.
+Glad to have you in my small Corner of the Web™.
 I'm `Andreas` and I'm very enthusiastic about the magical
 [WWW](https://webfoundation.org/about/vision/history-of-the-web/).
 This site's main purpose is to act as my personal playground for different web

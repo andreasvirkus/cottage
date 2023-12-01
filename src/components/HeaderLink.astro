@@ -1,24 +1,40 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<'a'>
 
-const { href, class: className, ...props } = Astro.props;
+const { href, class: className, ...props } = Astro.props
 
-const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+const { pathname } = Astro.url
+let isActive = href === pathname || href === pathname.replace(/\/$/, '')
+
+if (pathname.startsWith('/thoughts/') && href?.toString().startsWith('/thoughts')) {
+  isActive = true
+}
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
+  <slot />
 </a>
+
 <style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
+  a {
+    display: inline-block;
+    padding: 1em 0.5em;
+    color: var(--text-color);
+  }
+  a.active {
+    position: relative;
+    font-weight: bolder;
+  }
+  a.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    background-image: var(--gradient);
+  }
 </style>
