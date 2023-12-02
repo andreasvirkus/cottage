@@ -44,7 +44,7 @@ Current - {{ currentDate }}
 
 When your assignment is due - {{ assignmentIsDue }}
 
-<script>
+<script type="module">
 export default {
   name: 'increment-javascript-date',
   data() {
