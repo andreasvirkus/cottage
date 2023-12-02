@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, passthroughImageService } from 'astro/config'
 import mdx from '@astrojs/mdx'
 // import tailwind from "@astrojs/tailwind"
 import sitemap from '@astrojs/sitemap'
@@ -8,6 +8,9 @@ import { remarkReadingTime } from './src/utils/reading-time'
 export default defineConfig({
   site: 'https://andreasvirkus.me',
   integrations: [mdx(), sitemap()],
+  image: {
+    service: passthroughImageService(),
+  },
   // integrations: [tailwind()]
   markdown: {
     remarkPlugins: [remarkReadingTime],
