@@ -6,7 +6,7 @@ import { SITE_TITLE } from '../consts'
 <header>
   <nav>
     <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
+    <div class="links">
       <HeaderLink href="/">~</HeaderLink> /
       <HeaderLink href="/me">me</HeaderLink> /
       <HeaderLink href="/thoughts">thoughts</HeaderLink> /
@@ -20,6 +20,7 @@ import { SITE_TITLE } from '../consts'
     position: sticky;
     top: 0;
     background: var(--background-color);
+    padding-top: 0.5em;
     padding-bottom: 1em;
     z-index: 2;
   }
@@ -41,6 +42,11 @@ import { SITE_TITLE } from '../consts'
   @media (max-width: 768px) {
     header {
       padding-bottom: 0.2em;
+      padding-top: 0.2em;
+    }
+
+    .links {
+      margin: 0 auto;
     }
 
     h2 {

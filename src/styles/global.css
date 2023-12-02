@@ -55,15 +55,18 @@ body {
   flex-direction: column;
   gap: 1em;
   min-height: 100vh;
-  font-family: var(--font-secondary);
-  font-size: var(--font-scale);
   margin: auto;
   max-width: var(--width);
+  width: calc(100% - 1.6em);
+
+  font-family: var(--font-secondary);
+  font-size: var(--font-scale);
+  line-height: 1.5;
   text-align: left;
-  background-color: var(--background-color);
   word-wrap: break-word;
   overflow-wrap: break-word;
-  line-height: 1.5;
+
+  background-color: var(--background-color);
   color: var(--text-color);
 }
 
