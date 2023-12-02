@@ -1,7 +1,8 @@
 ---
 title: blender
 description: Follow my journey with Blender
-layout: Blender
+# layout: Blender
+layout: ../layouts/Base.astro
 ---
 
 # blender
