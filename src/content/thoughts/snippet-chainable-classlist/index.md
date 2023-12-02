@@ -1,5 +1,5 @@
 ---
-title: "snippet #4 - chainable classList"
+title: 'snippet #4 - chainable classList'
 
 description: Logging is always the missing link of your dev chain
 pubDate: 2019-11-10
@@ -15,9 +15,18 @@ function classList(el) {
   const list = el.classList
 
   return {
-    add: function(c) { list.add(c); return this },
-    toggle: function(c) { list.toggle(c); return this },
-    remove: function(c) { list.remove(c); return this }
+    add: function (c) {
+      list.add(c)
+      return this
+    },
+    toggle: function (c) {
+      list.toggle(c)
+      return this
+    },
+    remove: function (c) {
+      list.remove(c)
+      return this
+    },
   }
 }
 ```

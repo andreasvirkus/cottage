@@ -1,5 +1,5 @@
 ---
-title: "snippet #3 - chainable logger"
+title: 'snippet #3 - chainable logger'
 
 description: Logging is always the missing link of your dev chain
 pubDate: 2019-11-08
@@ -17,10 +17,10 @@ As a lover of terse JavaScript, I often use the shorthand return pattern
 for fat-arrow functions, such as
 
 ```js
-const paidPlans = plans.filter(plan => plan.subscriptionId)
+const paidPlans = plans.filter((plan) => plan.subscriptionId)
 
 // Instead of 👇
-const paidPlans = plans.filter(plan => {
+const paidPlans = plans.filter((plan) => {
   return !!plan.subscriptionId
 })
 ```
@@ -44,10 +44,10 @@ directly, since then it would get looped over with `for (a in array)`, but we ca
 `Object.defineProperty()`:
 
 ```js
-Object.defineProperty(Array.prototype, 'log',  {
+Object.defineProperty(Array.prototype, 'log', {
   value: function () {
-    (this).forEach(item => console.log(item))
-  }
+    this.forEach((item) => console.log(item))
+  },
 })
 ```
 
@@ -55,10 +55,11 @@ And now it's a breeze to check whether or not an array contains
 the right data. No more interim variables or having to write
 explicit return statements since you had to call `console.log`
 on the line above 😬 Rejoice!
+
 ```js
 const newArray = oldArray
   .sort(someSortMethod)
-  .filter(i => i.quantity > 5)
+  .filter((i) => i.quantity > 5)
   .log() // Wooh - found my mistake in seconds!
-  .map(i => i.name)
+  .map((i) => i.name)
 ```

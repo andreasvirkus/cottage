@@ -13,6 +13,7 @@ I'm not much of a talker, but let me rant about myself for a bit. You can skip a
 - or my [work](#labor).
 
 My full _curriculum vitae_ can be viewed [here](/cv/).
+
 <!-- My full _curriculum vitae_ can be viewed [here](/cv/) and downloaded through the following link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf). -->
 
 ## superpowers
@@ -179,7 +180,7 @@ Programming has long been an interest of mine. Having also a soft spot
 for the artsy side in me—front-end development seemed like an excellent
 field to start gaining some experience.
 
-----
+---
 
 In my free time I enjoy working on my motorcycle, disc golfing, learning BJJ & Blender,
 bouldering... and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.

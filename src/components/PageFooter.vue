@@ -32,8 +32,8 @@ export default {
     repoLink() {
       if (!this.page) return false
       return [this.$siteConfig.repoLink, `/edit/master/pages/`, `${this.page.slug}.md`].join('')
-    }
-  }
+    },
+  },
 }
 </script>
 

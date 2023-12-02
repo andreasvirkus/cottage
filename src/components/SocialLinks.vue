@@ -27,33 +27,33 @@ export default {
         {
           alt: 'Glimpse at my code (GitHub)',
           link: 'https://www.github.com/andreasvirkus',
-          name: 'GitHub'
+          name: 'GitHub',
         },
         {
           alt: 'View my scribblings (Codepen)',
           link: 'https://codepen.io/ajv/pens/popular/',
-          name: 'Codepen'
+          name: 'Codepen',
         },
         {
           alt: 'See my network (LinkedIn)',
           link: 'https://www.linkedin.com/in/andreasvirkus',
-          name: 'LinkedIn'
+          name: 'LinkedIn',
         },
         {
           alt: 'Pen pal me (e-mail)',
           link: 'mailto:write@andreasvirkus.me',
-          name: 'E-mail'
+          name: 'E-mail',
         },
         {
           alt: 'Hear first of my posts (RSS)',
           link: '/rss2.xml',
           rel: 'alternate',
           type: 'application/rss+xml',
-          name: 'RSS'
-        }
-      ]
+          name: 'RSS',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

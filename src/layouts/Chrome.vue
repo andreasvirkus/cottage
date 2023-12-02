@@ -41,8 +41,8 @@ export default {
   name: 'chrome',
   components: {
     Sidebar,
-    PageFooter
-  }
+    PageFooter,
+  },
 }
 </script>
 

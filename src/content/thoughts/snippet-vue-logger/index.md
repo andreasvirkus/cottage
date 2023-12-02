@@ -1,5 +1,5 @@
 ---
-title: "snippet #1 - vue logger"
+title: 'snippet #1 - vue logger'
 
 description: Conditional logging - check!
 pubDate: 2019-11-07
@@ -35,38 +35,40 @@ your `.env.local` or `.env.development` files (but definitely set it to false in
 export const logger = (...args) => process.env.VUE_APP_DEBUG && console.log(...args)
 
 export default {
-  install (Vue) {
+  install(Vue) {
     Vue.prototype.$log = logger
-  }
+  },
 }
 ```
 
 We still export the `logger` function, since it comes in handy in regular `.js` files,
 e.g. for your router and store files.\
 We can now import those in our entrypoint (e.g. `main.js`).
+
 ```js
 import Vue from 'vue'
 import logPlugin, { logger } from '@/src/utils/logger'
 
 Vue.use(logPlugin)
 new Vue({
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount('#app')
 logger('App mounted')
 ```
 
 By using it as a plugin, it's always available in our Vue components without excessive
 import statements. Note that multiple parameters work just like they do for `console.log`:
+
 ```html
 <script>
-export default {
-  name: 'some-child',
-  props: {
-    msg: String
-  },
-  created () {
-    this.$log('Child component created!', msg)
+  export default {
+    name: 'some-child',
+    props: {
+      msg: String,
+    },
+    created() {
+      this.$log('Child component created!', msg)
+    },
   }
-}
 </script>
 ```

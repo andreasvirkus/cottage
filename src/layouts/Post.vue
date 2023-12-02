@@ -59,14 +59,14 @@ export default {
   name: 'post',
   data() {
     return {
-      readingTime: null
+      readingTime: null,
     }
   },
   props: ['page'],
   components: {
     Sidebar,
     SearchBox,
-    PageFooter
+    PageFooter,
   },
   async mounted() {
     await this.$nextTick()
@@ -82,12 +82,12 @@ export default {
       meta: [
         {
           name: 'description',
-          content: description || excerpt || this.$siteConfig.description
-        }
-      ]
+          content: description || excerpt || this.$siteConfig.description,
+        },
+      ],
     }
   },
-  methods: { formatPostDate }
+  methods: { formatPostDate },
 }
 </script>
 

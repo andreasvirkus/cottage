@@ -28,21 +28,21 @@ export default {
       links: [
         {
           label: `~/`,
-          path: '/'
+          path: '/',
         },
         {
           label: '/me',
-          path: '/me'
+          path: '/me',
         },
         {
           label: '/thoughts',
-          path: '/thoughts'
+          path: '/thoughts',
         },
         {
           label: '/contact',
-          path: '/contact'
-        }
-      ]
+          path: '/contact',
+        },
+      ],
     }
   },
   props: ['page'],
@@ -50,9 +50,9 @@ export default {
     activeLinkIndex() {
       const path = this.$route.path
       if (path.startsWith('/thoughts')) return 2
-      return this.links.findIndex(link => link.path === path || link.path + '/' === path) || 0
-    }
-  }
+      return this.links.findIndex((link) => link.path === path || link.path + '/' === path) || 0
+    },
+  },
 }
 </script>
 
@@ -65,7 +65,9 @@ export default {
     right: 0;
     z-index: 3;
     margin-top: 3.5rem;
-    transition: transform 0.6s, top 0.4s;
+    transition:
+      transform 0.6s,
+      top 0.4s;
     backdrop-filter: blur(20px);
   }
 }

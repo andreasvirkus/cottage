@@ -1,5 +1,5 @@
 ---
-title: "emoji icon set"
+title: 'emoji icon set'
 
 description: A small timeout utility for development
 pubDate: 2020-05-10
@@ -19,11 +19,12 @@ jive with your next project's visual vibe or grant some minimalism, to keep the 
 a little more grounded and prevent it from being too colourful.
 
 We can achieve it with just a couple lines of CSS! The benefits here might be that
-1) they're "installed" for everyone, so there's nothing to download (performance <span class="emoji">⚡️</span>)
-2) you don't need to add Yet Another Dependency™ to your project (great for prototyping)
-3) the selection is huge _and_ growing + almost all users find the figures already familiar
-4) it's a bit of a different look to regular emojis and could look rather tasteful when done right
-5) you won't have to properly title all the icons you use, since emojis are [quite accessible](https://www.perkinselearning.org/technology/blog/how-do-people-vision-impairments-use-emoji) out-of-the-box.
+
+1. they're "installed" for everyone, so there's nothing to download (performance <span class="emoji">⚡️</span>)
+2. you don't need to add Yet Another Dependency™ to your project (great for prototyping)
+3. the selection is huge _and_ growing + almost all users find the figures already familiar
+4. it's a bit of a different look to regular emojis and could look rather tasteful when done right
+5. you won't have to properly title all the icons you use, since emojis are [quite accessible](https://www.perkinselearning.org/technology/blog/how-do-people-vision-impairments-use-emoji) out-of-the-box.
 
 _Side note: Perkins has some pretty great articles that give you amazing insights on how various people use software that you build - check them out!_
 
@@ -34,7 +35,7 @@ best practises, but I like the way `<span emoji>` feels when I write it)
 ```css
 span[emoji] {
   color: transparent;
-  text-shadow: 0 0 #CECECE;
+  text-shadow: 0 0 #cecece;
 }
 ```
 
@@ -62,11 +63,12 @@ We can now take this one step further by giving them an outline with `text-shado
 
 ```css
 .stroke {
-  text-shadow: 0 0 white,
-   -1px -1px 0 #4A4A4A,
-    1px -1px 0 #4A4A4A,
-    -1px 1px 0 #4A4A4A,
-     1px 1px 0 #4A4A4A;
+  text-shadow:
+    0 0 white,
+    -1px -1px 0 #4a4a4a,
+    1px -1px 0 #4a4a4a,
+    -1px 1px 0 #4a4a4a,
+    1px 1px 0 #4a4a4a;
 }
 ```
 
@@ -104,6 +106,7 @@ span[emoji].highlight::selection {
 
 The only odd part is that when a user selects some part of the text that contains this
 emoji, it'll display the emoji in its original coloured form. To work around this (if you'd like) you should either
+
 - set the emoji to have `user-select: none;`
 - override the highlighted styles with the `::selection` pseudo-class
 

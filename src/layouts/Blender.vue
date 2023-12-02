@@ -64,132 +64,131 @@ const VIDEO = 'video'
 const videos = [
   {
     label: 'donut',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/le_donut.mov?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/le_donut.mov?raw=true',
   },
   {
     label: 'pendulum.row.1',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum_row/renders/final.1.mov?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum_row/renders/final.1.mov?raw=true',
   },
   {
     label: 'pendulum.row.2',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum_row/renders/final.3.mov?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum_row/renders/final.3.mov?raw=true',
   },
   {
     label: 'pendulum.row.3',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum_row/renders/final.4.mov?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum_row/renders/final.4.mov?raw=true',
   },
   {
     label: 'pendulum.cross.1',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum-crossing/render.1.mp4?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum-crossing/render.1.mp4?raw=true',
   },
   {
     label: 'pendulum.cross.2',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum-crossing/render.3.mp4?raw=true'
-  }
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/pendulum-crossing/render.3.mp4?raw=true',
+  },
 ]
 
 const stills = [
   {
     label: 'donut.1',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.2.png?raw=true',
   },
   {
     label: 'donut.2',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.3.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.3.png?raw=true',
   },
   {
     label: 'donut.3',
-    url:
-      'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.7.denoised.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.7.denoised.png?raw=true',
   },
   {
     label: 'donut.4',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.8.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/donut.render.8.png?raw=true',
   },
   {
     label: 'cup.1',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/cup.render.1.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/cup.render.1.png?raw=true',
   },
   {
     label: 'cup.2',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/cup.render.3.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/cup.render.3.png?raw=true',
   },
   {
     label: 'cup.3',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/water.render.1.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/water.render.1.png?raw=true',
   },
   {
     label: 'cup.4',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/water.render.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/water.render.2.png?raw=true',
   },
   {
     label: 'cup.5',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/coffee.render.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/coffee.render.2.png?raw=true',
   },
   {
     label: 'cup.6',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/coffee.render.3.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/coffee.render.3.png?raw=true',
   },
   {
     label: 'cup.7',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/coffee.render.4.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/coffee.render.4.png?raw=true',
   },
   {
     label: 'donut.composition.1',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/final.render.1.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/final.render.1.png?raw=true',
   },
   {
     label: 'donut.composition.2',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/final.render.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/final.render.2.png?raw=true',
   },
   {
     label: 'donut.composition.3',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/final.render.4.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/donut/renders/final.render.4.png?raw=true',
   },
   {
     label: 'piggy',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/piggy/oink.4.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/piggy/oink.4.png?raw=true',
   },
   {
     label: 'sink',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/bathroom_project/sink.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/bathroom_project/sink.2.png?raw=true',
   },
   {
     label: 'lighting.experiment.1',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/cube_lighting/lighting.experiment.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/cube_lighting/lighting.experiment.2.png?raw=true',
   },
   {
     label: 'lighting.experiment.2',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/cube_lighting/lighting.experiment.3.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/cube_lighting/lighting.experiment.3.png?raw=true',
   },
   {
     label: 'gopher.mascot',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/gopher/gopher.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/gopher/gopher.2.png?raw=true',
   },
   {
     label: 'klaus.mascot',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/klaus_desk/klaus.voxel.6.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/klaus_desk/klaus.voxel.6.png?raw=true',
   },
   {
     label: 'hairball.1',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/hair/hair.blob.2.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/hair/hair.blob.2.png?raw=true',
   },
   {
     label: 'hairball.2',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/hair/hair.blob.4.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/hair/hair.blob.4.png?raw=true',
   },
   {
     label: 'hairball.3',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/hair/hair.blob.5.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/hair/hair.blob.5.png?raw=true',
   },
   {
     label: 'metal.blob',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/lego_brick/metal.png?raw=true'
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/lego_brick/metal.png?raw=true',
   },
   {
     label: 'lego.brick',
-    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/lego_brick/bricks.stacked.6.png?raw=true'
-  }
+    url: 'https://github.com/andreasvirkus/blender-fiddles/blob/master/lego_brick/bricks.stacked.6.png?raw=true',
+  },
 ]
 
 export default {
@@ -201,7 +200,7 @@ export default {
       stills,
       VIDEO,
       loading: true,
-      activeRender: videos[0]
+      activeRender: videos[0],
     }
   },
   head() {
@@ -212,9 +211,9 @@ export default {
       meta: [
         {
           name: 'description',
-          content: description || excerpt || this.$siteConfig.description
-        }
-      ]
+          content: description || excerpt || this.$siteConfig.description,
+        },
+      ],
     }
   },
   computed: {
@@ -227,28 +226,28 @@ export default {
       return [...videos, ...stills]
     },
     activeIndex() {
-      return this.masterFeed.findIndex(r => this.activeRender.label === r.label)
+      return this.masterFeed.findIndex((r) => this.activeRender.label === r.label)
     },
     prevBtnDisabled() {
       return this.activeIndex === 0
     },
     nextBtnDisabled() {
       return this.activeIndex === this.masterFeed.length - 1
-    }
+    },
   },
   watch: {
     activeRender: {
       handler(render) {
         const hash = this.$route.hash.slice(1)
         if (render && render.label !== hash) history.replaceState({}, '', `#${render.label}`)
-      }
-    }
+      },
+    },
   },
   created() {
     const label = this.$route.hash.slice(1)
 
     if (this.activeRender.label !== label) {
-      const render = this.masterFeed.find(r => r.label === label)
+      const render = this.masterFeed.find((r) => r.label === label)
       if (render) this.activeRender = render
     }
   },
@@ -265,8 +264,8 @@ export default {
     goNext() {
       this.loading = true
       this.activeRender = this.masterFeed[this.activeIndex + 1]
-    }
-  }
+    },
+  },
 }
 </script>
 

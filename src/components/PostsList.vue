@@ -24,14 +24,14 @@ import { formatPostDate } from '@/util'
 export default {
   name: 'PostsList',
   props: {
-    posts: Array
+    posts: Array,
   },
   methods: {
     formatPostDate,
     stripTags(html) {
       return html.replace(/<(?:.|\n)*?>/gm, '')
-    }
-  }
+    },
+  },
 }
 </script>
 

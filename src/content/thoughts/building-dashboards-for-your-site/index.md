@@ -12,11 +12,13 @@ In this post, I'll go through the approaches that I explored in order to set up 
 user and performance statistics site: [stats](/dashboard).
 
 Prerequisities:
+
 - Had to work on a static site
 - Had to be secure (not exposing any crucial API keys etc)
 - Something else to concider
 
 What I tried:
+
 - GA to Google Docs
 - another framework I tested
 - another framework I tested

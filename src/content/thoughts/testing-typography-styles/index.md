@@ -22,9 +22,9 @@ So let's run through some rudimentary elements essential for a half-decent blog!
 **Edit** This also turned out to be very useful whilst refactoring this site from
 [Metalsmith to Vuepress]() (and I'd imagine likewise for a future style makeover).
 
-**Edit 2019** *...and when migrating from Vuepress to Saber*
+**Edit 2019** _...and when migrating from Vuepress to Saber_
 
-**Edit 2023** *...and when migrating from Saber to Astro*
+**Edit 2023** _...and when migrating from Saber to Astro_
 
 We'll start off with some headings
 
@@ -67,20 +67,19 @@ Edison bulb godard craft beer, leggings keytar organic XOXO disrupt irony hell o
 
 Swag occupy affogato flexitarian, locavore actually plaid cloud bread street art art party cardigan health goth. +1 mustache paleo tofu knausgaard neutra. Gluten-free hashtag umami, helvetica tilde meditation direct trade hot chicken tbh forage artisan. Tote bag helvetica quinoa vexillologist, blog air plant etsy asymmetrical la croix stumptown art party.
 
-
 And now some code blocks:
 
 ```js
-const pi = 'I never remembered it 😶';
+const pi = 'I never remembered it 😶'
 ```
 
 We can even have them
 
-``` html
+```html
 <h2>with <u>different</u> syntaxes</h2>
 ```
 
-``` css
+```css
 body {
   /* Someone's going to jail for this */
   display: none !important;
@@ -90,4 +89,5 @@ body {
 Also inline code `<kbd>` examples need some love!
 
 ~~Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.~~ (covered by migrating to Vuepress)
+
 <!-- TODO: Link to Vuepress migration post in the future -->

@@ -13,7 +13,7 @@ export default {
   name: 'ThemeToggle',
   data() {
     return {
-      darkTheme: false
+      darkTheme: false,
     }
   },
   mounted() {
@@ -21,7 +21,7 @@ export default {
     const preference = window.matchMedia('(prefers-color-scheme: dark)')
     this.darkTheme = savedTheme !== 'light' && preference.matches
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
       this.darkTheme = e.matches
     })
   },
@@ -32,8 +32,8 @@ export default {
       const theme = isDark ? 'dark' : 'light'
       document.documentElement.dataset.theme = theme
       localStorage.setItem('theme', theme)
-    }
-  }
+    },
+  },
 }
 </script>
 

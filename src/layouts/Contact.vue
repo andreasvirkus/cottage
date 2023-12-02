@@ -28,12 +28,12 @@ export default {
   name: 'contact',
   data() {
     return {
-      sent: false
+      sent: false,
     }
   },
   mounted() {
     this.sent = window.location.search.includes('sent')
-  }
+  },
 }
 </script>
 

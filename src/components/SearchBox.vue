@@ -41,14 +41,14 @@ export default {
       query: '',
       focused: false,
       focusIndex: 0,
-      suggestions: []
+      suggestions: [],
     }
   },
   props: ['page'],
   computed: {
     showSuggestions() {
       return this.focused && this.suggestions.length
-    }
+    },
   },
   watch: {
     async query() {
@@ -57,14 +57,14 @@ export default {
       // TODO: Also go through the page's headers & tags
       this.suggestions = database
         .filter(
-          page =>
+          (page) =>
             (page.title && page.title.includes(keyword)) ||
             page.permalink.includes(keyword) ||
             (page.excerpt && page.excerpt.includes(keyword)) ||
-            (page.markdownHeadings || []).some(h => h.slug.includes(keyword))
+            (page.markdownHeadings || []).some((h) => h.slug.includes(keyword)),
         )
         .slice(0, 5)
-    }
+    },
   },
   methods: {
     onUp() {
@@ -99,8 +99,8 @@ export default {
     },
     unfocusSearchBox() {
       this.$refs.input.blur()
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -123,7 +123,8 @@ export default {
   font-weight: 500;
   font-family: var(--font-mono);
   outline: none;
-  transition: width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+  transition:
+    width 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
     border-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   background: url('/svg/search.svg') 0.6rem 0.55rem no-repeat;
   will-change: width;

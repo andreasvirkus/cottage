@@ -11,6 +11,7 @@ Tallinn, Estonia\
 _[write@andreasvirkus.me](mailto:write@andreasvirkus.me)_
 
 ## Desired positions
+
 - Staff engineer
 - Technical lead
 - Senior product developer
@@ -50,6 +51,7 @@ Helped set up monitoring & benchmarks for accessibility, performance & basic sec
 Campaigned for the need for a universal component-driven framework in our front-end stack. Vetted Angular/React/Vue and decided to bet on Vue in the early days of Vue 2. Kicked off our efforts to move away from outsourced designers to build our own internal design team, that would collaborate tightly with our growing front-end team.
 
 ### Saue High School
+
 _January 2015 – May 2016_\
 **Programming teacher**
 
@@ -62,6 +64,7 @@ _Since 2014_
 Over the years I've worked my way up from delivering small static sites to friends of family & local businesses, to complex & interactive visual applications, e-commerce solutions and audiovisual experiments. I consult companies & also sometimes do pro-bono work.
 
 ## Strong suites
+
 - User empathy, interest in UX & improving user flow
 - Communication, internally with the team, cross-teams/-departments and externally with our users
 - Knowing when to ship & iterate, and when to polish
@@ -72,9 +75,10 @@ Over the years I've worked my way up from delivering small static sites to frien
   - security
 
 ## Education
+
 - **Free Code Camp**\
-    _Spring 2015_\
-    Certificate in full-stack development
+   _Spring 2015_\
+   Certificate in full-stack development
 - **Tallinn University of Technology**\
-    _2013–2015_\
-    Proud drop out of B.Sc. in Computer Science
+   _2013–2015_\
+   Proud drop out of B.Sc. in Computer Science

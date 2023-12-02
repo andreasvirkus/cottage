@@ -1,8 +1,8 @@
 <template>
   <main class="content">
-    <slot/>
+    <slot />
 
-    <posts-list v-if="page.posts" :posts="page.posts"/>
+    <posts-list v-if="page.posts" :posts="page.posts" />
   </main>
 </template>
 
@@ -13,27 +13,25 @@ export default {
   name: 'page',
   props: ['page'],
   components: { PostsList },
-  head () {
+  head() {
     const { title, description, excerpt } = this.page
     const defaultTitle = this.$siteConfig.title
     return {
-      title: (title && title !== defaultTitle)
-        ? `${title} | ${defaultTitle}`
-        : defaultTitle,
+      title: title && title !== defaultTitle ? `${title} | ${defaultTitle}` : defaultTitle,
       meta: [
         {
           name: 'description',
-          content: description || excerpt || this.$siteConfig.description
-        }
-      ]
+          content: description || excerpt || this.$siteConfig.description,
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
 <style>
-  .nprogress {
-    height: .75rem;
-    background-color: cornflowerblue;
-  }
+.nprogress {
+  height: 0.75rem;
+  background-color: cornflowerblue;
+}
 </style>

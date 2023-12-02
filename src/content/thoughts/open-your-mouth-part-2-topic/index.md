@@ -20,7 +20,6 @@ Ideally, you'd want to convey a message and not just a technical detail.
 Do not be afraid of the questions in the end - take them as
 a vibrant community discussion (where you just happen to be able to help out)
 
-
 > I've always felt that a person's intelligence is directly reflected by the number of conflicting points of view he can entertain simultaneously on the same topic.
 
 - Abigail Adams
