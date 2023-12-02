@@ -35,5 +35,6 @@
     "@astrojs/sitemap": "^3.0.3",
     "astro": "^3.6.4",
     "mdast-util-to-string": "^4.0.0"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
