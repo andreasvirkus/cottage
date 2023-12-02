@@ -30,11 +30,13 @@
     "not ie > 0"
   ],
   "dependencies": {
+    "@astrojs/check": "^0.3.1",
     "@astrojs/mdx": "^1.1.5",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.3",
     "astro": "^3.6.4",
-    "mdast-util-to-string": "^4.0.0"
+    "mdast-util-to-string": "^4.0.0",
+    "typescript": "^5.3.2"
   },
   "packageManager": "yarn@1.22.19"
 }
