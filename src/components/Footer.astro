@@ -11,7 +11,11 @@ if (hour < 6) timeOfDay = 'night'
 
 <footer>
   <hr />
-  <p>Good {timeOfDay}! It's <time :datetime={today}>{hourFormatted}:{minFormatted}</time>.</p>
+  <p>
+    Good <span class="js-time-of-day">{timeOfDay}</span>! It's <time :datetime={today}
+      >{hourFormatted}:{minFormatted}</time
+    >.
+  </p>
 
   <div class="links">
     <a href="mailto:write@andreasvirkus.me"> E-mail me! Write about anything.</a>
@@ -27,29 +31,7 @@ if (hour < 6) timeOfDay = 'night'
   </div>
 </footer>
 
-<script type="module">
-  const datetime = document.querySelector('time')
-
-  function updateTime() {
-    if (!datetime) return
-
-    const today = new Date()
-    const hour = today.getHours()
-    const hourFormatted = hour < 10 ? '0' + hour : hour
-    const min = today.getMinutes()
-    const minFormatted = min < 10 ? '0' + min : min
-    let timeOfDay = hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : 'evening'
-
-    if (hour < 6) timeOfDay = 'night'
-
-    const time = `${hourFormatted}:${minFormatted}`
-    const greeting = `Good ${timeOfDay}! It's ${time}.`
-    datetime.textContent = greeting
-    datetime.setAttribute('datetime', today.toISOString())
-  }
-
-  setInterval(updateTime, 30 * 1000)
-</script>
+<script is:inline type="module" src="/js/update-time.js"></script>
 
 <style>
   footer {
