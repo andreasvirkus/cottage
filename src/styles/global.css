@@ -33,8 +33,9 @@
     --text-color: #ddd;
     --link-color: #3363ff;
     --visited-color: #8cc2dd;
-    --code-background-color: #222;
-    --code-color: #ddd;
+    --code-background-color: #8b6fcb;
+    /* --code-color: #ddd; */
+    --code-color: var(--background-color);
     --blockquote-color: #ccc;
     --gradient: linear-gradient(90deg, #0ec1f6, #8823de);
   }

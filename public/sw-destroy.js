@@ -1,3 +1,9 @@
+navigator.serviceWorker.getRegistrations().then(function (registrations) {
+  for (let registration of registrations) {
+    registration.unregister()
+  }
+})
+
 self.addEventListener('install', (e) => self.skipWaiting())
 
 self.addEventListener('activate', (e) => {
