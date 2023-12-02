@@ -16,12 +16,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
       <slot />
     </main>
     <Footer />
-    <script>
-      navigator.serviceWorker.getRegistrations().then(function (registrations) {
-        for (let registration of registrations) {
-          registration.unregister()
-        }
-      })
-    </script>
+    <script src="../utils/service-worker.ts"></script>
   </body>
 </html>
