@@ -6,7 +6,7 @@
 
 Cottage is my personal slice of the internet. My cozy corner, my safe haven & my technical playground.
 
-Hosted on [Netlify](https://netlify.com) & built with [Saber](https://saber.land)
+Hosted on [Netlify](https://netlify.com) & built with [Astro](https://astro.build)
 
 ## `git log`
 
@@ -17,9 +17,9 @@ Check out the **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-b
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/andreasvirkus/metalsmith-boilerplate)
 
-### Saber (current)
+### Astro
 
-Read my reasons for impulsive SSG-hopping [here]() (👈 TODO) and to find out why I've decided to stick with Saber!
+Read my reasons for impulsive SSG-hopping [here]() (👈 TODO)
 
 ---
 
