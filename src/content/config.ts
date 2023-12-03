@@ -10,6 +10,7 @@ const thoughts = defineCollection({
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
     readingTime: z.string().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 })
 

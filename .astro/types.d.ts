@@ -241,13 +241,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"increment-javascript-date/index.md": {
-	id: "increment-javascript-date/index.md";
+"increment-javascript-date/index.mdx": {
+	id: "increment-javascript-date/index.mdx";
   slug: "increment-javascript-date";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "inline-event-handlers/index.md": {
 	id: "inline-event-handlers/index.md";
   slug: "inline-event-handlers";

@@ -4,16 +4,20 @@ import { getCollection } from 'astro:content'
 import FormattedDate from '../../components/FormattedDate.astro'
 import { getConicGradient } from '../../utils/conic-art'
 
-const posts = ((await getCollection('thoughts')) || [])
+const tags = new Set()
+let posts = ((await getCollection('thoughts')) || [])
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .map((post) => ({
-    ...post,
-    // Generate custom gradient for each post, seeded by slug
-    data: {
-      ...post.data,
-      heroImage: getConicGradient(post.slug || ''),
-    },
-  }))
+  .map((post) => {
+    post.data.tags?.forEach((tag) => tags.add(tag))
+    return {
+      ...post,
+      // Generate custom gradient for each post, seeded by slug
+      data: {
+        ...post.data,
+        heroImage: getConicGradient(post.slug || ''),
+      },
+    }
+  })
 ---
 
 <Base>
@@ -30,20 +34,34 @@ const posts = ((await getCollection('thoughts')) || [])
   </p>
   <hr />
 
+  <!-- TODO: Show tags once we add post filtering -->
+  <div class="tags" style="display: none">
+    {
+      Array.from(tags).map((tag) => (
+        <label>
+          {tag}
+          <input type="checkbox" />
+        </label>
+      ))
+    }
+  </div>
+
   <section>
     <ul>
       {
-        posts.map((post) => (
-          <li>
-            <a href={`/thoughts/${post.slug}/`}>
-              <div class="gradient" style={`--hero-gradient: ${post.data.heroImage}`} />
-              <h4 class="title">{post.data.title}</h4>
-              <p class="date">
-                <FormattedDate date={post.data.pubDate} />
-              </p>
-            </a>
-          </li>
-        ))
+        posts
+          // .filter((post) => selectedTags.includes(post.data.tags?.join()))
+          .map((post) => (
+            <li>
+              <a href={`/thoughts/${post.slug}/`}>
+                <div class="gradient" style={`--hero-gradient: ${post.data.heroImage}`} />
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+              </a>
+            </li>
+          ))
       }
     </ul>
   </section>
@@ -110,6 +128,28 @@ const posts = ((await getCollection('thoughts')) || [])
   a:hover h4,
   a:hover .date {
     color: var(--accent);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 2em;
+  }
+
+  label {
+    border-radius: 4px;
+    background-color: var(--code-background-color);
+    padding: 0.5em;
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    cursor: pointer;
+  }
+
+  /* TODO: Hide once there's a nice way to style checked state */
+  label input {
+    cursor: pointer;
+    /* display: none; */
   }
 
   @media (max-width: 720px) {

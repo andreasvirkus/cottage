@@ -1,11 +1,11 @@
 ---
 title: 'increment a date in javascript'
-
 description: "Dates are scary. Let's explore."
 pubDate: 2020-04-04
 tags:
   - javascript
 ---
+
 
 Another quickie. Sometimes you want to increment a date without having to pull in the monster that is `moment.js`, `date-fns` or even the tiny `day.js`. Maybe you're restricted by your environment. Whatever the reason, it never hurts to know your way around some native APIs.
 
@@ -40,20 +40,14 @@ const assignmentIsDue = date.toLocaleDateString('en-GB')
 
 Which results in these dynamic dates <span class="emoji">👇</span>
 
+{/*
+TODO: Fix JS expressions
+const date = new Date()
+const currentDate = date.toLocaleDateString('en-GB')
+date.setDate(date.getDate() + 14)
+const assignmentIsDue = date.toLocaleDateString('en-GB')
+
 Current - {{ currentDate }}
 
 When your assignment is due - {{ assignmentIsDue }}
-
-<script type="module">
-export default {
-  name: 'increment-javascript-date',
-  data() {
-    const date = new Date()
-    const currentDate = date.toLocaleDateString('en-GB')
-    date.setDate(date.getDate() + 14)
-    const assignmentIsDue = date.toLocaleDateString('en-GB')
-
-    return { currentDate, assignmentIsDue }
-  }
-}
-</script>
+*/}
