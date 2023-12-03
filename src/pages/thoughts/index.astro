@@ -8,7 +8,7 @@ const posts = ((await getCollection('thoughts')) || [])
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .map((post) => ({
     ...post,
-    // Generate custom gradient for each post, with the slug being seed
+    // Generate custom gradient for each post, seeded by slug
     data: {
       ...post.data,
       heroImage: getConicGradient(post.slug || ''),
@@ -17,89 +17,6 @@ const posts = ((await getCollection('thoughts')) || [])
 ---
 
 <Base>
-  <style>
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      margin-top: 1em;
-    }
-    ul li {
-      width: calc(50% - 1rem);
-      border-radius: 12px;
-    }
-
-    ul a {
-      border: none;
-      box-shadow: none;
-    }
-    ul a:hover {
-      box-shadow: none;
-      background: none;
-    }
-    ul a:hover .gradient {
-      opacity: 0.4;
-    }
-    ul li * {
-      text-decoration: none;
-      transition: 0.2s ease;
-    }
-    ul li:first-child {
-      width: 100%;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    ul li:first-child .gradient {
-      width: 100%;
-    }
-    ul li:first-child .title {
-      font-size: 2.369rem;
-    }
-    ul li .gradient {
-      margin-bottom: 0.5rem;
-      border-radius: 12px;
-      background-image: var(--hero-gradient);
-      height: 132px;
-    }
-    ul li a {
-      display: block;
-    }
-    .title {
-      margin: 0;
-      line-height: 1;
-    }
-    .date {
-      margin: 0;
-      color: rgb(var(--gray));
-      font-size: 0.8em;
-    }
-    ul li a:hover h4,
-    ul li a:hover .date {
-      color: rgb(var(--accent));
-    }
-    ul a:hover .gradient {
-      box-shadow: var(--box-shadow);
-    }
-    @media (max-width: 720px) {
-      ul {
-        gap: 0.5em;
-      }
-      ul li {
-        width: 100%;
-        text-align: center;
-      }
-      ul li:first-child {
-        margin-bottom: 0;
-      }
-      ul li:first-child .title {
-        font-size: 1.563em;
-      }
-    }
-  </style>
-
   <h1>thoughts</h1>
   <p>
     Here you can read 'bout my questionable opinions on anything dev-related or just nice tips/hacks I enjoy having in
@@ -131,3 +48,88 @@ const posts = ((await getCollection('thoughts')) || [])
     </ul>
   </section>
 </Base>
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+  }
+  li {
+    width: calc(50% - 1rem);
+    border-radius: 12px;
+  }
+
+  a {
+    display: block;
+    border: none;
+    box-shadow: none;
+  }
+  a:hover {
+    box-shadow: none;
+    background: none;
+    border: none;
+  }
+  a:hover .gradient {
+    opacity: 0.4;
+    box-shadow: var(--box-shadow);
+  }
+  li * {
+    transition: 0.2s ease;
+  }
+  li:first-child {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  li:first-child .gradient {
+    width: 100%;
+  }
+  li:first-child .title {
+    font-size: 2.369rem;
+  }
+  .gradient {
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    background-image: var(--hero-gradient);
+    height: 132px;
+  }
+  .title {
+    margin: 0;
+    line-height: 1;
+  }
+  .date {
+    margin: 0;
+    color: rgb(var(--gray));
+    font-size: 0.8em;
+  }
+  a:hover h4,
+  a:hover .date {
+    color: var(--accent);
+  }
+
+  @media (max-width: 720px) {
+    ul {
+      gap: 0.5em;
+    }
+    li {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    li:first-child {
+      margin-bottom: 0;
+    }
+    li:first-child .title {
+      font-size: 1.563em;
+    }
+
+    .gradient {
+      height: 60px;
+    }
+  }
+</style>
