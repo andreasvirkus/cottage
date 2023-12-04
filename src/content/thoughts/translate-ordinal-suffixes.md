@@ -2,6 +2,9 @@
 title: 'Translate Ordinal Suffixes'
 description: 'Easiest trick for ordinal suffixes with i18n support'
 pubDate: 2023-12-04
+tags:
+  - snippet
+  - javascript
 ---
 
 Another quick one today. Ever needed to dynamically add ordinal suffixes to your numbers? For example make 23 → 23rd or 41 → 41st?
