@@ -6,6 +6,7 @@ import { getConicGradient } from '../../utils/conic-art'
 
 const tags = new Set()
 let posts = ((await getCollection('thoughts')) || [])
+  .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .map((post) => {
     post.data.tags?.forEach((tag) => tags.add(tag))
@@ -34,7 +35,7 @@ let posts = ((await getCollection('thoughts')) || [])
   </p>
   <hr />
 
-  <!-- TODO: Show tags once we add post filtering -->
+  <!-- TODO: Show tags once we add filtering -->
   <div class="tags" style="display: none">
     {
       Array.from(tags).map((tag) => (

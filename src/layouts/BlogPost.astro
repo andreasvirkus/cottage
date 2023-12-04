@@ -62,7 +62,7 @@ const { slug } = Astro.params
       {
         readingTime && (
           <div class="reading-time">
-            {readingTime} minutes to read
+            {readingTime} {readingTime === 1 ? 'minute' : 'minutes'} to read
             <hr />
           </div>
         )

@@ -1,10 +1,11 @@
 ---
 title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jul 01 2022'
+description: 'Helpful stuff'
+draft: true
+pubDate: 2023-11-22
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+Just running through different Markdown elements to make sure everything gets styled nicely. Feel free to skip this one!
 
 ## Headings
 
