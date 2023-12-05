@@ -4,10 +4,19 @@ interface Props {
 }
 
 const { date } = Astro.props
-const d = new Date(date)
+
+console.info(
+  'post date',
+  date,
+  date.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }),
+)
 ---
 
-<time datetime={d.toISOString()}>
+<div>
   {
     date.toLocaleDateString('en-us', {
       year: 'numeric',
@@ -15,4 +24,5 @@ const d = new Date(date)
       day: 'numeric',
     })
   }
-</time>
+</div>
+<time class="sr-only" datetime={date.toISOString()} aria-label="Published at date"></time>

@@ -8,42 +8,11 @@ type Props = CollectionEntry<'thoughts'>
 
 const { title, pubDate, updatedDate, readingTime } = Astro.props.data
 const { slug } = Astro.params
+
+console.info('pubDate', pubDate)
 ---
 
 <Base>
-  <style>
-    main {
-      width: calc(100% - 2em);
-      max-width: 100%;
-      margin: 0;
-    }
-    .hero-image {
-      width: 100%;
-      background-image: var(--hero-gradient);
-    }
-    .hero-image {
-      display: block;
-      margin: 0 auto;
-      height: 200px;
-      border-radius: 12px;
-      box-shadow: var(--box-shadow);
-    }
-    .title {
-      padding-top: 1em 0;
-      text-align: center;
-    }
-    .title h1 {
-      margin-bottom: 0.5em;
-    }
-    .date {
-      margin-bottom: 0.5em;
-      font-size: 0.8em;
-    }
-    .last-updated-on {
-      font-style: italic;
-    }
-  </style>
-
   <article>
     <div class="hero-image" style={`--hero-gradient: ${getConicGradient(slug || '')}`}></div>
 
@@ -72,3 +41,36 @@ const { slug } = Astro.params
     <slot />
   </article>
 </Base>
+
+<style>
+  main {
+    width: calc(100% - 2em);
+    max-width: 100%;
+    margin: 0;
+  }
+  .hero-image {
+    width: 100%;
+    background-image: var(--hero-gradient);
+  }
+  .hero-image {
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+  .title {
+    padding-top: 1em 0;
+    text-align: center;
+  }
+  .title h1 {
+    margin-bottom: 0.5em;
+  }
+  .date {
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+</style>

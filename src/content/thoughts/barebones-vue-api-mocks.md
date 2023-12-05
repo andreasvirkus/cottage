@@ -2,7 +2,6 @@
 title: Barebones API Mocks in Vue
 description: JSON here, JSON there, JSON everywhere!
 pubDate: 2023-12-05
-draft: true
 tags:
   - javascript
   - vue

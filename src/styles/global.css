@@ -193,20 +193,12 @@ p code {
   border-radius: 3px;
 }
 
-/* blog post list */
-ul.blog-posts {
-  list-style-type: none;
-  padding: unset;
-}
-
-ul.blog-posts li {
-  display: flex;
-}
-
-ul.blog-posts li span {
-  flex: 0 0 130px;
-}
-
-ul.blog-posts a:visited {
-  color: var(--visited-color);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
 }
