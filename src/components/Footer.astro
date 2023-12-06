@@ -1,21 +1,10 @@
 ---
-const today = new Date()
-const hour = today.getHours()
-const hourFormatted = hour < 10 ? '0' + hour : hour
-const min = today.getMinutes()
-const minFormatted = min < 10 ? '0' + min : min
-let timeOfDay = hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : 'evening'
-
-if (hour < 6) timeOfDay = 'night'
+import TimeGreeting from './TimeGreeting.astro'
 ---
 
 <footer>
   <hr />
-  <p>
-    Good <span class="js-time-of-day">{timeOfDay}</span>! It's <time :datetime={today}>
-      {hourFormatted}:{minFormatted}
-    </time>.
-  </p>
+  <TimeGreeting />
 
   <div class="links">
     <a href="mailto:write@andreasvirkus.me"> E-mail me! Write about anything.</a>
@@ -52,10 +41,5 @@ if (hour < 6) timeOfDay = 'night'
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-  }
-
-  time {
-    font-family: var(--font-mono);
-    font-size: 0.8em;
   }
 </style>

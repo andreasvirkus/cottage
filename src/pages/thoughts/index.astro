@@ -57,9 +57,9 @@ let posts = ((await getCollection('thoughts')) || [])
               <a href={`/thoughts/${post.slug}/`}>
                 <div class="gradient" style={`--hero-gradient: ${post.data.heroImage}`} />
                 <h4 class="title">{post.data.title}</h4>
-                <p class="date">
+                <div class="date">
                   <FormattedDate date={post.data.pubDate} />
-                </p>
+                </div>
               </a>
             </li>
           ))
@@ -94,9 +94,13 @@ let posts = ((await getCollection('thoughts')) || [])
     border: none;
   }
   a:hover .gradient {
-    opacity: 0.4;
+    opacity: 0.9;
     box-shadow: var(--box-shadow);
   }
+  a:hover .date {
+    opacity: 1;
+  }
+
   li * {
     transition: 0.2s ease;
   }
@@ -116,6 +120,7 @@ let posts = ((await getCollection('thoughts')) || [])
     border-radius: 12px;
     background-image: var(--hero-gradient);
     height: 132px;
+    opacity: 0.4;
   }
   .title {
     margin: 0;
@@ -123,7 +128,7 @@ let posts = ((await getCollection('thoughts')) || [])
   }
   .date {
     margin: 0;
-    color: rgb(var(--gray));
+    opacity: 0.5;
     font-size: 0.8em;
   }
   a:hover h4,

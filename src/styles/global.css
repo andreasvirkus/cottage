@@ -23,20 +23,33 @@
   --blockquote-color: #222;
   --gradient: linear-gradient(90deg, #61e695, #c6ff54);
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+  --scrollbar-color: #b49bff;
+
+  scrollbar-color: var(--scrollbar-color) var(--background-color);
+  scrollbar-width: 0.75em;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: rgb(30, 26, 37);
-    --background-color: #0e141b;
+    --background-color: #0B1616;
     --heading-color: #eee;
     --text-color: #ddd;
-    --link-color: #3363ff;
+    --link-color: rgb(108, 62, 65);
     --visited-color: #8cc2dd;
-    --code-background-color: #223;
-    --code-color: #3363ff;
+    --code-background-color: #444;
+    --code-color: white;
     --blockquote-color: #ccc;
+    --scrollbar-color: #c6ff54;
+
+    /* Dark theme #2 */
+    /* --code-color: #03A9F4;
+    --code-background-color: #223;
+    --background-color: #0e141b;
+    --link-color: #3363ff;
     --gradient: linear-gradient(90deg, #0ec1f6, #8823de);
+    --scrollbar-color: #b49bff;
+    */
   }
 }
 
@@ -75,7 +88,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #b49bff;
+  background-color: var(--scrollbar-color);
   box-shadow: inset 4px solid white;
 }
 
@@ -119,6 +132,10 @@ footer a:hover {
   background-color: var(--link-color);
   border-bottom: 3px solid var(--text-color);
 }
+
+/* main a:visited {
+  color: var(--visited-color);
+} */
 
 main p {
   font-size: 1.2em;

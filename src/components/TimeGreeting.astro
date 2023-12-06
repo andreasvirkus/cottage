@@ -1,0 +1,23 @@
+---
+const today = new Date()
+const hour = today.getHours()
+const hourFormatted = hour < 10 ? '0' + hour : hour
+const min = today.getMinutes()
+const minFormatted = min < 10 ? '0' + min : min
+let timeOfDay = hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : 'evening'
+
+if (hour < 6) timeOfDay = 'night'
+---
+
+<p>
+  Good <span class="js-time-of-day">{timeOfDay}</span>! It's <time :datetime={today}>
+    {hourFormatted}:{minFormatted}
+  </time>.
+</p>
+
+<style>
+  time {
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+  }
+</style>

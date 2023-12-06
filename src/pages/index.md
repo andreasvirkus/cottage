@@ -17,4 +17,4 @@ If you're looking to get in touch, just reach out to me on
 [e-mail](mailto:write@andreasvirkus.me 'Shoot me an e-mail!').
 
 I sometimes also write short posts about small development techniques or
-explanations of short snippets that I often find useful. You can read about them in [/thoughts](/thoughts/).
+explanations of short snippets that I may have found useful. You can read about them in [/thoughts](/thoughts/).
