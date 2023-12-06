@@ -46,7 +46,7 @@ const test = Array(201)
 
 I won't log it all onto the page, but open your Console to see the results! That's all 🖖
 
-<script type="module">
+<script is:inline type="module">
 const enOrdinalRules = new Intl.PluralRules('en', {type: 'ordinal'})
 const suffixes = {
   one: 'st',

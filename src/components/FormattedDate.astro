@@ -4,16 +4,6 @@ interface Props {
 }
 
 const { date } = Astro.props
-
-console.info(
-  'post date',
-  date,
-  date.toLocaleDateString('en-us', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  }),
-)
 ---
 
 <div>

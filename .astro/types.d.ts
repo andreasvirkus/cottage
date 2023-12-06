@@ -185,9 +185,16 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"thoughts": {
-"appending-lines-to-xml/index.md": {
-	id: "appending-lines-to-xml/index.md";
+"appending-lines-to-xml.md": {
+	id: "appending-lines-to-xml.md";
   slug: "appending-lines-to-xml";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
+"barebones-vue-api-mocks.md": {
+	id: "barebones-vue-api-mocks.md";
+  slug: "barebones-vue-api-mocks";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
@@ -213,22 +220,22 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"emoji-icon-set/index.md": {
-	id: "emoji-icon-set/index.md";
+"emoji-icon-set.md": {
+	id: "emoji-icon-set.md";
   slug: "emoji-icon-set";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"footnotes-on-the-web/index.md": {
-	id: "footnotes-on-the-web/index.md";
+"footnotes-on-the-web.md": {
+	id: "footnotes-on-the-web.md";
   slug: "footnotes-on-the-web";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"fuzzy-svg-filters/index.md": {
-	id: "fuzzy-svg-filters/index.md";
+"fuzzy-svg-filters.md": {
+	id: "fuzzy-svg-filters.md";
   slug: "fuzzy-svg-filters";
   body: string;
   collection: "thoughts";
@@ -248,15 +255,15 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".mdx"] };
-"inline-event-handlers/index.md": {
-	id: "inline-event-handlers/index.md";
+"inline-event-handlers.md": {
+	id: "inline-event-handlers.md";
   slug: "inline-event-handlers";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"javascript-bookmarklets/index.md": {
-	id: "javascript-bookmarklets/index.md";
+"javascript-bookmarklets.md": {
+	id: "javascript-bookmarklets.md";
   slug: "javascript-bookmarklets";
   body: string;
   collection: "thoughts";
@@ -269,8 +276,8 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"my-site-stack/index.md": {
-	id: "my-site-stack/index.md";
+"my-site-stack.md": {
+	id: "my-site-stack.md";
   slug: "my-site-stack";
   body: string;
   collection: "thoughts";
@@ -290,36 +297,36 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"snippet-chainable-classlist/index.md": {
-	id: "snippet-chainable-classlist/index.md";
+"snippet-chainable-classlist.md": {
+	id: "snippet-chainable-classlist.md";
   slug: "snippet-chainable-classlist";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"snippet-chainable-logger/index.md": {
-	id: "snippet-chainable-logger/index.md";
+"snippet-chainable-logger.md": {
+	id: "snippet-chainable-logger.md";
   slug: "snippet-chainable-logger";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"snippet-csp-hashing/index.md": {
-	id: "snippet-csp-hashing/index.md";
+"snippet-csp-hashing.md": {
+	id: "snippet-csp-hashing.md";
   slug: "snippet-csp-hashing";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"snippet-vue-logger/index.md": {
-	id: "snippet-vue-logger/index.md";
+"snippet-vue-logger.md": {
+	id: "snippet-vue-logger.md";
   slug: "snippet-vue-logger";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"snippet-wait/index.md": {
-	id: "snippet-wait/index.md";
+"snippet-wait.md": {
+	id: "snippet-wait.md";
   slug: "snippet-wait";
   body: string;
   collection: "thoughts";
@@ -332,22 +339,29 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"stack-css-transforms/index.md": {
-	id: "stack-css-transforms/index.md";
+"stack-css-transforms.md": {
+	id: "stack-css-transforms.md";
   slug: "stack-css-transforms";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"testing-typography-styles/index.md": {
-	id: "testing-typography-styles/index.md";
+"testing-typography-styles.md": {
+	id: "testing-typography-styles.md";
   slug: "testing-typography-styles";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"vue-html-variables/index.md": {
-	id: "vue-html-variables/index.md";
+"translate-ordinal-suffixes.md": {
+	id: "translate-ordinal-suffixes.md";
+  slug: "translate-ordinal-suffixes";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
+"vue-html-variables.md": {
+	id: "vue-html-variables.md";
   slug: "vue-html-variables";
   body: string;
   collection: "thoughts";

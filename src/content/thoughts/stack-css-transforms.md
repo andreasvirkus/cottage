@@ -54,7 +54,7 @@ This is where the stackable transform declarations come in! Let's rework our exa
 
 <script>
 export default {
-  name: 'increment-javascript-date',
+  name: 'stack-css-transforms',
   data() {
     return {
       showFirst: false,
