@@ -9,11 +9,16 @@ let timeOfDay = hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : 'evening'
 if (hour < 6) timeOfDay = 'night'
 ---
 
-<p>
+<p id="time-greeting" style="display: none">
   Good <span class="js-time-of-day">{timeOfDay}</span>! It's <time :datetime={today}>
     {hourFormatted}:{minFormatted}
   </time>.
 </p>
+
+<script is:inline type="module">
+  const el = document.getElementById('time-greeting')
+  if (el) el.style.display = 'block'
+</script>
 
 <style>
   time {
