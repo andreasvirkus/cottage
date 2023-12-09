@@ -6,7 +6,7 @@ import TimeGreeting from './TimeGreeting.astro'
   <hr />
   <TimeGreeting />
 
-  <div class="links">
+  <div class="links hide-print">
     <a href="mailto:write@andreasvirkus.me"> E-mail me! Write about anything.</a>
     <a href="https://github.com/andreasvirkus" target="_blank" rel="noopener noreferrer">
       <span>Visit my GitHub profile</span>
@@ -18,6 +18,10 @@ import TimeGreeting from './TimeGreeting.astro'
       </svg>
     </a>
   </div>
+
+  <p class="print-only">
+    View the online version over at <a href="https://andreasvirkus.me/cv">https://andreasvirkus.me/cv</a>.
+  </p>
 </footer>
 
 <script is:inline type="module" src="/js/update-time.js"></script>

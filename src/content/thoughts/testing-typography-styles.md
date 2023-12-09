@@ -88,6 +88,6 @@ body {
 
 Also inline code `<kbd>` examples need some love!
 
-~~Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.~~ (covered by migrating to Vuepress)
+~~Down the road, we'll add syntax highlighting with PrismJS to Metalsmith.~~ (covered by migrating to ~~Vuepress~~ ~~Saber~~ Astro)
 
-<!-- TODO: Link to Vuepress migration post in the future -->
+<!-- TODO: Link to Vuepress > Saber > Astro migration post in the future -->

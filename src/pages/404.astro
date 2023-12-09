@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro'
+
+console.info('404 page', Astro)
+---
+
+<Base>
+  <h1>Truly puzzling...</h1>
+  <h2>{Astro.url.pathname} could not be found</h2>
+
+  <p>
+    So sorry for getting you lost. If you have a minute, please let me know if you'd expect to find something from this
+    URL (<a href="/contact">/contact</a>).
+  </p>
+
+  <p>
+    Until then, I can either <a href="javascript:history.back()">take you back</a> or
+    <a href="/">take you home</a>.
+  </p>
+</Base>

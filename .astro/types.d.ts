@@ -199,27 +199,20 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"building-dashboards-for-your-site/index.md": {
-	id: "building-dashboards-for-your-site/index.md";
-  slug: "building-dashboards-for-your-site";
+"css-better-quotes.md": {
+	id: "css-better-quotes.md";
+  slug: "css-better-quotes";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
-"creating-keep-alive-monitoring/index.md": {
-	id: "creating-keep-alive-monitoring/index.md";
-  slug: "creating-keep-alive-monitoring";
-  body: string;
-  collection: "thoughts";
-  data: InferEntrySchema<"thoughts">
-} & { render(): Render[".md"] };
-"do-your-pixels-justice/index.md": {
-	id: "do-your-pixels-justice/index.md";
+"do-your-pixels-justice/index.mdx": {
+	id: "do-your-pixels-justice/index.mdx";
   slug: "do-your-pixels-justice";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "emoji-icon-set.md": {
 	id: "emoji-icon-set.md";
   slug: "emoji-icon-set";
@@ -272,6 +265,13 @@ declare module 'astro:content' {
 "markdown-style-guide.md": {
 	id: "markdown-style-guide.md";
   slug: "markdown-style-guide";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
+"markdown-target-blank-links.md": {
+	id: "markdown-target-blank-links.md";
+  slug: "markdown-target-blank-links";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">

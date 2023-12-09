@@ -230,3 +230,16 @@ p code {
   overflow: hidden;
   border: 0;
 }
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  .hide-print {
+    display: none;
+  }
+  .print-only {
+    display: block;
+  }
+}
