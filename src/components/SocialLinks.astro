@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+// import { Image } from 'astro:assets'
 
 const links = [
   {
@@ -45,7 +45,7 @@ const links = [
             type={link.type}
             target={link.type ? '_blank' : null}
           >
-            <Image alt={link.name} src={`/svg/${link.name.toLowerCase().replace('-', '')}.svg`} />
+            <!-- <Image alt={link.name} src={`/svg/${link.name.toLowerCase().replace('-', '')}.svg`} /> -->
             <span>{link.name}</span>
           </a>
         </li>

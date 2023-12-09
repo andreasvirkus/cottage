@@ -5,7 +5,7 @@
   "private": true,
   "description": "A humble homepage of sorts.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "astro check",
     "generate-pdf": "markdown-pdf site/cv.md -o site/.vuepress/public/cv.pdf -s dist/assets/css/styles.min.css",
     "dev": "astro dev",
     "start": "astro dev",
