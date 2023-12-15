@@ -1,5 +1,5 @@
 ---
-title: 'Markedown target="_blank" links'
+title: 'Markdown target="_blank" links'
 description: Properly add target blank attributes to all external links
 pubDate: 2023-12-09
 tags:

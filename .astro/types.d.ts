@@ -318,6 +318,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"snippet-strip-html.md": {
+	id: "snippet-strip-html.md";
+  slug: "snippet-strip-html";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "snippet-vue-logger.md": {
 	id: "snippet-vue-logger.md";
   slug: "snippet-vue-logger";
