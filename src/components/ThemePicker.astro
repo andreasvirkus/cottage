@@ -1,0 +1,33 @@
+<div data-theme-picker class="flex gap-4">
+  <button class="w-4 h-4" style="background:#a8ebcb" data-theme="light"></button>
+  <button class="w-4 h-4" style="background:#6c3e41" data-theme="dark"></button>
+  <button class="w-4 h-4" style="background:#3363ff" data-theme="dark-2"></button>
+  <!-- <button class="w-4 h-4" style="background:#C4CFCD" data-theme="light-2"></button> -->
+</div>
+
+<script is:inline type="module">
+  const picker = document.querySelector('[data-theme-picker]')
+  const themeBtn = picker.querySelectorAll('button')
+
+  themeBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const theme = btn.dataset.theme
+      document.documentElement.setAttribute('data-theme', theme)
+      localStorage.setItem('_cottageTheme', theme)
+    })
+  })
+</script>
+
+<style>
+  time {
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+  }
+
+  button {
+    border: 0;
+    border-radius: 20%;
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+</style>
