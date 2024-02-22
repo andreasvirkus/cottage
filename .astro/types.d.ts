@@ -297,6 +297,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"shopify-embed-navigation-menu.md": {
+	id: "shopify-embed-navigation-menu.md";
+  slug: "shopify-embed-navigation-menu";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "snippet-chainable-classlist.md": {
 	id: "snippet-chainable-classlist.md";
   slug: "snippet-chainable-classlist";
