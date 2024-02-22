@@ -4,7 +4,6 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import { remarkReadingTime } from './src/utils/reading-time'
 
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://andreasvirkus.me',
@@ -14,8 +13,8 @@ export default defineConfig({
   },
   vite: {
     build: {
-      assetsInlineLimit: 0
-    }
+      // assetsInlineLimit: 0
+    },
   },
   markdown: {
     remarkPlugins: [remarkReadingTime],

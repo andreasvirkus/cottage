@@ -44,5 +44,8 @@
   "packageManager": "yarn@1.22.19",
   "devDependencies": {
     "playwright": "^1.41.2"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
   }
 }
