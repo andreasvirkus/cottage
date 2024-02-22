@@ -346,6 +346,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"sort-shopify-products-by-availability.md": {
+	id: "sort-shopify-products-by-availability.md";
+  slug: "sort-shopify-products-by-availability";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "spice-up-your-gists/index.md": {
 	id: "spice-up-your-gists/index.md";
   slug: "spice-up-your-gists";
