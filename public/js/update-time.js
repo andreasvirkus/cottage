@@ -2,6 +2,7 @@
 const datetime = document.querySelector('time')
 const readableTime = document.querySelector('.js-time-of-day')
 
+
 function updateTime() {
   if (!datetime) return
 

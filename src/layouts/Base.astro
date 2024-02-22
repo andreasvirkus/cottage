@@ -17,7 +17,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
     </main>
     <Footer />
 
-    <script is:inline type="module">
+    <script type="module">
       const theme = localStorage.getItem('_cottageTheme')
       if (theme) document.documentElement.setAttribute('data-theme', theme)
     </script>
