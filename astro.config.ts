@@ -12,10 +12,11 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  devToolbar: {
-    enabled: false,
+  vite: {
+    build: {
+      assetsInlineLimit: 0
+    }
   },
-  // integrations: [tailwind()]
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {

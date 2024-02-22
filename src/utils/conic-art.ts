@@ -25,6 +25,6 @@ export function getConicGradient(slug: string) {
   return `conic-gradient(${baseColor} ${degree}%${contrastColor ? ', ' + contrastColor : ''})`
 }
 
-function getRandomInteger(min, max) {
+function getRandomInteger(min: number, max: number) {
   return Math.round(Math.random() * (max - min) + min)
 }

@@ -17,11 +17,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
     </main>
     <Footer />
 
-    <script type="module">
+    <script>
       const theme = localStorage.getItem('_cottageTheme')
       if (theme) document.documentElement.setAttribute('data-theme', theme)
     </script>
 
-    <script data-goatcounter="https://kano.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script is:inline data-goatcounter="https://kano.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </body>
 </html>
