@@ -46,6 +46,6 @@
     "playwright": "^1.41.2"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.6.1"
+    "@rollup/rollup-linux-x64-gnu": "^4.9.6"
   }
 }
