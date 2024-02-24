@@ -10,17 +10,24 @@ if (hour < 6) timeOfDay = 'night'
 ---
 
 <p id="time-greeting" style="display: none">
-  Good <span class="js-time-of-day">{timeOfDay}</span>! It's <time :datetime={today}>
+  Good <span class="js-time-of-day">{timeOfDay}</span>! It's <time id="footer-time" :datetime={today}>
     {hourFormatted}:{minFormatted}</time
   >.
 </p>
 
 <script>
   const el = document.getElementById('time-greeting')
-  if (el) el.style.display = 'block'
+  let datetime: HTMLTimeElement | null
+  let readableTime: HTMLSpanElement | null
 
-  const datetime = document.querySelector('time')
-  const readableTime = document.querySelector('.js-time-of-day')
+  if (el) {
+    el.style.display = 'block'
+    datetime = el.querySelector('time')
+    readableTime = document.querySelector('.js-time-of-day')
+
+    updateTime()
+    setInterval(updateTime, 15 * 1000)
+  }
 
   function updateTime() {
     if (!datetime) return
@@ -40,9 +47,6 @@ if (hour < 6) timeOfDay = 'night'
     console.info('update footer:', time, ' > ', timeOfDay)
     if (readableTime) readableTime.textContent = timeOfDay
   }
-
-  updateTime()
-  setInterval(updateTime, 15 * 1000)
 </script>
 
 <style>
