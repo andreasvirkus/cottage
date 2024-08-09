@@ -1,8 +1,11 @@
-<div data-theme-picker class="flex gap-4">
-  <button class="w-4 h-4" style="background:#a8ebcb" data-theme="light"></button>
-  <button class="w-4 h-4" style="background:#6c3e41" data-theme="dark"></button>
-  <button class="w-4 h-4" style="background:#3363ff" data-theme="dark-2"></button>
-  <!-- <button class="w-4 h-4" style="background:#C4CFCD" data-theme="light-2"></button> -->
+<div>
+  <span class="theme-picker-title flex-1 basis-full text-xs mt-4 block">click us pls</span>
+  <div data-theme-picker class="flex gap-4">
+    <button class="w-4 h-4" style="--theme-bg: #a8ebcb" data-theme="light"></button>
+    <button class="w-4 h-4" style="--theme-bg: #6c3e41" data-theme="dark"></button>
+    <button class="w-4 h-4" style="--theme-bg: #3363ff" data-theme="dark-2"></button>
+    <button class="w-4 h-4" style="--theme-bg: #C4CFCD" data-theme="light-2"></button>
+  </div>
 </div>
 
 <script>
@@ -15,19 +18,39 @@
       document.documentElement.setAttribute('data-theme', theme)
       localStorage.setItem('_cottageTheme', theme)
     })
+    btn.addEventListener('mouseenter', ding)
   })
+
+  function ding() {
+    const sound = new Audio('https://www.soundjay.com/misc/sounds/small-bell-ring-01a.mp3')
+    sound.play()
+  }
 </script>
 
 <style>
-  time {
-    font-family: var(--font-mono);
-    font-size: 0.8em;
+  .theme-picker-title {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: -0.5rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-style: monospace;
   }
 
   button {
     border: 0;
-    border-radius: 20%;
+    border-radius: 60px 100%;
     height: 0.5rem;
     width: 0.5rem;
+    background-color: var(--theme-bg);
+    transition:
+      box-shadow 0.2s ease-out,
+      border-radius 0.2s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 0 0.2rem var(--theme-bg);
+      border-radius: 100% 40px;
+    }
   }
 </style>

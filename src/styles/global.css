@@ -79,8 +79,9 @@ html[data-theme="dark-2"] {
 
 html[data-theme="light-2"] {
   --text-color: #121614;
+  --heading-color: #e1d3d3;
   --code-color: #223;
-  --code-background-color: #223;
+  --code-background-color: #e1d3d3;
   --background-color: #F4F6F4;
   --link-color: #7B6569;
   --gradient: linear-gradient(90deg, #C4CFCD, #7B6569);
