@@ -143,6 +143,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"background-bleed.md": {
+	id: "background-bleed.md";
+  slug: "background-bleed";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "barebones-vue-api-mocks.md": {
 	id: "barebones-vue-api-mocks.md";
   slug: "barebones-vue-api-mocks";
