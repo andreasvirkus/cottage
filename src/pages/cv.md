@@ -6,7 +6,7 @@ layout: ../layouts/Base.astro
 
 # Andreas Johan Virkus
 
-Updated November 2023\
+Updated August 2024\
 Tallinn, Estonia\
 _[write@andreasvirkus.me](mailto:write@andreasvirkus.me)_
 
@@ -18,9 +18,23 @@ _[write@andreasvirkus.me](mailto:write@andreasvirkus.me)_
 
 ## Work
 
-### Klaus
+### [Supersimple](https://supersimple.io?utm_source=andreasvirkus.me) 🐧
 
-_April 2022_\
+Currently helping Supersimple simplify complex data exploration flows and
+aiding all roles of any SaaS company to have swift answers for
+their burning curiosity.
+
+### [Zendesk QA](https://www.zendesk.com/service/workforce-engagement-management/?utm_source=andreasvirkus.me)
+
+<span style="font-size:85%">January 2024 – May 2024</span>
+
+Dealt with acquisition due-dilligence. I helped ensure a smooth transition for the
+developer teams and make sure everyone got settled. Planned integrations into the
+large Zendesk ecosystem.
+
+### [Klaus](https://klausapp.com?utm_source=andreasvirkus.me) 🐈‍⬛
+
+_April 2022 – May 2024_ \
 **Front-End Technical Lead**
 
 Grew the Front-End team from myself to 9 people, helped get [shape-up](https://basecamp.com/shapeup) running as a development framework. Communicated tightly with the product & design teams to develop & grow a complex product in an unexplored market. Ran internal hackathons and helped drive other developer-facing initiatives like "Wisdom Club" to discuss various books, podcasts, articles on different developer & product related topics.
@@ -30,7 +44,7 @@ _July 2018 – April 2022_\
 
 Joined a very early-stage startup as one of the first 2 developers to accompany the technical founder. Rebuilt the application from scratch with Vue, also shaping the product along the way & wearing various hats. Helped guide & maintain the internal company culture, set up processes & dealt with hiring.
 
-### Bigbank
+### [Bigbank](https://bigbank.eu)
 
 _Aug 2017 – Jul 2019_\
 **Full Stack Developer & Team Lead**

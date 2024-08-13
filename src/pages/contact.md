@@ -8,10 +8,10 @@ layout: ../layouts/Base.astro
 
 That's `hello` in Estonian.
 
-I'm currently helping [Klaus](https://klausapp.com) conquer
-the world of customer support's conversation quality.
+I'm currently helping [Supersimple](https://klausapp.com) conquer
+the world of asking complex questions.
 
-When I'm not hanging out with the coolest cat in tech,
+When I'm not hanging out with the coolest penguin in tech,
 I consult others on front-end best practises, help them
 execute their next big project or am tinkering on something small (and often silly).
 

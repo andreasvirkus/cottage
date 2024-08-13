@@ -1,11 +1,10 @@
 ---
 import HeaderLink from './HeaderLink.astro'
-import { SITE_TITLE } from '../consts'
 ---
 
 <header>
   <nav class="hide-print">
-    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <h2><a href="/">the c<span>ö</span>ttage</a></h2>
     <div class="links">
       <HeaderLink href="/">~</HeaderLink> /
       <HeaderLink href="/me">me</HeaderLink> /
@@ -26,6 +25,10 @@ import { SITE_TITLE } from '../consts'
   }
   h2 {
     font-size: 1em;
+  }
+
+  header h2 span {
+    color: var(--link-color);
   }
 
   h2 a,
