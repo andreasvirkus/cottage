@@ -9,6 +9,8 @@
 </div>
 
 <script>
+  import sound from '../assets/sounds/ding.wav'
+
   const picker = document.querySelector('[data-theme-picker]')
   const themeBtn = picker?.querySelectorAll('button') || []
 
@@ -17,13 +19,13 @@
       const theme = btn.dataset.theme || ''
       document.documentElement.setAttribute('data-theme', theme)
       localStorage.setItem('_cottageTheme', theme)
+      ding()
     })
-    btn.addEventListener('mouseenter', ding)
   })
 
   function ding() {
-    const sound = new Audio('https://www.soundjay.com/misc/sounds/small-bell-ring-01a.mp3')
-    sound.play()
+    const snd = new Audio(sound)
+    snd.play()
   }
 </script>
 
