@@ -63,11 +63,10 @@ the starting point, destination and date every time I visit their URL:
 
 ```js
 javascript: (() => {
-  const e = new Date(),
-    t = e.getDate(),
-    l = e.getMonth() + 1
-  let n = `https://elron.pilet.ee/et/otsing/Tondi/Pääsküla/${`${e.getFullYear()}-${l}-${t}`}`
-  location.href = n
+  const d = new Date()
+  const day = String(d.getDate()).padStart(2, '0')
+  const month = String(d.getMonth() + 1).padStart(2, '0')
+  location.href = `https://elron.pilet.ee/et/otsing/Tondi/Tallinn/${`${d.getFullYear()}-${month}-${day}`}`
 })()
 ```
 
