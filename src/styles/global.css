@@ -296,3 +296,8 @@ p code {
     display: block;
   }
 }
+
+#cursor-inner,
+#cursor-outer {
+  transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out !important;
+}
