@@ -34,6 +34,7 @@
     --code-color: white;
     --blockquote-color: #ccc;
     --scrollbar-color: #c6ff54;
+    --cursor-color: var(--scrollbar-color);
   }
 }
 
@@ -48,6 +49,7 @@ html[data-theme="light"] {
   --blockquote-color: #222;
   --gradient: linear-gradient(90deg, #61e695, #c6ff54);
   --scrollbar-color: #b49bff;
+  --cursor-color: var(--scrollbar-color);
 }
 
 html[data-theme="dark"] {
@@ -61,8 +63,8 @@ html[data-theme="dark"] {
   --code-color: white;
   --blockquote-color: #ccc;
   --scrollbar-color: #c6ff54;
+  --cursor-color: var(--scrollbar-color);
 }
-
 
 html[data-theme="dark-2"] {
   --background-color: #0e141b;
@@ -75,6 +77,21 @@ html[data-theme="dark-2"] {
   --blockquote-color: #ccc;
   --gradient: linear-gradient(90deg, #0ec1f6, #8823de);
   --scrollbar-color: #b49bff;
+  --cursor-color: var(--scrollbar-color);
+}
+
+html[data-theme="dark-3"] {
+  --background-color: #2a1b2a;
+  --heading-color: #eee;
+  --text-color: #ddd;
+  --code-color: #d0b3be;
+  --code-background-color: #111;
+  --link-color: #ce7bce;
+  --visited-color: #8cc2dd;
+  --blockquote-color: #ccc;
+  --gradient: linear-gradient(90deg, #f60ef2, #8823de);
+  --scrollbar-color: #b49bff;
+  --cursor-color: var(--scrollbar-color);
 }
 
 html[data-theme="light-2"] {
@@ -86,6 +103,7 @@ html[data-theme="light-2"] {
   --link-color: #7B6569;
   --gradient: linear-gradient(90deg, #C4CFCD, #7B6569);
   --scrollbar-color: #C4CFCD;
+  --cursor-color: var(--scrollbar-color);
 }
 
 html {

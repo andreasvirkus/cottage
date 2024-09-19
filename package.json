@@ -35,13 +35,14 @@
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.1",
     "@astrojs/vue": "^4.0.8",
+    "animated-cursor": "^1.2.0",
     "astro": "^4.4.3",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.2.5",
     "sharp": "^0.33.2",
     "typescript": "^5.3.3"
   },
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@4.5.0",
   "devDependencies": {
     "playwright": "^1.41.2"
   },
