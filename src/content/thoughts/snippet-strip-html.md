@@ -1,5 +1,5 @@
 ---
-title: Strip HTML the easy way
+title: strip HTML the easy way
 description: Forget the regex and use a DOMParser
 pubDate: 2023-12-15
 tags:

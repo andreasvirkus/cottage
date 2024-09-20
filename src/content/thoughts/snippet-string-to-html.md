@@ -1,5 +1,5 @@
 ---
-title: Generate DOMNode from string
+title: generate DOMNode from string
 description: Bored of those tedious createElement, appendChild chains?
 pubDate: 2023-12-15
 tags:

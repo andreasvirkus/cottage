@@ -1,5 +1,5 @@
 ---
-title: 'Translate Ordinal Suffixes'
+title: translate ordinal suffixes
 description: 'Easiest trick for ordinal suffixes with i18n support'
 pubDate: 2023-12-04
 tags:

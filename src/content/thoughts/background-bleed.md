@@ -1,5 +1,5 @@
 ---
-title: Background bleed
+title: background bleed
 description: No parent sets my limits!
 pubDate: 2024-08-09
 tags:
