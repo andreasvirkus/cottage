@@ -16,6 +16,8 @@
   const themeBtn = picker?.querySelectorAll('button') || []
   let prevCursorColor: string
 
+  const audio = new Audio(sound)
+
   themeBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       const theme = btn.dataset.theme || ''
@@ -38,9 +40,11 @@
   })
 
   function ding() {
-    const snd = new Audio(sound)
-    snd.volume = 0.4
-    snd.play()
+    // const audio = new Audio(sound)
+    audio.pause()
+    audio.currentTime = 0
+    audio.volume = 0.4
+    audio.play()
   }
 </script>
 

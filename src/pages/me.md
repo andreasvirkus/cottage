@@ -6,16 +6,23 @@ layout: ../layouts/Base.astro
 
 # me
 
-Let me rant about myself for a bit. My full _curriculum vitae_ can be viewed [here](/cv/). You can skip ahead to my [passions](#interests) or my [work](#labor).
 
-In my free time I enjoy climbing, working on my motorcycle, disc golfing, BJJ & learning Blender...
+Let me rant about myself for a bit. In my free time I enjoy climbing, working on my motorcycle, disc golfing, BJJ & learning Blender...
 and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.
+
+ My full _curriculum vitae_ can be viewed [here](/cv/).
 
 <!-- My full _curriculum vitae_ can be viewed [here](/cv/) and downloaded through the following link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf). -->
 
 ## interests
 
-I'm a developer with a soft spot for front-end. I'm interested in all kinds of visual communication, but my major focus is on designing web applications & interfaces. I love (and preach) all things JavaScript, semantic HTML, the power of CSS & progressive enhancement. Lately I've really enjoyed tinkering with:
+I'm a developer with a soft spot for front-end. I'm interested in all kinds of visual communication,
+but my major focus is on designing web applications & interfaces. I love (and preach) all things
+regarding usability, JavaScript, semantic HTML, the power of CSS & progressive enhancement. What fires me up
+is products where you can feel the polish and care that has gone into crafting them. I'd say I work
+great with designers (challenging their perspective on things), other devs & _less-techy folk_ (pretty sure that's the technical term for it?)
+
+Lately I've really enjoyed tinkering with:
 
 - Blender
 - Vue.js & Nuxt ♥
@@ -24,9 +31,6 @@ I'm a developer with a soft spot for front-end. I'm interested in all kinds of v
 - Edge functions & edge rendering
 - Golang
 - ESM build tools (Vite, Bun, ESBuild)
-
-I work great with designers (challenging their perspective on things),
-other devs & _less-techy folk_ (pretty sure that's the technical term for it).
 
 ### favourite learning resources:
 
@@ -62,15 +66,17 @@ other devs & _less-techy folk_ (pretty sure that's the technical term for it).
 - Too many [Smashing Magazine](https://www.smashingmagazine.com/articles/),
   [dev.to](https://dev.to) & Medium articles to count
 
-## labor
+## history
 
-\* Unfortunately, I can't show most of my past work on here for [legal reasons](https://en.wikipedia.org/wiki/Non-disclosure_agreement).
+<span style="color: tomato">\*</span> Unfortunately, I can't show most of my past work on here for [legal reasons](https://en.wikipedia.org/wiki/Non-disclosure_agreement).
 It's good stuff though.
 
 I like fiddling small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus)/Pi.\
 I started out creating websites for neighbours, family friends and small companies, which really sparked a passion. Here's what I've been up to since:
 
 ### [Supersimple](https://supersimple.io?utm_source=andreasvirkus.me) 🐧
+
+<div style="margin-top: -1rem">May 2024</div>
 
 Helping Supersimple simplify complex data exploration flows and
 aiding all roles of any SaaS company to have swift answers for

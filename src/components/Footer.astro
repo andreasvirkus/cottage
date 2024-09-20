@@ -8,9 +8,9 @@ import ThemePicker from './ThemePicker.astro'
   <TimeGreeting />
 
   <div class="links hide-print">
-    <a href="mailto:write@andreasvirkus.me"> E-mail me! Write about anything.</a>
+    <a href="mailto:write@andreasvirkus.me">E-mail me</a> /
     <a href="https://github.com/andreasvirkus" target="_blank" rel="noopener noreferrer">
-      <span>Visit my GitHub profile</span>
+      <span>GitHub profile</span>
       <svg viewBox="0 0 16 16" aria-hidden="true" width="16" height="16" astro-icon="social/github">
         <path
           fill="currentColor"
@@ -38,10 +38,9 @@ import ThemePicker from './ThemePicker.astro'
 
   .links {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: 0.5rem;
   }
   .links a {
     display: inline-flex;

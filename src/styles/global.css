@@ -190,6 +190,12 @@ a {
   text-decoration: none;
 }
 
+em {
+  font-family: var(--font-secondary);
+  font-style: normal;
+  font-size: 0.85em;
+}
+
 main a,
 footer a {
   font-size: 1.1rem;
