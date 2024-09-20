@@ -6,7 +6,7 @@ tags:
   - css
 ---
 
-Love the latest CSS color enhancements! It includes a great new `color-mix()` utility that has [vey solid browser support](https://caniuse.com/?search=color-mix).
+Love the latest CSS color enhancements! It includes a great new `color-mix()` utility that has [very solid browser support](https://caniuse.com/?search=color-mix).
 My favourite use-case is tweaking the opacity of an existing CSS variable:
 
 ```css
