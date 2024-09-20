@@ -27,7 +27,8 @@
     btn.addEventListener('mouseenter', (event) => {
       if (event.target === null || !(event.target instanceof HTMLElement)) return
 
-      const btnTheme = (prevCursorColor = getComputedStyle(event.target).getPropertyValue('--theme-bg'))
+      prevCursorColor = getComputedStyle(document.body).getPropertyValue('--cursor-color')
+      const btnTheme = getComputedStyle(event.target).getPropertyValue('--theme-bg')
       document.documentElement.style.setProperty('--cursor-color', btnTheme)
     })
 
