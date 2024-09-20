@@ -106,6 +106,23 @@ html[data-theme="light-2"] {
   --cursor-color: var(--scrollbar-color);
 }
 
+/* Inspiration for future themes
+#adc7b0
+#ddc296
+#d0b3be
+
+html[data-theme="light-2"] {
+  --text-color: #121614;
+  --heading-color: #e1d3d3;
+  --code-color: #223;
+  --code-background-color: #e1d3d3;
+  --background-color: #F4F6F4;
+  --link-color: #7B6569;
+  --gradient: linear-gradient(90deg, #C4CFCD, #7B6569);
+  --scrollbar-color: #C4CFCD;
+  --cursor-color: var(--scrollbar-color);
+} */
+
 html {
   scroll-behavior: smooth;
 }

@@ -14,6 +14,7 @@
 
   const picker = document.querySelector('[data-theme-picker]')
   const themeBtn = picker?.querySelectorAll('button') || []
+  let prevCursorColor: string
 
   themeBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -22,10 +23,22 @@
       localStorage.setItem('_cottageTheme', theme)
       ding()
     })
+
+    btn.addEventListener('mouseenter', (event) => {
+      if (event.target === null || !(event.target instanceof HTMLElement)) return
+
+      const btnTheme = (prevCursorColor = getComputedStyle(event.target).getPropertyValue('--theme-bg'))
+      document.documentElement.style.setProperty('--cursor-color', btnTheme)
+    })
+
+    btn.addEventListener('mouseleave', () => {
+      document.documentElement.style.setProperty('--cursor-color', prevCursorColor)
+    })
   })
 
   function ding() {
     const snd = new Audio(sound)
+    snd.volume = 0.4
     snd.play()
   }
 </script>
@@ -34,7 +47,7 @@
   .theme-picker-title {
     display: block;
     margin-top: 2rem;
-    margin-bottom: -0.5rem;
+    margin-bottom: 0;
     font-size: 1rem;
     letter-spacing: 1px;
     font-style: monospace;
@@ -43,8 +56,8 @@
   button {
     border: 0;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    height: 0.5rem;
-    width: 0.5rem;
+    height: 1.25rem;
+    width: 1.25rem;
     background-color: var(--theme-bg);
     transition:
       box-shadow 0.2s ease-out,
