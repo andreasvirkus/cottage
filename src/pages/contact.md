@@ -8,7 +8,7 @@ layout: ../layouts/Base.astro
 
 That's `hello` in Estonian.
 
-I'm currently helping [Supersimple](https://klausapp.com) conquer
+I'm currently helping [Supersimple](https://supersimple.io) conquer
 the world of asking complex questions.
 
 When I'm not hanging out with the coolest penguin in tech,
