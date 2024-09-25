@@ -1,11 +1,11 @@
 <div>
   <span class="theme-picker-title flex-1 basis-full text-xs mt-4 block">click us pls</span>
   <div data-theme-picker class="flex gap-4">
-    <button class="w-4 h-4" style="--theme-bg: #a8ebcb" data-theme="light"></button>
-    <button class="w-4 h-4" style="--theme-bg: #6c3e41" data-theme="dark"></button>
-    <button class="w-4 h-4" style="--theme-bg: #3363ff" data-theme="dark-2"></button>
-    <button class="w-4 h-4" style="--theme-bg: #C4CFCD" data-theme="light-2"></button>
-    <button class="w-4 h-4" style="--theme-bg: #ce7bce" data-theme="dark-3"></button>
+    <button class="w-4 h-4" style="--theme-bg: var(--theme-light)" data-theme="light"></button>
+    <button class="w-4 h-4" style="--theme-bg: var(--theme-dark)" data-theme="dark"></button>
+    <button class="w-4 h-4" style="--theme-bg: var(--theme-dark-2)" data-theme="dark-2"></button>
+    <button class="w-4 h-4" style="--theme-bg: var(--theme-light-2)" data-theme="light-2"></button>
+    <button class="w-4 h-4" style="--theme-bg: var(--theme-dark-3)" data-theme="dark-3"></button>
   </div>
 </div>
 
@@ -36,6 +36,12 @@
 
     btn.addEventListener('mouseleave', () => {
       document.documentElement.style.setProperty('--cursor-color', prevCursorColor)
+    })
+
+    btn.addEventListener('click', (event) => {
+      if (event.target === null || !(event.target instanceof HTMLElement)) return
+      const btnTheme = (prevCursorColor = getComputedStyle(event.target).getPropertyValue('--theme-bg'))
+      document.documentElement.style.setProperty('--cursor-color', btnTheme)
     })
   })
 
