@@ -131,6 +131,7 @@ html[data-theme="light-2"] {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 @media prefers-reduced-motion {

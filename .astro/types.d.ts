@@ -192,6 +192,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"get-your-scroll-on.md": {
+	id: "get-your-scroll-on.md";
+  slug: "get-your-scroll-on";
+  body: string;
+  collection: "thoughts";
+  data: any
+} & { render(): Render[".md"] };
 "giving-this-another-go/index.md": {
 	id: "giving-this-another-go/index.md";
   slug: "giving-this-another-go";
