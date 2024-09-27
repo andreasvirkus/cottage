@@ -69,6 +69,12 @@ let posts = ((await getCollection('thoughts')) || [])
 </Base>
 
 <style>
+  @property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 10deg;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -93,15 +99,16 @@ let posts = ((await getCollection('thoughts')) || [])
     border: none;
   }
   a:hover .gradient {
-    opacity: 0.9;
-    box-shadow: var(--box-shadow);
+    opacity: 1;
+    --angle: 190deg;
   }
   a:hover .date {
     opacity: 1;
   }
-
   li * {
-    transition: 0.2s ease;
+    transition:
+      opacity 0.3s cubic-bezier(0.85, 0, 0.15, 1),
+      --angle 0.6s cubic-bezier(0.85, 0, 0.15, 1);
   }
   li:first-child {
     width: 100%;
@@ -118,7 +125,7 @@ let posts = ((await getCollection('thoughts')) || [])
     margin-bottom: 0.5rem;
     background-image: var(--hero-gradient);
     height: 132px;
-    opacity: 0.4;
+    opacity: 0.6;
   }
   .title {
     margin: 0;
