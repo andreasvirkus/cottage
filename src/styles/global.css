@@ -169,6 +169,11 @@ body::-webkit-scrollbar-thumb {
   box-shadow: inset 4px solid white;
 }
 
+::selection {
+  color: var(--code-color);
+  background-color: var(--code-background-color);
+}
+
 a,
 button,
 input,
