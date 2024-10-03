@@ -44,7 +44,6 @@ if (hour < 6) timeOfDay = 'night'
     const time = `${hourFormatted}:${minFormatted}`
     datetime.setAttribute('datetime', today.toISOString())
     datetime.textContent = time
-    console.info('update footer:', time, ' > ', timeOfDay)
     if (readableTime) readableTime.textContent = timeOfDay
   }
 </script>
