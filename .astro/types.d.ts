@@ -276,6 +276,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"simplest-auto-resizing-textarea.md": {
+	id: "simplest-auto-resizing-textarea.md";
+  slug: "simplest-auto-resizing-textarea";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "snippet-chainable-classlist.md": {
 	id: "snippet-chainable-classlist.md";
   slug: "snippet-chainable-classlist";
@@ -346,6 +353,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"tailwind-hocus-pocus.md": {
+	id: "tailwind-hocus-pocus.md";
+  slug: "tailwind-hocus-pocus";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "testing-typography-styles.md": {
 	id: "testing-typography-styles.md";
   slug: "testing-typography-styles";
@@ -363,6 +377,13 @@ declare module 'astro:content' {
 "vue-html-variables.md": {
 	id: "vue-html-variables.md";
   slug: "vue-html-variables";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
+"vue-marquee.md": {
+	id: "vue-marquee.md";
+  slug: "vue-marquee";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">

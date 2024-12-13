@@ -1,5 +1,6 @@
 ---
 title: simplest auto-resizing textarea
+description: auto-resize a textarea without any JS or extra elements
 pubDate: 2024-10-26
 draft: true
 tags:
