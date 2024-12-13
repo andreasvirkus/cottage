@@ -1,7 +1,7 @@
 ---
 title: get your scroll on
 description: Forget about annoying headers covering content post-scroll
-pubDate: 2024-26-09
+pubDate: 2024-09-26
 tags:
   - css
 ---
