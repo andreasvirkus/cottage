@@ -7,40 +7,39 @@ tags:
   - css
 ---
 
-A simple snippet where we utilise a pseudo-element and the `content: attr(data-value)` to grab the
+A simple snippet where we utilise a pseudo-element and the `content: attr(data-replicated-value)` to grab the
 textarea's value, to shadow its contents and get multiline functionality.
 
 ```css
 .textareaWrapper {
+  --border-width: 1px;
   display: grid;
-  width: 100%;
+  max-height: inherit;
 
-  &:after {
-    content: attr(data-value) " ";
+  &::after {
+    content: attr(data-replicated-value) ' ';
+    border: var(--border-width) solid transparent;
     white-space: pre-wrap;
     visibility: hidden;
-    max-width: 100%;
-    padding-bottom: 5px;
-    line-height: normal;
   }
 
-  & > textarea {
+  .textArea {
     resize: none;
-    overflow: hidden;
+    color: inherit;
   }
 
-  & > textarea,
+  .textArea,
   &::after {
+    box-sizing: border-box;
+    font: inherit;
+    font-size: inherit;
+    max-height: inherit;
     grid-area: 1 / 1 / 2 / 2;
-    resize: none;
-    flex-grow: 1;
+    width: 100%;
+    padding: $space-xxxs 0.375rem;
     margin: 0;
-    padding: 16px;
-    max-width: 100%;
-    border: 1px solid tomato;
-    border-radius: 4px;
-    font-size: 20px;
-    background: none;
+    overflow: auto;
+    scrollbar-gutter: stable;
   }
 }
 ```
