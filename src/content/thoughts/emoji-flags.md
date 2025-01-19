@@ -6,15 +6,19 @@ publishedAt: 2025-01-19
 ---
 
 Here's a nifty snippet to automatically calculate the expected flag emoji of any country,
-based on its country code:
+based on its country code
 
 ```ts
+const getFlagEmoji = (countryCode) => countryCode
+  .toUpperCase()
+  .split('')
+  .map((char) =>  String.fromCodePoint(127397 + char.charCodeAt()))
+
+// A slightly faster version (https://jsperf.app/peluko)
 function getFlagEmoji(countryCode) {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split('')
-    .map((char) =>  127397 + char.charCodeAt())
-  return String.fromCodePoint(...codePoints)
+  return [...countryCode.toUpperCase()]
+    .map(char => String.fromCodePoint(127397 + char.charCodeAt()))
+    .reduce((a, b) => `${a}${b}`);
 }
 ```
 
@@ -32,6 +36,11 @@ getFlagEmoji('ee') // 🇪🇪
 ``
 
 <script>
+window.shorter = (countryCode) => countryCode
+  .toUpperCase()
+  .split('')
+  .map((char) =>  String.fromCodePoint(127397 + char.charCodeAt()))
+
 window.getFlagEmoji = function getFlagEmoji(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
