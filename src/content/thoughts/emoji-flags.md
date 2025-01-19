@@ -1,8 +1,10 @@
 ---
 title: emoji flags from country codes
-
 description: generate the respective flag of any country code
-publishedAt: 2025-01-19
+pubDate: 2025-01-19
+tags:
+  - til
+  - snippet
 ---
 
 Here's a nifty snippet to automatically calculate the expected flag emoji of any country,
