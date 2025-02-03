@@ -35,7 +35,7 @@ textarea's value, to shadow its contents and get multiline functionality.
     max-height: inherit;
     grid-area: 1 / 1 / 2 / 2;
     width: 100%;
-    padding: $space-xxxs 0.375rem;
+    padding: 0.25rem;
     margin: 0;
     overflow: auto;
     scrollbar-gutter: stable;
