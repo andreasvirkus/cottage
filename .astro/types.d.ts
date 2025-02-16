@@ -171,6 +171,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".mdx"] };
+"emoji-flags.md": {
+	id: "emoji-flags.md";
+  slug: "emoji-flags";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "emoji-icon-set.md": {
 	id: "emoji-icon-set.md";
   slug: "emoji-icon-set";
@@ -272,6 +279,13 @@ declare module 'astro:content' {
 "shopify-embed-navigation-menu.md": {
 	id: "shopify-embed-navigation-menu.md";
   slug: "shopify-embed-navigation-menu";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
+"simple-image-placeholders.md": {
+	id: "simple-image-placeholders.md";
+  slug: "simple-image-placeholders";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">

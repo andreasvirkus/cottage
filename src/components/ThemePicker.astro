@@ -10,14 +10,12 @@
 </div>
 
 <script>
-  import sound from '../assets/sounds/boop-2.mp3'
-  // import sound from '../assets/sounds/ding.wav'
-
   const picker = document.querySelector('[data-theme-picker]')
   const themeBtn = picker?.querySelectorAll('button') || []
   let prevCursorColor: string
 
-  const audio = new Audio(sound)
+  const sound = new URL('../assets/sounds/boop-5.mp3', import.meta.url)
+  const audio = new Audio(sound.href)
 
   themeBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -47,10 +45,6 @@
   })
 
   function ding() {
-    // const audio = new Audio(sound)
-    audio.pause()
-    audio.currentTime = 0
-    // audio.volume = 0.4
     audio.play()
   }
 </script>
@@ -75,10 +69,12 @@
       box-shadow 0.2s ease-out,
       border-radius 0.2s ease-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       cursor: pointer;
       box-shadow: 0 0 0 0.2rem var(--theme-bg);
       border-radius: 20% 40px;
+      outline: 5px solid var(--theme-bg);
     }
   }
 </style>
