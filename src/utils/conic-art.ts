@@ -16,8 +16,6 @@ const getSeed = (slug: string) => (slug.length * 4) % cutoff
 
 // Generate a random conic-gradient background based on post slug
 export function getConicGradient(slug: string) {
-  // const degree = getRandomInteger(30, 100)
-  // const flipDegree = Math.random() > 0.5 ? -1 : 1
   const degree = getRandomDegree(slug)
   const baseColor = colors[slug.length % cutoff]
   let contrastIdx = Math.round(getSeed(slug))
@@ -25,7 +23,7 @@ export function getConicGradient(slug: string) {
   if (contrastIdx === slug.length % cutoff) contrastIdx = contrastIdx + (1 % cutoff)
   const contrastColor = colors[contrastIdx]
 
-  return `conic-gradient(${baseColor} var(--angle, ${degree})${contrastColor ? ', ' + contrastColor : ''})`
+  return `conic-gradient(${baseColor} var(--angle, ${degree})${contrastColor ? `, ${contrastColor} 220deg, ${baseColor} 360deg` : ''})`
 }
 
 function getRandomInteger(min: number, max: number) {
