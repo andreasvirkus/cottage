@@ -112,6 +112,10 @@ html[data-theme="light-2"] {
   --cursor-color: var(--theme-light-2);
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 /* Inspiration for future themes
 #adc7b0
 #ddc296
