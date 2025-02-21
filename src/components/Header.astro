@@ -29,6 +29,10 @@ import HeaderLink from './HeaderLink.astro'
 
   header h2 span {
     color: var(--link-color);
+    transition: color 0.3s ease-out;
+  }
+  h2 a:hover span {
+    color: var(--text-color);
   }
 
   h2 a,

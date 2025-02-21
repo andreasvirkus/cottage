@@ -234,6 +234,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"lightweight-event-bus.md": {
+	id: "lightweight-event-bus.md";
+  slug: "lightweight-event-bus";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "markdown-style-guide.md": {
 	id: "markdown-style-guide.md";
   slug: "markdown-style-guide";
@@ -293,6 +300,13 @@ declare module 'astro:content' {
 "simplest-auto-resizing-textarea.md": {
 	id: "simplest-auto-resizing-textarea.md";
   slug: "simplest-auto-resizing-textarea";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
+"singularize-words.md": {
+	id: "singularize-words.md";
+  slug: "singularize-words";
   body: string;
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">

@@ -43,9 +43,9 @@ Lately I've really enjoyed tinkering with:
 - [Front End Happy Hour](http://frontendhappyhour.com/)
 - [CodePen Radio](https://blog.codepen.io/radio/)
 - [Friends Talk Frontend](https://friendstalkfrontend.com/)
-- [Changelog](https://changelog.com) (all their podcasts #masterfeed)
-  - [JS Party](https://changelog.com/jsparty)
-  - [Go Time](https://changelog.com/gotime)
+- [Changelog](https://changelog.com) (all their podcasts ~~#masterfeed~~)
+  - [JS Party](https://changelog.com/jsparty) (RIP 🕊️)
+  - [Go Time](https://changelog.com/gotime) (RIP 🕊️)
 
 **News/article feeds**
 
