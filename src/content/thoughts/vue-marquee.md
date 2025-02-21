@@ -1,7 +1,5 @@
 ---
-title: vue html variables
-
-draft: true
+title: vue marquee
 description: bring back the magic of retro web design
 pubDate: 2024-10-28
 tags:
