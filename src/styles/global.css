@@ -187,6 +187,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
+  flex: 1;
   padding: 0 2em 2em;
 }
 
@@ -368,6 +369,10 @@ p code {
   background-size: 16px 15px;
   background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+
+  @media (max-width: 720px) {
+    background-image: none;
+  }
 }
 
 /* Layout gridlines */
