@@ -2,7 +2,7 @@
 import HeaderLink from './HeaderLink.astro'
 ---
 
-<header>
+<header class="grid-background">
   <nav class="hide-print">
     <h2><a href="/">the c<span>ö</span>ttage</a></h2>
     <div class="links">
@@ -18,9 +18,10 @@ import HeaderLink from './HeaderLink.astro'
   header {
     position: sticky;
     top: 0;
-    background: var(--background-color);
-    padding-top: 0.5em;
-    padding-bottom: 1em;
+    background-color: var(--background-color);
+    padding: 0.5em 2em 1em;
+    /* Hide overlap with the grid background and body outline */
+    margin: 0 -1px;
     z-index: 2;
   }
   h2 {
@@ -46,10 +47,9 @@ import HeaderLink from './HeaderLink.astro'
     justify-content: space-between;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 720px) {
     header {
-      padding-bottom: 0.2em;
-      padding-top: 0.2em;
+      padding: 0.2em 0;
     }
 
     .links {

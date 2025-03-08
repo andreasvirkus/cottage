@@ -1,5 +1,5 @@
 :root {
-  --width: 74ch;
+  --width: 80ch;
   --font-primary: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
     'Open Sans', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-secondary: 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro',
@@ -12,6 +12,7 @@
   --text-color: #444;
   --link-color: #a8ebcb;
   --visited-color: #8b6fcb;
+  --grid-color: #dddddd60;
   --code-background-color: #c6ff54;
   --code-color: #222;
   --blockquote-color: #222;
@@ -25,13 +26,13 @@
   --theme-dark: #c6ff54;
   --theme-light: #a8ebcb;
   --theme-dark-2: #3363ff;
-  --theme-light-2: #C4CFCD;
+  --theme-light-2: #c4cfcd;
   --theme-dark-3: #ce7bce;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #0B1616;
+    --background-color: #0b1616;
     --heading-color: #eee;
     --text-color: #ddd;
     --link-color: rgb(108, 62, 65);
@@ -41,15 +42,17 @@
     --blockquote-color: #ccc;
     --scrollbar-color: #c6ff54;
     --cursor-color: var(--theme-dark);
+    --grid-color: #dddddd10;
   }
 }
 
-html[data-theme="light"] {
+html[data-theme='light'] {
   --background-color: #fff;
   --heading-color: #222;
   --text-color: #444;
   --link-color: #a8ebcb;
   --visited-color: #8b6fcb;
+  --grid-color: #dddddd60;
   --code-background-color: #c6ff54;
   --code-color: #222;
   --blockquote-color: #222;
@@ -58,9 +61,9 @@ html[data-theme="light"] {
   --cursor-color: var(--theme-light);
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   /* --background-color: rgb(30, 26, 37); */
-  --background-color: #0B1616;
+  --background-color: #0b1616;
   --heading-color: #eee;
   --text-color: #ddd;
   --link-color: #6c3e41;
@@ -70,13 +73,14 @@ html[data-theme="dark"] {
   --blockquote-color: #ccc;
   --scrollbar-color: #c6ff54;
   --cursor-color: var(--theme-dark);
+  --grid-color: #dddddd10;
 }
 
-html[data-theme="dark-2"] {
+html[data-theme='dark-2'] {
   --background-color: #0e141b;
   --heading-color: #eee;
   --text-color: #ddd;
-  --code-color: #03A9F4;
+  --code-color: #03a9f4;
   --code-background-color: #223;
   --link-color: #3363ff;
   --visited-color: #8cc2dd;
@@ -84,9 +88,10 @@ html[data-theme="dark-2"] {
   --gradient: linear-gradient(90deg, #0ec1f6, #8823de);
   --scrollbar-color: #b49bff;
   --cursor-color: var(--theme-dark-2);
+  --grid-color: #dddddd10;
 }
 
-html[data-theme="dark-3"] {
+html[data-theme='dark-3'] {
   --background-color: #2a1b2a;
   --heading-color: #eee;
   --text-color: #ddd;
@@ -98,18 +103,20 @@ html[data-theme="dark-3"] {
   --gradient: linear-gradient(90deg, #f60ef2, #8823de);
   --scrollbar-color: #b49bff;
   --cursor-color: var(--theme-dark-3);
+  --grid-color: #dddddd10;
 }
 
-html[data-theme="light-2"] {
+html[data-theme='light-2'] {
   --text-color: #121614;
   --heading-color: #e1d3d3;
   --code-color: #223;
   --code-background-color: #e1d3d3;
-  --background-color: #F4F6F4;
-  --link-color: #7B6569;
-  --gradient: linear-gradient(90deg, #C4CFCD, #7B6569);
-  --scrollbar-color: #C4CFCD;
+  --background-color: #f4f6f4;
+  --link-color: #7b6569;
+  --gradient: linear-gradient(90deg, #c4cfcd, #7b6569);
+  --scrollbar-color: #c4cfcd;
   --cursor-color: var(--theme-light-2);
+  --grid-color: #dddddd60;
 }
 
 @view-transition {
@@ -147,7 +154,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  gap: 1em;
   min-height: 100vh;
   margin: auto;
   max-width: var(--width);
@@ -159,9 +165,11 @@ body {
   text-align: left;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  overflow-x: hidden;
 
   background-color: var(--background-color);
   color: var(--text-color);
+  outline: 1px solid var(--grid-color, #dddddd20);
 }
 
 body::-webkit-scrollbar {
@@ -176,6 +184,19 @@ body::-webkit-scrollbar-thumb {
 ::selection {
   color: var(--code-color);
   background-color: var(--code-background-color);
+}
+
+main {
+  padding: 0 2em 2em;
+}
+
+@media (max-width: 720px) {
+  body {
+    outline: none;
+  }
+  main {
+    padding: 0;
+  }
 }
 
 a,
@@ -285,7 +306,7 @@ blockquote {
 }
 
 q {
-  quotes: "“" "”" "‘" "’";
+  quotes: '“' '”' '‘' '’';
 }
 q::before {
   content: open-quote;
@@ -338,5 +359,42 @@ p code {
 
 #cursor-inner,
 #cursor-outer {
-  transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out !important;
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.1s ease-in-out !important;
+}
+
+.grid-background {
+  background-size: 16px 15px;
+  background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+/* Layout gridlines */
+body > header,
+body > main,
+body > footer {
+  position: relative;
+}
+body > header::before,
+body > main::before,
+body > footer::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 200vw;
+  height: 1px;
+  left: -100%;
+  right: -100%;
+  background-color: var(--grid-color);
+}
+@media (max-width: 720px) {
+  body > header::before,
+  body > main::before,
+  body > footer::before {
+    content: unset;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
 }
