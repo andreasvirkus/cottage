@@ -9,6 +9,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+    <script>
+      const theme = localStorage.getItem('_cottageTheme')
+      if (theme) document.documentElement.setAttribute('data-theme', theme)
+    </script>
   </head>
   <body>
     <Header />
@@ -17,10 +22,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
     </main>
     <Footer />
 
-    <script>
-      const theme = localStorage.getItem('_cottageTheme')
-      if (theme) document.documentElement.setAttribute('data-theme', theme)
-    </script>
 
     <div id="cursor">
       <div id="cursor-outer"></div>
