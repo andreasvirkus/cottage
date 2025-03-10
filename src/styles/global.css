@@ -282,7 +282,6 @@ table {
 hr {
   display: block;
   border: 0;
-  /* border-top: 3px double; */
   max-width: 30ch;
   margin: 1em auto;
   text-align: center;
@@ -360,13 +359,6 @@ p code {
   .print-only {
     display: block;
   }
-}
-
-#cursor-inner,
-#cursor-outer {
-  transition:
-    opacity 0.2s ease-in-out,
-    transform 0.1s ease-in-out !important;
 }
 
 .grid-background {
