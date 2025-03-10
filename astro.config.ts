@@ -16,6 +16,9 @@ export default defineConfig({
       assetsInlineLimit: 0,
     },
   },
+  build: {
+    inlineStylesheets: 'always',
+  },
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
