@@ -2,7 +2,7 @@
 
 /* TEAM */
 Your title: Andreas Johan Virkus
-Site: <write@andreasvirkus.me> (https://andreasvirkus.me/contact)
+Site: <write@andreasvirkus.me> (https://andreasvirkus.me/contact/)
 Location: Tallinn, Estonia
 
 /* THANKS */
