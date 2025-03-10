@@ -369,7 +369,7 @@ p code {
 }
 
 .grid-background {
-  background-size: 16px 15px;
+  background-size: 24px 24px;
   background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
 
