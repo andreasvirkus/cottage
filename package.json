@@ -44,7 +44,11 @@
   },
   "packageManager": "yarn@4.5.0",
   "devDependencies": {
-    "playwright": "^1.41.2"
+    "@types/markdown-it": "^14",
+    "@types/sanitize-html": "^2",
+    "markdown-it": "^14.1.0",
+    "playwright": "^1.41.2",
+    "sanitize-html": "^2.17.0"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.9.6"

@@ -122,7 +122,6 @@ html[data-theme='light-2'] {
   --grid-color: var(--grid-light);
 }
 
-/* FIXME: https://www.reddit.com/r/astrojs/comments/1fi2e47/dark_mode_seems_to_break_with_view_transitions/ */
 @view-transition {
   navigation: auto;
 }
@@ -359,6 +358,16 @@ p code {
   .print-only {
     display: block;
   }
+}
+
+.avatar {
+  float: left;
+  height: 128px;
+  width: auto;
+  border-radius: 60% 40% 70px 60px / 20% 70% 80px 80px;
+  margin: 0 24px 0 -16px;
+  shape-outside: circle(45%);
+  outline: 2px solid beige;
 }
 
 .grid-background {
