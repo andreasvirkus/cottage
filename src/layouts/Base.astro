@@ -38,6 +38,7 @@ document.addEventListener('astro:after-swap', () => {
       const themeAccent = getComputedStyle(document.body).getPropertyValue('--cursor-color')
       const ac = AnimatedCursor({
         color: themeAccent,
+        trailingSpeed: 0.5,
         cursorInnerStyles: {
           backgroundColor: 'black',
           zIndex: 10,
