@@ -367,7 +367,33 @@ p code {
   border-radius: 60% 40% 70px 60px / 20% 70% 80px 80px;
   margin: 0 24px 0 -16px;
   shape-outside: circle(45%);
-  outline: 2px solid beige;
+  outline: 2px solid #ffd9a2;
+  background-color: #ffd9a2;
+  animation: avatar-border 10s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+@keyframes avatar-border {
+  0% {
+    border-radius: 90% 20% 24px 50px / 40% 70% 80px 80px;
+  }
+  20% {
+    border-radius: 60% 40% 70px 60px / 20% 70% 80px 80px;
+  }
+  40% {
+    border-radius: 20% 60% 40px 30px / 60% 40% 80px 80px;
+  }
+  60% {
+    border-radius: 90% 20% 24px 50px / 40% 70% 90px 80px;
+  }
+  70% {
+    border-radius: 60% 40% 60px 50px / 35% 60% 70px 70px;
+  }
+  85% {
+    border-radius: 40% 50% 50px 30px / 60% 55% 80px 80px;
+  }
+  100% {
+    border-radius: 90% 20% 24px 50px / 40% 70% 80px 80px;
+  }
 }
 
 .grid-background {
