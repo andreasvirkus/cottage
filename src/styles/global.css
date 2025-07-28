@@ -21,6 +21,8 @@
 
   scrollbar-color: var(--scrollbar-color) var(--background-color);
   scrollbar-width: 0.75em;
+  --cursor: url("/cursor.png");
+  --cursor-pointer: url("/cursor-pointer.png");
 
   --theme-dark: #c6ff54;
   --theme-light: #a8ebcb;
@@ -122,10 +124,11 @@ html[data-theme='light-2'] {
   --grid-color: var(--grid-light);
 }
 
-@view-transition {
-  navigation: auto;
-}
-
+/* @media not (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: auto;
+  }
+} */
 /* Inspiration for future themes
 #adc7b0
 #ddc296
@@ -146,6 +149,16 @@ html[data-theme="light-2"] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+}
+* {
+cursor: var(--cursor), auto;
+}
+
+a,
+a *,
+button,
+button * {
+  cursor: var(--cursor-pointer), pointer;
 }
 
 @media prefers-reduced-motion {
@@ -227,7 +240,6 @@ h6 {
 
 a {
   color: var(--link-color);
-  cursor: pointer;
   text-decoration: none;
 }
 
@@ -265,7 +277,6 @@ b {
 
 button {
   margin: 0;
-  cursor: pointer;
   color: inherit;
   border: 1px solid;
 }
@@ -394,6 +405,48 @@ p code {
   100% {
     border-radius: 90% 20% 24px 50px / 40% 70% 80px 80px;
   }
+}
+
+.thoughts-list {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+  }
+  li {
+    width: calc(50% - 1rem);
+  }
+
+  @media (min-width: 720px) {
+    li:first-child {
+      width: 100%;
+      text-align: center;
+    }
+    li:first-child .title {
+      font-size: 2.369rem;
+    }
+  }
+  @media (max-width: 720px) {
+    ul {
+      gap: 0.5em;
+    }
+    li {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+#cursor-inner,
+#cursor-outer {
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.1s ease-in-out !important;
 }
 
 .grid-background {

@@ -73,7 +73,6 @@ button {
   box-shadow: 0px 1px 4px rgba(45, 55, 72, 0.12), 0px 1px 2px rgba(45, 55, 72, 0.04);
   background: none;
   transition: border-color 0.3s ease-out;
-  cursor: pointer;
   padding: 8px 16px;
 }
 button:hover {

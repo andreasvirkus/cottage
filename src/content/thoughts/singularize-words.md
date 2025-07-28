@@ -3,7 +3,7 @@ title: singularize words
 description: native event bus on 12 lines of code
 pubDate: 2025-02-21
 tags:
-  - js
+  - javascript
   - snippet
 ---
 

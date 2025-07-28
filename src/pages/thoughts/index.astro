@@ -1,15 +1,16 @@
 ---
-import Base from '../../layouts/Base.astro'
 import { getCollection } from 'astro:content'
-import FormattedDate from '../../components/FormattedDate.astro'
+import Base from '../../layouts/Base.astro'
+import PostListing from '../../components/PostListing.astro'
 import { getConicGradient } from '../../utils/conic-art'
 
+// const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 const tags = new Set()
 let posts = ((await getCollection('thoughts')) || [])
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .map((post) => {
-    post.data.tags?.forEach((tag) => tags.add(tag))
+    post.data.tags?.forEach((tag: string) => tags.add(tag))
     return {
       ...post,
       // Generate custom gradient for each post, seeded by slug
@@ -29,167 +30,20 @@ let posts = ((await getCollection('thoughts')) || [])
   </p>
   <hr />
 
-  <!-- TODO: Show tags once we add filtering -->
-  <div class="tags" style="display: none">
+  <div class="tags">
     {
       Array.from(tags).map((tag) => (
-        <label>
-          {tag}
-          <input type="checkbox" />
-        </label>
+        <a href={'/thoughts/tagged/' + tag} class="tag">
+          <span class="tag-label">{tag}</span>
+        </a>
       ))
     }
   </div>
 
-  <section>
+  <section class="thoughts-list">
     <ul>
-      {
-        posts
-          // .filter((post) => selectedTags.includes(post.data.tags?.join()))
-          .map((post) => (
-            <li>
-              <a href={`/thoughts/${post.slug}/`} class="gradient" style={`--hero-gradient: ${post.data.heroImage}`}>
-                <div class="card">
-                <h4 class="title">{post.data.title}</h4>
-                <div class="date">
-                  <FormattedDate date={post.data.pubDate} />
-                </div>
-                </div>
-              </a>
-            </li>
-          ))
-      }
+      { posts.map((post) => <li><PostListing slug={post.slug} title={post.data.title} gradient={post.data.heroImage} date={post.data.pubDate} /></li>)}
     </ul>
   </section>
 </Base>
 
-<style>
-  @property --angle {
-    syntax: '<angle>';
-    inherits: false;
-    initial-value: 10deg;
-  }
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    margin-top: 1em;
-  }
-  li {
-    width: calc(50% - 1rem);
-  }
-
-  a {
-    display: block;
-    border: none;
-    box-shadow: none;
-  }
-  a:hover {
-    border: none;
-  }
-  a:hover .date {
-    opacity: 1;
-  }
-  li * {
-    transition:
-      opacity 0.3s cubic-bezier(0.85, 0, 0.15, 1),
-      --angle 0.6s cubic-bezier(0.85, 0, 0.15, 1);
-  }
-
-  .gradient {
-    display: flex;
-    flex-direction: column;
-
-    background-image: var(--hero-gradient);
-    min-height: 84px;
-    padding: 0.625rem;
-    opacity: 0.9;
-    border-radius: 0.25rem;
-    mix-blend-mode: luminosity;
-  }
-  .gradient:hover {
-    opacity: 1;
-    --angle: 190deg;
-    mix-blend-mode: normal;
-    opacity: 1;
-  }
-  .card {
-    flex: 1;
-    background-color: #222;
-    padding: 0.625rem;
-    height: 100%;
-    border-radius: 4px;
-  }
-  .title,
-  .date {
-    color: white;
-    background-color: #222;
-  }
-  .title {
-    margin: 0 0 0.25rem;
-    line-height: 1;
-
-  }
-  .date {
-    margin: 0;
-    opacity: 0.5;
-    font-size: 0.8em;
-  }
-  a:hover h4,
-  a:hover .date {
-    // color: var(--accent);
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    margin-bottom: 2em;
-  }
-
-  label {
-    border-radius: 4px;
-    background-color: var(--code-background-color);
-    padding: 0.5em;
-    font-family: var(--font-mono);
-    font-size: 0.8em;
-    cursor: pointer;
-  }
-
-  /* TODO: Hide once there's a nice way to style checked state */
-  label input {
-    cursor: pointer;
-    /* display: none; */
-  }
-
-  @media (min-width: 720px) {
-    li:first-child {
-      width: 100%;
-      text-align: center;
-    }
-    li:first-child .title {
-      font-size: 2.369rem;
-    }
-  }
-
-  @media (max-width: 720px) {
-    ul {
-      gap: 0.5em;
-    }
-    li {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-
-    .gradient {
-      opacity: 1;
-      height: 60px;
-      mix-blend-mode: normal;
-    }
-  }
-</style>

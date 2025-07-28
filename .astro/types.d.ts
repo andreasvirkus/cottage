@@ -283,6 +283,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"round-to-stops.md": {
+	id: "round-to-stops.md";
+  slug: "round-to-stops";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "shopify-embed-navigation-menu.md": {
 	id: "shopify-embed-navigation-menu.md";
   slug: "shopify-embed-navigation-menu";

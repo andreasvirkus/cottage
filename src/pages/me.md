@@ -7,8 +7,8 @@ layout: ../layouts/Base.astro
 # me
 
 
-Let me rant about myself for a bit. In my free time I enjoy climbing, working on my motorcycle, disc golfing, BJJ & learning Blender...
-and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.
+Let me rant about myself for a bit. I'm a tech enthusiast, in my early 30s & live in Estonia. In my free time I enjoy climbing, BJJ, working on my motorcycle, disc golfing, board games & video games and lately also learning Blender...
+oh, and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.
 
  My full _curriculum vitae_ can be viewed [here](/cv/).
 
@@ -26,8 +26,8 @@ Lately I've really enjoyed tinkering with:
 
 - Blender
 - Vue.js & Nuxt ♥
-  - Pruvious
-- Metalsmith, Eleventy, Vitepress, Astro ♥
+  - Pruvious, Decap
+- Metalsmith → Eleventy → Vitepress → Astro ♥
 - Edge functions & edge rendering
 - Golang
 - ESM build tools (Vite, Bun, ESBuild)
@@ -36,6 +36,7 @@ Lately I've really enjoyed tinkering with:
 
 **Podcasts**
 
+- [Syntax](https://syntax.fm/)
 - [Shop Talk Show](http://shoptalkshow.com/)
 - [Developer tea](https://spec.fm/podcasts/developer-tea)
 - [Javascript Jabber](http://devchat.tv/js-jabber/picks)
@@ -71,8 +72,8 @@ Lately I've really enjoyed tinkering with:
 <span style="color: tomato">\*</span> Unfortunately, I can't show most of my past work on here for [legal reasons](https://en.wikipedia.org/wiki/Non-disclosure_agreement).
 It's good stuff though.
 
-I like fiddling small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus)/Pi.\
-I started out creating websites for neighbours, family friends and small companies, which really sparked a passion. Here's what I've been up to since:
+I like carving small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus)/Pi.\
+I started out creating websites for neighbours, friends of the family and small local companies in my high school years, which really sparked a passion. Here's what I've been up to since:
 
 ### [Supersimple](https://supersimple.io?utm_source=andreasvirkus.me) 🐧
 

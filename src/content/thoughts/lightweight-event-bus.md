@@ -3,7 +3,7 @@ title: lightweight event bus
 description: native event bus on 12 lines of code
 pubDate: 2025-02-22
 tags:
-  - js
+  - javascript
 ---
 
 An event bus can be a useful tool to communicate between components or parts of your app.

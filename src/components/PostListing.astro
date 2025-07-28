@@ -1,0 +1,126 @@
+---
+import FormattedDate from './FormattedDate.astro'
+
+interface Props {
+  slug: string
+  gradient: string
+  title: string
+  date: Date
+}
+
+const { date, slug, title, gradient } = Astro.props
+---
+<a href={`/thoughts/${slug}/`} class="gradient" style={`--hero-gradient: ${gradient}`}>
+  <div class="card">
+    <h4 class="title">{title}</h4>
+    <div class="date">
+      <FormattedDate date={date} />
+    </div>
+  </div>
+</a>
+
+<style>
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 10deg;
+}
+a {
+  display: block;
+  border: none;
+  box-shadow: none;
+}
+a:hover {
+  border: none;
+}
+a:hover .date {
+  opacity: 1;
+}
+
+.gradient {
+  display: flex;
+  flex-direction: column;
+
+  background-image: var(--hero-gradient);
+  min-height: 84px;
+  padding: 0.625rem;
+  opacity: 0.9;
+  border-radius: 0.25rem;
+  mix-blend-mode: luminosity;
+  transition:
+    opacity 0.3s cubic-bezier(0.85, 0, 0.15, 1),
+    --angle 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.gradient:hover {
+  opacity: 1;
+  --angle: 190deg;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+.card {
+  flex: 1;
+  background-color: #222;
+  padding: 0.625rem;
+  height: 100%;
+  border-radius: 4px;
+}
+.title,
+.date {
+  color: white;
+  background-color: #222;
+}
+.title {
+  margin: 0 0 0.25rem;
+  line-height: 1;
+}
+.date {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+a:hover h4,
+a:hover .date {
+  /* color: var(--accent); */
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 2em;
+}
+
+.tag-label {
+  border-radius: 4px;
+  background-color: var(--code-background-color);
+  padding: 0.5em;
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  cursor: var(--cursor-pointer), pointer;
+}
+
+/* TODO: Hide once there's a nice way to style checked state */
+label input {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tag input:checked ~ .tag-label {
+  background-color: var(--link-color);
+}
+
+@media (max-width: 720px) {
+  a {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .gradient {
+    opacity: 1;
+    height: 60px;
+    mix-blend-mode: normal;
+  }
+}
+</style>

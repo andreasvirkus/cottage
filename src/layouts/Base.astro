@@ -26,31 +26,6 @@ document.addEventListener('astro:after-swap', () => {
     </main>
     <Footer />
 
-
-    <div id="cursor">
-      <div id="cursor-outer"></div>
-      <div id="cursor-inner"></div>
-    </div>
-
-    <script>
-      import AnimatedCursor from 'animated-cursor'
-
-      const themeAccent = getComputedStyle(document.body).getPropertyValue('--cursor-color')
-      const ac = AnimatedCursor({
-        color: themeAccent,
-        trailingSpeed: 0.5,
-        cursorInnerStyles: {
-          backgroundColor: 'black',
-          zIndex: 10,
-        },
-        cursorOuterStyles: {
-          backgroundColor: 'color-mix(in srgb, var(--cursor-color) 70%, transparent)',
-          zIndex: 9,
-        },
-      })
-      ac.init()
-    </script>
-
     <script is:inline data-goatcounter="https://kano.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </body>
 </html>

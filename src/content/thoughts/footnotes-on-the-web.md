@@ -113,7 +113,7 @@ a[aria-describedby='footnote-label']::after {
   margin-left: 2px;
   color: blue;
   text-decoration: underline;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
 }
 
 a[aria-describedby='footnote-label']:focus::after {
@@ -314,7 +314,6 @@ a[aria-describedby="footnote-label"]::after {
   margin-left: 2px; /* 4 */
   color: blue; /* 5 */
   text-decoration: underline; /* 5 */
-  cursor: pointer; /* 5 */
 }
 
 /**
