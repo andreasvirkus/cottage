@@ -1,5 +1,5 @@
 ---
-title: 'css: better quotes'
+title: 'better quotes'
 
 description: Get your quotes in order!
 pubDate: 2023-12-07

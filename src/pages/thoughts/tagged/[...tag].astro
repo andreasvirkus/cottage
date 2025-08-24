@@ -1,7 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
-import Base from '../../../layouts/Base.astro'
-import PostListing from '../../../components/PostListing.astro';
+
+import PostFeed from '../../../components/PostFeed.astro';
+import { getConicGradient } from '../../../utils/conic-art'
 
 type Props = CollectionEntry<'thoughts'>
 
@@ -18,35 +19,44 @@ export async function getStaticPaths() {
   });
 }
 
+// TODO: We should unify this with code in thoughts/index.astro to avoid duplication?
 const { tag } = Astro.params;
-const allPosts = await getCollection('thoughts')
-const posts = await getStaticPaths();
-const postsForTag = posts.find((taggedPosts) => taggedPosts.params.tag === tag);
-const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
----
-<Base>
-  <h1>thoughts</h1>
-  <p>
-    Here you can read 'bout my questionable opinions on anything dev-related or just nice tips/hacks I enjoy having in
-    my utility belt.
-  </p>
-  <hr />
 
-  <div class="tags">
-    {
-      Array.from(tags).map((tag) => (
-        <a href={'/tags/' + tag} class="tag">
-          <span class="tag-label">{tag}</span>
-        </a>
-      ))
+const tags = new Set<string>()
+let posts = ((await getCollection('thoughts')) || [])
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .map((post) => {
+    post.data.tags?.forEach((tag: string) => tags.add(tag))
+    return {
+      ...post,
+      data: {
+        ...post.data,
+        heroImage: getConicGradient(post.slug || ''),
+      },
     }
-  </div>
+  })
+  .filter((post) => post.data.tags?.includes(tag))
+---
 
-  <section class="thoughts-list">
-    {postsForTag !== undefined && (
-      <ul>
-        { postsForTag.props.posts.map((post) => <li><PostListing slug={post.slug} title={post.data.title} gradient={post.data.heroImage ?? ''} date={post.data.pubDate} /></li>)}
-      </ul>
-    )}
-  </section>
-</Base>
+<PostFeed posts={posts} tags={Array.from(tags)} />
+
+<style>
+
+.tags {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5em;
+  row-gap: 0.5em;
+  margin-bottom: 2em;
+  overflow: hidden; /* Hide seperators when wrapping */
+}
+
+.tag::before {
+  content: '*';
+  position: absolute;
+  translate: -1.1em 0;
+}
+</style>
+

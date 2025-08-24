@@ -3,10 +3,11 @@ import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/Base.astro'
 import FormattedDate from '../components/FormattedDate.astro'
 import { getConicGradient } from '../utils/conic-art'
+import TagsList from '../components/TagsList.astro'
 
 type Props = CollectionEntry<'thoughts'>
 
-const { title, pubDate, updatedDate, readingTime } = Astro.props.data
+const { title, pubDate, updatedDate, readingTime, tags } = Astro.props.data
 const { slug } = Astro.params
 ---
 
@@ -30,11 +31,14 @@ const { slug } = Astro.params
         readingTime && (
           <div class="reading-time">
             {readingTime} {readingTime === 1 ? 'minute' : 'minutes'} to read
-            <hr />
           </div>
         )
       }
     </div>
+
+    <TagsList centered tags={tags ?? []} />
+
+    <hr />
 
     <slot />
   </article>

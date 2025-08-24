@@ -1,11 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
-import Base from '../../layouts/Base.astro'
-import PostListing from '../../components/PostListing.astro'
-import { getConicGradient } from '../../utils/conic-art'
 
-// const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
-const tags = new Set()
+import { getConicGradient } from '../../utils/conic-art'
+import PostFeed from '../../components/PostFeed.astro'
+
+const tags = new Set<string>()
 let posts = ((await getCollection('thoughts')) || [])
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -22,28 +21,22 @@ let posts = ((await getCollection('thoughts')) || [])
   })
 ---
 
-<Base>
-  <h1>thoughts</h1>
-  <p>
-    Here you can read 'bout my questionable opinions on anything dev-related or just nice tips/hacks I enjoy having in
-    my utility belt.
-  </p>
-  <hr />
+<PostFeed posts={posts} tags={Array.from(tags)} />
 
-  <div class="tags">
-    {
-      Array.from(tags).map((tag) => (
-        <a href={'/thoughts/tagged/' + tag} class="tag">
-          <span class="tag-label">{tag}</span>
-        </a>
-      ))
-    }
-  </div>
+<style>
+.tags {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5em;
+  row-gap: 0.5em;
+  margin-bottom: 2em;
+  overflow: hidden; /* Hide seperators when wrapping */
+}
 
-  <section class="thoughts-list">
-    <ul>
-      { posts.map((post) => <li><PostListing slug={post.slug} title={post.data.title} gradient={post.data.heroImage} date={post.data.pubDate} /></li>)}
-    </ul>
-  </section>
-</Base>
-
+.tag::before {
+  content: '*';
+  position: absolute;
+  translate: -1.1em 0;
+}
+</style>

@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro'
+import PostListing from './PostListing.astro'
+import TagsList from './TagsList.astro';
+
+interface Post {
+  slug: string;
+  data: {
+    title: string;
+    heroImage: string; // Gradient background
+    pubDate: Date;
+  }
+}
+
+interface Props {
+  tags: string[]
+  posts: Post[]
+}
+
+const { tags, posts } = Astro.props
+---
+
+<Base>
+  <h1>thoughts</h1>
+  <p>
+    Here you can read 'bout my questionable opinions on anything dev-related or just nice tips/hacks I enjoy having in
+    my utility belt.
+  </p>
+  <hr />
+
+  <TagsList tags={Array.from(tags) ?? []} showAll />
+
+  <section class="thoughts-list">
+    <ul>
+      { posts.map((post) => <li><PostListing slug={post.slug} title={post.data.title} gradient={post.data.heroImage} date={post.data.pubDate} /></li>)}
+    </ul>
+  </section>
+</Base>
+
+<style>
+
+.tags {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5em;
+  row-gap: 0.5em;
+  margin-bottom: 2em;
+  overflow: hidden; /* Hide seperators when wrapping */
+}
+
+.tag::before {
+  content: '*';
+  position: absolute;
+  translate: -1.1em 0;
+}
+</style>
