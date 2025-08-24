@@ -43,9 +43,10 @@ const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
   </div>
 
   <section class="thoughts-list">
-    {postsForTag &&}
-    <ul>
-      { postsForTag.props.posts.map((post) => <li><PostListing slug={post.slug} title={post.data.title} gradient={post.data.heroImage} date={post.data.pubDate} /></li>)}
-    </ul>
+    {postsForTag !== undefined && (
+      <ul>
+        { postsForTag.props.posts.map((post) => <li><PostListing slug={post.slug} title={post.data.title} gradient={post.data.heroImage ?? ''} date={post.data.pubDate} /></li>)}
+      </ul>
+    )}
   </section>
 </Base>
