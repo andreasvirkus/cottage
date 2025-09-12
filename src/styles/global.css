@@ -208,12 +208,12 @@ main {
 }
 
 @media (max-width: 720px) {
-  :root {
-    --font-scale: 1em;
-  }
   body {
     outline: none;
     margin: 0;
+    padding: 0 0.5em;
+    width: calc(100% - 2 * 0.5em);
+    --font-scale: 1.4em;
   }
   main {
     padding: 0;
@@ -388,6 +388,7 @@ p code {
 
   @media (max-width: 720px) {
     height: 84px;
+    margin-left: 8px;
   }
 }
 
