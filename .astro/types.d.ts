@@ -409,6 +409,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"typescript-exhaustive-switch.md": {
+	id: "typescript-exhaustive-switch.md";
+  slug: "typescript-exhaustive-switch";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "vue-html-variables.md": {
 	id: "vue-html-variables.md";
   slug: "vue-html-variables";

@@ -21,8 +21,8 @@
 
   scrollbar-color: var(--scrollbar-color) var(--background-color);
   scrollbar-width: 0.75em;
-  --cursor: url("/cursor.png");
-  --cursor-pointer: url("/cursor-pointer.png");
+  --cursor: url('/cursor.png');
+  --cursor-pointer: url('/cursor-pointer.png');
 
   --theme-dark: #c6ff54;
   --theme-light: #a8ebcb;
@@ -151,7 +151,7 @@ html {
   scroll-padding-top: 4rem;
 }
 * {
-cursor: var(--cursor), auto;
+  cursor: var(--cursor), auto;
 }
 
 a,
@@ -171,7 +171,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: auto;
+  margin: 0 auto;
   max-width: var(--width);
   width: calc(100% - 1.6em);
 
@@ -208,8 +208,12 @@ main {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --font-scale: 1em;
+  }
   body {
     outline: none;
+    margin: 0;
   }
   main {
     padding: 0;
@@ -381,6 +385,10 @@ p code {
   outline: 2px solid #ffd9a2;
   background-color: #ffd9a2;
   animation: avatar-border 10s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+
+  @media (max-width: 720px) {
+    height: 84px;
+  }
 }
 
 @keyframes avatar-border {

@@ -1,11 +1,12 @@
 <div>
-  <span class="theme-picker-title flex-1 basis-full text-xs mt-4 block">switch colours (click pls)</span>
-  <div data-theme-picker class="flex gap-4">
-    <button class="w-4 h-4" style="--theme-bg: var(--theme-light)" data-theme="light"></button>
-    <button class="w-4 h-4" style="--theme-bg: var(--theme-dark)" data-theme="dark"></button>
-    <button class="w-4 h-4" style="--theme-bg: var(--theme-dark-2)" data-theme="dark-2"></button>
-    <button class="w-4 h-4" style="--theme-bg: var(--theme-light-2)" data-theme="light-2"></button>
-    <button class="w-4 h-4" style="--theme-bg: var(--theme-dark-3)" data-theme="dark-3"></button>
+  <span class="theme-picker-title">← light themes | dark themes →</span>
+  <div data-theme-picker class="theme-picker-palette">
+    <button style="--theme-bg: var(--theme-light)" data-theme="light"></button>
+    <button style="--theme-bg: var(--theme-light-2)" data-theme="light-2"></button>
+    <hr class="theme-picker-separator">
+    <button style="--theme-bg: var(--theme-dark)" data-theme="dark"></button>
+    <button style="--theme-bg: var(--theme-dark-2)" data-theme="dark-2"></button>
+    <button style="--theme-bg: var(--theme-dark-3)" data-theme="dark-3"></button>
   </div>
 </div>
 
@@ -53,15 +54,36 @@
   .theme-picker-title {
     display: block;
     margin-top: 2rem;
-    margin-bottom: 0;
+    margin-left: -1.45rem;
     font-size: 1rem;
     letter-spacing: 1px;
-    font-style: monospace;
+  }
+
+  .theme-picker-palette {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-picker-separator {
+    display: inline-block;
+    width: 2px;
+    margin: 0;
+    margin-right: 2px;
+    &::after {
+      content: '';
+      position: absolute;
+      background: var(--text-color);
+      width: 2px;
+      height: 60px;
+      translate: 0 -30px;
+      padding: 0;
+    }
   }
 
   button {
     border: 4px transparent;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     height: 1.25rem;
     width: 1.25rem;
     background-color: var(--theme-bg);
@@ -72,8 +94,8 @@
     &:hover,
     &:focus {
       box-shadow: 0 0 0 0.2rem var(--theme-bg);
-      border-radius: 20% 40px;
       outline: 5px solid var(--theme-bg);
+      background-color: transparent;
     }
   }
 </style>
