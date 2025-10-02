@@ -6,31 +6,25 @@ import HeaderLink from './HeaderLink.astro'
   <nav class="hide-print">
     <h2><a href="/">the c<span>ö</span>ttage</a></h2>
     <div class="links">
-      <HeaderLink href="/">~</HeaderLink> /
-      <HeaderLink href="/me/">me</HeaderLink> /
-      <HeaderLink href="/thoughts/">thoughts</HeaderLink> /
-      <HeaderLink href="/contact/">contact</HeaderLink>
+      <HeaderLink href="/?sound=header-nav">~</HeaderLink> /
+      <HeaderLink href="/me/?sound=header-nav">me</HeaderLink> /
+      <HeaderLink href="/thoughts/?sound=header-nav">thoughts</HeaderLink> /
+      <HeaderLink href="/contact/?sound=header-nav">contact</HeaderLink>
     </div>
   </nav>
 </header>
 
 <script>
-// const sound = new URL('../assets/sounds/boop-3.mp3', import.meta.url)
 const sound = new URL('../assets/sounds/mouse-click-2.mp3', import.meta.url)
 const audio = new Audio(sound.href)
-const headerLinks = document.querySelectorAll('#header a')
 
-headerLinks.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const href = link.getAttribute('href') ?? ''
-    audio.play();
-    
-    setTimeout(() => {
-      window.location.href = href;
-    }, 250);
-  })
-})
+if (location.search.includes('sound=header-nav')) {
+  audio.play();
+
+  setTimeout(() => {
+    history.replaceState({}, document.title, location.pathname);
+  }, 350);
+}
 </script>
 
 <style>
