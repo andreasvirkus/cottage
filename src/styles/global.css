@@ -451,6 +451,30 @@ p code {
   }
 }
 
+
+/* Drop caps */
+article > p:first-of-type {
+  display: block;
+  min-height: 80px;
+
+  &::first-letter {
+    color: var(--font-secondary);
+    padding-right: 8px;
+    padding: 0 .3rem;
+    margin: 0 .3rem 0 0;
+    border: 2px solid;
+    border-radius: 8px;
+
+    font-size: 4rem;
+    float: left;
+    line-height: 1;
+
+    /* TODO: When browser support is better, this can be replaced with:
+    -webkit-initial-letter: 3;
+    initial-letter: 3; */
+  }
+}
+
 #cursor-inner,
 #cursor-outer {
   transition:

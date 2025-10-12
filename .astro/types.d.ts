@@ -283,6 +283,13 @@ declare module 'astro:content' {
   collection: "thoughts";
   data: InferEntrySchema<"thoughts">
 } & { render(): Render[".md"] };
+"properly-disable-forms.md": {
+	id: "properly-disable-forms.md";
+  slug: "properly-disable-forms";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".md"] };
 "round-to-stops.md": {
 	id: "round-to-stops.md";
   slug: "round-to-stops";

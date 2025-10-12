@@ -1,7 +1,7 @@
 ---
 title: 'emoji icon set'
 
-description: A small timeout utility for development
+description: built-in icons, stylized
 pubDate: 2020-05-10
 tags:
   - snippet
