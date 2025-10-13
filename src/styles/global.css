@@ -149,6 +149,10 @@ html[data-theme="light-2"] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+
+  -webkit-font-smoothing: antialiased; /* for macOS Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale;  /* for Firefox on macOS */
+  text-rendering: optimizeLegibility;
 }
 * {
   cursor: var(--cursor), auto;
