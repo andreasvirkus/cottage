@@ -149,9 +149,6 @@ html[data-theme="light-2"] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
-
-  -webkit-font-smoothing: antialiased; /* for macOS Safari/Chrome */
-  -moz-osx-font-smoothing: grayscale;  /* for Firefox on macOS */
   text-rendering: optimizeLegibility;
 }
 * {
@@ -455,7 +452,6 @@ p code {
   }
 }
 
-
 /* Drop caps */
 article > p:first-of-type {
   display: block;
@@ -464,8 +460,8 @@ article > p:first-of-type {
   &::first-letter {
     color: var(--font-secondary);
     padding-right: 8px;
-    padding: 0.2rem .3rem 0;
-    margin: 0 .3rem 0 0;
+    padding: 0.2rem 0.3rem 0;
+    margin: 0 0.3rem 0 0;
     border-radius: 8px;
 
     font-size: 4rem;
