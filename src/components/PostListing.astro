@@ -10,7 +10,7 @@ interface Props {
 
 const { date, slug, title, gradient } = Astro.props
 ---
-<a href={`/thoughts/${slug}/`} class="gradient" style={`--hero-gradient: ${gradient}`}>
+<a href={`/thoughts/${slug}/`} data-sound="mouseClick" class="gradient" style={`--hero-gradient: ${gradient}`}>
   <div class="card">
     <h4 class="title">{title}</h4>
     <div class="date">

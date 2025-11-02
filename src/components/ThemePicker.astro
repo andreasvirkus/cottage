@@ -11,19 +11,18 @@
 </div>
 
 <script>
+  import { playSound } from '../utils/play-sound.ts'
+
   const picker = document.querySelector('[data-theme-picker]')
   const themeBtn = picker?.querySelectorAll('button') || []
   let prevCursorColor: string
-
-  const sound = new URL('../assets/sounds/boop-5.mp3', import.meta.url)
-  const audio = new Audio(sound.href)
 
   themeBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       const theme = btn.dataset.theme || ''
       document.documentElement.setAttribute('data-theme', theme)
       localStorage.setItem('_cottageTheme', theme)
-      ding()
+      playSound('themeSwitch')
     })
 
     btn.addEventListener('mouseenter', (event) => {
@@ -44,10 +43,6 @@
       document.documentElement.style.setProperty('--cursor-color', btnTheme)
     })
   })
-
-  function ding() {
-    audio.play()
-  }
 </script>
 
 <style>
@@ -83,6 +78,8 @@
   }
 
   button {
+    all: unset;
+    cursor: var(--cursor-pointer), pointer;
     border: 4px transparent;
     height: 1.25rem;
     width: 1.25rem;

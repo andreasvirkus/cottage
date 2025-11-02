@@ -20,22 +20,22 @@ Luckily, there's a simple work-around: the `fieldset` element. With a disabled f
 ```html
 <form>
   <fieldset disabled>
-    <!-- your form controls -->
     <button>Disabled when fieldset is disabled</button>
   </fieldset>
 </form>
 ```
 
-You probably already have some CSS styling that should apply to disabled form controls. This usually also works within a field set without changing anything. Just make sure to use the proper selectors, i.e. `button:disabled` instead of `button[disabled]`.
+You probably already have some CSS styling that should apply to disabled form controls. This usually also works within a fieldset without changing anything. Just make sure to use the proper selectors, i.e. `button:disabled` instead of `button[disabled]`.
 
 By default, most browsers apply a border and some spacings to fieldset elements. That makes sense if they are actually used to group different form controls together. But for this use case, we likely don't want that default styling. You could remove spacings and the border with the usual CSS
+
 ```css
 padding: 0;
 margin: 0;
 border-width: none;
 ```
 
-But it is even better to set `display: contents` which has the effect that the fieldset—but not is descendants—is visually removed. That resolves problematic spacings and properly falls back to collapsing margins.
+But it is even better to set `display: contents` which has the effect that the fieldset—but not its descendants—is visually removed. That resolves problematic spacings and properly falls back to collapsing margins.
 
 ```css
 fieldset {
