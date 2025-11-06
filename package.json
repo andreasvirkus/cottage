@@ -6,7 +6,6 @@
   "description": "A humble homepage of sorts.",
   "scripts": {
     "test": "astro check",
-    "generate-pdf": "markdown-pdf site/cv.md -o site/.vuepress/public/cv.pdf -s dist/assets/css/styles.min.css",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -34,7 +33,6 @@
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/vue": "^4.0.8",
     "animated-cursor": "^1.2.0",
     "astro": "^4.4.3",
     "mdast-util-to-string": "^4.0.0",
