@@ -29,26 +29,26 @@
     "not ie > 0"
   ],
   "dependencies": {
-    "@astrojs/check": "^0.5.5",
-    "@astrojs/mdx": "^2.1.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
+    "@astrojs/check": "0.9.5",
+    "@astrojs/mdx": "4.3.10",
+    "@astrojs/rss": "4.0.13",
+    "@astrojs/sitemap": "3.6.0",
     "animated-cursor": "^1.2.0",
-    "astro": "^4.4.3",
+    "astro": "5.15.4",
     "mdast-util-to-string": "^4.0.0",
-    "prettier": "^3.2.5",
-    "sharp": "^0.33.2",
+    "prettier": "^3.6.2",
+    "sharp": "^0.33.5",
     "typescript": "^5.3.3"
   },
   "packageManager": "yarn@4.5.0",
   "devDependencies": {
-    "@types/markdown-it": "^14",
-    "@types/sanitize-html": "^2",
+    "@types/markdown-it": "^14.1.2",
+    "@types/sanitize-html": "^2.16.0",
     "markdown-it": "^14.1.0",
-    "playwright": "^1.41.2",
+    "playwright": "^1.56.1",
     "sanitize-html": "^2.17.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.9.6"
+    "@rollup/rollup-linux-x64-gnu": "^4.52.5"
   }
 }
