@@ -187,6 +187,9 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   outline: 1px solid var(--grid-color, #dddddd20);
+
+  overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 body::-webkit-scrollbar {
