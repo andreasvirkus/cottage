@@ -1,9 +1,10 @@
 :root {
   --width: 80ch;
-  --font-primary: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-secondary: 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro',
-    serif;
+  --font-primary:
+    -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-secondary:
+    'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro', serif;
   --font-mono: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', Courier, monospace;
   --font-scale: 1.2em;
 
@@ -406,6 +407,7 @@ p code {
   float: left;
   height: 128px;
   width: auto;
+  min-width: 128px;
   border-radius: 60% 40% 70px 60px / 20% 70% 80px 80px;
   margin: 0 24px 0 -16px;
   shape-outside: circle(45%);
@@ -509,7 +511,8 @@ article > p:first-of-type {
 
 .grid-background {
   background-size: 24px 24px;
-  background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
 
   @media (max-width: 720px) {
