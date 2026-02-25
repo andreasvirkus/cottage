@@ -6,11 +6,10 @@ layout: ../layouts/Base.astro
 
 # me
 
-
 Let me rant about myself for a bit. I'm a tech enthusiast, in my early 30s & live in Estonia. In my free time I enjoy climbing, BJJ, working on my motorcycle, disc golfing, board games & video games and lately also learning Blender...
 oh, and starring [GitHub repos](https://github.com/andreasvirkus?tab=stars) ⭐.
 
- My full _curriculum vitae_ can be viewed [here](/cv/).
+My full _curriculum vitae_ can be viewed [here](/cv/).
 
 <!-- My full _curriculum vitae_ can be viewed [here](/cv/) and downloaded through the following link: [download CV.pdf](/assets/cv/CV-Andreas-Johan-Virkus.pdf). -->
 
@@ -75,9 +74,16 @@ It's good stuff though.
 I like carving small components and scripts on [codepen](https://codepen.io/ajv/pens/popular), [jsfiddle](https://jsfiddle.net/user/andreasvirkus/fiddles/), [gist](https://gist.github.com/andreasvirkus/) and on my [Arduino](https://github.com/andreasvirkus)/Pi.\
 I started out creating websites for neighbours, friends of the family and small local companies in my high school years, which really sparked a passion. Here's what I've been up to since:
 
+### [Buffer](https://buffer.com?utm_source=andreasvirkus.me)
+
+<div style="margin-top: -1rem">December 2025</div>
+
+Growing with Buffer, both as a person as well as enhancing
+their editor flows and tastefully incorporating AI into the product.
+
 ### [Supersimple](https://supersimple.io?utm_source=andreasvirkus.me) 🐧
 
-<div style="margin-top: -1rem">May 2024</div>
+<div style="margin-top: -1rem">May 2024 – November 2025</div>
 
 Helping Supersimple simplify complex data exploration flows and
 aiding all roles of any SaaS company to have swift answers for
