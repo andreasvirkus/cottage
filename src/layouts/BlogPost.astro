@@ -13,10 +13,10 @@ const { slug } = Astro.params
 
 <Base>
   <article>
-    <div class="hero-image" style={`--hero-gradient: ${getConicGradient(slug || '')}`}></div>
+    <div class="hero-image" style={`--hero-gradient: ${getConicGradient(slug || '')}`} transition:name={`post-hero-${slug}`}></div>
 
     <div class="title">
-      <h1>{title}</h1>
+      <h1 transition:name={`post-title-${slug}`}>{title}</h1>
       <div class="date">
         <FormattedDate date={pubDate} />
         {
