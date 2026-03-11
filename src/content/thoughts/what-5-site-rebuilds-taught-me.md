@@ -3,7 +3,6 @@ title: what 5 site rebuilds taught me
 
 description: from metalsmith to astro and all the yak shaving in between
 pubDate: 2026-02-25
-draft: true
 tags:
   - learning
 ---
@@ -75,12 +74,12 @@ to the uncomfortable truth about betting on smaller projects.
 ## Astro (2023–present)
 
 Astro is the first SSG where I feel like I might actually stay. It has opinions
-but they're _my_ opinions: ship zero JS by default, use whatever UI framework you want
+but they're also _my_ opinions: ship zero JS by default, use whatever UI framework you want
 (or none), treat content as a first-class concern.
 
 The content collections API, the island architecture, the build performance — it all
 just works. And it has enough momentum behind it that I'm not worried about
-it disappearing.
+it disappearing (especially now with [Cloudflare in the mix](https://blog.cloudflare.com/astro-joins-cloudflare/)).
 
 **What it taught me:** Maturity matters. Not just in the tool, but in me. I'm no longer
 chasing the newest thing. I want something stable, maintained, and aligned with how I
@@ -92,7 +91,7 @@ Five rebuilds, and what do I have to show for it? A blog with ~40 posts that cou
 built with literally any of these tools. The content is what matters. The tool is just
 the vehicle.
 
-But I don't regret the rebuilds. Each one taught me something real — about build tools,
+But I have no regrets and love all these rebuilds. Each one taught me something real — about build tools,
 about my own preferences, about the difference between _needing_ to switch and _wanting_ to.
 The yak shaving was its own form of learning.
 
