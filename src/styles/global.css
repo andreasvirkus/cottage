@@ -169,6 +169,11 @@ button * {
   }
 }
 
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -190,7 +195,6 @@ body {
   outline: 1px solid var(--grid-color, #dddddd20);
 
   overflow-y: auto;
-  scrollbar-gutter: stable;
 }
 
 body::-webkit-scrollbar {
