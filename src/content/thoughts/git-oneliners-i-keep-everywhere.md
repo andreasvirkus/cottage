@@ -114,7 +114,5 @@ The `symbolic-ref` bit detects whether your remote uses `main` or `master` (or
 anything else), so this works across repos without hardcoding. I run this about
 once a week to keep `git branch` readable.
 
----
-
-None of these are clever. That's the point. The best aliases are the ones you
-forget are aliases — they just become part of how you move through a codebase.
+If you have any you can't live without, ones you rush to add whenever you're setting up
+a fresh developer rig, then please share them with me! An email, message online or even a GitHub issue will work!
