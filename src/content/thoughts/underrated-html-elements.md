@@ -2,8 +2,7 @@
 title: the most underrated html elements
 
 description: semantic elements that eliminate javascript
-pubDate: 2026-02-25
-draft: true
+pubDate: 2026-02-28
 tags:
   - html
   - css

@@ -2,8 +2,7 @@
 title: css scroll-driven animations from scratch
 
 description: a complete walkthrough of scroll-timeline, view-timeline, and animation-range
-pubDate: 2026-02-25
-draft: true
+pubDate: 2026-02-21
 tags:
   - css
 ---
@@ -11,7 +10,7 @@ tags:
 I've touched on [scroll-padding](/thoughts/get-your-scroll-on) before, but CSS's scroll
 story has gotten _much_ more interesting since then. Scroll-driven animations let you
 tie any CSS animation to scroll progress — no JavaScript, no IntersectionObserver,
-no scroll event listeners, no `requestAnimationFrame` loops. Just CSS.
+no scroll event listeners, no `requestAnimationFrame` loops; just CSS.
 
 Let's build this up from zero.
 
@@ -54,7 +53,7 @@ to the scroll progress: 0% scrolled = `from`, 100% scrolled = `to`.
 You can also specify which scroll container and axis:
 
 ```css
-animation-timeline: scroll(root block);   /* root scroller, vertical */
+animation-timeline: scroll(root block); /* root scroller, vertical */
 animation-timeline: scroll(nearest inline); /* nearest scroller, horizontal */
 ```
 
@@ -107,12 +106,12 @@ into view and stays fully visible after.
 
 The available range keywords:
 
-| Keyword   | Meaning                                        |
-| --------- | ---------------------------------------------- |
-| `entry`   | Element is entering the scrollport              |
-| `exit`    | Element is exiting the scrollport               |
-| `contain` | Element is fully contained in the scrollport    |
-| `cover`   | From first entering to fully exiting            |
+| Keyword   | Meaning                                      |
+| --------- | -------------------------------------------- |
+| `entry`   | Element is entering the scrollport           |
+| `exit`    | Element is exiting the scrollport            |
+| `contain` | Element is fully contained in the scrollport |
+| `cover`   | From first entering to fully exiting         |
 
 You can mix them:
 
@@ -142,8 +141,12 @@ and update a width. Now:
 }
 
 @keyframes grow-bar {
-  from { scale: 0 1; }
-  to { scale: 1 1; }
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
 }
 ```
 
@@ -161,8 +164,12 @@ Parallax effects have always been JS-heavy. Not anymore:
 }
 
 @keyframes parallax {
-  from { translate: 0 -5rem; }
-  to { translate: 0 5rem; }
+  from {
+    translate: 0 -5rem;
+  }
+  to {
+    translate: 0 5rem;
+  }
 }
 ```
 

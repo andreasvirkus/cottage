@@ -2,8 +2,7 @@
 title: building with the platform
 
 description: why browser-native APIs age better than abstractions
-pubDate: 2026-02-25
-draft: true
+pubDate: 2026-03-04
 tags:
   - javascript
   - learning
@@ -14,7 +13,7 @@ that abstracts away some browser API, my first instinct is to check what browser
 it's abstracting. More often than not, the API itself is perfectly usable, and the
 library is solving a problem I don't have.
 
-This isn't about being a purist. It's about making a bet on what will still work in 5 years.
+And it's not about being a purist, rather making a bet on what will still work in 5 years.
 
 ## The libraries I didn't install
 
@@ -25,7 +24,7 @@ using `CustomEvent` and `EventTarget`. It's 15 lines. It works everywhere. No li
 
 **Date formatting** — `Intl.DateTimeFormat` handles locale-aware date formatting that used to
 require Moment.js (rest in peace) or date-fns. The API is a bit verbose, sure,
-but it handles edge cases that your hand-rolled formatter never will.
+but it handles edge cases that your hand-rolled formatter never will. And Temporal is coming soon (!!)
 
 **Number & string formatting** — `Intl.PluralRules` for [ordinal suffixes](/thoughts/translate-ordinal-suffixes),
 `Intl.NumberFormat` for currencies and compact notation, `Intl.ListFormat` for joining
@@ -52,7 +51,7 @@ backwards compatibility_ that no library can match. `document.getElementById` fr
 
 The code I wrote for my blog in 2019 using `CustomEvent` and `:target` pseudo-classes still works,
 unchanged, in 2026. The Metalsmith plugins I wrote in 2017? Also still work, but the ecosystem
-around them has evaporated. The platform stayed. The abstractions didn't.
+around them has evaporated. The platform stayed when the abstractions didn't.
 
 ## When to reach for a library
 
@@ -65,7 +64,7 @@ I'm not saying "never use libraries." That would be absurd. Here's my rough heur
   10% of the library's features, or when the library is essentially a thin wrapper with
   a nicer syntax.
 
-The question isn't "Is this library good?" — it's "Is this library worth the dependency?"
+The question isn't "Is this library good?" but rather "Is this library worth the dependency?"
 
 ## The compound effect
 
@@ -73,7 +72,7 @@ Every native API you use instead of a library is one fewer entry in `package.jso
 One fewer thing to audit, update, and worry about. One fewer thing that can break
 when you come back to the project after 6 months.
 
-It compounds. A project built mostly on platform APIs feels _lighter_. Not just in bundle
+And it compounds. A project built mostly on platform APIs feels _lighter_. Not just in bundle
 size (though that too), but in cognitive overhead. There's less to remember, less to look up,
 and when you do need to look something up, MDN is right there — stable, comprehensive,
 and not going anywhere.
