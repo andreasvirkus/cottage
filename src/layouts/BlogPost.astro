@@ -3,17 +3,21 @@ import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/Base.astro'
 import FormattedDate from '../components/FormattedDate.astro'
 import { getConicGradient } from '../utils/conic-art'
+import { getAsciiSnowflake } from '../utils/snowflakes'
 import TagsList from '../components/TagsList.astro'
 
 type Props = CollectionEntry<'thoughts'>
 
 const { title, pubDate, updatedDate, readingTime, tags } = Astro.props.data
 const { slug } = Astro.params
+const ascii = getAsciiSnowflake(slug || '')
 ---
 
 <Base>
   <article>
-    <div class="hero-image" style={`--hero-gradient: ${getConicGradient(slug || '')}`} transition:name={`post-hero-${slug}`}></div>
+    <div class="hero-image" style={`--hero-gradient: ${getConicGradient(slug || '')}`} transition:name={`post-hero-${slug}`}>
+      <pre class="ascii" aria-hidden="true">{ascii}</pre>
+    </div>
 
     <div class="title">
       <h1 transition:name={`post-title-${slug}`}>{title}</h1>
@@ -51,15 +55,36 @@ const { slug } = Astro.params
     margin: 0;
   }
   .hero-image {
+    position: relative;
     width: 100%;
     background-image: var(--hero-gradient);
     animation: 3s conic infinite;
+    overflow: hidden;
   }
   .hero-image {
     display: block;
     margin: 0 auto;
     height: 200px;
     box-shadow: var(--box-shadow);
+  }
+  .ascii {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.8rem;
+    line-height: 1;
+    letter-spacing: 0.35em;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+    white-space: pre;
+    overflow: hidden;
   }
   .title {
     padding-top: 1em 0;

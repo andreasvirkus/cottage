@@ -1,5 +1,6 @@
 ---
 import FormattedDate from './FormattedDate.astro'
+import { getAsciiSnowflake } from '../utils/snowflakes'
 
 interface Props {
   slug: string
@@ -9,8 +10,10 @@ interface Props {
 }
 
 const { date, slug, title, gradient } = Astro.props
+const ascii = getAsciiSnowflake(slug)
 ---
 <a href={`/thoughts/${slug}/`} data-sound="mouseClick" class="gradient" style={`--hero-gradient: ${gradient}`} transition:name={`post-hero-${slug}`}>
+  <pre class="ascii" aria-hidden="true">{ascii}</pre>
   <div class="card">
     <h4 class="title" transition:name={`post-title-${slug}`}>{title}</h4>
     <div class="date">
@@ -38,6 +41,7 @@ a:hover .date {
 }
 
 .gradient {
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -47,9 +51,29 @@ a:hover .date {
   opacity: 0.9;
   border-radius: 0.25rem;
   mix-blend-mode: luminosity;
+  overflow: hidden;
   transition:
     opacity 0.3s cubic-bezier(0.85, 0, 0.15, 1),
     --angle 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.ascii {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.6rem;
+  line-height: 1.05;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  white-space: pre;
+  overflow: hidden;
 }
 .gradient:hover {
   opacity: 1;
@@ -58,8 +82,9 @@ a:hover .date {
   opacity: 1;
 }
 .card {
+  position: relative;
   flex: 1;
-  background-color: #222;
+  background-color: #22222270;
   padding: 0.625rem;
   height: 100%;
   border-radius: 4px;
@@ -67,15 +92,16 @@ a:hover .date {
 .title,
 .date {
   color: white;
-  background-color: #222;
+  padding: 0.25rem;
+  border-radius: 4px;
 }
 .title {
   margin: 0 0 0.25rem;
   line-height: 1;
+  background-color: #222;
 }
 .date {
   margin: 0;
-  opacity: 0.5;
   font-size: 0.8em;
 }
 a:hover h4,
