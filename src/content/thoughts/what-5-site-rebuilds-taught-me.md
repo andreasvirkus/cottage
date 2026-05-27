@@ -23,6 +23,9 @@ Metalsmith taught me the joy of running JavaScript outside the browser for the f
 I remember that feeling vividly — the raw power of the filesystem being at your disposal.
 I fell head-over-heels in love with programming all over again.
 
+A previous version of this site is still available under [metalsmith-ajv.netlify.app](https://metalsmith-ajv.netlify.app). I'm particularly proud of the mobile menu animation (it's so springy!)\
+There's also a Netlify deploy template available: **[boilerplate repo](https://github.com/andreasvirkus/metalsmith-boilerplate)**
+
 **What it taught me:** Build tools are just functions that transform files. There's no magic.
 Once you understand that, the whole ecosystem becomes less intimidating.
 
