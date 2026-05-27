@@ -30,7 +30,7 @@ export function getAsciiSnowflake(slug: string, rows = 12, cols = 60): string {
   const palette: string[] = []
   const pool = [...chars]
   while (palette.length < paletteSize && pool.length) {
-    palette.push(pool.splice(Math.floor(rand() * pool.length), 1)[0])
+    palette.push(pool.splice(Math.floor(rand() * pool.length), 1)[0] ?? '')
   }
 
   const density = 0.28 + rand() * 0.14
@@ -41,7 +41,7 @@ export function getAsciiSnowflake(slug: string, rows = 12, cols = 60): string {
   for (let r = 0; r < halfR; r++) {
     const row: string[] = []
     for (let c = 0; c < halfC; c++) {
-      row.push(rand() < density ? palette[Math.floor(rand() * palette.length)] : ' ')
+      row.push((rand() < density ? palette[Math.floor(rand() * palette.length)] : '') ?? '')
     }
     quad.push(row)
   }
@@ -52,7 +52,7 @@ export function getAsciiSnowflake(slug: string, rows = 12, cols = 60): string {
     let line = ''
     for (let c = 0; c < cols; c++) {
       const qc = c < halfC ? c : cols - 1 - c
-      line += quad[qr][qc]
+      line += quad[qr]?.[qc] ?? ''
     }
     lines.push(line)
   }
