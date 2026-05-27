@@ -7,8 +7,7 @@ tags:
   - learning
 ---
 
-<span style="font-size:85%">**Note**: This article has been updated throughout time,
-with its latest edit in November 2019</span>
+<span style="font-size:85%">**Note**: This article has a [newer version](https://andreasvirkus.me/thoughts/what-5-site-rebuilds-taught-me/) (Feb 2026)</span>
 
 I feel like this is the `Hello World!` post for every/any developer
 who's managed to set up a blog with a static-site generator. Since
