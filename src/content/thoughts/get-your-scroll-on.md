@@ -11,7 +11,7 @@ You slap a nice `scroll-behavior: smooth` rule into your CSS, so users would thi
 scroll animations, the browser does all the heavy lifting and the person is gracefully courted to their
 `#section` of choice... And then a header covers the top 10% of said section 😑.
 
-Well have I got a solution for you; and basically free! Alright, _you smooth talker_, we're good friends by this point, totally free!
+Well have I got a solution for you — and basically free! Alright, _you smooth talker_, we're good friends by this point, totally free!
 CSS has a helpful `scroll-padding-top` property that you can use. Usually you'd apply it to the `html` element
 along with the scroll behavior
 

@@ -12,7 +12,7 @@ tags:
 Couple of things bundled together in this one. I needed to present users with
 a way to quickly navigate between the product categories (different collections).
 
-As I already had them defined in the main navigation & I didn't want to manually keep
+As I already had them defined in the main navigation and didn't want to manually keep
 the two menus in sync, I figured I could just grab the links/structure from the main nav.
 
 However, when wanting to pipe `linklists.main-menu.links` through the `| json` filter to see its output, I was met with:

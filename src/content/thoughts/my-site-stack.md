@@ -9,7 +9,7 @@ tags:
 
 <span style="font-size:85%">**Note**: This article has a [newer version](https://andreasvirkus.me/thoughts/what-5-site-rebuilds-taught-me/) (Feb 2026)</span>
 
-I feel like this is the `Hello World!` post for every/any developer
+I feel like this is the `Hello World!` post for any developer
 who's managed to set up a blog with a static-site generator. Since
 I'm an avid [generator-hopper](/thoughts/generator-hopping), I've
 broken this post down to different eras:
@@ -40,7 +40,7 @@ progressively enhanced), I feel it's my duty to quickly sell you on some benefit
 - _Time to Interactive_ (or at least perceived) performance gains
 - Less expensive, if not free (👋 Netlify!)
 - A robust stack that doesn't confuse you 6 months later
-- `Host-it-and-forget-it`, which is especially nice for a typical devloper's or
+- `Host-it-and-forget-it`, which is especially nice for a typical developer's or
   designer's portfolio/CV sites
 - Maybe a sense of pride, knowing that your site is not just human-friendly,
   but also accessible to a wide range of readers/parsers? 🤖
@@ -52,7 +52,7 @@ I had looked and fiddled with Jekyll before, but to me it wasn't really approach
 or hackable, since (being a simple front-end developer then) Ruby was rather foreign to me.
 But Metalsmith _clicked_. It was _simple enough_ out-of-the-box and had a whole
 universe of possibilities circling around it with its rich plugin ecosystem.
-I also really liked how it taught you from the getgo to write plugins on your own
+I also really liked how it taught you from the get-go to write plugins on your own
 and there really was no magic to it. I have even published one
 [on my own](https://github.com/andreasvirkus/metalsmith-podcast).
 

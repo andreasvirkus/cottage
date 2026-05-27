@@ -8,8 +8,8 @@ tags:
   - vue
 ---
 
-Let's see how you can cut down on TLS handshake times by understanding
-how we can leverage `vue-cli`'s environment variables in our `index.html` file.
+Let's see how you can cut down on TLS handshake times by leveraging
+`vue-cli`'s environment variables in our `index.html` file.
 
 ## vue and dotenv
 
@@ -28,7 +28,7 @@ Meaning once your JS is parsed and it wants to make requests, the browser can
 skip certain parts of initiating a connection, because preconnect has already
 gone ahead and told the browser to do that way before we made the request. Namely, preconnect:
 
-1. performs a DNS lookup (this can also be achieved with `<link rel="dns-prefetc">`
+1. performs a DNS lookup (this can also be achieved with `<link rel="dns-prefetch">`)
 2. performs a TCP handshake
 3. does TLS negotiation for HTTPS sites
 

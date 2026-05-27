@@ -37,8 +37,8 @@ Now let's automate it via a bookmarklet. We'll start off with a self-invoking me
 })()
 ```
 
-And since browsers usually don't like whitespaces nor new-lines in their bookmark's location declarations,
-we'll run it through a home-brewn minifier when stiching it together (or use a proper minifier online)
+And since browsers usually don't like whitespace or newlines in their bookmark's location declarations,
+we'll run it through a home-brewed minifier when stitching it together (or use a proper minifier online)
 
 ```js
 const minify = (code) => code.replace(/\n/g, '')

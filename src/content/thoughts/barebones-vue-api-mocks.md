@@ -54,4 +54,4 @@ Mocking utilities have the added benefit of introducing controlled chaos to your
 It has support for fancy scenarios, but you can also stick to very basic mocking.
 3. You can also look into Mock Service Worker – [MSW](https://mswjs.io/)
 
-I hope in the future you'll be more open to collaborate with your backend counterparts, lock those payload structures down quick and get to developing on day 1! 🚀
+I hope in the future you'll be more open to collaborating with your backend counterparts, lock those payload structures down quick and get to developing on day 1! 🚀
