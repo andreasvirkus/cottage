@@ -34,6 +34,11 @@
   --grid-dark: #dddddd20;
 
   --grid-color: var(--grid-light);
+
+  /* Base colours a custom theme is mixed from, see html[data-theme='custom'] below */
+  --custom-bg: #ffffff;
+  --custom-fg: #222222;
+  --custom-accent: #a8ebcb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -110,6 +115,25 @@ html[data-theme='dark-3'] {
   --scrollbar-color: #b49bff;
   --cursor-color: var(--theme-dark-3);
   --grid-color: var(--grid-dark);
+}
+
+html[data-theme='custom'] {
+  --background-color: var(--custom-bg);
+  --heading-color: var(--custom-fg);
+  --text-color: color-mix(in srgb, var(--custom-fg) 85%, var(--custom-bg) 15%);
+  --link-color: var(--custom-accent);
+  --visited-color: color-mix(in srgb, var(--custom-accent) 55%, var(--custom-fg) 45%);
+  --code-background-color: color-mix(in srgb, var(--custom-accent) 25%, var(--custom-bg) 75%);
+  --code-color: color-mix(in srgb, var(--custom-fg) 80%, var(--custom-accent) 20%);
+  --blockquote-color: color-mix(in srgb, var(--custom-fg) 70%, var(--custom-bg) 30%);
+  --gradient: linear-gradient(
+    90deg,
+    var(--custom-accent),
+    color-mix(in srgb, var(--custom-accent) 55%, var(--custom-fg) 45%)
+  );
+  --scrollbar-color: var(--custom-accent);
+  --cursor-color: var(--custom-accent);
+  --grid-color: color-mix(in srgb, var(--custom-fg) 12%, transparent);
 }
 
 html[data-theme='light-2'] {

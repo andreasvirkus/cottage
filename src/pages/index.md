@@ -20,3 +20,5 @@ If you're looking to get in touch, just reach out to me on
 
 I sometimes also write short posts about small development techniques or
 explanations of code snippets that I may have found useful. You can read about them in [/thoughts](/thoughts/).
+
+**PS!** All sounds on this site are made by me. There is also a theme picker (and builder!) at the bottom - play around with it!

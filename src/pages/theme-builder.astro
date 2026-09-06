@@ -1,0 +1,307 @@
+---
+import Base from '../layouts/Base.astro'
+---
+
+<Base>
+  <h1>theme builder</h1>
+
+  <p>
+    Having kept the colour palette of this site pretty minimalistic, all tones can be derived from basically these three:
+    a foreground, background and an accent colour. The rest of the site's palette gets generated with pure CSS
+    using <a href="/thoughts/modern-css-color-mixing">CSS colour mixing</a>, and this allows you
+    to mix your own! This page previews live as you drag the sliders, so you'll see exactly what concoction you're
+    mixing up.
+  </p>
+
+  <div class="builder" data-theme-builder>
+    <div class="builder__inputs">
+      <label class="builder__color">
+        <input type="color" data-role="bg" value="#ffffff" data-sound="mouseClick" />
+        Background
+      </label>
+      <label class="builder__color">
+        <input type="color" data-role="fg" value="#222222" data-sound="mouseClick" />
+        Foreground
+      </label>
+      <label class="builder__color">
+        <input type="color" data-role="accent" value="#a8ebcb" data-sound="mouseClick" />
+        Accent
+      </label>
+    </div>
+
+    <div class="builder__save">
+      <input type="text" data-role="name" class="builder__name-input" placeholder="Name this mix…" maxlength="40" />
+      <button type="button" data-role="save" data-sound="mouseClick">Save theme</button>
+    </div>
+  </div>
+
+  <hr />
+
+  <h2>your past mixes</h2>
+  <p data-role="empty-state">You haven't saved any custom themes yet — mix some colours above and hit save.</p>
+  <ul class="builder__list" data-role="theme-list"></ul>
+</Base>
+
+<style>
+  .builder {
+    margin-top: 2rem;
+  }
+
+  .builder__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .builder__color {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  input[type='color'] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 3rem;
+    width: 3rem;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: var(--cursor-pointer), pointer;
+    outline: 2px solid var(--text-color);
+    outline-offset: 3px;
+    transition: outline-color 0.2s ease-out;
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    &::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+    &::-moz-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+
+    &:hover,
+    &:focus {
+      outline-color: var(--link-color);
+    }
+  }
+
+  .builder__save {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .builder__name-input,
+  :global(.builder__rename) {
+    flex: 1;
+    min-width: 12rem;
+    padding: 0.5em 0.75em;
+    border: 1px solid var(--text-color);
+    border-radius: 0.25em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .builder__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+
+  /* Items below are built client-side (see <script>), so these rules must stay unscoped */
+  :global(.builder__item) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  :global(.builder__swatch) {
+    display: flex;
+    flex-shrink: 0;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 999px;
+    overflow: hidden;
+    outline: 1px solid var(--text-color);
+  }
+
+  :global(.builder__swatch i) {
+    flex: 1;
+    font-style: normal;
+  }
+
+  :global(.builder__delete) {
+    border-color: transparent;
+    box-shadow: none;
+    padding: 0.4em 0.6em;
+  }
+
+  [data-role='empty-state'][hidden] {
+    display: none;
+  }
+</style>
+
+<script>
+  import { playSound } from '../utils/play-sound.ts'
+
+  const THEME_KEY = '_cottageTheme'
+  const THEMES_KEY = '_cottageCustomThemes'
+  const ACTIVE_ID_KEY = '_cottageActiveCustomThemeId'
+
+  const root = document.documentElement
+  const builder = document.querySelector('[data-theme-builder]')
+  const bgInput = builder?.querySelector<HTMLInputElement>('[data-role="bg"]')
+  const fgInput = builder?.querySelector<HTMLInputElement>('[data-role="fg"]')
+  const accentInput = builder?.querySelector<HTMLInputElement>('[data-role="accent"]')
+  const nameInput = builder?.querySelector<HTMLInputElement>('[data-role="name"]')
+  const saveBtn = builder?.querySelector<HTMLButtonElement>('[data-role="save"]')
+  const list = document.querySelector('[data-role="theme-list"]')
+  const emptyState = document.querySelector<HTMLElement>('[data-role="empty-state"]')
+
+  interface CustomTheme {
+    id: string
+    name: string
+    bg: string
+    fg: string
+    accent: string
+  }
+
+  function getThemes(): CustomTheme[] {
+    try {
+      return JSON.parse(localStorage.getItem(THEMES_KEY) || '[]')
+    } catch {
+      return []
+    }
+  }
+
+  function setThemes(themes: CustomTheme[]) {
+    localStorage.setItem(THEMES_KEY, JSON.stringify(themes))
+  }
+
+  function readCurrentHex(varName: string, fallback: string) {
+    const value = getComputedStyle(root).getPropertyValue(varName).trim()
+    return /^#[0-9a-f]{6}$/i.test(value) ? value : fallback
+  }
+
+  function previewLive() {
+    if (!bgInput || !fgInput || !accentInput) return
+    root.setAttribute('data-theme', 'custom')
+    root.style.setProperty('--custom-bg', bgInput.value)
+    root.style.setProperty('--custom-fg', fgInput.value)
+    root.style.setProperty('--custom-accent', accentInput.value)
+  }
+
+  function applyTheme(theme: CustomTheme) {
+    if (!bgInput || !fgInput || !accentInput) return
+    bgInput.value = theme.bg
+    fgInput.value = theme.fg
+    accentInput.value = theme.accent
+    previewLive()
+    localStorage.setItem(THEME_KEY, 'custom')
+    localStorage.setItem(ACTIVE_ID_KEY, theme.id)
+    playSound('themeSwitch')
+  }
+
+  function renderList() {
+    if (!list || !emptyState) return
+    const themes = getThemes()
+    list.innerHTML = ''
+    emptyState.hidden = themes.length > 0
+
+    themes.forEach((theme) => {
+      const item = document.createElement('li')
+      item.className = 'builder__item'
+
+      const swatch = document.createElement('span')
+      swatch.className = 'builder__swatch'
+      ;(['bg', 'fg', 'accent'] as const).forEach((key) => {
+        const dot = document.createElement('i')
+        dot.style.backgroundColor = theme[key]
+        swatch.append(dot)
+      })
+
+      const nameField = document.createElement('input')
+      nameField.type = 'text'
+      nameField.value = theme.name
+      nameField.maxLength = 40
+      nameField.className = 'builder__rename'
+      nameField.setAttribute('aria-label', 'Rename this theme')
+      nameField.addEventListener('change', () => {
+        const current = getThemes()
+        const target = current.find((t) => t.id === theme.id)
+        if (!target) return
+        target.name = nameField.value.trim() || target.name
+        nameField.value = target.name
+        setThemes(current)
+      })
+
+      const applyBtn = document.createElement('button')
+      applyBtn.type = 'button'
+      applyBtn.textContent = 'Apply'
+      applyBtn.dataset.sound = 'mouseClick'
+      applyBtn.addEventListener('click', () => applyTheme(theme))
+
+      const deleteBtn = document.createElement('button')
+      deleteBtn.type = 'button'
+      deleteBtn.textContent = '×'
+      deleteBtn.className = 'builder__delete'
+      deleteBtn.setAttribute('aria-label', `Delete "${theme.name}"`)
+      deleteBtn.addEventListener('click', () => {
+        setThemes(getThemes().filter((t) => t.id !== theme.id))
+
+        if (localStorage.getItem(ACTIVE_ID_KEY) === theme.id) {
+          localStorage.setItem(THEME_KEY, 'light')
+          localStorage.removeItem(ACTIVE_ID_KEY)
+          root.setAttribute('data-theme', 'light')
+        }
+
+        renderList()
+      })
+
+      item.append(swatch, nameField, applyBtn, deleteBtn)
+      list.append(item)
+    })
+  }
+
+  if (bgInput && fgInput && accentInput) {
+    bgInput.value = readCurrentHex('--background-color', bgInput.value)
+    fgInput.value = readCurrentHex('--heading-color', fgInput.value)
+    accentInput.value = readCurrentHex('--link-color', accentInput.value)
+    ;[bgInput, fgInput, accentInput].forEach((input) => input.addEventListener('input', previewLive))
+  }
+
+  saveBtn?.addEventListener('click', () => {
+    if (!bgInput || !fgInput || !accentInput || !nameInput) return
+    const themes = getThemes()
+    const theme: CustomTheme = {
+      id: crypto.randomUUID(),
+      name: nameInput.value.trim() || `Mix #${themes.length + 1}`,
+      bg: bgInput.value,
+      fg: fgInput.value,
+      accent: accentInput.value,
+    }
+    themes.push(theme)
+    setThemes(themes)
+    localStorage.setItem(THEME_KEY, 'custom')
+    localStorage.setItem(ACTIVE_ID_KEY, theme.id)
+    nameInput.value = ''
+    renderList()
+    playSound('themeSwitch')
+  })
+
+  renderList()
+</script>
