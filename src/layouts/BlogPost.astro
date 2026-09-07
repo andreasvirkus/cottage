@@ -3,20 +3,17 @@ import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/Base.astro'
 import FormattedDate from '../components/FormattedDate.astro'
 import { getConicGradient } from '../utils/conic-art'
-import { getAsciiSnowflake } from '../utils/snowflakes'
 import TagsList from '../components/TagsList.astro'
 
 type Props = CollectionEntry<'thoughts'>
 
 const { title, pubDate, updatedDate, readingTime, tags } = Astro.props.data
 const { slug } = Astro.params
-const ascii = getAsciiSnowflake(slug || '')
 ---
 
 <Base>
   <article>
     <div class="hero-image" style={`--hero-gradient: ${getConicGradient(slug || '')}`} transition:name={`post-hero-${slug}`}>
-      <pre class="ascii" aria-hidden="true">{ascii}</pre>
     </div>
 
     <div class="title">

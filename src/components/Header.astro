@@ -2,7 +2,7 @@
 import HeaderLink from './HeaderLink.astro'
 ---
 
-<header class="grid-background" id="header">
+<header id="header">
   <nav class="hide-print">
     <h2><a data-sound="mouseClick" href="/">the c<span>ö</span>ttage</a></h2>
     <div class="links">
@@ -18,7 +18,8 @@ import HeaderLink from './HeaderLink.astro'
   header {
     position: sticky;
     top: 0;
-    background-color: var(--background-color);
+    background-color: color-mix(in srgb, var(--background-color), transparent 60%);
+    backdrop-filter: blur(8px);
     padding: 0.5em 2em 1em;
     /* Hide overlap with the grid background and body outline */
     margin: 0 -1px;

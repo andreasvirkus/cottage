@@ -639,17 +639,6 @@ article > p:first-of-type {
     transform 0.1s ease-in-out !important;
 }
 
-.grid-background {
-  background-size: 24px 24px;
-  background-image:
-    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-
-  @media (max-width: 720px) {
-    background-image: none;
-  }
-}
-
 /* Layout gridlines */
 body > header,
 body > main,

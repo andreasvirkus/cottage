@@ -1,6 +1,5 @@
 ---
 import FormattedDate from './FormattedDate.astro'
-import { getAsciiSnowflake } from '../utils/snowflakes'
 
 interface Props {
   slug: string
@@ -10,10 +9,8 @@ interface Props {
 }
 
 const { date, slug, title, gradient } = Astro.props
-const ascii = getAsciiSnowflake(slug)
 ---
 <a href={`/thoughts/${slug}/`} data-sound="mouseClick" class="gradient" style={`--hero-gradient: ${gradient}`} transition:name={`post-hero-${slug}`}>
-  <pre class="ascii" aria-hidden="true">{ascii}</pre>
   <div class="card">
     <h4 class="title" transition:name={`post-title-${slug}`}>{title}</h4>
     <div class="date">
@@ -98,15 +95,10 @@ a:hover .date {
 .title {
   margin: 0 0 0.25rem;
   line-height: 1;
-  background-color: #222;
 }
 .date {
   margin: 0;
   font-size: 0.8em;
-}
-a:hover h4,
-a:hover .date {
-  /* color: var(--accent); */
 }
 
 .tag-label {
