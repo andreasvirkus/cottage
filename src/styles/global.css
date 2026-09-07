@@ -1,12 +1,62 @@
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/shantell-sans-variable.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/shantell-sans-variable.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/shantell-sans-variable.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/shantell-sans-variable.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --width: 80ch;
+  /* Headings only — a warm, slightly hand-drawn display face for the site's personality.
+     Falls back to the system UI stack instantly, so nothing waits on the network. */
   --font-primary:
-    -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-secondary:
-    'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro', serif;
-  --font-mono: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', Courier, monospace;
+    'Shantell Sans', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+  --font-secondary: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, Cambria, ui-serif, serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', Courier, monospace;
   --font-scale: 1.2em;
+
+  /* Fluid heading scale, ~1.3 ratio between steps */
+  --text-h1: clamp(2.25rem, 1.9rem + 1.8vw, 3.25rem);
+  --text-h2: clamp(1.75rem, 1.55rem + 1vw, 2.25rem);
+  --text-h3: clamp(1.375rem, 1.25rem + 0.7vw, 1.6875rem);
+  --text-h4: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+  --text-h5: 1.05rem;
+  --text-h6: 0.9rem;
 
   --background-color: #fff;
   --heading-color: #222;
@@ -175,6 +225,11 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
   text-rendering: optimizeLegibility;
+  /* Without this, mobile Safari/Chrome auto-inflate text size on narrow viewports,
+     independent of the font-size actually declared here — throws off the heading
+     scale and can push headings wider than their container. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 * {
   cursor: var(--cursor), auto;
@@ -247,6 +302,15 @@ main {
     padding: 0 0.5em;
     width: calc(100% - 2 * 0.5em);
     --font-scale: 1.4em;
+
+    /* Fixed instead of fluid here: vw-based clamp() doesn't know about this
+       padding/max-width, so it can outgrow the content column on narrow screens. */
+    --text-h1: 2rem;
+    --text-h2: 1.5rem;
+    --text-h3: 1.25rem;
+    --text-h4: 1.125rem;
+    --text-h5: 1rem;
+    --text-h6: 0.9rem;
   }
   main {
     padding: 0;
@@ -260,10 +324,6 @@ textarea {
   font-family: var(--font-mono);
 }
 
-h1 {
-  font-size: 2em;
-}
-
 h1,
 h2,
 h3,
@@ -272,7 +332,37 @@ h5,
 h6 {
   font-family: var(--font-primary);
   color: var(--heading-color);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   scroll-margin-top: 100px;
+}
+
+h1 {
+  font-size: var(--text-h1);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 700;
+}
+h3 {
+  font-size: var(--text-h3);
+  font-weight: 700;
+}
+h4 {
+  font-size: var(--text-h4);
+  font-weight: 600;
+}
+h5 {
+  font-size: var(--text-h5);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+h6 {
+  font-size: var(--text-h6);
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 a {
@@ -299,12 +389,20 @@ footer a:hover {
   border-bottom: 3px solid var(--text-color);
 }
 
+main a {
+    font-size: 0.9em;
+}
+
 /* main a:visited {
   color: var(--visited-color);
 } */
 
 main p {
   font-size: 1.2em;
+
+  @media (max-width: 720px) {
+    font-size: 1em;
+  }
 }
 
 strong,
@@ -406,6 +504,7 @@ p code {
   color: var(--code-color);
   padding: 0.2em;
   border-radius: 3px;
+  font-size: 0.8em;
 }
 
 .sr-only {
@@ -515,7 +614,9 @@ article > p:first-of-type {
   min-height: 80px;
 
   &::first-letter {
-    color: var(--font-secondary);
+    font-family: var(--font-primary);
+    font-weight: 800;
+    color: var(--heading-color);
     padding-right: 8px;
     padding: 0.2rem 0.3rem 0;
     margin: 0 0.3rem 0 0;
