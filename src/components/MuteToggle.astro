@@ -1,0 +1,64 @@
+<button type="button" class="mute-toggle" data-role="mute-toggle" aria-pressed="false" aria-label="Mute sounds">
+  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"></polygon>
+    <g class="waves">
+      <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+      <path d="M18.5 5.5a9 9 0 0 1 0 13"></path>
+    </g>
+    <g class="muted-x">
+      <line x1="16" y1="9" x2="22" y2="15"></line>
+      <line x1="22" y1="9" x2="16" y2="15"></line>
+    </g>
+  </svg>
+</button>
+
+<script>
+  import { playSound, isMuted, setMuted } from '../utils/play-sound.ts'
+
+  const button = document.querySelector<HTMLButtonElement>('[data-role="mute-toggle"]')
+
+  function render(muted: boolean) {
+    button?.classList.toggle('is-muted', muted)
+    button?.setAttribute('aria-pressed', String(muted))
+    button?.setAttribute('aria-label', muted ? 'Unmute sounds' : 'Mute sounds')
+  }
+
+  render(isMuted())
+
+  button?.addEventListener('click', () => {
+    const muted = !isMuted()
+    setMuted(muted)
+    render(muted)
+    // Silence is its own confirmation when muting; only chime back in on unmute.
+    if (!muted) playSound('mouseClick')
+  })
+</script>
+
+<style>
+  .mute-toggle {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4em;
+    color: var(--text-color);
+    cursor: var(--cursor-pointer), pointer;
+    transition: color 0.2s ease-out;
+  }
+
+  .mute-toggle:hover {
+    color: var(--heading-color);
+  }
+
+  .mute-toggle .muted-x {
+    display: none;
+  }
+
+  .mute-toggle.is-muted .waves {
+    display: none;
+  }
+
+  .mute-toggle.is-muted .muted-x {
+    display: block;
+  }
+</style>

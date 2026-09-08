@@ -1,9 +1,10 @@
 ---
 import TimeGreeting from './TimeGreeting.astro'
 import ThemePicker from './ThemePicker.astro'
+import MuteToggle from './MuteToggle.astro'
 ---
 
-<footer>
+<footer transition:persist>
   <hr />
   <TimeGreeting />
 
@@ -18,6 +19,7 @@ import ThemePicker from './ThemePicker.astro'
         ></path>
       </svg>
     </a>
+    <MuteToggle />
   </div>
 
   <div class="screen-only">

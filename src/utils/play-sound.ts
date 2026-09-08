@@ -4,9 +4,15 @@ import mouseClickSound from '../assets/sounds/mouse-click-2.mp3'
 import themeSwitchSound from '../assets/sounds/boop-5.mp3'
 
 const audioCache: Record<string, HTMLAudioElement> = {}
+const MUTE_KEY = '_cottageMuted'
+
+export const isMuted = () => localStorage.getItem(MUTE_KEY) === '1'
+export const setMuted = (muted: boolean) => localStorage.setItem(MUTE_KEY, muted ? '1' : '0')
 
 export type Sound = 'boop' | 'swoosh' | 'mouseClick' | 'themeSwitch'
 export const playSound = (sound: Sound) => {
+  if (isMuted()) return
+
   try {
     const soundMap = {
       boop: boopSound,

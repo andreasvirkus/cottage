@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions'
+
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
@@ -8,6 +10,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 <!doctype html>
 <html lang="en">
   <head>
+    <ClientRouter />
     <!-- Whitespace matters (CSP hashing) -->
     <script is:inline>const theme = localStorage.getItem('_cottageTheme')
 if (theme) document.documentElement.setAttribute('data-theme', theme)
@@ -24,15 +27,32 @@ function applyCustomTheme() {
   document.documentElement.style.setProperty('--custom-accent', active.accent)
 }
 
-document.addEventListener('cottage:navigate', () => {
+// Header carries transition:persist, so it's never re-rendered on navigation —
+// mirrors HeaderLink.astro's server-rendered isActive rules to keep it in sync.
+function syncActiveNav() {
+  const pathname = location.pathname
+  document.querySelectorAll('header a[href]').forEach((link) => {
+    const href = link.getAttribute('href') || ''
+    let active = href === pathname || href === pathname.replace(/\/$/, '')
+    if (pathname.startsWith('/thoughts/') && href.startsWith('/thoughts')) active = true
+    if (pathname === '/cv/' && href.startsWith('/me')) active = true
+    link.classList.toggle('active', active)
+  })
+}
+
+document.addEventListener('astro:after-swap', () => {
   const theme = localStorage.getItem('_cottageTheme')
   if (theme) document.documentElement.setAttribute('data-theme', theme)
   applyCustomTheme()
+  syncActiveNav()
 })</script>
 
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <!-- Header/Footer carry their own transition:persist directly on <header>/<footer>,
+         so ThemePicker/MuteToggle's listeners (bundled scripts, run once) survive
+         across ClientRouter swaps instead of going dead -->
     <Header />
     <main>
       <slot />
@@ -40,10 +60,17 @@ document.addEventListener('cottage:navigate', () => {
     <Footer />
 
     <script is:inline data-goatcounter="https://kano.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <!-- ClientRouter owns navigation itself; this just plays the click sound and gets out of the way -->
     <script>
-      import { initRouter } from '../utils/router.ts'
+      import { playSound, type Sound } from '../utils/play-sound.ts'
 
-      initRouter()
+      document.addEventListener('click', (event) => {
+        let target = event.target as HTMLElement | null
+        if (target?.dataset.sound === undefined) {
+          target = target?.closest('[data-sound]') as HTMLElement | null
+        }
+        if (target) playSound(target.dataset.sound as Sound)
+      })
     </script>
   </body>
 </html>
