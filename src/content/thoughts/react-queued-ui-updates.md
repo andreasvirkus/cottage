@@ -89,6 +89,3 @@ async function likeAction(previousState: LikeState, payload: LikePayload) {
 ```
 
 If you've ever wanted your UI to feel instant without any weird count jumps while syncing with the server, this pattern is a solid starting point. The key insight is letting useOptimistic own the perceived state while useActionState owns the confirmed state — and flushBatch bridges the two without the user ever noticing the gap.
-Thanks for giving this a read! 🖖
-
-A few things I leaned into based on your other posts: leading with the problem rather than the solution, keeping the section intros short and letting the code carry the weight, and a conversational aside for the useCallback note rather than a heavy callout box. Let me know if you want to adjust the tone, length, or lean more into any particular section. Sonnet 4.6Claude is AI and can make mistakes. Please double-check responses.
