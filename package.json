@@ -34,13 +34,18 @@
     "@astrojs/rss": "4.0.13",
     "@astrojs/sitemap": "3.6.0",
     "animated-cursor": "^1.2.0",
-    "astro": "5.15.4",
+    "astro": "5.18.2",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.6.2",
-    "sharp": "^0.33.5",
     "typescript": "^5.3.3"
   },
   "packageManager": "yarn@4.5.0",
+  "resolutions": {
+    "sharp": "0.35.4",
+    "vite": "6.4.3",
+    "rollup": "4.59.1",
+    "fast-xml-parser": "5.11.1"
+  },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
     "@types/sanitize-html": "^2.16.0",
