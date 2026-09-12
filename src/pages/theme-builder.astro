@@ -162,14 +162,6 @@ import Base from '../layouts/Base.astro'
   const ACTIVE_ID_KEY = '_cottageActiveCustomThemeId'
 
   const root = document.documentElement
-  const builder = document.querySelector('[data-theme-builder]')
-  const bgInput = builder?.querySelector<HTMLInputElement>('[data-role="bg"]')
-  const fgInput = builder?.querySelector<HTMLInputElement>('[data-role="fg"]')
-  const accentInput = builder?.querySelector<HTMLInputElement>('[data-role="accent"]')
-  const nameInput = builder?.querySelector<HTMLInputElement>('[data-role="name"]')
-  const saveBtn = builder?.querySelector<HTMLButtonElement>('[data-role="save"]')
-  const list = document.querySelector('[data-role="theme-list"]')
-  const emptyState = document.querySelector<HTMLElement>('[data-role="empty-state"]')
 
   interface CustomTheme {
     id: string
@@ -196,111 +188,131 @@ import Base from '../layouts/Base.astro'
     return /^#[0-9a-f]{6}$/i.test(value) ? value : fallback
   }
 
-  function previewLive() {
-    if (!bgInput || !fgInput || !accentInput) return
-    root.setAttribute('data-theme', 'custom')
-    root.style.setProperty('--custom-bg', bgInput.value)
-    root.style.setProperty('--custom-fg', fgInput.value)
-    root.style.setProperty('--custom-accent', accentInput.value)
-  }
+  // Astro hoists this page's <script> into <head>, outside <main> — the
+  // router's reviveScripts() only re-executes scripts inside the swapped
+  // <main>, so this module never re-runs on a return visit. Re-query and
+  // re-bind on cottage:navigate instead of relying on top-level execution.
+  function init() {
+    const builder = document.querySelector('[data-theme-builder]')
+    if (!builder) return
 
-  function applyTheme(theme: CustomTheme) {
-    if (!bgInput || !fgInput || !accentInput) return
-    bgInput.value = theme.bg
-    fgInput.value = theme.fg
-    accentInput.value = theme.accent
-    previewLive()
-    localStorage.setItem(THEME_KEY, 'custom')
-    localStorage.setItem(ACTIVE_ID_KEY, theme.id)
-    playSound('themeSwitch')
-  }
+    const bgInput = builder.querySelector<HTMLInputElement>('[data-role="bg"]')
+    const fgInput = builder.querySelector<HTMLInputElement>('[data-role="fg"]')
+    const accentInput = builder.querySelector<HTMLInputElement>('[data-role="accent"]')
+    const nameInput = builder.querySelector<HTMLInputElement>('[data-role="name"]')
+    const saveBtn = builder.querySelector<HTMLButtonElement>('[data-role="save"]')
+    const list = document.querySelector('[data-role="theme-list"]')
+    const emptyState = document.querySelector<HTMLElement>('[data-role="empty-state"]')
 
-  function renderList() {
-    if (!list || !emptyState) return
-    const themes = getThemes()
-    list.innerHTML = ''
-    emptyState.hidden = themes.length > 0
-
-    themes.forEach((theme) => {
-      const item = document.createElement('li')
-      item.className = 'builder__item'
-
-      const swatch = document.createElement('span')
-      swatch.className = 'builder__swatch'
-      ;(['bg', 'fg', 'accent'] as const).forEach((key) => {
-        const dot = document.createElement('i')
-        dot.style.backgroundColor = theme[key]
-        swatch.append(dot)
-      })
-
-      const nameField = document.createElement('input')
-      nameField.type = 'text'
-      nameField.value = theme.name
-      nameField.maxLength = 40
-      nameField.className = 'builder__rename'
-      nameField.setAttribute('aria-label', 'Rename this theme')
-      nameField.addEventListener('change', () => {
-        const current = getThemes()
-        const target = current.find((t) => t.id === theme.id)
-        if (!target) return
-        target.name = nameField.value.trim() || target.name
-        nameField.value = target.name
-        setThemes(current)
-      })
-
-      const applyBtn = document.createElement('button')
-      applyBtn.type = 'button'
-      applyBtn.textContent = 'Apply'
-      applyBtn.dataset.sound = 'mouseClick'
-      applyBtn.addEventListener('click', () => applyTheme(theme))
-
-      const deleteBtn = document.createElement('button')
-      deleteBtn.type = 'button'
-      deleteBtn.textContent = '×'
-      deleteBtn.className = 'builder__delete'
-      deleteBtn.setAttribute('aria-label', `Delete "${theme.name}"`)
-      deleteBtn.addEventListener('click', () => {
-        setThemes(getThemes().filter((t) => t.id !== theme.id))
-
-        if (localStorage.getItem(ACTIVE_ID_KEY) === theme.id) {
-          localStorage.setItem(THEME_KEY, 'light')
-          localStorage.removeItem(ACTIVE_ID_KEY)
-          root.setAttribute('data-theme', 'light')
-        }
-
-        renderList()
-      })
-
-      item.append(swatch, nameField, applyBtn, deleteBtn)
-      list.append(item)
-    })
-  }
-
-  if (bgInput && fgInput && accentInput) {
-    bgInput.value = readCurrentHex('--background-color', bgInput.value)
-    fgInput.value = readCurrentHex('--heading-color', fgInput.value)
-    accentInput.value = readCurrentHex('--link-color', accentInput.value)
-    ;[bgInput, fgInput, accentInput].forEach((input) => input.addEventListener('input', previewLive))
-  }
-
-  saveBtn?.addEventListener('click', () => {
-    if (!bgInput || !fgInput || !accentInput || !nameInput) return
-    const themes = getThemes()
-    const theme: CustomTheme = {
-      id: crypto.randomUUID(),
-      name: nameInput.value.trim() || `Mix #${themes.length + 1}`,
-      bg: bgInput.value,
-      fg: fgInput.value,
-      accent: accentInput.value,
+    function previewLive() {
+      if (!bgInput || !fgInput || !accentInput) return
+      root.setAttribute('data-theme', 'custom')
+      root.style.setProperty('--custom-bg', bgInput.value)
+      root.style.setProperty('--custom-fg', fgInput.value)
+      root.style.setProperty('--custom-accent', accentInput.value)
     }
-    themes.push(theme)
-    setThemes(themes)
-    localStorage.setItem(THEME_KEY, 'custom')
-    localStorage.setItem(ACTIVE_ID_KEY, theme.id)
-    nameInput.value = ''
-    renderList()
-    playSound('themeSwitch')
-  })
 
-  renderList()
+    function applyTheme(theme: CustomTheme) {
+      if (!bgInput || !fgInput || !accentInput) return
+      bgInput.value = theme.bg
+      fgInput.value = theme.fg
+      accentInput.value = theme.accent
+      previewLive()
+      localStorage.setItem(THEME_KEY, 'custom')
+      localStorage.setItem(ACTIVE_ID_KEY, theme.id)
+      playSound('themeSwitch')
+    }
+
+    function renderList() {
+      if (!list || !emptyState) return
+      const themes = getThemes()
+      list.innerHTML = ''
+      emptyState.hidden = themes.length > 0
+
+      themes.forEach((theme) => {
+        const item = document.createElement('li')
+        item.className = 'builder__item'
+
+        const swatch = document.createElement('span')
+        swatch.className = 'builder__swatch'
+        ;(['bg', 'fg', 'accent'] as const).forEach((key) => {
+          const dot = document.createElement('i')
+          dot.style.backgroundColor = theme[key]
+          swatch.append(dot)
+        })
+
+        const nameField = document.createElement('input')
+        nameField.type = 'text'
+        nameField.value = theme.name
+        nameField.maxLength = 40
+        nameField.className = 'builder__rename'
+        nameField.setAttribute('aria-label', 'Rename this theme')
+        nameField.addEventListener('change', () => {
+          const current = getThemes()
+          const target = current.find((t) => t.id === theme.id)
+          if (!target) return
+          target.name = nameField.value.trim() || target.name
+          nameField.value = target.name
+          setThemes(current)
+        })
+
+        const applyBtn = document.createElement('button')
+        applyBtn.type = 'button'
+        applyBtn.textContent = 'Apply'
+        applyBtn.dataset.sound = 'mouseClick'
+        applyBtn.addEventListener('click', () => applyTheme(theme))
+
+        const deleteBtn = document.createElement('button')
+        deleteBtn.type = 'button'
+        deleteBtn.textContent = '×'
+        deleteBtn.className = 'builder__delete'
+        deleteBtn.setAttribute('aria-label', `Delete "${theme.name}"`)
+        deleteBtn.addEventListener('click', () => {
+          setThemes(getThemes().filter((t) => t.id !== theme.id))
+
+          if (localStorage.getItem(ACTIVE_ID_KEY) === theme.id) {
+            localStorage.setItem(THEME_KEY, 'light')
+            localStorage.removeItem(ACTIVE_ID_KEY)
+            root.setAttribute('data-theme', 'light')
+          }
+
+          renderList()
+        })
+
+        item.append(swatch, nameField, applyBtn, deleteBtn)
+        list.append(item)
+      })
+    }
+
+    if (bgInput && fgInput && accentInput) {
+      bgInput.value = readCurrentHex('--background-color', bgInput.value)
+      fgInput.value = readCurrentHex('--heading-color', fgInput.value)
+      accentInput.value = readCurrentHex('--link-color', accentInput.value)
+      ;[bgInput, fgInput, accentInput].forEach((input) => input.addEventListener('input', previewLive))
+    }
+
+    saveBtn?.addEventListener('click', () => {
+      if (!bgInput || !fgInput || !accentInput || !nameInput) return
+      const themes = getThemes()
+      const theme: CustomTheme = {
+        id: crypto.randomUUID(),
+        name: nameInput.value.trim() || `Mix #${themes.length + 1}`,
+        bg: bgInput.value,
+        fg: fgInput.value,
+        accent: accentInput.value,
+      }
+      themes.push(theme)
+      setThemes(themes)
+      localStorage.setItem(THEME_KEY, 'custom')
+      localStorage.setItem(ACTIVE_ID_KEY, theme.id)
+      nameInput.value = ''
+      renderList()
+      playSound('themeSwitch')
+    })
+
+    renderList()
+  }
+
+  init()
+  window.addEventListener('cottage:navigate', init)
 </script>
