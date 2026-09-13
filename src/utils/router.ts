@@ -100,11 +100,13 @@ function cancelPrefetch() {
 }
 
 function scrollToTarget(hash: string) {
+  // html has scroll-behavior: smooth globally (for in-page anchor links) — override
+  // it here so post <> list navigations jump instantly instead of animating.
   if (!hash) {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     return
   }
-  document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView()
+  document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ behavior: 'instant' })
 }
 
 async function swap(url: string, { push }: { push: boolean }) {
