@@ -585,6 +585,10 @@ p code {
   }
   li {
     width: calc(50% - 1rem);
+    /* Cards carry an expensive SVG filter (pixelation); skip layout/paint for
+       rows off-screen instead of rasterizing all ~60 of them on every scroll. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 84px;
   }
 
   @media (min-width: 720px) {
