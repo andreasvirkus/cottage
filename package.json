@@ -11,7 +11,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "astro build && wrangler deploy"
   },
   "repository": {
     "type": "git",
@@ -51,7 +52,8 @@
     "@types/sanitize-html": "^2.16.0",
     "markdown-it": "^14.1.0",
     "playwright": "^1.56.1",
-    "sanitize-html": "^2.17.0"
+    "sanitize-html": "^2.17.0",
+    "wrangler": "^4.131.1"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.52.5"
